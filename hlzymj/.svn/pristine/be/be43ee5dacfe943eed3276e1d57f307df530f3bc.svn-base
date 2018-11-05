@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "signal_bg",
+    "texture": "718f38c4-c976-4f0a-95f5-8c716449bd04",
+    "atlas": "",
+    "rect": [
+      0,
+      15,
+      33,
+      2
+    ],
+    "offset": [
+      0,
+      -7.5
+    ],
+    "originalSize": [
+      33,
+      17
+    ]
+  }
+}

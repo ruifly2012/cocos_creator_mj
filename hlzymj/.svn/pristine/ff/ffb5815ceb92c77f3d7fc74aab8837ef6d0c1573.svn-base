@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "commontipsBg",
+    "texture": "0ce26da4-f82e-4a1f-ab4c-80e746537d3a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      628,
+      71
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      628,
+      71
+    ]
+  }
+}

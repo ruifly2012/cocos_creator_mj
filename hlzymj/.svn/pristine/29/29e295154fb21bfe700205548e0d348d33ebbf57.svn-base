@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "processingBg",
+    "texture": "f04e9f6c-3f19-4003-b8a3-3a3d53df6702",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      647,
+      73
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      647,
+      73
+    ]
+  }
+}

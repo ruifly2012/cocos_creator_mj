@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yingLaiYou",
+    "texture": "266b262c-aaa8-4fc5-a12b-0c577b94da6c",
+    "atlas": "",
+    "rect": [
+      19,
+      1,
+      226,
+      86
+    ],
+    "offset": [
+      3.5,
+      -0.5
+    ],
+    "originalSize": [
+      257,
+      87
+    ]
+  }
+}

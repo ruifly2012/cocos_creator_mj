@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "0d46efc3-adfc-4907-a953-a95b03331da6",
+  "atlasJson": "{\"SubTexture\":[{\"width\":172,\"y\":143,\"height\":199,\"name\":\"sltx_4\",\"x\":1},{\"width\":381,\"y\":1,\"height\":140,\"name\":\"sltx_3\",\"x\":1},{\"width\":85,\"y\":1,\"height\":84,\"name\":\"sltx_2_2\",\"x\":384},{\"width\":30,\"y\":1,\"height\":30,\"name\":\"sltx_1\",\"x\":471}],\"width\":512,\"height\":512,\"name\":\"SLTX_shuchu\",\"imagePath\":\"SLTX_shuchu_tex.png\"}",
+  "texture": "39887628-fced-455d-99f8-dcadd841906b",
+  "subMetas": {}
+}

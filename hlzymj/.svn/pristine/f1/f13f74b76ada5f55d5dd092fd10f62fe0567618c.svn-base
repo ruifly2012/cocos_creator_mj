@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "laiYouZi",
+    "texture": "ec4a4574-05d6-485f-9691-9a8a7c1f61c6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      207,
+      94
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      207,
+      95
+    ]
+  }
+}

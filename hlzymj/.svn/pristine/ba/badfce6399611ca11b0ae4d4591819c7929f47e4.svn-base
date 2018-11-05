@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dingque",
+    "texture": "7df67f7b-1f59-4a4d-8a83-745a2efa49a1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      246,
+      91
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      246,
+      91
+    ]
+  }
+}

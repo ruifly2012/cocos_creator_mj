@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rewardNumBg",
+    "texture": "66c562c5-b11c-48f4-be35-5101157ef891",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      145,
+      22
+    ],
+    "offset": [
+      -55.5,
+      117
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

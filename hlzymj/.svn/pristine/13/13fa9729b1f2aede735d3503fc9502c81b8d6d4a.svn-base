@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xueliu_title",
+    "texture": "11d83c71-82b5-48d8-96ba-33580c88ae73",
+    "atlas": "",
+    "rect": [
+      13,
+      7,
+      152,
+      36
+    ],
+    "offset": [
+      1.5,
+      -1
+    ],
+    "originalSize": [
+      175,
+      48
+    ]
+  }
+}

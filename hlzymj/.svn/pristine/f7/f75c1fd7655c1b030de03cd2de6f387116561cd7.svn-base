@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "result_win_icon",
+    "texture": "cb94ede1-8d70-436b-9578-15f201f19e4c",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      163,
+      165
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      165,
+      166
+    ]
+  }
+}

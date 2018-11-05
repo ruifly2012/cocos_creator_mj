@@ -1,0 +1,50 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "quickChatTimer",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 3.0166666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "012a0163-04fe-4698-a9da-b9b378c5954e"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "7b1f3157-7f9b-49e0-8557-2dbeaf6da2da"
+            }
+          },
+          {
+            "frame": 2,
+            "value": {
+              "__uuid__": "e1d66bb0-7b1a-42bf-8fab-556978cb8cad"
+            }
+          },
+          {
+            "frame": 3,
+            "value": {
+              "__uuid__": "648df1cf-848e-4e7f-bd68-5b54ff4c6811"
+            }
+          }
+        ]
+      },
+      "cc.Button": {}
+    }
+  },
+  "events": [
+    {
+      "frame": 3,
+      "func": "onActionEnd",
+      "params": []
+    }
+  ]
+}

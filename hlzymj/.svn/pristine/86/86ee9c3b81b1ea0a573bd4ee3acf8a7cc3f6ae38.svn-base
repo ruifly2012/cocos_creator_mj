@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "reward_icon",
+    "texture": "0d143862-66ff-4fb4-a93e-fbeee779d0a0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      83,
+      83
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      83,
+      83
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "XL_hupai2_tex",
+    "texture": "845edeaa-06d9-4303-baea-88f45cb70173",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1013,
+      466
+    ],
+    "offset": [
+      -4.5,
+      278
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}

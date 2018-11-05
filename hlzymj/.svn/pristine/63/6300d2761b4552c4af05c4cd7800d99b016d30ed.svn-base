@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "quickStartBtn",
+    "texture": "c3deb9a7-4d86-4afb-a0e4-36f5dd8ce9d9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      366,
+      115
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      366,
+      115
+    ]
+  }
+}

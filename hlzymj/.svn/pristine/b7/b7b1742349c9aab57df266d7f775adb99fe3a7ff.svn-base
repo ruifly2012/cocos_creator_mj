@@ -1,0 +1,45 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/TableManager.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'f3033B+Kl5Gf58nFv+Pno2g', 'TableManager', __filename);
+// scripts/hall/gamelib/room/TableManager.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Table_1 = require("../Table");
+var TableManager = /** @class */ (function () {
+    function TableManager(tableCount, chairCount) {
+        this._chairCount = chairCount;
+        this._tableCount = tableCount;
+        this._tables = new Array();
+        for (var i = 0; i < tableCount; i++)
+            this._tables[i] = new Table_1.Table(chairCount, i);
+    }
+    TableManager.prototype.getTableCount = function () {
+        return this._tableCount;
+    };
+    TableManager.prototype.getChairCount = function () {
+        return this._chairCount;
+    };
+    TableManager.prototype.getTableList = function () {
+        return this._tables;
+    };
+    TableManager.prototype.getTable = function (tableID) {
+        if (tableID < 0 || tableID >= this._tableCount)
+            return null;
+        return this._tables[tableID];
+    };
+    return TableManager;
+}());
+exports.TableManager = TableManager;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=TableManager.js.map
+        

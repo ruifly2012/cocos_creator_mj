@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "goldClickOff",
+    "texture": "fea175aa-0da3-4e65-bf93-e3bb58931bcf",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      217,
+      96
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      217,
+      97
+    ]
+  }
+}

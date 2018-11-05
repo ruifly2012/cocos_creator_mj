@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "duiArrow1",
+    "texture": "e166244d-f431-4096-b080-124ebcd6993e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      47,
+      70
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      47,
+      70
+    ]
+  }
+}

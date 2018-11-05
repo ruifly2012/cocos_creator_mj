@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chaDaJiao",
+    "texture": "f7f23415-1121-4bc6-ad02-73d2944836e9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      251,
+      171
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      251,
+      171
+    ]
+  }
+}

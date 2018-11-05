@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallBuyBtn",
+    "texture": "ccd33c9a-0a5c-4f67-a1c8-5a309856ba6e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      248,
+      82
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      248,
+      82
+    ]
+  }
+}

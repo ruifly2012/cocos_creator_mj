@@ -1,0 +1,48 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/CMD_GR_Logon_ByVnet.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'fb8bcdZ5GNKdoPWBU7h1ps1', 'CMD_GR_Logon_ByVnet', __filename);
+// scripts/hall/gamelib/room/CMD_GR_Logon_ByVnet.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tagConnectInfo_1 = require("../tagConnectInfo");
+var tagClientInfo_1 = require("../tagClientInfo");
+var tagVersionInfo_1 = require("../tagVersionInfo");
+var ByteArray_1 = require("../../common/ByteArray");
+var TSCommon_1 = require("../../TSCommon");
+var CMD_GR_Logon_ByVnet = /** @class */ (function () {
+    function CMD_GR_Logon_ByVnet() {
+        this.ConnectInfo = new tagConnectInfo_1.tagConnectInfo();
+        this.ClientInfo = new tagClientInfo_1.tagClientInfo();
+        this.VersionInfo = new tagVersionInfo_1.tagVersionInfo();
+        this.cbShake = 0;
+        this.cbEnterType = 0;
+        this.szTablePass = "";
+    }
+    CMD_GR_Logon_ByVnet.prototype.serialize = function () {
+        var ba = new ByteArray_1.ByteArray();
+        ba.writeInt(this.lUserDBID);
+        TSCommon_1.TSCommon.writeStringWithLength(ba, this.szEncryptPass, 64);
+        this.ConnectInfo.serialize(ba);
+        this.ClientInfo.serialize(ba);
+        this.VersionInfo.serialize(ba);
+        ba.writeByte(this.cbShake);
+        ba.writeByte(this.cbEnterType);
+        TSCommon_1.TSCommon.writeStringWithLength(ba, this.szTablePass, 16);
+        return ba;
+    };
+    return CMD_GR_Logon_ByVnet;
+}());
+exports.CMD_GR_Logon_ByVnet = CMD_GR_Logon_ByVnet;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=CMD_GR_Logon_ByVnet.js.map
+        

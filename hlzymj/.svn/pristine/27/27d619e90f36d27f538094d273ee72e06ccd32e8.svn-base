@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "arrowLower",
+    "texture": "d15a687c-36c9-4cba-8f5b-3683e275bf9c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      13,
+      11
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      13,
+      11
+    ]
+  }
+}

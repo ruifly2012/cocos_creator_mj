@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "8b6add14-df28-4de4-aac9-988d86fec3ec",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Game_JiDan_tex": {
+      "ver": "1.0.3",
+      "uuid": "e30c947b-9ee7-4b91-aa91-798e2c47bd8c",
+      "rawTextureUuid": "8b6add14-df28-4de4-aac9-988d86fec3ec",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -116,
+      "offsetY": 13.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 278,
+      "height": 227,
+      "rawWidth": 512,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "seasonTitle",
+    "texture": "e9bb13a1-50e0-4c02-b9fd-90ae3f6ce44f",
+    "atlas": "",
+    "rect": [
+      121,
+      11,
+      69,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

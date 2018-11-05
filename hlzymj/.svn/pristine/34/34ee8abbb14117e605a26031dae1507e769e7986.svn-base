@@ -1,0 +1,23 @@
+"use strict";
+cc._RF.push(module, '5c0f4tMkS5FsImK3VirJE10', 'CMD_GP_GetGameInfo');
+// scripts/hall/gamelib/place/CMD_GP_GetGameInfo.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../../TSCommon");
+var CMD_GP_GetGameInfo = /** @class */ (function () {
+    function CMD_GP_GetGameInfo() {
+    }
+    CMD_GP_GetGameInfo.prototype.serialize = function (ba) {
+        ba.writeInt(this.nUserDBID);
+        ba.writeInt(this.nPartnerID);
+        ba.writeInt(this.nVersionCode);
+        this.ClientInfo.serialize(ba);
+        this.VersionInfo.serialize(ba);
+        TSCommon_1.TSCommon.log("password = " + this.password);
+        TSCommon_1.TSCommon.writeStringWithLength(ba, this.password, 64);
+    };
+    return CMD_GP_GetGameInfo;
+}());
+exports.CMD_GP_GetGameInfo = CMD_GP_GetGameInfo;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "huanpaiBg",
+    "texture": "6c4ad687-3eb8-491c-9409-601446f811cd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      385,
+      140
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      385,
+      140
+    ]
+  }
+}

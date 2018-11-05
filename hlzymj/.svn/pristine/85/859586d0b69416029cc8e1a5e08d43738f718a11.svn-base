@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rankOutBtn",
+    "texture": "28172c88-7af8-4914-971a-51e0d7c0ef55",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      18,
+      27
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      18,
+      27
+    ]
+  }
+}

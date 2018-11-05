@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "signal_fore",
+    "texture": "da1606a9-8e36-444c-83dc-594837141b21",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      33,
+      17
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      33,
+      17
+    ]
+  }
+}

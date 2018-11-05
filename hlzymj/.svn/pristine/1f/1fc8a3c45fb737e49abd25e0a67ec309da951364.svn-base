@@ -1,0 +1,520 @@
+"use strict";
+cc._RF.push(module, 'b36c3tqCaNDjapQylcaZQ6r', 'MatchGameOverLayer');
+// scripts/hall/game/gameOver/MatchGameOverLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+/**
+ * 此处结算界面为段位赛的结算界面
+ */
+var GameDefs = require("GameDefs");
+var Resources = require("Resources");
+
+var HallResources = require("HallResources");
+var GameCfg = require("GameCfg");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+
+        match_level_star_bg: {
+            default: null,
+            type: cc.Node
+        },
+
+        match_level_star: {
+            default: null,
+            type: cc.Node
+        },
+
+        match_level: {
+            default: null,
+            type: cc.Node
+        },
+
+        match_cup: {
+            default: null,
+            type: cc.Node
+        },
+
+        cur_score: cc.Label,
+
+        level_progressBar: {
+            default: null,
+            type: cc.ProgressBar
+        },
+
+        level_tips: {
+            default: null,
+            type: cc.Node
+        },
+
+        win_lose_symbol: cc.Sprite,
+
+        win_counts: cc.Label,
+
+        result_info: cc.Node,
+
+        hu_type: cc.Sprite,
+
+        hu_fan: cc.Label,
+
+        laiyou_mj: cc.Sprite,
+
+        win_bg_spriteFrame: cc.SpriteFrame,
+
+        lose_bg_spriteFrame: cc.SpriteFrame,
+
+        lose_score_font: cc.Font,
+
+        win_score_font: cc.Font,
+
+        diaoxingAssets: dragonBones.DragonBonesAtlasAsset,
+
+        jiaxingAssets: dragonBones.DragonBonesAtlasAsset
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        var windowSize = cc.view.getVisibleSize();
+        //主界面不显示
+        if (this.node.getChildByName("bg")) {
+            this.node.getChildByName("bg").setContentSize(windowSize);
+        }
+
+        _TSCommon.TSCommon.addEvent(GameCfg.PROTECT_SCORE_SUCCESS, this.onShareProtectScoreSucceed, this);
+    },
+
+    onDestroy: function onDestroy() {
+        this.stopLeftTimer();
+        _TSCommon.TSCommon.removeEvent(GameCfg.PROTECT_SCORE_SUCCESS, this.onShareProtectScoreSucceed, this);
+
+        if (this.m_jiaxingdragonDisplay) {
+            this.m_jiaxingdragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, this.onPlayJiaxingFinished, this);
+        }
+
+        if (this.m_diaoxingdragonDisplay) {
+            this.m_diaoxingdragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, this.onPlayDiaoxingFinished, this);
+        }
+    },
+
+    onEnable: function onEnable() {
+        var _this = this;
+
+        if (this.m_myselfWinOrLoseScore < 0) {
+            this.node.getChildByName("result_bg").getComponent(cc.Sprite).spriteFrame = this.lose_bg_spriteFrame;
+        } else {
+            this.node.getChildByName("result_bg").getComponent(cc.Sprite).spriteFrame = this.win_bg_spriteFrame;
+        }
+
+        this.win_counts.node.active = false;
+
+        var winSize = cc.director.getWinSize();
+
+        this.node.getChildByName("result_bg").x = -winSize.width;
+
+        var posY = this.node.getChildByName("result_bg").y;
+
+        var moveTo = cc.moveTo(0.1, cc.p(0, posY));
+
+        var self = this;
+        var onEnd = cc.callFunc(function () {
+            if (self.m_bIsLiuju) {
+                self.result_info.getChildByName("hutype_bg").active = false;
+                self.result_info.getChildByName("laiyou_bg").active = false;
+                self.result_info.getChildByName("liuju_bg").active = true;
+            } else {
+                self.result_info.getChildByName("hutype_bg").active = true;
+                self.result_info.getChildByName("laiyou_bg").active = true;
+                self.result_info.getChildByName("liuju_bg").active = false;
+
+                self.loadRes();
+                self.setHuFan();
+                self.setLaiyouZi();
+            }
+            _this.setLevelInfo();
+        });
+
+        var sequence = cc.sequence(moveTo, onEnd);
+
+        this.node.getChildByName("result_bg").runAction(sequence);
+
+        this.startLeftTimer();
+
+        var HallResources = require("HallResources");
+        HallResources.recordPlayerLogToServer(HallResources.recordList.count_page);
+    },
+
+    loadRes: function loadRes() {
+
+        var self = this;
+
+        //硬癞油
+        cc.loader.loadRes("texture/game/gameOver/yinglaiyou_match", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_yingLaiYouFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //软癞油
+        cc.loader.loadRes("texture/game/gameOver/ruanlaiyou_match", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_ruanLaiYouFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //硬自摸
+        cc.loader.loadRes("texture/game/gameOver/yingzimo_match", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_yingZiMoFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //软自摸
+        cc.loader.loadRes("texture/game/gameOver/ruanzimo_match", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_ruanZiMoFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //油中油
+        cc.loader.loadRes("texture/game/gameOver/youzhongyou_match", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_youZhongYouFrame = spriteFrame;
+            self.setHuType();
+        });
+    },
+
+    /*
+     * 初始化
+     * @huType 胡牌类型 
+     * @fanNum 胡牌番数
+     * @laiyouValue 癞油字的牌值
+    */
+    init: function init(bIsLiuju, huType, fanNum, laiyouValue, showDetailResult, nMatchLevel, nMatchScore, myselfWinOrLoseScore, winCount) {
+        this.m_bIsLiuju = bIsLiuju;
+        this.m_huType = huType;
+        this.m_fanNum = fanNum;
+        this.m_laiyouValue = laiyouValue;
+        this.m_showDetailResult = showDetailResult;
+        this.m_matchLevel = nMatchLevel;
+        this.m_matchScore = nMatchScore;
+
+        this.m_myselfWinOrLoseScore = myselfWinOrLoseScore;
+
+        //连胜场数
+        this.m_winCount = winCount;
+        console.log("获取到的连胜次数为:" + winCount);
+        this.m_leftTimerStop = false;
+        this.m_leftTime = 25;
+    },
+
+    setLevelInfo: function setLevelInfo() {
+
+        //段位ID
+        var divisionID = this.m_matchLevel;
+
+        //当前段位数据
+        var curLevelData = HallResources.getInstance().getRankDataById(divisionID);
+
+        var curMaxScore = curLevelData.MaxScore;
+        var curMinScore = curLevelData.MinScore;
+
+        this.cur_score.font = this.m_myselfWinOrLoseScore >= 0 ? this.win_score_font : this.lose_score_font;
+        this.cur_score.string = require("Tools").getFormatNumber(this.m_matchScore);
+
+        //下一个段位的数据
+        var data = HallResources.getInstance().getRankDataById(divisionID + 1);
+        var nextScore = data.MinScore;
+
+        this.level_tips.getComponent(cc.Label).string = "还差" + (nextScore - this.m_matchScore) + "分进入晋级赛";
+        var offsetScore = curMaxScore - curMinScore;
+        var curPercent = (this.m_matchScore - curMinScore) / offsetScore;
+
+        var data = HallResources.getInstance().getRankAndStarByScore(this.m_matchScore);
+        var self = this;
+        cc.loader.loadRes("texture/hallRes/qualifyingCup/cup" + data.cup, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.match_cup.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            }
+        });
+
+        var levelDir = this.m_myselfWinOrLoseScore >= 0 ? "texture/hallRes/qualifyingCup/rank_level_" + divisionID : "texture/hallRes/qualifyingCup/rank_level_blue_" + divisionID;
+        cc.loader.loadRes(levelDir, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.match_level.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            }
+        });
+
+        var levelOffsetScore = curMaxScore - curMinScore;
+        var curLevelScore = this.m_matchScore - curMinScore;
+
+        for (var i = 0; i < this.match_level_star.childrenCount; i++) {
+            this.match_level_star.children[i].active = false;
+        }
+
+        var starNum = Math.floor(curLevelScore / levelOffsetScore * 3);
+        console.log("当前的星数为：" + starNum);
+
+        //之前的分数
+        var preScore = this.m_matchScore - this.m_myselfWinOrLoseScore;
+        var preLevelScore = preScore - curMinScore;
+
+        console.log("之前的段位分数为: " + preScore);
+        var preRankData = HallResources.getInstance().getRankAndStarByScore(preScore);
+        // var curRankData = HallResources.getInstance().getRankAndStarByScore(this.m_matchScore);
+
+        //之前的星数
+        var preStarNum = Math.floor(preLevelScore / levelOffsetScore * 3);
+        var prePercent = preLevelScore / offsetScore;
+
+        this.level_progressBar.progress = prePercent; // (this.m_matchScore - curMinScore) / offsetScore;
+
+        console.log("之前的星数目为：" + preStarNum);
+
+        console.log("之前的段位id为：" + preRankData.id);
+        console.log("当前的段位id为：" + divisionID);
+        if (preRankData.id == divisionID) {
+
+            if (starNum > preStarNum) {
+                //加星了
+                for (var i = 0; i < starNum - 1; i++) {
+                    this.match_level_star.children[i].active = true;
+                }
+
+                cc.loader.loadResDir("animation/dragonBones/dh_jiaxing", function (err, assets) {
+                    self.jiaxingAssets = assets;
+
+                    var actNode = new cc.Node();
+                    var dragonDisplay = actNode.addComponent(dragonBones.ArmatureDisplay);
+
+                    for (var i in self.jiaxingAssets) {
+                        if (self.jiaxingAssets[i] instanceof dragonBones.DragonBonesAsset) {
+                            dragonDisplay.dragonAsset = self.jiaxingAssets[i];
+                        }
+                        if (self.jiaxingAssets[i] instanceof dragonBones.DragonBonesAtlasAsset) {
+                            dragonDisplay.dragonAtlasAsset = self.jiaxingAssets[i];
+                        }
+                    }
+
+                    dragonDisplay.armatureName = 'armatureName';
+                    dragonDisplay.playAnimation("shengxing");
+
+                    self.onPlayJiaxingFinished = function () {
+                        self.match_level_star.children[starNum - 1].active = true;
+                        actNode.destroy();
+
+                        self.scrollToPercent(prePercent, curPercent, 0.3);
+                    };
+                    dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, self.onPlayJiaxingFinished, self);
+
+                    self.m_jiaxingdragonDisplay = dragonDisplay;
+                    self.match_level_star_bg.children[starNum - 1].addChild(actNode);
+                });
+            } else if (starNum < preStarNum) {
+                //减星了
+                for (var i = 0; i < starNum; i++) {
+                    this.match_level_star.children[i].active = true;
+                }
+
+                cc.loader.loadResDir("animation/dragonBones/dh_diaoxing", function (err, assets) {
+                    self.diaoxingAssets = assets;
+
+                    var actNode = new cc.Node();
+                    var dragonDisplay = actNode.addComponent(dragonBones.ArmatureDisplay);
+
+                    for (var i in self.diaoxingAssets) {
+                        if (self.diaoxingAssets[i] instanceof dragonBones.DragonBonesAsset) {
+                            dragonDisplay.dragonAsset = self.diaoxingAssets[i];
+                        }
+                        if (self.diaoxingAssets[i] instanceof dragonBones.DragonBonesAtlasAsset) {
+                            dragonDisplay.dragonAtlasAsset = self.diaoxingAssets[i];
+                        }
+                    }
+
+                    dragonDisplay.armatureName = 'armatureName';
+                    dragonDisplay.playAnimation("diaoxing");
+                    self.onPlayDiaoxingFinished = function () {
+                        self.match_level_star.children[starNum - 1].active = false;
+                        actNode.destroy();
+                        self.scrollToPercent(prePercent, curPercent, 0.3);
+                    };
+                    dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, self.onPlayDiaoxingFinished, self);
+
+                    self.m_diaoxingdragonDisplay = dragonDisplay;
+                    self.match_level_star.children[starNum - 1].addChild(actNode);
+                });
+            }
+        }
+
+        if (this.m_myselfWinOrLoseScore < 0) {
+            cc.loader.loadRes("texture/game/gameOver/result_lose_icon", cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.win_lose_symbol.spriteFrame = spriteFrame;
+                }
+            });
+        } else {
+            if (this.m_winCount == 1) {
+                cc.loader.loadRes("texture/game/gameOver/result_win_icon", cc.SpriteFrame, function (err, spriteFrame) {
+                    if (!err) {
+                        self.win_lose_symbol.spriteFrame = spriteFrame;
+                    }
+                });
+            } else if (this.m_winCount > 1) {
+                this.win_counts.node.active = true;
+                this.win_counts.string = this.m_winCount;
+
+                cc.loader.loadRes("texture/game/gameOver/result_continue_win", cc.SpriteFrame, function (err, spriteFrame) {
+                    if (!err) {
+                        self.win_lose_symbol.spriteFrame = spriteFrame;
+                    }
+                });
+            }
+        }
+    },
+
+    //滑动列表滑动到某个百分比
+    scrollToPercent: function scrollToPercent(prePercent, curPercent, scrollTime) {
+        var deltaScroll = (curPercent - prePercent) / (scrollTime * 100);
+        var self = this;
+        var setProgress = function setProgress() {
+            if (deltaScroll && prePercent > curPercent || deltaScroll < 0 && prePercent < curPercent) {
+                return;
+            }
+
+            prePercent += deltaScroll;
+            self.level_progressBar.progress = prePercent;
+            _TSCommon.TSCommon.performWithDelay(this, setProgress, scrollTime / (scrollTime * 100));
+        };
+        _TSCommon.TSCommon.performWithDelay(this, setProgress, scrollTime / (scrollTime * 100));
+    },
+
+    //分享保分成功
+    onShareProtectScoreSucceed: function onShareProtectScoreSucceed() {
+
+        //之前的分数
+        var preScore = this.m_matchScore - this.m_myselfWinOrLoseScore;
+
+        var curScore = this.m_matchScore;
+
+        //当前段位数据
+        var curLevelData = HallResources.getInstance().getRankDataById(this.m_matchLevel);
+
+        var MinScore = curLevelData.MinScore;
+
+        //当前段位分数的差值
+        var offsetScore = curLevelData.MaxScore - MinScore;
+
+        var prePercent = (preScore - MinScore) / offsetScore;
+
+        var curPercent = (curScore - MinScore) / offsetScore;
+
+        this.scrollToPercent(prePercent, curPercent, 0.3);
+    },
+
+    getLeftLeaveTime: function getLeftLeaveTime() {
+        return this.m_leftTime;
+    },
+
+    setHuType: function setHuType() {
+        var frame;
+
+        //软自摸
+        if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+            frame = this.m_ruanZiMoFrame;
+        }
+
+        //硬自摸
+        else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                frame = this.m_yingZiMoFrame;
+            }
+
+            //软癞油
+            else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                    frame = this.m_ruanLaiYouFrame;
+                }
+
+                //硬癞油
+                else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                        frame = this.m_yingLaiYouFrame;
+                    }
+
+                    //油中油
+                    else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                            frame = this.m_youZhongYouFrame;
+                        }
+
+        if (!frame) {
+            return;
+        }
+
+        this.hu_type.node.active = true;
+        this.hu_type.spriteFrame = frame;
+    },
+
+    //设定胡牌翻数
+    setHuFan: function setHuFan() {
+        this.hu_fan.string = this.m_fanNum;
+    },
+
+    setLaiyouZi: function setLaiyouZi() {
+        if (this.m_laiyouValue == undefined || this.m_laiyouValue == null) {
+            return;
+        }
+        var frameName = Resources.get_frameName("hh_dao_", this.m_laiyouValue);
+
+        var frame = this.node.parent.getComponent("MjResourceMgr").mj1_face_dao.getSpriteFrame(frameName);
+
+        if (frame) {
+            this.laiyou_mj.spriteFrame = frame;
+        }
+    },
+
+    //开始离开房间的按钮
+    startLeftTimer: function startLeftTimer() {
+        var leftTimerNode = this.node.getChildByName("ready_btn").getChildByName("leave_timer");
+        leftTimerNode.active = true;
+        leftTimerNode.getComponent(cc.Label).string = "(" + this.m_leftTime + ")";
+
+        var self = this;
+        var callback = function callback() {
+            if (self.m_leftTimerStop) {
+                return;
+            }
+
+            self.m_leftTime -= 1;
+            var label = leftTimerNode.getComponent(cc.Label);
+            label.string = "(" + self.m_leftTime + ")";
+
+            if (self.m_leftTime > 0) {
+                _TSCommon.TSCommon.performWithDelay(self, callback, 1);
+            } else {
+                leftTimerNode.getComponent(cc.Label).string = "";
+                leftTimerNode.active = false;
+                require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+            }
+        };
+
+        _TSCommon.TSCommon.performWithDelay(this, callback, 1);
+    },
+
+    stopLeftTimer: function stopLeftTimer() {
+        this.m_leftTimerStop = true;
+    },
+
+    onLeaveGameClicked: function onLeaveGameClicked() {
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+    },
+
+    onDetailResultClicked: function onDetailResultClicked() {
+        if (this.m_showDetailResult) {
+            this.m_showDetailResult();
+        }
+    },
+
+    onPrepareClicked: function onPrepareClicked() {
+        G.matchGameReady = true;
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+    }
+
+});
+
+cc._RF.pop();

@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "49ef0ab1-f983-4dd1-8ed3-9078ae67b412",
+  "atlasJson": "{\"SubTexture\":[{\"width\":259,\"y\":208,\"height\":198,\"name\":\"TX5_1\",\"x\":256},{\"width\":39,\"y\":327,\"height\":41,\"name\":\"TX11_1\",\"x\":795},{\"width\":265,\"y\":201,\"height\":199,\"name\":\"TX6_1\",\"x\":528},{\"width\":208,\"y\":745,\"height\":168,\"name\":\"TX1_1\",\"x\":255},{\"width\":270,\"y\":1,\"height\":205,\"name\":\"TX7_1\",\"x\":256},{\"width\":253,\"y\":1,\"height\":225,\"name\":\"TX2_1\",\"x\":1},{\"width\":255,\"y\":408,\"height\":171,\"name\":\"TX8_1\",\"x\":255},{\"width\":259,\"y\":402,\"height\":189,\"name\":\"TX3_1\",\"x\":517},{\"width\":255,\"y\":581,\"height\":162,\"name\":\"TX9_1\",\"x\":255},{\"width\":268,\"y\":1,\"height\":198,\"name\":\"TX4_1\",\"x\":528},{\"width\":252,\"y\":228,\"height\":179,\"name\":\"TX10_1\",\"x\":1},{\"width\":142,\"y\":201,\"height\":201,\"name\":\"TX1_2\",\"x\":872},{\"width\":92,\"y\":402,\"height\":371,\"name\":\"TX1_3\",\"x\":778},{\"width\":85,\"y\":593,\"height\":345,\"name\":\"TX3_2\",\"x\":872},{\"width\":43,\"y\":1,\"height\":324,\"name\":\"TX4_2\",\"x\":798}],\"width\":1024,\"height\":1024,\"name\":\"texiao_hupai\",\"imagePath\":\"texiao_hupai_tex.png\"}",
+  "texture": "7c941c06-b427-42ed-b50c-6f0c96c19d62",
+  "subMetas": {}
+}

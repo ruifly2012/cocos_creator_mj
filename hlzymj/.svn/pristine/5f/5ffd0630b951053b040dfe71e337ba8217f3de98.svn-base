@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "consecutiveVictoriesBtn",
+    "texture": "8f9e6491-559e-4042-8367-c8035b3dd783",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      130,
+      60
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      130,
+      60
+    ]
+  }
+}

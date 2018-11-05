@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "NumTimer",
+    "texture": "5e2c8d2b-8fbe-475e-8cb5-3a112084a27e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      269,
+      34
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      270,
+      34
+    ]
+  }
+}

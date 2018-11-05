@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chiPaiBg",
+    "texture": "24043e2f-ac21-4a84-a654-b7556060db8e",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      202,
+      113
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      206,
+      116
+    ]
+  }
+}

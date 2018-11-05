@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "downline",
+    "texture": "90d5d70d-409b-4ea3-9826-43be6a29f206",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      751,
+      2
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      751,
+      2
+    ]
+  }
+}

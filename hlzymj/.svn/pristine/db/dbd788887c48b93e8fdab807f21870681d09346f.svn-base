@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "seeGroupRankBtn",
+    "texture": "69c8ab42-81aa-42d0-b6c0-4ecb960fe141",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      145,
+      50
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      145,
+      50
+    ]
+  }
+}

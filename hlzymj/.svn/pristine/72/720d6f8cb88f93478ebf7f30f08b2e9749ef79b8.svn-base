@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "PaiHangBang_paiming_0",
+    "texture": "d1b5a4ad-68da-4632-a70d-b2d943f3dfcf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      195,
+      28
+    ],
+    "offset": [
+      -30.5,
+      114
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

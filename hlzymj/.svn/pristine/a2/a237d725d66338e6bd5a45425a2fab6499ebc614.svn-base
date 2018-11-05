@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diceBg",
+    "texture": "f36a4b83-27d4-49e1-af62-7a1061bb0a01",
+    "atlas": "",
+    "rect": [
+      52,
+      40,
+      90,
+      69
+    ],
+    "offset": [
+      1,
+      2.5
+    ],
+    "originalSize": [
+      192,
+      154
+    ]
+  }
+}

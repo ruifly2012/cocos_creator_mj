@@ -1,0 +1,53 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/room/MoreGameList.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '3da8dnONCJKkZclmDEsRjko', 'MoreGameList', __filename);
+// scripts/hall/game/room/MoreGameList.js
+
+"use strict";
+
+var HallResources = require("HallResources");
+var MoreGameList = cc.Class({
+    extends: cc.Component,
+    properties: {
+        moreItem: cc.Prefab
+    },
+
+    onLoad: function onLoad() {
+        // this.initData();
+    },
+
+    initData: function initData(gameList, hot, changwan) {
+        this.content = this.node.getComponent(cc.ScrollView).content;
+        this.content.removeAllChildren();
+        this.maxHeight = this.content.height;
+        this.newWidth = this.content.width;
+        for (var i = 0; i < gameList.length; i++) {
+            var item = cc.instantiate(this.moreItem);
+            item.parent = this.content;
+            item.getComponent("MoreGameListItem").initData(gameList[i], hot, changwan);
+            //.初始化位置
+            var x = -500 + i % 3 * 335;
+            var y = -140 - Math.floor(i / 3) * 250;
+            item.setPosition(x, y);
+        }
+
+        var newHeight = (this.moreItem.data.height + 5) * Math.ceil(gameList.length / 3);
+        this.content.height = newHeight > this.maxHeight ? this.maxHeight : newHeight;
+        var newWidth = (this.moreItem.data.width + 5) * (gameList.length % 3);
+        this.content.width = newWidth > this.maxHeight ? this.maxHeight : newWidth;
+    }
+});
+module.exports = MoreGameList;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=MoreGameList.js.map
+        

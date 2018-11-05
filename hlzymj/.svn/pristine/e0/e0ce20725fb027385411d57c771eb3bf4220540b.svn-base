@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dljl_gou_icon",
+    "texture": "77194b42-60f7-437f-aba6-dab692467200",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      71,
+      73
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      71,
+      73
+    ]
+  }
+}

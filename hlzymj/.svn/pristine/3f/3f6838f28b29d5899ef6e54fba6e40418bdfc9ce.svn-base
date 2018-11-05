@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "17ccb3f8-28db-44dc-8d60-39f4bb9c4b5d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Game_Kiss_tex": {
+      "ver": "1.0.3",
+      "uuid": "a8183c82-023d-46a1-8670-72aaa30e8983",
+      "rawTextureUuid": "17ccb3f8-28db-44dc-8d60-39f4bb9c4b5d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -34.5,
+      "offsetY": 25.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 185,
+      "height": 459,
+      "rawWidth": 256,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "careerBg",
+    "texture": "598b07eb-e430-47ad-a996-54e0ffc0b8d5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      287,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      287,
+      40
+    ]
+  }
+}

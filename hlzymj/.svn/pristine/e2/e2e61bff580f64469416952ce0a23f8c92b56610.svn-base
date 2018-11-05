@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coinNoEnoughTitle",
+    "texture": "5382d628-bf51-490c-b4b5-5252d957502a",
+    "atlas": "",
+    "rect": [
+      88,
+      11,
+      135,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

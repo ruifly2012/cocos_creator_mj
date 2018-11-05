@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "aa87943d-69bd-4c2d-ad13-1da83a9ba647",
+  "atlasJson": "{\"width\":1024,\"imagePath\":\"guafen_tex.png\",\"height\":1024,\"name\":\"guafen\",\"SubTexture\":[{\"width\":411,\"y\":206,\"height\":246,\"name\":\"guafen_06\",\"x\":486},{\"width\":270,\"y\":748,\"height\":87,\"name\":\"guafen_01\",\"x\":1},{\"width\":483,\"y\":1,\"height\":227,\"name\":\"guafen_07\",\"x\":1},{\"width\":273,\"y\":712,\"height\":231,\"name\":\"guafen_02\",\"x\":346},{\"width\":535,\"y\":1,\"height\":203,\"name\":\"guafen_08\",\"x\":486},{\"width\":343,\"y\":489,\"height\":257,\"name\":\"guafen_03\",\"x\":1},{\"width\":372,\"y\":454,\"height\":256,\"name\":\"guafen_04\",\"x\":377},{\"width\":374,\"y\":230,\"height\":257,\"name\":\"guafen_05\",\"x\":1}]}",
+  "texture": "1cd30198-d54a-4340-a699-9ebb05c082cb",
+  "subMetas": {}
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "goldClickOn",
+    "texture": "0027e097-3a3b-41ad-a9c3-4417aafa7af1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      235,
+      97
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      235,
+      97
+    ]
+  }
+}

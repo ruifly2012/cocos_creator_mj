@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "metop_lai",
+    "texture": "1a5570f2-f826-4763-8b70-e8a15fc990c4",
+    "atlas": "",
+    "rect": [
+      35,
+      16,
+      45,
+      49
+    ],
+    "offset": [
+      15.5,
+      19.5
+    ],
+    "originalSize": [
+      84,
+      120
+    ]
+  }
+}

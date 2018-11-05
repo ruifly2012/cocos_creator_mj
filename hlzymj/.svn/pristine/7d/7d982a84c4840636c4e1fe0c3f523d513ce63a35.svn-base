@@ -1,0 +1,122 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/ClientFrameSink.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '5766fPzYKhOCbTarn2NHaN8', 'ClientFrameSink', __filename);
+// scripts/hall/game/ClientFrameSink.js
+
+"use strict";
+
+var _ByteArray = require("../common/ByteArray");
+
+var _CGameLib = require("../gamelib/CGameLib");
+
+var _TSCommon = require("../TSCommon");
+
+var ClientFrameSink = cc.Class({
+    ctor: function ctor() {
+        this.m_dataEventHandler = null;
+    },
+    onSceneChanged: function onSceneChanged(data) {
+
+        if (this.m_dataEventHandler) {
+            this.m_dataEventHandler.emit("onSceneChanged", { data: data });
+        } else {
+            var callback = function callback() {
+                this.onSceneChanged(data);
+            };
+            _TSCommon.TSCommon.performWithDelay(this, callback, ClientFrameSink.N_DELAYTIME);
+        }
+    },
+    onPlayerStateChanged: function onPlayerStateChanged(chair, oldState, newState) {
+
+        if (this.m_dataEventHandler) {
+            this.m_dataEventHandler.emit("onPlayerStateChanged", {
+                chair: chair,
+                nOldState: oldState,
+                nNewState: newState
+            });
+        } else {
+            var callback = function callback() {
+                this.onPlayerStateChanged(chair, oldState, newState);
+            };
+            _TSCommon.TSCommon.performWithDelay(this, callback, ClientFrameSink.N_DELAYTIME);
+        }
+    },
+    onGetMainVersion: function onGetMainVersion() {
+        return 1;
+    },
+    onGetSubVersion: function onGetSubVersion() {
+        return 1;
+    },
+
+    onGameStart: function onGameStart() {},
+
+    onGameMessage: function onGameMessage(chair, cbCmdID, data) {
+
+        if (this.m_dataEventHandler) {
+            this.m_dataEventHandler.emit("onGameMessage", {
+                chair: chair,
+                cCmdID: cbCmdID,
+                data: data
+            });
+        } else {
+            var callback = function callback() {
+                this.onGameMessage(chair, cbCmdID, data);
+            };
+            _TSCommon.TSCommon.performWithDelay(this, callback, ClientFrameSink.N_DELAYTIME);
+        }
+    },
+    onGameEnd: function onGameEnd(data) {},
+    onGameOption: function onGameOption(option) {},
+    onUserEnterTable: function onUserEnterTable(chair, wUserID, isPlayer) {
+
+        if (this.m_dataEventHandler) {
+            cc.log("onUserEnterTable ========");
+            this.m_dataEventHandler.emit("onUserEnterTable", {
+                chair: chair,
+                wUserID: wUserID,
+                isPlayer: isPlayer
+            });
+        } else {
+            var callback = function callback() {
+                this.onUserEnterTable(chair, wUserID, isPlayer);
+            };
+            _TSCommon.TSCommon.performWithDelay(this, callback, ClientFrameSink.N_DELAYTIME);
+        }
+    },
+    onUserExitTable: function onUserExitTable(chair, wUserID, isPlayer) {
+        cc.log("onUserExitTable ========");
+        if (this.m_dataEventHandler) {
+            this.m_dataEventHandler.emit("onUserExitTable", {
+                chair: chair,
+                wUserID: wUserID,
+                isPlayer: isPlayer
+            });
+        } else {
+            var callback = function callback() {
+                this.onUserExitTable(chair, wUserID, isPlayer);
+            };
+            _TSCommon.TSCommon.performWithDelay(this, callback, ClientFrameSink.N_DELAYTIME);
+        }
+    },
+
+    onNotEnoughGold: function onNotEnoughGold(nMinGold, nMaxGold) {},
+    onTableSound: function onTableSound(nChair, pBuf) {},
+    onGameSystemMsg: function onGameSystemMsg(msg) {}
+});
+
+ClientFrameSink.N_DELAYTIME = 1;
+
+module.exports = ClientFrameSink;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ClientFrameSink.js.map
+        

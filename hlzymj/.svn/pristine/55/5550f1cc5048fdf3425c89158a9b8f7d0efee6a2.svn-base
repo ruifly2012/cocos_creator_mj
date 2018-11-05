@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_dao_3_1",
+    "texture": "77e26a9e-0e3e-428c-88fc-3237b51f7fa3",
+    "atlas": "e12b4727-e886-4f12-98cb-9f3604b6effe",
+    "rect": [
+      355,
+      118,
+      56,
+      77
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      56,
+      79
+    ],
+    "rotated": 1
+  }
+}

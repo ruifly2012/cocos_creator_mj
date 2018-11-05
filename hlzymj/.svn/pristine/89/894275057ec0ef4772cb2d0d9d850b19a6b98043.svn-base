@@ -1,0 +1,27 @@
+"use strict";
+cc._RF.push(module, '583e48eyP9L+p9K/MDmczUc', 'Chair');
+// scripts/hall/gamelib/Chair.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Chair = /** @class */ (function () {
+    function Chair() {
+        this._userID = 0;
+        this._empty = true;
+    }
+    Chair.prototype.setUserID = function (userID) {
+        this._userID = userID;
+    };
+    Chair.prototype.setEmpty = function (value) {
+        this._empty = value;
+    };
+    Chair.prototype.getUserID = function () {
+        return this._userID;
+    };
+    Chair.prototype.isEmpty = function () {
+        return this._empty;
+    };
+    return Chair;
+}());
+exports.Chair = Chair;
+
+cc._RF.pop();

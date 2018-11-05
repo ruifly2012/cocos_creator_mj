@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ruanLaiYou",
+    "texture": "486f7d2b-67e5-40e7-9e60-3598e44eff4f",
+    "atlas": "",
+    "rect": [
+      26,
+      1,
+      219,
+      86
+    ],
+    "offset": [
+      7,
+      -0.5
+    ],
+    "originalSize": [
+      257,
+      87
+    ]
+  }
+}

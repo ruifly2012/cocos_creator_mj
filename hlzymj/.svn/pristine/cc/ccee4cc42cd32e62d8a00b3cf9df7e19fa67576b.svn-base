@@ -1,0 +1,26 @@
+"use strict";
+cc._RF.push(module, 'befe2KW9Y1DXa0bqys4DbNZ', 'MoreGameListLayer');
+// scripts/hall/game/room/MoreGameListLayer.js
+
+"use strict";
+
+var HallResources = require("HallResources");
+var MoreGameListLayer = cc.Class({
+    extends: cc.Component,
+    properties: {
+        gameList: {
+            default: null,
+            type: cc.ScrollView
+        }
+    },
+
+    onLoad: function onLoad() {},
+
+    initData: function initData(data, hot, changwan) {
+        this.gameList.getComponent("MoreGameList").initData(data, hot, changwan);
+    }
+});
+
+module.exports = MoreGameListLayer;
+
+cc._RF.pop();

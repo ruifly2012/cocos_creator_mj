@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ZuanShiNum_0",
+    "texture": "9ad4d4c1-449a-4b9c-ae4e-d414ac51b0a5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      148,
+      19
+    ],
+    "offset": [
+      -54,
+      118.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

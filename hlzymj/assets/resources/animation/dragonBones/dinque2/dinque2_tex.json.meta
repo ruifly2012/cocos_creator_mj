@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "03677351-aa7c-442d-9f00-6f6ee3c9d7ba",
+  "atlasJson": "{\"width\":256,\"imagePath\":\"dinque2_tex.png\",\"height\":256,\"name\":\"dinque2\",\"SubTexture\":[{\"width\":89,\"y\":116,\"height\":89,\"name\":\"DQ_01\",\"x\":1},{\"width\":69,\"y\":1,\"height\":69,\"name\":\"DQ_02\",\"x\":170},{\"width\":167,\"y\":1,\"height\":113,\"name\":\"DQ_03\",\"x\":1}]}",
+  "texture": "4ae385db-ccaf-41aa-a0f0-ba4895105818",
+  "subMetas": {}
+}

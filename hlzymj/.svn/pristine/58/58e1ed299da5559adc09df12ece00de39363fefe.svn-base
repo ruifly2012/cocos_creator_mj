@@ -1,0 +1,22 @@
+"use strict";
+cc._RF.push(module, '706bf3Wa/tB/agpos3prJ95', 'tagGameStationEx');
+// scripts/hall/gamelib/tagGameStationEx.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../TSCommon");
+var tagGameStationEx = /** @class */ (function () {
+    function tagGameStationEx() {
+    }
+    tagGameStationEx.getLen = function () {
+        return 40;
+    };
+    tagGameStationEx.prototype.deserialize = function (ba) {
+        this.dwParentID = ba.readInt();
+        this.dwStationID = ba.readInt();
+        this.szStationName = TSCommon_1.TSCommon.readGbkString(ba, 32);
+    };
+    return tagGameStationEx;
+}());
+exports.tagGameStationEx = tagGameStationEx;
+
+cc._RF.pop();

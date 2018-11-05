@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "right_gang_lai",
+    "texture": "0dbf4eae-6a36-4748-ad33-879173d39bc8",
+    "atlas": "",
+    "rect": [
+      6,
+      8,
+      29,
+      28
+    ],
+    "offset": [
+      -13.5,
+      10
+    ],
+    "originalSize": [
+      68,
+      64
+    ]
+  }
+}

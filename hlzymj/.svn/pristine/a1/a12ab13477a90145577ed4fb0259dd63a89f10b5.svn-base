@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yjly_rule1",
+    "texture": "dbab164d-8757-4ed5-853a-87036406e69a",
+    "atlas": "",
+    "rect": [
+      0,
+      6,
+      793,
+      1181
+    ],
+    "offset": [
+      -5,
+      1
+    ],
+    "originalSize": [
+      803,
+      1195
+    ]
+  }
+}

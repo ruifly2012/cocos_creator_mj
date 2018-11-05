@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "processingIcon",
+    "texture": "648ad413-0afb-4659-8dbd-79fc324b897a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      146,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      146,
+      56
+    ]
+  }
+}

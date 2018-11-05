@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "PiPei_Time_0",
+    "texture": "d5ec547e-f76e-4e7f-aa55-d21b0e202894",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      239,
+      87
+    ],
+    "offset": [
+      -8.5,
+      84.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

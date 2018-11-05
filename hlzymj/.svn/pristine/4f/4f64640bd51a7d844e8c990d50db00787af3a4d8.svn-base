@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cupBg",
+    "texture": "87b54c7a-981b-456f-b537-c7e426780e24",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1014,
+      303
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1014,
+      303
+    ]
+  }
+}

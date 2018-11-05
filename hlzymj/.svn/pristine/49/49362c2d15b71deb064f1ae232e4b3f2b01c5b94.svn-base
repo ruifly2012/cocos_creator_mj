@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shunhuaipai",
+    "texture": "a991c456-b97b-4b4d-a7c5-80c3a9a66959",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      217,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      217,
+      37
+    ]
+  }
+}

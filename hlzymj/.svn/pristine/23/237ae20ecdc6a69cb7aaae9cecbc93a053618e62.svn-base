@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "inviteFriendIcon",
+    "texture": "47801fa8-4c44-49f5-90ad-6086bdbee6d2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      88,
+      89
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      88,
+      89
+    ]
+  }
+}

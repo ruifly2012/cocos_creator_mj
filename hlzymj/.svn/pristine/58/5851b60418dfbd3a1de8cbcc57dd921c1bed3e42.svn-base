@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sameDayNumBg",
+    "texture": "74e7c733-5ab2-4c77-93ff-80726b08b28a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      146,
+      22
+    ],
+    "offset": [
+      -55,
+      117
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

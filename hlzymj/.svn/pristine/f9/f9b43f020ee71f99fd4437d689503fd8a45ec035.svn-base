@@ -1,0 +1,106 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/qualifying/HallQualifying.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'db57e2WBi5AL6wAbvdnIU2e', 'HallQualifying', __filename);
+// scripts/hall/qualifying/HallQualifying.js
+
+"use strict";
+
+var _TSCommon = require("TSCommon");
+
+var HallResources = require("HallResources");
+var HallQualifying = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        star1: {
+            default: null,
+            type: cc.Sprite
+        },
+        star2: {
+            default: null,
+            type: cc.Sprite
+        },
+        star3: {
+            default: null,
+            type: cc.Sprite
+        },
+        star4: {
+            default: null,
+            type: cc.Sprite
+        },
+        star5: {
+            default: null,
+            type: cc.Sprite
+        },
+        cupIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        rankLabel: {
+            default: null,
+            type: cc.Label
+        },
+        receiveBtn: {
+            default: null,
+            type: cc.Node
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {},
+
+    clickReceiveBtn: function clickReceiveBtn() {
+        HallResources.getInstance().playButtonEffect();
+    },
+
+
+    clickQuestionBtn: function clickQuestionBtn() {
+
+        this.node.parent.parent.getComponent("HallPlatformInfo").showSeasonLayer();
+    },
+
+    changeRank: function changeRank(rankScore) {
+        var self = this;
+        var data = HallResources.getInstance().getRankAndStarByScore(rankScore);
+
+        if (data.star > 4) {
+            this.star5.node.active = true;
+        }
+        if (data.star > 3) {
+            this.star4.node.active = true;
+        }
+        if (data.star > 2) {
+            this.star3.node.active = true;
+        }
+        if (data.star > 1) {
+            this.star2.node.active = true;
+        }
+        if (data.star > 0) {
+            this.star1.node.active = true;
+        }
+        this.rankLabel.string = data.rankName;
+        cc.loader.loadRes("texture/hallRes/qualifyingCup/cup" + data.cup, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.cupIcon.spriteFrame = spriteFrame;
+            }
+        });
+    }
+
+    // update (dt) {},
+});
+
+module.exports = HallQualifying;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=HallQualifying.js.map
+        

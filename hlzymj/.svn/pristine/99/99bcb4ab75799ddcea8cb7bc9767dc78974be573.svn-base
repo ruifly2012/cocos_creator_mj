@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chargebg",
+    "texture": "c0907249-7511-491f-bf2c-a847cbe84fd6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      889,
+      614
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      889,
+      614
+    ]
+  }
+}

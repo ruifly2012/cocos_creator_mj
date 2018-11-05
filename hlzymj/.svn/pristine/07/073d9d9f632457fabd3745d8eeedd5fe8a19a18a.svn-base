@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "cd6306f8-28df-4899-9455-2b5c56bbf182",
+  "atlasJson": "{\"width\":1024,\"SubTexture\":[{\"width\":470,\"y\":1,\"height\":408,\"name\":\"xl_hu1\",\"x\":1},{\"width\":283,\"y\":1,\"height\":248,\"name\":\"xl_hu2\",\"x\":473},{\"width\":259,\"y\":251,\"height\":216,\"name\":\"xl_hu3\",\"x\":473},{\"width\":256,\"y\":1,\"height\":256,\"name\":\"xl_guang\",\"x\":758}],\"height\":1024,\"name\":\"XL_hupai2\",\"imagePath\":\"XL_hupai2_tex.png\"}",
+  "texture": "845edeaa-06d9-4303-baea-88f45cb70173",
+  "subMetas": {}
+}

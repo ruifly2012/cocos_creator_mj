@@ -1,0 +1,400 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/desk/GameButtonLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '3a0dbGq8yJH+pPTB80bF5n3', 'GameButtonLayer', __filename);
+// scripts/hall/game/desk/GameButtonLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+var GameCfg = require("GameCfg");
+
+var sendCMD = require("sendCMD");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+
+        moreBtn: {
+            default: null,
+            type: cc.Button
+        },
+
+        chatBtn: {
+            default: null,
+            type: cc.Button
+        },
+
+        autoHuBtn: {
+            default: null,
+            type: cc.Button
+        },
+
+        startGameBtn: {
+            default: null,
+            type: cc.Button
+        },
+
+        gameInfoToggle: {
+            default: null,
+            type: cc.Node
+        },
+
+        laiziInfo: {
+            default: null,
+            type: cc.Node
+        },
+
+        settingLayer: {
+            default: null,
+            type: cc.Node
+        },
+
+        chattingLayer: {
+            default: null,
+            type: cc.Node
+        },
+
+        buttonAtlas: {
+            default: null,
+            type: cc.SpriteAtlas
+        }
+
+    },
+
+    onLoad: function onLoad() {
+
+        this.laiziInfo.active = false;
+
+        _TSCommon.TSCommon.addEvent(GameCfg.sendChatEnd, this.onSendChatEnd, this);
+
+        this.init();
+
+        this.node.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
+    },
+
+    init: function init() {
+        this.m_autoHuPrePos = this.autoHuBtn.node.getPosition();
+
+        this.autoHuBtn.node.setPosition(cc.p(this.m_autoHuPrePos.x + 350, this.m_autoHuPrePos.y));
+    },
+
+    onTouch: function onTouch(event) {
+        var pos = event.touch.getLocation();
+        var convertPos = this.laiziInfo.getChildByName("info_bg").convertToNodeSpace(pos);
+        var size = this.laiziInfo.getChildByName("info_bg").getContentSize();
+        var rect = cc.rect(0, 0, size.width, size.height);
+
+        if (!cc.rectContainsPoint(rect, convertPos)) {
+            this.laiziInfo.active = false;
+        }
+    },
+
+    onDisable: function onDisable() {
+        _TSCommon.TSCommon.removeEvent(GameCfg.sendChatEnd, this.onSendChatEnd, this);
+    },
+
+    //点击开始按钮
+    onStartBtnClicked: function onStartBtnClicked() {
+        require("sendCMD").sendCMD_PO_RESTART();
+
+        if (this.m_onStartCallBack) {
+            this.m_onStartCallBack();
+        }
+
+        //记录日志
+        var HallResources = require("HallResources");
+        HallResources.recordPlayerLogToServer(HallResources.recordList.click_ready);
+    },
+
+    onMoreBtnClicked: function onMoreBtnClicked() {
+        this.settingLayer.getComponent("MoreSettingLayer").show();
+    },
+
+    onChatBtnClicked: function onChatBtnClicked() {
+        this.chattingLayer.getComponent("Chatting").show();
+    },
+
+    onGameInfoBgClicked: function onGameInfoBgClicked(event) {
+        this.gameInfoToggle.getComponent(cc.Toggle).isChecked = !this.gameInfoToggle.getComponent(cc.Toggle).isChecked;
+
+        var parent = this.gameInfoToggle.parent;
+
+        var gameInfoLayer = parent.getChildByName("base_info_bg");
+
+        if (this.gameInfoToggle.getComponent(cc.Toggle).isChecked) {
+            this.gameInfoToggle.getChildByName("Background").active = false;
+            gameInfoLayer.active = true;
+        } else {
+            this.gameInfoToggle.getChildByName("Background").active = true;
+            gameInfoLayer.active = false;
+        }
+    },
+
+    onShowGameInfoClicked: function onShowGameInfoClicked(event) {
+
+        var parent = this.gameInfoToggle.parent;
+
+        var gameInfoLayer = parent.getChildByName("base_info_bg");
+
+        if (this.gameInfoToggle.getComponent(cc.Toggle).isChecked) {
+            this.gameInfoToggle.getChildByName("Background").active = false;
+            gameInfoLayer.active = true;
+        } else {
+            this.gameInfoToggle.getChildByName("Background").active = true;
+            gameInfoLayer.active = false;
+        }
+    },
+
+    //癞子牌点击的情况
+    onLaiziImgClicked: function onLaiziImgClicked() {
+        this.laiziInfo.active = true;
+    },
+
+    onCancelRobotClicked: function onCancelRobotClicked() {
+        if (this.m_onCancelRobotCallBack) {
+            this.m_onCancelRobotCallBack();
+        }
+        sendCMD.sendCMD_PO_ROBOTPLAYCANCEL();
+    },
+
+    //过按钮点击
+    onGuoBtnClicked: function onGuoBtnClicked(event) {
+        sendCMD.sendCMD_PO_PASS();
+        if (this.m_onGuoCallBack) {
+            this.m_onGuoCallBack();
+        }
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onChiBtnClicked: function onChiBtnClicked(event) {
+
+        if (this.m_onChiCallback) {
+            this.m_onChiCallback();
+        }
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onGangBtnClicked: function onGangBtnClicked(event) {
+
+        if (this.m_onGangCallBack) {
+            this.m_onGangCallBack();
+        }
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onChaoTianBtnClicked: function onChaoTianBtnClicked(event) {
+        if (this.m_onChaotianCallBack) {
+            this.m_onChaotianCallBack();
+        }
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onPengBtnClicked: function onPengBtnClicked(event) {
+        sendCMD.sendCMD_PO_PENG();
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onHuBtnClicked: function onHuBtnClicked(event) {
+        sendCMD.sendCMD_PO_HU();
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    onZiMoBtnClicked: function onZiMoBtnClicked(event) {
+        sendCMD.sendCMD_PO_HU();
+        this.setAllOperateButtonIsVis(false);
+    },
+
+    autoHuBtnShow: function autoHuBtnShow() {
+        var moveTo = cc.moveTo(0.2, this.m_autoHuPrePos);
+        this.autoHuBtn.node.runAction(moveTo);
+    },
+
+    //点击自动胡牌
+    onAutoHuClicked: function onAutoHuClicked() {},
+
+    onSendChatEnd: function onSendChatEnd() {
+
+        this.chatBtn.interactable = false;
+        var animationComponent = this.chatBtn.getComponent(cc.Animation);
+        animationComponent.play("quickChatTimer");
+
+        var self = this;
+        var onPlayAnimationEnd = function onPlayAnimationEnd() {
+            self.chatBtn.interactable = true;
+            cc.log("end");
+        };
+
+        animationComponent.on('finished', onPlayAnimationEnd, this);
+    },
+
+    //设定所有的操作按钮的可见性
+    setAllOperateButtonIsVis: function setAllOperateButtonIsVis(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        for (var i = 0; i < operateNodes.childrenCount; i++) {
+
+            operateNodes.children[i].active = bIsVisible;
+        }
+    },
+
+    setGuoBtnVisible: function setGuoBtnVisible(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_guo_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setChiBtnVisible: function setChiBtnVisible(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_chi_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setPengBtnVisible: function setPengBtnVisible(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_peng_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setGangBtnVisible: function setGangBtnVisible(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_gang_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setChaoTianBtnVisible: function setChaoTianBtnVisible(bIsVisible) {
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_chaotian_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setHuBtnVisible: function setHuBtnVisible(bIsVisible) {
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_hu_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setZiMoBtnVisible: function setZiMoBtnVisible(bIsVisible) {
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        operateNodes.getChildByName("operate_zimo_btn").active = bIsVisible;
+
+        this.autoAdjustPos();
+    },
+
+    setStartBtnVisible: function setStartBtnVisible(bIsVisible) {
+
+        this.startGameBtn.node.active = bIsVisible;
+    },
+
+    setStartClickBtnCallBack: function setStartClickBtnCallBack(callback) {
+        this.m_onStartCallBack = callback;
+    },
+
+    setGuoClickBtnCallBack: function setGuoClickBtnCallBack(callback) {
+
+        this.m_onGuoCallBack = callback;
+    },
+
+    setChiClickBtnCallBack: function setChiClickBtnCallBack(callback) {
+
+        this.m_onChiCallback = callback;
+    },
+
+    setGangClickBtnCallBack: function setGangClickBtnCallBack(callback) {
+
+        this.m_onGangCallBack = callback;
+    },
+
+    setChaoTianClickBtnCallBack: function setChaoTianClickBtnCallBack(callback) {
+        this.m_onChaotianCallBack = callback;
+    },
+
+    setCancelRobotBtnCallBack: function setCancelRobotBtnCallBack(callback) {
+
+        this.m_onCancelRobotCallBack = callback;
+    },
+
+    onClickedDingQue: function onClickedDingQue(event, data) {
+        sendCMD.sendCMD_PO_DingQue(parseInt(data));
+    },
+
+    //自动修正坐标
+    autoAdjustPos: function autoAdjustPos() {
+
+        //设定好过的坐标  
+        this.frontNode = this.frontNode || null;
+
+        var operateNodes = this.node.getChildByName("operate_button_layer");
+
+        var GuoBtn = operateNodes.getChildByName("operate_guo_btn");
+        GuoBtn.x = 390;
+        this.front = GuoBtn;
+
+        if (operateNodes.getChildByName("operate_peng_btn").active == true) {
+
+            operateNodes.getChildByName("operate_peng_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_peng_btn");
+        }
+
+        if (operateNodes.getChildByName("operate_chi_btn").active == true) {
+
+            operateNodes.getChildByName("operate_chi_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_chi_btn");
+        }
+
+        if (operateNodes.getChildByName("operate_gang_btn").active == true) {
+
+            operateNodes.getChildByName("operate_gang_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_gang_btn");
+        }
+
+        if (operateNodes.getChildByName("operate_chaotian_btn").active == true) {
+            operateNodes.getChildByName("operate_chaotian_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_chaotian_btn");
+        }
+
+        if (operateNodes.getChildByName("operate_hu_btn").active == true) {
+
+            operateNodes.getChildByName("operate_hu_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_hu_btn");
+        }
+
+        if (operateNodes.getChildByName("operate_zimo_btn").active == true) {
+            operateNodes.getChildByName("operate_zimo_btn").x = this.front.x - 180;
+            this.front = operateNodes.getChildByName("operate_zimo_btn");
+        }
+    }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GameButtonLayer.js.map
+        

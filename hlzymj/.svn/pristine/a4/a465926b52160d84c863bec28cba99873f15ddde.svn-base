@@ -1,0 +1,65 @@
+"use strict";
+cc._RF.push(module, '3b759xnRytNc7nwdsoT8ozi', 'Dialog');
+// scripts/hall/control/Dialog.js
+
+"use strict";
+
+var _cc$Class;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Dialog = cc.Class((_cc$Class = {
+    extends: cc.Component,
+    _suerBtnCallBack: null,
+    _cancelBtnCallBack: null,
+    properties: {
+        contentLabel: {
+            default: null,
+            type: cc.Label
+        },
+        suerBtn: {
+            default: null,
+            type: cc.Button
+        },
+        cancelBtn: {
+            default: null,
+            type: cc.Button
+        }
+    },
+    onLoad: function onLoad() {},
+
+    start: function start() {},
+
+    update: function update(dt) {},
+
+    onDestroy: function onDestroy() {},
+
+    //点击确定按钮事件
+    clickSuerBtn: function clickSuerBtn(event) {
+        if (this._suerBtnCallBack != null) {
+            this._suerBtnCallBack();
+        }
+        this.node.removeFromParent(true);
+        this.destroy();
+    },
+
+    //点击取消按钮事件
+    clickCancelBtn: function clickCancelBtn(event) {
+        if (this._cancelBtnCallBack != null) {
+            this._cancelBtnCallBack();
+        }
+        this.node.removeFromParent(true);
+        this.destroy();
+    },
+
+    setSuerBtnCallBack: function setSuerBtnCallBack(onSuerBtnCallBack) {
+        this._suerBtnCallBack = onSuerBtnCallBack;
+    }
+
+}, _defineProperty(_cc$Class, "setSuerBtnCallBack", function setSuerBtnCallBack(onCancelBtnCallBack) {
+    this._cancelBtnCallBack = onCancelBtnCallBack;
+}), _defineProperty(_cc$Class, "setContentLabelStr", function setContentLabelStr(strContent) {
+    this.contentLabel.string = strContent;
+}), _cc$Class));
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sureBtn",
+    "texture": "e5b20aaa-823f-49f2-a90b-84a2decaf1f3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      248,
+      82
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      248,
+      82
+    ]
+  }
+}

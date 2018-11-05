@@ -1,0 +1,10 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "zuanshi_tex",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_atlasJson": "{\"SubTexture\":[{\"width\":61,\"y\":1,\"height\":39,\"name\":\"zuan_04\",\"x\":57},{\"width\":43,\"y\":42,\"height\":43,\"name\":\"zuan_02\",\"x\":57},{\"width\":39,\"y\":57,\"height\":39,\"name\":\"zuan_03\",\"x\":1},{\"width\":54,\"y\":1,\"height\":54,\"name\":\"zuan_01\",\"x\":1}],\"width\":128,\"height\":128,\"name\":\"zuanshi\",\"imagePath\":\"zuanshi_tex.png\"}",
+  "texture": {
+    "__uuid__": "c4c7cd4b-52ab-4a4b-b813-94c2b6d3d4cb"
+  }
+}

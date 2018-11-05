@@ -1,0 +1,50 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/CMD_CM_SysteMessage.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '2732bk4Ex1Nert8RuCLO5g2', 'CMD_CM_SysteMessage', __filename);
+// scripts/hall/gamelib/CMD_CM_SysteMessage.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../TSCommon");
+var CMD_CM_SysteMessage = /** @class */ (function () {
+    function CMD_CM_SysteMessage() {
+    }
+    CMD_CM_SysteMessage.prototype.deserialize = function (ba) {
+        this.bCloseLine = ba.readUnsignedByte();
+        this.bMessageType = ba.readUnsignedByte();
+        this.wMessageLen = ba.readUnsignedShort();
+        if (this.wMessageLen > 0)
+            this.szMessage = TSCommon_1.TSCommon.readGbkString(ba, this.wMessageLen); //ba.readUTFBytes(this.wMessageLen);
+        else
+            this.szMessage = "";
+    };
+    return CMD_CM_SysteMessage;
+}());
+exports.CMD_CM_SysteMessage = CMD_CM_SysteMessage;
+var CMD_CM_SysteMessageEx = /** @class */ (function () {
+    function CMD_CM_SysteMessageEx() {
+    }
+    CMD_CM_SysteMessageEx.prototype.deserialize = function (ba) {
+        this.bCloseLine = ba.readUnsignedByte();
+        this.uButtonType = ba.readUnsignedByte();
+        this.wMessageLen = ba.readUnsignedShort();
+        if (this.wMessageLen > 0)
+            this.szMessage = TSCommon_1.TSCommon.readGbkString(ba, this.wMessageLen);
+        else
+            this.szMessage = "";
+    };
+    return CMD_CM_SysteMessageEx;
+}());
+exports.CMD_CM_SysteMessageEx = CMD_CM_SysteMessageEx;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=CMD_CM_SysteMessage.js.map
+        

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "restmj_icon1",
+    "texture": "0eb81d29-3f0c-409c-9dc1-8b7d7ff4b4a3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      21,
+      30
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      21,
+      30
+    ]
+  }
+}

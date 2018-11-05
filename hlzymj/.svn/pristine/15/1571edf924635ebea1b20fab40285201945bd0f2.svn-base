@@ -1,0 +1,182 @@
+"use strict";
+cc._RF.push(module, 'aee22MsHGJG85qdk8iVTDbO', 'ClientFrame');
+// scripts/hall/gamelib/frame/ClientFrame.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ByteArray_1 = require("../../common/ByteArray");
+var TSCommon_1 = require("../../TSCommon");
+var FrameCmds_1 = require("./FrameCmds");
+var GAME_DATA_1 = require("./GAME_DATA");
+var gamelibcommon_1 = require("../gamelibcommon");
+var ClientFrame = /** @class */ (function () {
+    function ClientFrame(room, gameLib) {
+        this.m_sink = null;
+        this._mySelf = null;
+        this.m_gameRoom = room;
+        this.m_pGameLib = gameLib;
+        this.m_cachedCmds = new Array();
+        this.clear();
+    }
+    ClientFrame.prototype.clear = function () {
+        this._mySelf = null;
+        this.m_cachedCmds.splice(0);
+        this.m_bDismissed = false;
+        this.m_chairCount = 2;
+        this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_FREE;
+    };
+    ClientFrame.prototype.setMyself = function (myself) {
+        this._mySelf = myself;
+    };
+    ClientFrame.prototype.setSink = function (sink) {
+        this.m_sink = sink;
+        this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_FREE;
+    };
+    ClientFrame.prototype.meEnterGame = function (cbChairCount) {
+        console.log("meEnterGame");
+        this.m_chairCount = cbChairCount;
+        var frameVersion = 1310761;
+        var ba = new ByteArray_1.ByteArray();
+        ba.writeInt(frameVersion);
+        this.sendGameCmd(FrameCmds_1.FrameCmds.CLIENTSITE_FRAME_VERSION, ba);
+        var version = new ByteArray_1.ByteArray();
+        version.writeInt(this.m_sink.onGetMainVersion());
+        version.writeInt(this.m_sink.onGetSubVersion());
+        version.writeInt(0);
+        this.sendGameCmd(FrameCmds_1.FrameCmds.CLIENTSITE_REQUEST_VERIFY_VERSION, version);
+        this.m_cachedCmds.splice(0);
+    };
+    ClientFrame.prototype.sendGameCmd = function (cmdID, buf) {
+        this.m_gameRoom.sendGameCmd(cmdID, buf);
+    };
+    ClientFrame.prototype.recvGameCmd = function (buf) {
+        var dataLen = buf.length - 2;
+        if (dataLen < 0)
+            return false;
+        if (this.m_sink == null) {
+            this.m_cachedCmds.push(buf);
+            return true;
+        }
+        var data = new GAME_DATA_1.GAME_DATA(buf);
+        if (data.cCmdID >= FrameCmds_1.FrameCmds.SERVERSITE_MSG) {
+            this.recvFrameCmd(data.cChairID, data.cCmdID, data.data);
+            return true;
+        }
+        this.m_sink.onGameMessage(data.cChairID, data.cCmdID, data.data);
+        return true;
+    };
+    ClientFrame.prototype.recvFrameCmd = function (chairID, cmdID, lpBuf) {
+        var nLen = lpBuf.length;
+        if (nLen < 0)
+            return;
+        var bt;
+        var i;
+        switch (cmdID) {
+            case FrameCmds_1.FrameCmds.SERVERSITE_PERSONAL_SCENE:
+                {
+                    if (nLen <= 0) {
+                        console.log("CClientFrame::RecvFrameMsg() error -- SERVERSITE_SCENE nLen <= 0");
+                        return;
+                    }
+                    this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_PLAYING;
+                    this.m_bDismissed = false;
+                    bt = new ByteArray_1.ByteArray();
+                    bt.writeBytes(lpBuf, 4, nLen - 4);
+                    bt.position = 0;
+                    this.m_sink.onSceneChanged(bt);
+                    break;
+                }
+            case FrameCmds_1.FrameCmds.SERVERSITE_SCENE:
+                {
+                    if (nLen <= 0) {
+                        console.log("CClientFrame::RecvFrameMsg() error -- SERVERSITE_SCENE nLen <= 0");
+                        return;
+                    }
+                    this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_PLAYING;
+                    this.m_bDismissed = false;
+                    bt = new ByteArray_1.ByteArray();
+                    bt.writeBytes(lpBuf, 4, lpBuf.length - 4);
+                    bt.position = 0;
+                    this.m_sink.onSceneChanged(bt);
+                    break;
+                }
+            case FrameCmds_1.FrameCmds.SERVERSITE_FIRST_SCENE:
+                {
+                    console.log("CClientFrame::RecvFrameMsg() -- SERVERSITE_FIRST_SCENE");
+                    this.changePlayerStatus(-1, gamelibcommon_1.gamelibcommon.USER_PLAY_GAME, gamelibcommon_1.gamelibcommon.USER_READY_STATUS);
+                    this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_PLAYING;
+                    this.m_bDismissed = false;
+                    if (this._mySelf.isPlayer())
+                        this.sendGameCmd(FrameCmds_1.FrameCmds.CLIENTSITE_CONFIRM_START, null);
+                    bt = new ByteArray_1.ByteArray();
+                    bt.writeBytes(lpBuf, 4, nLen - 4);
+                    bt.position = 0;
+                    this.m_sink.onSceneChanged(bt);
+                    this.m_sink.onGameStart();
+                    break;
+                }
+            case FrameCmds_1.FrameCmds.SERVERSITE_GAME_OVER:
+                console.log("--SERVERSITE_GAME_OVER");
+                this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_FREE;
+                // 把所有人的状态改为free
+                //this.changePlayerStatus(-1, gamelibcommon.USER_FREE_STATUS, gamelibcommon.USER_PLAY_GAME);
+                this.m_sink.onGameEnd(lpBuf);
+                break;
+            case FrameCmds_1.FrameCmds.SERVERSITE_GAME_DISMISS:
+                {
+                    console.log("SERVERSITE_GAME_DISMISS");
+                    this.m_nSceneStatus = FrameCmds_1.FrameCmds.SCENE_STATUS_FREE;
+                    this.m_bDismissed = true;
+                    this.changePlayerStatus(-1, gamelibcommon_1.gamelibcommon.USER_FREE_STATUS, gamelibcommon_1.gamelibcommon.USER_PLAY_GAME);
+                    // 显示解散理由
+                    /*if (nLen > 0) {
+                        //ShowSystemMsg(lpBuf.toString());
+                        this.m_sink.onDispatch(FameCmds..DISPID_ON_GAME_DISMISS, 0, 0);
+                    }*/
+                }
+                break;
+            case FrameCmds_1.FrameCmds.SERVERSITE_GAMEOPTION:
+                {
+                    var dwOption = lpBuf.readUnsignedInt();
+                    // 通知逻辑
+                    this.m_sink.onGameOption(dwOption);
+                    break;
+                }
+            case FrameCmds_1.FrameCmds.SERVERSITE_SOFT_READY:
+                {
+                    console.log("Recv player soft ready signal");
+                    if (nLen < 4) {
+                        console.log("RecvFrameMsg--SERVERSITE_GAMEOPTION error,mismatch length");
+                        break;
+                    }
+                    var nChair = lpBuf.readInt();
+                    this.changePlayerStatus(nChair, gamelibcommon_1.gamelibcommon.USER_READY_STATUS, gamelibcommon_1.gamelibcommon.USER_SIT_TABLE);
+                    break;
+                }
+            case FrameCmds_1.FrameCmds.SERVERSITE_SOUND: {
+                this.m_sink.onTableSound(chairID, lpBuf);
+                break;
+            }
+            case FrameCmds_1.FrameCmds.SERVERSITE_SYSTEMMESSAGE: {
+                ;
+                this.m_sink.onGameSystemMsg(TSCommon_1.TSCommon.readGbkString(lpBuf, lpBuf.length));
+                break;
+            }
+            default:
+                console.log("--CClient::GameMessage, recieved an unknown msg, id= " + cmdID);
+                break;
+        }
+    };
+    ClientFrame.prototype.changePlayerStatus = function (chair, newStatus, oldStatus) {
+        if (chair == -1) {
+            for (var i = 0; i < this.m_chairCount; i++) {
+                this.m_sink.onPlayerStateChanged(i, oldStatus, newStatus);
+            }
+        }
+        else
+            this.m_sink.onPlayerStateChanged(chair, oldStatus, newStatus);
+    };
+    return ClientFrame;
+}());
+exports.ClientFrame = ClientFrame;
+
+cc._RF.pop();

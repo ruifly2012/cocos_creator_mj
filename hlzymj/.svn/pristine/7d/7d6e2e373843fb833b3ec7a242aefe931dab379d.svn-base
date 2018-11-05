@@ -1,0 +1,428 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/place/GamePlace.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'd0305NAowlCHojZ5+PZzMrZ', 'GamePlace', __filename);
+// scripts/hall/gamelib/place/GamePlace.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var CMD_GP_LogonSuccess_Ex2_1 = require("./CMD_GP_LogonSuccess_Ex2");
+var PlazaCmds_1 = require("./PlazaCmds");
+var ByteArray_1 = require("../../common/ByteArray");
+var TSCommon_1 = require("../../TSCommon");
+var CMD_GP_GetGameInfo_1 = require("./CMD_GP_GetGameInfo");
+var tagGameStationEx_1 = require("../tagGameStationEx");
+var tagGameServerEx_1 = require("../tagGameServerEx");
+var GameIDList_1 = require("./GameIDList");
+var tagGameKind_1 = require("./tagGameKind");
+var tagVersionInfo_1 = require("../tagVersionInfo");
+var tagClientInfo_1 = require("../tagClientInfo");
+var CMD_CM_SysteMessage_1 = require("../CMD_CM_SysteMessage");
+var LoginType;
+(function (LoginType) {
+    LoginType[LoginType["GetGameInfo"] = 0] = "GetGameInfo";
+    LoginType[LoginType["GetServerList"] = 1] = "GetServerList";
+})(LoginType || (LoginType = {}));
+;
+var GamePlace = /** @class */ (function () {
+    function GamePlace(gameLib, publicUserInfo) {
+        this.m_socketType = LoginType.GetGameInfo;
+        this.m_pSink = null;
+        this.m_gameLib = gameLib;
+        this.m_gameIDList = new GameIDList_1.GameIDList();
+        this._publicUserInfo = publicUserInfo;
+        TSCommon_1.TSCommon.log("password for gameplace = " + publicUserInfo.encryptPassword);
+    }
+    GamePlace.prototype.getGameLib = function () {
+        return this.m_gameLib;
+    };
+    GamePlace.prototype.setSink = function (sink) {
+        this.m_pSink = sink;
+    };
+    GamePlace.prototype.setGameID = function (gameid) {
+        this.m_gameID = gameid;
+    };
+    GamePlace.prototype.loginGame = function () {
+        this.m_pSink.onLogonFinished();
+    };
+    GamePlace.prototype.setServerIP = function (ip) {
+        this.m_plazaIP = ip;
+    };
+    GamePlace.prototype.setPort = function (port) {
+        this.m_plazaPort = port;
+    };
+    GamePlace.prototype.setWebRoot = function (webRoot) {
+        this.m_webRoot = webRoot;
+    };
+    GamePlace.prototype.getGameInfo = function () {
+        this.initWebSocket();
+    };
+    GamePlace.prototype.changeIP = function (ip) {
+        var ba = new ByteArray_1.ByteArray();
+        ba.writeUnsignedInt(ip);
+        ba.position = 0;
+        return ba.readUnsignedByte() + "." + ba.readUnsignedByte() + "." + ba.readUnsignedByte() + "." + ba.readUnsignedByte();
+    };
+    GamePlace.prototype.initWebSocket = function () {
+        //创建 WebSocket 对象
+        //this.m_socket = new WebSocket("ws://dged.ss2007.com:13502");
+        this.m_socket = new WebSocket("wss://" + this.m_plazaIP + ":" + this.m_plazaPort);
+        //设置数据格式为二进制，默认为字符串
+        this.m_socket.binaryType = "arraybuffer";
+        // //添加收到数据侦听，收到数据会调用此方法
+        // this.m_socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+        // //添加链接打开侦听，连接成功会调用此方法
+        // this.m_socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+        // //添加链接关闭侦听，手动关闭或者服务器关闭连接会调用此方法
+        // this.m_socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
+        // //添加异常侦听，出现异常会调用此方法
+        // this.m_socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
+        var socket = this.m_socket;
+        var self = this;
+        this.m_socket.onopen = function (evt) {
+            console.log("websocket was opened.");
+            self.sendGetGameInfo();
+        };
+        this.m_socket.onmessage = function (event) {
+            self.onReceiveMessage(event.data);
+        };
+        this.m_socket.onerror = function (event) {
+            console.log("Send Text fired an error");
+            self.m_socket = null;
+            self.m_pSink.onLogonFailed("网络连接失败，请检查网络后重新连接！", 1);
+        };
+        this.m_socket.onclose = function (event) {
+            console.log("onclose");
+            self.m_socket = null;
+        };
+    };
+    GamePlace.prototype.closeSocket = function () {
+        if (!this.m_socket)
+            return;
+        this.m_socket.close();
+    };
+    GamePlace.prototype.onReceiveMessage = function (arraybuffer) {
+        //创建 ByteArray 对象        
+        var byte = new ByteArray_1.ByteArray(arraybuffer);
+        //读取数据
+        var nLen = byte.length;
+        var cbMainCmd = byte.readUnsignedByte();
+        var cbSubCmd = byte.readUnsignedByte();
+        var cbHandleCode = byte.readUnsignedByte();
+        var nRealDataLen = nLen - 4;
+        if (nRealDataLen <= 0) {
+            if (nLen < 3)
+                return;
+            this.recvData(cbMainCmd, cbSubCmd, cbHandleCode, null);
+            return;
+        }
+        var data = new ByteArray_1.ByteArray();
+        byte.readUnsignedByte();
+        byte.readBytes(data);
+        this.recvData(cbMainCmd, cbSubCmd, cbHandleCode, data);
+        TSCommon_1.TSCommon.log("onReceiveMessage main = " + cbMainCmd + ",sub = " + cbSubCmd + ",len = " + data.length);
+    };
+    GamePlace.prototype.recvData = function (cbMainCmd, cbSubCmd, cbHandleCode, buf) {
+        switch (cbMainCmd) {
+            case PlazaCmds_1.PlazaCmds.MAIN_GP_LOGON:
+                this.onMainLogonMessage(cbSubCmd, cbHandleCode, buf);
+                return;
+            case PlazaCmds_1.PlazaCmds.MAIN_GP_SERVER_LIST:
+                this.onMainServerListMessage(cbSubCmd, cbHandleCode, buf);
+                return;
+            case PlazaCmds_1.PlazaCmds.MAIN_CM_SERVICE:
+                this.onMainSystemMessage(cbSubCmd, cbHandleCode, buf);
+                return;
+            case PlazaCmds_1.PlazaCmds.MAIN_GP_CONFIG:
+                this.onMainConfig(cbSubCmd, cbHandleCode, buf);
+                return;
+            default:
+                this.trace("onrecv main = " + cbMainCmd + ",sub = " + cbSubCmd);
+                break;
+        }
+    };
+    GamePlace.prototype.onMainLogonMessage = function (cbSubCmd, cbHandleCode, buf) {
+        switch (cbSubCmd) {
+            case PlazaCmds_1.PlazaCmds.SUB_GP_GAMEINFO: {
+                this.m_userLoginInfo = new CMD_GP_LogonSuccess_Ex2_1.CMD_GP_LogonSuccess_Ex2();
+                this.m_userLoginInfo.deserialize(buf);
+                TSCommon_1.TSCommon.log("SUB_GP_GAMEINFO userdbid = " + this.m_userLoginInfo.nUserDBID);
+                this.getUserGameInfo();
+                return;
+            }
+        }
+        TSCommon_1.TSCommon.log("onMainLogonMessage,sub = " + cbSubCmd);
+    };
+    GamePlace.prototype.getUserGameInfo = function () {
+        // 获取游戏相关信息，暂时无用
+    };
+    GamePlace.prototype.getUserLoginInfo = function () {
+        return this.m_userLoginInfo;
+    };
+    GamePlace.prototype.clearServerList = function () {
+        this.m_gameIDList.clearServerList();
+    };
+    GamePlace.prototype.getStationOnlineCount = function (nStationID) {
+        return this.m_gameIDList.getStationOnlineCount(this._dwGameID, nStationID);
+    };
+    GamePlace.prototype.onMainServerListMessage = function (cbSubCmd, cbHandleCode, buf) {
+        switch (cbSubCmd) {
+            case PlazaCmds_1.PlazaCmds.SUB_GP_SERVER_LIST_TYPE_V1: {
+                var typeCount = buf.length / 21;
+                TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_TYPE_V1 typecount = " + typeCount);
+                return;
+            }
+            case PlazaCmds_1.PlazaCmds.SUB_GP_SERVER_LIST_KIND: {
+                if (buf == null) {
+                    TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_KIND kindCount = 0");
+                    return;
+                }
+                var kindCount = buf.length / tagGameKind_1.tagGameKind.getLen();
+                for (var i = 0; i < kindCount; i++) {
+                    var gameKind = new tagGameKind_1.tagGameKind();
+                    gameKind.deserialize(buf);
+                    this.m_gameIDList.addGameID(gameKind.dwKindID);
+                    TSCommon_1.TSCommon.log("KindID = " + gameKind.dwKindID);
+                }
+                TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_KIND kindCount = " + kindCount);
+                if (cbHandleCode == 0) {
+                    this.m_bRefreshServerList = false;
+                    this.sendServerListCmd();
+                }
+                return;
+            }
+            case PlazaCmds_1.PlazaCmds.SUB_GP_SERVER_LIST_STATION: {
+                var stationCount = buf.length / tagGameStationEx_1.tagGameStationEx.getLen();
+                TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_STATION count = " + stationCount);
+                if (stationCount == 0) {
+                    return;
+                }
+                for (var i = 0; i < stationCount; i++) {
+                    var station = new tagGameStationEx_1.tagGameStationEx();
+                    station.deserialize(buf);
+                    this.addGameStation(station);
+                    TSCommon_1.TSCommon.log("station name = " + station.szStationName + ",id=" + station.dwParentID);
+                }
+                return;
+            }
+            case PlazaCmds_1.PlazaCmds.SUB_GP_SERVER_LIST_ROOM: {
+                // 不处理
+                if (buf == null) {
+                    TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_ROOM  buf null");
+                    return;
+                }
+                var stationCount = buf.length / tagGameServerEx_1.tagGameServerEx.getLen();
+                TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_ROOM count = " + stationCount);
+                if (stationCount == 0) {
+                    return;
+                }
+                for (var i = 0; i < stationCount; i++) {
+                    var room = new tagGameServerEx_1.tagGameServerEx();
+                    room.deserializeEx(buf);
+                    room = this.addGameServer(room);
+                    if (room) {
+                        var station = this.getGameStation(room.dwStationID);
+                        if (station) {
+                            station.dwMinGold = room.dwMinGold;
+                            station.dwRuleID = room.dwRuleID;
+                        }
+                        TSCommon_1.TSCommon.log("server name exist = " + room.szGameRoomName);
+                    }
+                }
+                return;
+            }
+            case PlazaCmds_1.PlazaCmds.SUB_GP_SERVER_LIST_ROOM_EX: {
+                if (buf == null) {
+                    TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_ROOM_EX  buf null");
+                    return;
+                }
+                var stationCount = buf.length / tagGameServerEx_1.tagGameServerEx.getExtraInfoLen();
+                TSCommon_1.TSCommon.log("SUB_GP_SERVER_LIST_ROOM_EX count = " + stationCount + ",handleCode = " + cbHandleCode);
+                for (var i = 0; i < stationCount; i++) {
+                    var serverID = buf.readUnsignedInt();
+                    var room = this.m_gameIDList.getGameServer(serverID);
+                    if (room) {
+                        room.deserializeExtraInfo(buf);
+                        var station = this.getGameStation(room.dwStationID);
+                        if (station) {
+                            station.dwMinGold = room.dwMinGold;
+                            station.dwRuleID = room.dwRuleID;
+                        }
+                    }
+                }
+                if (cbHandleCode == 0) {
+                }
+                return;
+            }
+            default:
+                break;
+        }
+        TSCommon_1.TSCommon.log("onMainServerListMessage,sub = " + cbSubCmd);
+    };
+    GamePlace.prototype.sendServerListCmd = function () {
+        var ba = new ByteArray_1.ByteArray();
+        ba.writeInt(1);
+        ba.writeInt(this.m_gameID);
+        var version = this.getGameLib().VersionInfo;
+        version.serialize(ba);
+        this.sendData(PlazaCmds_1.PlazaCmds.MAIN_GP_SERVER_LIST, PlazaCmds_1.PlazaCmds.SUB_GP_GET_SERVER_LIST, ba);
+    };
+    GamePlace.prototype.onMainSystemMessage = function (cbSubCmd, cbHandleCode, buf) {
+        switch (cbSubCmd) {
+            case PlazaCmds_1.PlazaCmds.SUB_CM_MESSAGE: {
+                var msg = new CMD_CM_SysteMessage_1.CMD_CM_SysteMessage();
+                msg.deserialize(buf);
+                TSCommon_1.TSCommon.log("SUB_CM_MESSAGE:" + msg.szMessage);
+                if (msg.bCloseLine > 0)
+                    this.m_socket.close();
+                if (msg.wMessageLen > 0)
+                    this.m_pSink.onLogonFailed(msg.szMessage, 2);
+                return;
+            }
+            default:
+                break;
+        }
+        TSCommon_1.TSCommon.log("onMainSystemMessage,sub = " + cbSubCmd);
+    };
+    GamePlace.prototype.onMainConfig = function (cbSubCmd, cbHandleCode, buf) {
+        TSCommon_1.TSCommon.log("onMainConfig,sub = " + cbSubCmd);
+    };
+    GamePlace.prototype.trace = function (msg) {
+        TSCommon_1.TSCommon.log(msg);
+    };
+    GamePlace.prototype.sendGetGameInfo = function () {
+        var l = new CMD_GP_GetGameInfo_1.CMD_GP_GetGameInfo();
+        l.nUserDBID = this._publicUserInfo.userDBID;
+        l.nPartnerID = 1;
+        l.nVersionCode = 1;
+        l.ClientInfo = new tagClientInfo_1.tagClientInfo();
+        l.VersionInfo = new tagVersionInfo_1.tagVersionInfo();
+        l.password = this._publicUserInfo.encryptPassword;
+        var ba = new ByteArray_1.ByteArray();
+        l.serialize(ba);
+        this.sendData(PlazaCmds_1.PlazaCmds.MAIN_GP_LOGON, PlazaCmds_1.PlazaCmds.SUB_GP_GET_GAMEINFO_EX, ba);
+    };
+    GamePlace.prototype.sendData = function (mainCmd, subCmd, ba) {
+        var b = new ByteArray_1.ByteArray();
+        b.writeByte(mainCmd);
+        b.writeByte(subCmd);
+        b.writeByte(0);
+        b.writeByte(0);
+        b.writeBytes(ba);
+        //TSCommon.log("sendData len = " + b.length);
+        if (!this.m_socket) {
+            return;
+        }
+        if (this.m_socket.readyState === WebSocket.OPEN) {
+            this.m_socket.send(b.buffer);
+        }
+    };
+    GamePlace.prototype.getGameStation = function (stationID) {
+        return this.m_gameIDList.getStation(stationID);
+    };
+    GamePlace.prototype.getGameServer = function (gameserverID) {
+        return this.m_gameIDList.getGameServer(gameserverID);
+    };
+    GamePlace.prototype.getServerByIPAndPort = function (ipaddress, port) {
+        var gameServerList = this.getAllGameServerList();
+        for (var i = 0; i < gameServerList.length; i++) {
+            if (this.changeIP(gameServerList[i].dwServerIP) == ipaddress &&
+                gameServerList[i].uServerPort == port) {
+                return gameServerList[i];
+            }
+        }
+        return null;
+    };
+    GamePlace.prototype.getStationList = function () {
+        var stationList = this.m_gameIDList.getStationList(this.m_gameID);
+        if (stationList.length == 0) {
+            this.m_gameIDList.addGameID(this._dwGameID);
+            //this.requestServerList()
+        }
+        return stationList;
+    };
+    GamePlace.prototype.getGameServerList = function (stationID) {
+        return this.m_gameIDList.getGameServerList(this.m_gameID, stationID);
+    };
+    GamePlace.prototype.getAllGameServerList = function () {
+        return this.m_gameIDList.getAllGameServerList(this.m_gameID);
+    };
+    GamePlace.prototype.getAutoEnterRoom = function (lpszStation) {
+        var server = null;
+        var full = 0xFFFF;
+        var minServer = null;
+        var dwFocusStationID = -1;
+        //优先进入更大额房间
+        var nMinGold = 0;
+        var stationList = this.getStationList();
+        for (var i = 0; i < stationList.length; i++) {
+            var gameStation = stationList[i];
+            //TSCommon.log("getAutoEnterRoom station = " + gameStation.szStationName);
+            if (lpszStation != null && (lpszStation.length) > 0) {
+                if ((gameStation.szStationName.indexOf(lpszStation)) >= 0) {
+                    dwFocusStationID = gameStation.dwStationID;
+                    //TSCommon.log("getAutoEnterRoom focusid = " + dwFocusStationID);
+                    break;
+                }
+            }
+        }
+        var gameList = this.getAllGameServerList();
+        for (var i = 0; i < gameList.length; i++) {
+            var room = gameList[i];
+            //TSCommon.log("getAutoEnterRoom room = " + room.szGameRoomName + ",stationid = " + room.dwStationID);
+            if (dwFocusStationID != -1) {
+                if (room.dwStationID != dwFocusStationID) {
+                    continue;
+                }
+            }
+            if (minServer == null) {
+                minServer = room;
+            }
+            else {
+                if (minServer.dwMinGold > room.dwMinGold) {
+                    minServer = room;
+                }
+            }
+            //增加一个金额判断
+            if (room.dwMaxGold != 0 && room.dwMaxGold < this._publicUserInfo.nGold)
+                continue;
+            if (room.dwMinGold != 0 && room.dwMinGold > this._publicUserInfo.nGold)
+                continue;
+            var tempFull = room.wMaxOnLineCount * 4 / 5 - room.wOnLineCount;
+            if (tempFull <= 0)
+                continue;
+            if (server == null) {
+                server = room;
+            }
+            var nTempMinGold = room.dwMinGold;
+            if (nTempMinGold > nMinGold) {
+                nMinGold = nTempMinGold;
+                server = room;
+            }
+        }
+        ;
+        if (server == null)
+            server = minServer;
+        return server;
+    };
+    GamePlace.prototype.addGameStation = function (pStation) {
+        // 先看是否存在
+        return this.m_gameIDList.addStation(pStation);
+    };
+    GamePlace.prototype.addGameServer = function (pGameServer) {
+        return this.m_gameIDList.addGameServer(pGameServer);
+    };
+    return GamePlace;
+}());
+exports.GamePlace = GamePlace;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GamePlace.js.map
+        

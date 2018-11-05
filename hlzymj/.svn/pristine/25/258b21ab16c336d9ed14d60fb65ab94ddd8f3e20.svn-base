@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_y_hua_ju",
+    "texture": "fc4c9107-e47c-4bae-8eaf-89c9def86536",
+    "atlas": "b799e5ba-9d74-43ff-9eec-7c633a013c44",
+    "rect": [
+      421,
+      265,
+      68,
+      64
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      64
+    ]
+  }
+}

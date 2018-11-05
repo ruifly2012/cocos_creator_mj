@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xi_right_bg",
+    "texture": "d8e4130a-c546-4019-a7ea-685d796011ee",
+    "atlas": "694e54d1-ae48-4a78-bdda-9f5e40609973",
+    "rect": [
+      136,
+      70,
+      56,
+      94
+    ],
+    "offset": [
+      58,
+      2
+    ],
+    "originalSize": [
+      192,
+      154
+    ],
+    "rotated": 1
+  }
+}

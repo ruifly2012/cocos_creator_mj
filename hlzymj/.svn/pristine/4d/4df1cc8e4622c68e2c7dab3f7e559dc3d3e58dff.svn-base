@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "loase_share",
+    "texture": "03f6f694-df57-45aa-8831-49dac8d88fce",
+    "atlas": "",
+    "rect": [
+      85,
+      11,
+      141,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

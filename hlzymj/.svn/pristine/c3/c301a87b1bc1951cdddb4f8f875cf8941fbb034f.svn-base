@@ -1,0 +1,165 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/ScoreParser.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '7f825kIy39FlbxX/9uLERFA', 'ScoreParser', __filename);
+// scripts/hall/gamelib/room/ScoreParser.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../../TSCommon");
+var ByteArray_1 = require("../../common/ByteArray");
+var tagScoreColumnDesc = /** @class */ (function () {
+    function tagScoreColumnDesc() {
+        this.cbLength = 0;
+    }
+    tagScoreColumnDesc.prototype.GetLength = function () {
+        return 19;
+    };
+    tagScoreColumnDesc.prototype.Deserialize = function (buf, nOffset) {
+        buf.position = nOffset;
+        this.cbLength = buf.readUnsignedByte();
+        this.cbScoreField = buf.readUnsignedByte();
+        this.cbDataType = buf.readUnsignedByte();
+        var sz = new ByteArray_1.ByteArray();
+        buf.readBytes(sz, 0, 16);
+        sz.position = 0;
+        this.szDesc = TSCommon_1.TSCommon.readGbkString(sz, 16); //sz.readUTFBytes(16);
+        return true;
+    };
+    return tagScoreColumnDesc;
+}());
+exports.tagScoreColumnDesc = tagScoreColumnDesc;
+var ScoreColumnDetailInfo = /** @class */ (function () {
+    function ScoreColumnDetailInfo() {
+        this.column = new tagScoreColumnDesc();
+        this.dwOffset = 0;
+    }
+    return ScoreColumnDetailInfo;
+}());
+exports.ScoreColumnDetailInfo = ScoreColumnDetailInfo;
+var ScoreParser = /** @class */ (function () {
+    function ScoreParser() {
+        this._pHeader = new ByteArray_1.ByteArray();
+        this._nHeaderLen = 0;
+        this._nScoreBufLen = 0;
+        this._bInitialized = false;
+    }
+    ScoreParser.getInstance = function () {
+        if (this._instance == null)
+            this._instance = new ScoreParser();
+        return this._instance;
+    };
+    // 至少提供以下方法
+    // 得到某一字段的分数,因为不知道数据类型,所以填充void指针
+    ScoreParser.prototype.GetScoreField = function (lpScoreBuffer /*in*/, nField /*in*/, lpScore /*out*/) {
+        // 应该强制给的buffer的长度是对的
+        var nMaxLen = lpScore.length;
+        var nBufLen = lpScoreBuffer.length;
+        if (this._nScoreBufLen == 0 || this._nHeaderLen == 0) {
+            // 还没有初始化
+            return false;
+        }
+        if (nBufLen <= 0) {
+            return false;
+        }
+        if (nBufLen != this._nScoreBufLen) {
+            TSCommon_1.TSCommon.log("ScoreParser:getScoreField(),nBufLen != _nScoreBufLen");
+            return false;
+        }
+        var info = this._mapHeaders[nField];
+        if (info == null) {
+            // 没有找到
+            return false;
+        }
+        // 给的输出函数长度是否足够
+        if (nMaxLen < info.column.cbLength) {
+            return false;
+        }
+        // 从其偏移位置中取出数据
+        // 先初始化
+        lpScore.position = 0;
+        lpScore.writeBytes(lpScoreBuffer, info.dwOffset, nMaxLen);
+        lpScore.position = 0;
+        return true;
+    };
+    ScoreParser.prototype.getScoreFieldInt = function (lpScoreBuffer /*in*/, Field) {
+        var nRetVal = -1;
+        var byRetVal = new ByteArray_1.ByteArray();
+        byRetVal.length = 4;
+        if (!this.GetScoreField(lpScoreBuffer, Field, byRetVal))
+            return nRetVal;
+        byRetVal.position = 0;
+        nRetVal = byRetVal.readInt();
+        return nRetVal;
+    };
+    ScoreParser.prototype.getScoreHeader = function () {
+        if (this._nHeaderLen <= 0)
+            return null;
+        var btRet = new ByteArray_1.ByteArray();
+        btRet.writeBytes(this._pHeader, 0, this._nHeaderLen);
+        return btRet;
+    };
+    ScoreParser.prototype.setScoreHeader = function (lpScoreHeader) {
+        this._bInitialized = false;
+        var nLen = lpScoreHeader.length;
+        if (nLen <= 0) {
+            return false;
+        }
+        var descTemp = new tagScoreColumnDesc();
+        var descLen = descTemp.GetLength();
+        // 给的长度是否符合列长度的倍数
+        if (nLen % descLen != 0) {
+            return false;
+        }
+        this._nHeaderLen = nLen;
+        this._pHeader.position = 0;
+        this._pHeader.writeBytes(lpScoreHeader);
+        // 这里对这个头进行分析
+        // 删除所有
+        this._mapHeaders = new Array();
+        // 列数量
+        var nColumnCount = this._nHeaderLen / descLen;
+        // 偏移
+        this._nScoreBufLen = 0;
+        var nOffSet = 0;
+        for (var i = 0; i < nColumnCount; i++) {
+            var desc = new ScoreColumnDetailInfo();
+            desc.column.Deserialize(this._pHeader, nOffSet);
+            nOffSet += desc.column.GetLength();
+            desc.dwOffset = this._nScoreBufLen;
+            this._nScoreBufLen += desc.column.cbLength;
+            // add to the map
+            var nKey = desc.column.cbScoreField;
+            this._mapHeaders[nKey] = desc;
+        }
+        // 设置成功
+        this._bInitialized = true;
+        return true;
+    };
+    ScoreParser.prototype.IsInitialized = function () {
+        return this._bInitialized;
+    };
+    ScoreParser.enScore_Score = 0; //成绩
+    ScoreParser.enScore_Win = 1; //胜利局数
+    ScoreParser.enScore_Loss = 2; //失败局数
+    ScoreParser.enScore_Draw = 3; //打平局数
+    ScoreParser.enScore_Flee = 4; //逃跑局数
+    ScoreParser.enScore_SetCount = 5; //总共局数
+    ScoreParser.enScore_Custom = 16; //...前面的保留，后面的自定义
+    ScoreParser.enScore_Gold = 17; //金币
+    ScoreParser.enScore_Tax = 18; //税
+    ScoreParser.enScore_Ranking = 19; //等级分
+    return ScoreParser;
+}());
+exports.ScoreParser = ScoreParser;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ScoreParser.js.map
+        

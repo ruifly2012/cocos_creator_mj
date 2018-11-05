@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cup3",
+    "texture": "fab71236-beab-40d6-8020-66cf85462a3e",
+    "atlas": "",
+    "rect": [
+      84,
+      213,
+      400,
+      387
+    ],
+    "offset": [
+      7,
+      -79.5
+    ],
+    "originalSize": [
+      554,
+      654
+    ]
+  }
+}

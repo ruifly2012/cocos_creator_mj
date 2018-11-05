@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuezhanGame",
+    "texture": "391fd05f-e250-4f57-a990-0d9f024a692b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      150,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      150,
+      40
+    ]
+  }
+}

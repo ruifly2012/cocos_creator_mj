@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dice_17",
+    "texture": "34d668b8-4908-4470-9bab-cd29fd5060a4",
+    "atlas": "6c8b6218-0d21-4812-9e47-3c869db9b13c",
+    "rect": [
+      294,
+      73,
+      89,
+      69
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      89,
+      69
+    ]
+  }
+}

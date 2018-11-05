@@ -1,0 +1,78 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/activity/getReward/getRewardLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '78230ekY+VE+IW3aYhAfp0t', 'getRewardLayer', __filename);
+// scripts/hall/activity/getReward/getRewardLayer.js
+
+"use strict";
+
+var getRewardLayer = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        getRewardIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        getRewardLabel: {
+            default: null,
+            type: cc.Label
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        this.initUI();
+    },
+
+    initUI: function initUI() {
+        var effectNode = this.node.getChildByName("reward_frame_sp").getChildByName("reward_light_sp");
+        var rotate = cc.rotateBy(4, 360);
+        var repeatForever = cc.repeatForever(rotate);
+        effectNode.runAction(repeatForever);
+    },
+
+    initData: function initData(data) {
+        var self = this;
+        var resPath = "";
+        var addCount = "";
+        if (data.moneytype == 7) {
+            resPath = "texture/activityRes/dailyLogin/jinbi_3";
+            addCount = "金币+" + data.wantamount;
+        }
+        this.getRewardLabel.string = addCount;
+        cc.loader.loadRes(resPath, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.getRewardIcon.spriteFrame = spriteFrame;
+            }
+        });
+    },
+
+    start: function start() {},
+
+    clickGetRewardBtn: function clickGetRewardBtn() {
+        self.node.active = false;
+    },
+
+    clickCloseBtn: function clickCloseBtn() {
+        require('HallResources').getInstance().playCloseEffect();
+        this.node.active = false;
+    }
+
+    // update (dt) {},
+});
+
+module.exports = getRewardLayer;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=getRewardLayer.js.map
+        

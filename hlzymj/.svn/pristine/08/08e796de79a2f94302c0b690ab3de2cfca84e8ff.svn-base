@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallDiamond4",
+    "texture": "164a76de-c3c3-4b04-951d-8c1728c6f990",
+    "atlas": "",
+    "rect": [
+      10,
+      1,
+      99,
+      89
+    ],
+    "offset": [
+      1.5,
+      3.5
+    ],
+    "originalSize": [
+      116,
+      98
+    ]
+  }
+}

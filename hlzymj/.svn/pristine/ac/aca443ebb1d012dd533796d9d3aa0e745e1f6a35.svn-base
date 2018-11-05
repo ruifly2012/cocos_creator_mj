@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_li_laizi",
+    "texture": "f9b72897-718e-48fe-b71c-2513be97f475",
+    "atlas": "",
+    "rect": [
+      35,
+      16,
+      45,
+      49
+    ],
+    "offset": [
+      15.5,
+      19.5
+    ],
+    "originalSize": [
+      84,
+      120
+    ]
+  }
+}

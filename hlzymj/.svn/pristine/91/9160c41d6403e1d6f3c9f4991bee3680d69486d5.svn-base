@@ -1,0 +1,48 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/HtmlChat.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'f36dbM9alFASby36o3csSOm', 'HtmlChat', __filename);
+// scripts/hall/gamelib/room/HtmlChat.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ByteArray_1 = require("../../common/ByteArray");
+var TSCommon_1 = require("../../TSCommon");
+var HtmlChat = /** @class */ (function () {
+    function HtmlChat() {
+    }
+    HtmlChat.prototype.deserialize = function (buf) {
+        this._dwSubCode = buf.readUnsignedInt();
+        this._dwSpeaker = buf.readUnsignedInt();
+        this._dwListener = buf.readUnsignedInt();
+        this._dwChannelIDLength = buf.readUnsignedInt();
+        buf.position += this._dwChannelIDLength;
+        this._szContent = TSCommon_1.TSCommon.readGbkString(buf, buf.length - buf.position); //buf.readUTFBytes(buf.length - buf.position);
+    };
+    HtmlChat.prototype.serialize = function () {
+        var ba = new ByteArray_1.ByteArray();
+        ba.writeInt(this._dwSubCode);
+        ba.writeInt(this._dwSpeaker);
+        ba.writeInt(this._dwListener);
+        ba.writeInt(this._dwChannelIDLength);
+        ba.writeInt(0);
+        TSCommon_1.TSCommon.writeUtf8String(ba, this._szContent, 0);
+        return ba;
+    };
+    HtmlChat.prototype.getChatMsg = function () {
+        return this._szContent;
+    };
+    return HtmlChat;
+}());
+exports.HtmlChat = HtmlChat;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=HtmlChat.js.map
+        

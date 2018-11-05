@@ -1,0 +1,92 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/tagUserInfoBroad.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '5782ekgqI1GeKRsRVp62G+X', 'tagUserInfoBroad', __filename);
+// scripts/hall/gamelib/room/tagUserInfoBroad.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ByteArray_1 = require("../../common/ByteArray");
+var TSCommon_1 = require("../../TSCommon");
+var GameCmds_1 = require("./GameCmds");
+var tagUserInfoBroad = /** @class */ (function () {
+    function tagUserInfoBroad() {
+        this.szScores = new ByteArray_1.ByteArray();
+    }
+    tagUserInfoBroad.prototype.deserialize = function (buf) {
+        this.wSize = buf.readShort();
+        this.lUserDBID = buf.readInt();
+        this.wUserIndex = buf.readShort();
+        this.wRoundCount = buf.readShort();
+        this.wFaceID = buf.readShort();
+        this.wNetTimelag = buf.readShort();
+        this.wTableID = buf.readShort();
+        this.dwGroupID = buf.readUnsignedInt();
+        this.dwUserLevel = buf.readUnsignedInt();
+        this.cbChairID = buf.readByte();
+        this.cbUserStatus = buf.readByte();
+        this.cbSex = buf.readByte();
+        this.cbNameLen = buf.readByte();
+        this.cbGroupLen = buf.readByte();
+        this.cbVIPLevel = buf.readByte();
+        this.cbScoreLen = buf.readByte();
+        this.dwMemberClass = buf.readUnsignedInt();
+        this.dwMemberLevel = buf.readUnsignedInt();
+        this.dwFame = buf.readUnsignedInt();
+        this.dwFameLevel = buf.readUnsignedInt();
+        this.wShowID = buf.readShort();
+        this.szLocation = "";
+        this.szName = TSCommon_1.TSCommon.readGbkString(buf, this.cbNameLen); //buf.readUTFBytes(this.cbNameLen);
+        this.szGroup = "";
+        buf.readBytes(this.szScores, 0, this.cbScoreLen);
+        var nFieldsLen = buf.length - buf.position;
+        if (nFieldsLen <= 0)
+            return;
+        var szFields = new ByteArray_1.ByteArray();
+        buf.readBytes(szFields, 0, nFieldsLen);
+        var nFieldOff = 0;
+        while (nFieldOff < nFieldsLen) {
+            var cbFdType = szFields.readUnsignedByte();
+            nFieldOff = nFieldOff + 1;
+            var cbFdLen = szFields.readUnsignedByte();
+            nFieldOff = nFieldOff + 1;
+            if (cbFdLen <= 2)
+                continue;
+            cbFdLen = cbFdLen - 2;
+            if (cbFdLen + nFieldOff > nFieldsLen)
+                break;
+            var fdData = new ByteArray_1.ByteArray();
+            szFields.readBytes(fdData, 0, cbFdLen);
+            nFieldOff = nFieldOff + cbFdLen;
+            switch (cbFdType) {
+                case GameCmds_1.GameCmds.FIELD_FACECHANGEINDEX: {
+                    this.cbFaceChangeIndex = fdData.readUnsignedByte();
+                    break;
+                }
+                case GameCmds_1.GameCmds.FIELD_LOCATION: {
+                    this.szLocation = TSCommon_1.TSCommon.readGbkString(fdData, cbFdLen);
+                    break;
+                }
+                case GameCmds_1.GameCmds.FIELD_USER_DESCRIBE: {
+                    this.szDescribe = TSCommon_1.TSCommon.readGbkString(fdData, cbFdLen);
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+    };
+    return tagUserInfoBroad;
+}());
+exports.tagUserInfoBroad = tagUserInfoBroad;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=tagUserInfoBroad.js.map
+        

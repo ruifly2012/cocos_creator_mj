@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "swapTimeNum_0",
+    "texture": "1b18c62b-d0ab-4e25-9500-2c33291adbd7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      246,
+      86
+    ],
+    "offset": [
+      -5,
+      85
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

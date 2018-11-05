@@ -1,0 +1,32 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/room/CMD_GR_BroadCast_UserStatus.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '056feodKypKs6/GFeBVvjLj', 'CMD_GR_BroadCast_UserStatus', __filename);
+// scripts/hall/gamelib/room/CMD_GR_BroadCast_UserStatus.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var CMD_GR_BroadCast_UserStatus = /** @class */ (function () {
+    function CMD_GR_BroadCast_UserStatus() {
+    }
+    CMD_GR_BroadCast_UserStatus.prototype.deserialize = function (buf) {
+        this.dwUserDBID = buf.readUnsignedInt();
+        this.cbUserStatus = buf.readUnsignedByte();
+        this.wNetTimelag = buf.readUnsignedShort();
+        this.wTableID = buf.readUnsignedShort();
+        this.cbChairID = buf.readUnsignedByte();
+    };
+    return CMD_GR_BroadCast_UserStatus;
+}());
+exports.CMD_GR_BroadCast_UserStatus = CMD_GR_BroadCast_UserStatus;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=CMD_GR_BroadCast_UserStatus.js.map
+        

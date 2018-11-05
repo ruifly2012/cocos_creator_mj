@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "e7f3b536-deea-4511-b6eb-fc68d1ae0269",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Game_ZhuoJi_tex": {
+      "ver": "1.0.3",
+      "uuid": "81828a10-a1d6-4325-917a-aa1989878425",
+      "rawTextureUuid": "e7f3b536-deea-4511-b6eb-fc68d1ae0269",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -90.5,
+      "offsetY": 2.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 329,
+      "height": 249,
+      "rawWidth": 512,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

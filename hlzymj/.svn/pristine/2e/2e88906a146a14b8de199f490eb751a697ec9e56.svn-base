@@ -1,0 +1,107 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/gameOver/XueLiuPlayerResultItem.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'f8bdbhdSlZGp4B0owPEK5+q', 'XueLiuPlayerResultItem', __filename);
+// scripts/hall/game/gameOver/XueLiuPlayerResultItem.js
+
+"use strict";
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        playerName: {
+            default: null,
+            type: cc.Label
+        },
+        headIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        frameBg: {
+            default: null,
+            type: cc.Sprite
+        },
+        winCount: {
+            default: null,
+            type: cc.Label
+        },
+        loseCount: {
+            default: null,
+            type: cc.Label
+        },
+        bigWinPlayer: {
+            default: null,
+            type: cc.Sprite
+        },
+        poChan: {
+            default: null,
+            type: cc.Sprite
+        }
+    },
+    onLoad: function onLoad() {},
+
+    initData: function initData(name, headUrl, finalScore, bigWinScore, index, myIndex) {
+        console.log("下面是传入到每一个结算item的内容：");
+        console.log(name);
+        console.log(headUrl);
+        console.log(finalScore);
+        console.log(bigWinScore);
+        console.log(index);
+        console.log(myIndex);
+        var self = this;
+        var pos = myIndex - index;
+        var posName = "【对家】";
+        if (pos == 0) {
+            posName = "【自己】" + name;
+        } else if (pos == -2 || pos == 2) {
+            posName = "【对家】" + name;
+        } else if (pos == -1 || pos == 3) {
+            posName = "【下家】" + name;
+        } else if (pos == -3 || pos == 1) {
+            posName = "【上家】" + name;
+        }
+
+        var frameData = "texture/game/gameOver/loseFrame";
+        if (index == myIndex) {
+            frameData = "texture/game/gameOver/myFrame";
+        }
+        //.初始化数据
+        this.playerName.string = posName;
+        cc.loader.loadRes(frameData, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.frameBg.spriteFrame = spriteFrame;
+            }
+        });
+        this.bigWinPlayer.node.active = finalScore == bigWinScore;
+
+        if (finalScore > 0) {
+            this.winCount.string = finalScore;
+            this.winCount.node.active = true;
+        } else {
+            this.loseCount.string = finalScore;
+            this.loseCount.node.active = true;
+        }
+
+        var imgurl = headUrl;
+        if (imgurl) {
+            cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                if (!err) {
+                    self.headIcon.spriteFrame = new cc.SpriteFrame(texture);
+                }
+            });
+        }
+    }
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=XueLiuPlayerResultItem.js.map
+        

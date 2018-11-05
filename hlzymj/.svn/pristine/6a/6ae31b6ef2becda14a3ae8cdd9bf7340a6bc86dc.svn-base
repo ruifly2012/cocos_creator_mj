@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "match_level_bar",
+    "texture": "cb90967e-802b-4af3-bdfc-e3cab04ecd3f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      227,
+      17
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      227,
+      17
+    ]
+  }
+}

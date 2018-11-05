@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nextRankArrow",
+    "texture": "bd36efe3-d298-4c34-b28a-2363bfbd0e65",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      17,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      17,
+      29
+    ]
+  }
+}

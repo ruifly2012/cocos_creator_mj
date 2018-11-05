@@ -1,0 +1,39 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/Chair.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '583e48eyP9L+p9K/MDmczUc', 'Chair', __filename);
+// scripts/hall/gamelib/Chair.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Chair = /** @class */ (function () {
+    function Chair() {
+        this._userID = 0;
+        this._empty = true;
+    }
+    Chair.prototype.setUserID = function (userID) {
+        this._userID = userID;
+    };
+    Chair.prototype.setEmpty = function (value) {
+        this._empty = value;
+    };
+    Chair.prototype.getUserID = function () {
+        return this._userID;
+    };
+    Chair.prototype.isEmpty = function () {
+        return this._empty;
+    };
+    return Chair;
+}());
+exports.Chair = Chair;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=Chair.js.map
+        

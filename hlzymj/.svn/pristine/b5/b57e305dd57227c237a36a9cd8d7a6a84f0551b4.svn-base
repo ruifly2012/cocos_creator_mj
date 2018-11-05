@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rewardLight",
+    "texture": "6e2beda5-6d8d-4655-acb4-d2dfd0232b95",
+    "atlas": "",
+    "rect": [
+      42,
+      48,
+      584,
+      588
+    ],
+    "offset": [
+      -4,
+      -4
+    ],
+    "originalSize": [
+      676,
+      676
+    ]
+  }
+}

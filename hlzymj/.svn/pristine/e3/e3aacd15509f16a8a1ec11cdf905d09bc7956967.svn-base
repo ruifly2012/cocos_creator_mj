@@ -1,0 +1,44 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/Domain.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'fc68cOEhlxJuYjobLe7Z5vS', 'Domain', __filename);
+// scripts/hall/Domain.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Domain = /** @class */ (function () {
+    function Domain() {
+    }
+    Domain.WebRoot = "https://h5.ss2007.com:444/Platform/"; //"http://jingzhou.ss2007.com/Platform/";
+    Domain.GameWebRoot = "https://h5.ss2007.com:444/Platform/";
+    Domain.TestWebRoot = "https://netgate.ss2007.com/Platform/";
+    Domain.PayRoot = "https://h5.ss2007.com/NewPayMent/";
+    Domain.AliPayRoot = "https://h5.ss2007.com/AliPay/";
+    Domain.Phone = "4006 619 828";
+    Domain.QQ = "2351133900";
+    Domain.ToReplace = "h5.ss2007.com";
+    Domain.ReplaceTo = "h5.ss2007.com";
+    Domain.ShareRoot = "https://h5.ss2007.com/shareweb/";
+    Domain.Weixin = "sszymj666, sszymj888";
+    Domain.defaultHeader = "Host:" + Domain.ToReplace;
+    Domain.WEIXIN_APPID = "wx7d30e3b46cbd4978"; //"wx4fcbe111e915e93b";
+    Domain.WEIXIN_WEB_APPID = "wx9077e9fe86b5ae1b";
+    Domain.WEIXIN_URL = "http://scplatform.ss2007.com";
+    Domain.PAY_GENORDER_URL = "http://scplatform.ss2007.com/weixinauth/genorder.aspx";
+    //public static START_URL: string = "http://scplatform.ss2007.com/edongh5/";
+    Domain.ENV = 0;
+    Domain.CURRENCYTYPE = "CNY";
+    return Domain;
+}());
+exports.Domain = Domain;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=Domain.js.map
+        

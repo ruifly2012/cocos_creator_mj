@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_dao_2_9",
+    "texture": "66d743ff-1e20-4d31-b6c5-f6eccfbf5448",
+    "atlas": "6e435571-6961-4f9e-a53b-795ff120edeb",
+    "rect": [
+      59,
+      159,
+      56,
+      77
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      56,
+      79
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xueliuGame",
+    "texture": "816a91e6-372f-4b2f-9796-f25d42b18d8a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      150,
+      39
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      150,
+      40
+    ]
+  }
+}

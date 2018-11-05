@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "userInfoHeadIcon",
+    "texture": "fff07069-c64a-4daa-992a-99d2f5082161",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      67,
+      67
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      67,
+      67
+    ],
+    "capInsets": [
+      5,
+      5,
+      5,
+      5
+    ]
+  }
+}

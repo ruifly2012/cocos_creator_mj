@@ -1,0 +1,164 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "game_button.plist",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_spriteFrames": {
+    "1": {
+      "__uuid__": "e1d66bb0-7b1a-42bf-8fab-556978cb8cad"
+    },
+    "2": {
+      "__uuid__": "7b1f3157-7f9b-49e0-8557-2dbeaf6da2da"
+    },
+    "3": {
+      "__uuid__": "012a0163-04fe-4698-a9da-b9b378c5954e"
+    },
+    "10ShunYou": {
+      "__uuid__": "33a7445e-57f0-48f0-b839-bf8e54918f50"
+    },
+    "11SanYou": {
+      "__uuid__": "e1207f74-7b42-4081-82df-94c441008aef"
+    },
+    "1hu": {
+      "__uuid__": "e4965de0-482e-4e6f-9a62-6c2e313ec863"
+    },
+    "1pen": {
+      "__uuid__": "1c1557ef-f82f-4b26-aa06-0dafc44f68c8"
+    },
+    "2chi": {
+      "__uuid__": "b46210ce-938d-4384-adce-c7c7e40dc63f"
+    },
+    "2he": {
+      "__uuid__": "3ec424a5-09cc-45ea-b8ef-a2273341922a"
+    },
+    "3QianGang": {
+      "__uuid__": "4ab24119-1b27-420a-a9dd-566816d42f0a"
+    },
+    "3gang": {
+      "__uuid__": "b01bf4ca-9569-45d3-9b6e-8b5ab3822adb"
+    },
+    "4QianJin": {
+      "__uuid__": "dac4c2ea-bd8f-47b5-8412-73838e0def25"
+    },
+    "4tin": {
+      "__uuid__": "3a552c42-39ce-42a0-9a43-81629dd2a68e"
+    },
+    "5SanJinDao": {
+      "__uuid__": "20c9cc7f-f5e2-4ea0-8fb9-7b47df59461a"
+    },
+    "6TianHu": {
+      "__uuid__": "429099ff-63e9-4b1b-ae50-23c044241c19"
+    },
+    "6wan": {
+      "__uuid__": "6c461bfb-7d60-46ac-b79b-431ff51afe15"
+    },
+    "7TianHe": {
+      "__uuid__": "f16bed49-db08-4a39-afe1-85bbd2783739"
+    },
+    "7tiao": {
+      "__uuid__": "916dfee8-9420-41f6-b53d-572326b1bf2d"
+    },
+    "8ZhiMo": {
+      "__uuid__": "ed289a0e-be0e-4ca0-9096-d155aadafe39"
+    },
+    "8tong": {
+      "__uuid__": "1c2550ec-5dc2-471a-84ad-5080f6ca6548"
+    },
+    "9YouJin": {
+      "__uuid__": "4339c4c0-1669-4b51-a1ce-c97c1e59a4e5"
+    },
+    "CaoTian": {
+      "__uuid__": "3bc3708e-1707-4096-93e5-91d06f341b71"
+    },
+    "No_1lai": {
+      "__uuid__": "10d9654e-14fe-4f59-84cb-aa69e8deeca6"
+    },
+    "No_1pen": {
+      "__uuid__": "9636d4f5-2e1a-4c46-bb07-f4a1eecb90cb"
+    },
+    "No_1zhong": {
+      "__uuid__": "2f3cb852-10c5-4504-b1d4-34ee5e56c6d9"
+    },
+    "No_2FanPao": {
+      "__uuid__": "e3ab16eb-9cac-413a-b955-3b1378ad773d"
+    },
+    "No_2ZiMo": {
+      "__uuid__": "c151c019-2080-49ac-93b8-2646b99d2c86"
+    },
+    "No_2caotian": {
+      "__uuid__": "6ff6e980-2a64-4d51-b4a1-2247a906849a"
+    },
+    "No_2chi": {
+      "__uuid__": "c5aea92d-4e46-49f7-b39c-e4c85f498e61"
+    },
+    "No_2gang": {
+      "__uuid__": "6d005c9e-0c54-4bd9-82a3-5d7dc72e1a48"
+    },
+    "No_2hu": {
+      "__uuid__": "25657ea9-e60e-4bd4-8d21-e0a322960fce"
+    },
+    "No_2liuJu": {
+      "__uuid__": "251ab8ea-5152-4d0b-90c2-85d8a9090219"
+    },
+    "btnDetailResult": {
+      "__uuid__": "1307b97e-2dc2-4386-acd1-14c0c86b4c10"
+    },
+    "btnLeaveGame": {
+      "__uuid__": "5e74f25a-522f-4d21-adf9-dfd5a22ee3ca"
+    },
+    "btnPrepare": {
+      "__uuid__": "f825a312-21df-4c2e-be80-62222a4f1dd8"
+    },
+    "btnRobotCancel": {
+      "__uuid__": "7b4775c4-42c6-44a1-aaec-4be12ff4b587"
+    },
+    "btnShare": {
+      "__uuid__": "ad5fa83b-5550-42bf-9e2f-82b07bfa5664"
+    },
+    "btnStart_bg1": {
+      "__uuid__": "3e6eb836-fba7-43de-8509-951eeeee7930"
+    },
+    "changeDeskBtn": {
+      "__uuid__": "413ff25e-8ce5-4e7f-81fa-b2f7605637ed"
+    },
+    "chatBtn": {
+      "__uuid__": "8b3e3cbd-24ab-45db-8657-af54f7788199"
+    },
+    "get_btn": {
+      "__uuid__": "62a4fb75-13cb-47a0-91fc-394607ad62f3"
+    },
+    "guo": {
+      "__uuid__": "5adf0d11-5471-41c7-b442-7f494f0f780d"
+    },
+    "helpBtn": {
+      "__uuid__": "cdabfc62-8868-4e29-8f51-104a59980d34"
+    },
+    "helpBtn2": {
+      "__uuid__": "941972e5-51de-46a4-88ce-6f2535bf8642"
+    },
+    "huPaiTiShiBtn": {
+      "__uuid__": "137b1bd6-239b-4e07-a66e-bc685ddadbb7"
+    },
+    "queding": {
+      "__uuid__": "f6c1fb30-1ae5-4b81-821a-d55cf86854eb"
+    },
+    "quitBtn": {
+      "__uuid__": "41bdcd82-ba11-48a1-b758-26ba4b9aa5ae"
+    },
+    "robotBtn": {
+      "__uuid__": "db2e8e4a-d1a4-4f99-94cb-acec6c73eaad"
+    },
+    "setBtn": {
+      "__uuid__": "50062d2f-bc42-4c5d-8be9-819a0f41b607"
+    },
+    "talkBtn1": {
+      "__uuid__": "18547578-8270-4527-928d-894dd82c1357"
+    },
+    "zhanJiBtn1": {
+      "__uuid__": "47181a68-6c99-458e-b6fa-bb07ee8f50d2"
+    },
+    "ziDongHuPai": {
+      "__uuid__": "9d08f95f-4a4e-4890-8be7-cd0d99ba462a"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "d51021d7-241e-4165-9930-0b5e88dddd71",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Game_FeiDao_tex": {
+      "ver": "1.0.3",
+      "uuid": "6d99191d-9c08-4d7e-bc3c-0888cca06911",
+      "rawTextureUuid": "d51021d7-241e-4165-9930-0b5e88dddd71",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 118.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 251,
+      "height": 273,
+      "rawWidth": 256,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,52 @@
+"use strict";
+cc._RF.push(module, 'ef33dvQ4+tIAp8FBX07gqMt', 'XueLiuGameOverScrollList');
+// scripts/hall/game/gameOver/XueLiuGameOverScrollList.js
+
+"use strict";
+
+var _TSCommon = require("../TSCommon");
+
+var _WeixinManager = require("../weixin/WeixinManager");
+
+var XueLiuGameOverScrollList = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        resultItem: cc.Prefab
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        this.m_coinList = new Array();
+        this.maxHeight = 0;
+    },
+
+    start: function start() {},
+
+    initData: function initData(cbWriteScoreTimes, stSingleScoreItem, myChair) {
+        console.log("展示滑动列表内容");
+        console.log(cbWriteScoreTimes);
+        console.log(stSingleScoreItem);
+        console.log(myChair);
+        var self = this;
+        this.content = this.node.getComponent(cc.ScrollView).content;
+        self.maxHeight = this.content.height;
+        this.content.removeAllChildren();
+
+        for (var i = 0; i < cbWriteScoreTimes; i++) {
+            var item = cc.instantiate(this.resultItem);
+            item.parent = this.content;
+            item.getComponent("XueLiuHuTypeItem").initData(stSingleScoreItem[i], myChair);
+            var y = -25 - i * (item.height + 5);
+            item.setPosition(0, y);
+        }
+
+        var newHeight = (this.resultItem.data.height + 5) * cbWriteScoreTimes;
+        this.content.height = newHeight > self.maxHeight ? self.maxHeight : newHeight;
+    }
+});
+
+module.exports = XueLiuGameOverScrollList;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "qualifyingBg",
+    "texture": "2bb9fce0-1b70-43c3-a417-61f1bcbcc145",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      439,
+      455
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      439,
+      455
+    ]
+  }
+}

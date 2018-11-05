@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "laiyouzi_match",
+    "texture": "5b1f31a9-b89e-47a2-aa37-2593dfc2aded",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      212,
+      82
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      214,
+      83
+    ]
+  }
+}

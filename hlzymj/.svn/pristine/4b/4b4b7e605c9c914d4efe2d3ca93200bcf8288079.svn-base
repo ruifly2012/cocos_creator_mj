@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_face_dao",
+    "texture": "77e26a9e-0e3e-428c-88fc-3237b51f7fa3",
+    "atlas": "",
+    "rect": [
+      3,
+      3,
+      487,
+      487
+    ],
+    "offset": [
+      -9.5,
+      9.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

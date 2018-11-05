@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hallHead",
+    "texture": "f2efbfc6-c13d-467a-a60c-4e4f12d32365",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      108,
+      108
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      108,
+      108
+    ]
+  }
+}

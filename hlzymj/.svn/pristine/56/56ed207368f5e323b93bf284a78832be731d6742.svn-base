@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "iphonex_bg",
+    "texture": "6ddbe1a5-e62a-4c11-9860-3d846b32c75a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1559,
+      720
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1559,
+      720
+    ]
+  }
+}

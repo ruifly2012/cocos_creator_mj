@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tingPaiArrow",
+    "texture": "fc293fe0-609c-4426-a148-29a12429c603",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      34,
+      31
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      34,
+      31
+    ]
+  }
+}

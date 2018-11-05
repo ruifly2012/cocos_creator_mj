@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nihuaipai",
+    "texture": "791f4df6-e93f-4034-8563-c3044a623551",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      217,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      217,
+      37
+    ]
+  }
+}

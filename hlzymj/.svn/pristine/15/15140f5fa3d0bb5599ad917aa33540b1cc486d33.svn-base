@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "days7",
+    "texture": "8619ed0a-be28-4953-8604-54098ec35e10",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      28
+    ]
+  }
+}

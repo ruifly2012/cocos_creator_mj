@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "listen_blue_0",
+    "texture": "388dfed8-8673-4223-9ed8-128441674ef9",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      205,
+      24
+    ],
+    "offset": [
+      -25.5,
+      114
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

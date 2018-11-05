@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yidingque",
+    "texture": "cf41681c-1720-414c-af4c-988774a526a4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      199,
+      80
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      199,
+      80
+    ]
+  }
+}

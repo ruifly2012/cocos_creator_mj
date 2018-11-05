@@ -1,0 +1,247 @@
+"use strict";
+cc._RF.push(module, '92a02h+o+ZJf5qIZW4pMCCP', 'CGameLib');
+// scripts/hall/gamelib/CGameLib.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../TSCommon");
+var GameRoom_1 = require("./room/GameRoom");
+var GamePlace_1 = require("./place/GamePlace");
+var CDefaultGameLibSink_1 = require("./CDefaultGameLibSink");
+var tagClientInfo_1 = require("./tagClientInfo");
+var tagVersionInfo_1 = require("./tagVersionInfo");
+var tagConnectInfo_1 = require("./tagConnectInfo");
+var CGameLib = /** @class */ (function () {
+    function CGameLib() {
+        this.ClientInfo = new tagClientInfo_1.tagClientInfo();
+        this.VersionInfo = new tagVersionInfo_1.tagVersionInfo();
+        this.ConnectInfo = new tagConnectInfo_1.tagConnectInfo();
+    }
+    CGameLib.getInstance = function () {
+        if (this._instance)
+            return this._instance;
+        console.log("创建gamelib .......");
+        this._instance = new CGameLib();
+        return this._instance;
+    };
+    CGameLib.prototype.createByHall = function (publicUserInfo, logonIP, logonPort) {
+        this._publicUserInfo = publicUserInfo;
+        this._gameVersion = 1;
+        this._defaultSink = new CDefaultGameLibSink_1.CDefaultGameLibSink();
+        this._sink = this._defaultSink;
+        this._gamePlace = new GamePlace_1.GamePlace(this, publicUserInfo);
+        this._gameRoom = new GameRoom_1.GameRoom(this, publicUserInfo);
+        this.setPlazaPort(logonPort);
+        this.setPlazaIP(logonIP);
+        this._gamePlace.setSink(this._sink);
+        this.getGameInfo();
+    };
+    CGameLib.prototype.createGamelib = function (nGameID, nGameVersion, pGameLibSink, pClientFrameSink, nPartnerID, nClientVersion, logonIP, logonPort, webRoot) {
+        if (!pGameLibSink)
+            pGameLibSink = this._sink;
+        this._sink = pGameLibSink;
+        this._nGameID = nGameID;
+        this._gameVersion = nGameVersion;
+        this._gameRoom.setSink(this._sink);
+        this._gameRoom.setClientFrameSink(pClientFrameSink);
+        this._gamePlace.setSink(pGameLibSink);
+        this._gamePlace.setGameID(nGameID);
+        this.setWebRoot(webRoot);
+        this._gamePlace.loginGame();
+    };
+    CGameLib.prototype.backToHall = function () {
+        this._sink = this._defaultSink;
+        this._gameRoom.setSink(this._sink);
+        this._gameRoom.setClientFrameSink(null);
+        this._gamePlace.setSink(this._sink);
+        this._gamePlace.setGameID(0);
+    };
+    CGameLib.prototype.setPlazaIP = function (plazaIP) {
+        this._gamePlace.setServerIP(plazaIP);
+    };
+    CGameLib.prototype.setPlazaPort = function (port) {
+        this._gamePlace.setPort(port);
+    };
+    CGameLib.prototype.getGameInfo = function () {
+        return this._gamePlace.getGameInfo();
+    };
+    CGameLib.prototype.setWebRoot = function (webRoot) {
+        this._gamePlace.setWebRoot(webRoot);
+    };
+    CGameLib.prototype.getUserLogonInfo = function () {
+        return this._gamePlace.getUserLoginInfo();
+    };
+    CGameLib.prototype.getGameStation = function (stationID) {
+        return this._gamePlace.getGameStation(stationID);
+    };
+    CGameLib.prototype.getGameServer = function (gameserverID) {
+        return this._gamePlace.getGameServer(gameserverID);
+    };
+    CGameLib.prototype.getStationList = function () {
+        return this._gamePlace.getStationList();
+    };
+    CGameLib.prototype.getGameServerList = function (stationID) {
+        return this._gamePlace.getGameServerList(stationID);
+    };
+    CGameLib.prototype.getAllGameServerList = function () {
+        return this._gamePlace.getAllGameServerList();
+    };
+    CGameLib.prototype.enterGameRoom = function (roomID) {
+        var gameServer = this.getGameServer(roomID);
+        if (gameServer == null)
+            return "";
+        if (!this._gameRoom.enterGameRoom(gameServer, this._publicUserInfo.userDBID, this._publicUserInfo.encryptPassword, this._gameVersion))
+            return "";
+        return gameServer.szGameRoomName;
+    };
+    CGameLib.prototype.autoEnterGameRoom = function (station) {
+        var room = this._gamePlace.getAutoEnterRoom(station);
+        if (room != null) {
+            TSCommon_1.TSCommon.log("autoEnterGameRoom " + room.szGameRoomName);
+            this.enterGameRoom(room.dwServerID);
+            var pStation = this._gamePlace.getGameStation(room.dwStationID);
+            if (pStation) {
+                return pStation.szStationName;
+            }
+            return room.szGameRoomName;
+        }
+        TSCommon_1.TSCommon.log("autoEnterGameRoom 找不到对应的房间 " + station + ",id = " + this._nGameID);
+        return "";
+    };
+    CGameLib.prototype.enterGameRoomByIP = function (ipaddress, port) {
+        return this._gameRoom.enterGameRoomByIP(ipaddress, port, this._publicUserInfo.userDBID, this._publicUserInfo.encryptPassword, this._gameVersion, this._gamePlace.getServerByIPAndPort(ipaddress, port));
+    };
+    CGameLib.prototype.leaveGameRoom = function () {
+        this._gameRoom.leftRoom();
+    };
+    CGameLib.prototype.getMyself = function () {
+        return this._gameRoom.getMyself();
+    };
+    CGameLib.prototype.getUser = function (wUserID) {
+        return this._gameRoom.getUser(wUserID);
+    };
+    CGameLib.prototype.getUserByDBID = function (dwUserDBID) {
+        return this._gameRoom.getUserByDBID(dwUserDBID);
+    };
+    CGameLib.prototype.sitTable = function (tableID, cbChair) {
+        if (this._nGameID == 125) {
+            return this._gameRoom.sendWatchMessage(0, 0);
+        }
+        return this._gameRoom.enterTable(tableID, cbChair);
+    };
+    CGameLib.prototype.autoSit = function () {
+        TSCommon_1.TSCommon.log("autoSit gameid = " + this._nGameID);
+        if (this._nGameID == 88) {
+            return this._gameRoom.sendWatchMessage(0, 0);
+        }
+        return this._gameRoom.autoSit();
+    };
+    CGameLib.prototype.isPlaying = function () {
+        var p = this.getMyself();
+        if (p == null) {
+            return false;
+        }
+        return p.isPlayer();
+    };
+    CGameLib.prototype.sendGameCmd = function (cbCmdID, data) {
+        return this._gameRoom.sendGameCmd(cbCmdID, data);
+    };
+    CGameLib.prototype.sendReadyCmd = function () {
+        return this._gameRoom.sendReady();
+    };
+    CGameLib.prototype.sendCancelReadyCmd = function () {
+        return this._gameRoom.sendCancelReady();
+    };
+    CGameLib.prototype.getUserByChair = function (cbChair) {
+        return this._gameRoom.getUserByChair(cbChair);
+    };
+    CGameLib.prototype.sendCommand = function (cbMainCmd, cbSubCmd, data) {
+        return this._gameRoom.sendCommand(cbMainCmd, cbSubCmd, 0, data);
+    };
+    CGameLib.prototype.sendOldCmd = function (cbCmdID, data) {
+        return this._gameRoom.sendOldGameCmd(cbCmdID, data);
+    };
+    CGameLib.prototype.setClientFrameSink = function (sink) {
+        this._clientframeSink = sink;
+        this._gameRoom.setClientFrameSink(sink);
+    };
+    CGameLib.prototype.standUp = function () {
+        this._gameRoom.standup();
+    };
+    CGameLib.prototype.getCurrentGameRoom = function () {
+        return this._gameRoom.getCurrentGameRoom();
+    };
+    CGameLib.prototype.isInPrivateRoom = function () {
+        if (this._gameRoom.isServicing()) {
+            return this._gameRoom.isPrivteRoom();
+        }
+        return false;
+    };
+    CGameLib.prototype.watch = function (t, c) {
+        this._gameRoom.sendWatchMessage(t, c);
+    };
+    CGameLib.prototype.sendTableChat = function (lpszMsg) {
+        return this._gameRoom.sendTableChat(lpszMsg);
+    };
+    CGameLib.prototype.getRelativePos = function (cbChair) {
+        if (!this._gameRoom.isServicing()) {
+            return cbChair;
+        }
+        return this._gameRoom.getRelativePos(cbChair);
+    };
+    CGameLib.prototype.getRealChair = function (cbPos) {
+        if (!this._gameRoom.isServicing()) {
+            return cbPos;
+        }
+        return this._gameRoom.getRealChair(cbPos);
+    };
+    CGameLib.prototype.formatMoney = function (lMoney) {
+        var ret = null;
+        var bNegative = false;
+        if (lMoney < 0) {
+            bNegative = true;
+        }
+        var lValue = Math.abs(lMoney);
+        if (lValue < 10000) {
+            var lpsz = (bNegative ? "-" : "") + lValue;
+            return lpsz;
+        }
+        if (lValue < 100000000) {
+            return bNegative ? "-" : "" + lValue / 10000 + lValue % 10000;
+        }
+        return bNegative ? "-" : "" + lValue / 100000000 + (lValue % 100000000) / 10000 + lValue % 10000;
+    };
+    //获取我的网络延时
+    CGameLib.prototype.getNetLag = function () {
+        return this._gameRoom.getNetLag();
+    };
+    //获取桌子列表
+    CGameLib.prototype.GetTableList = function () {
+        return this._gameRoom.getTableList();
+    };
+    //获取桌子
+    CGameLib.prototype.getTable = function (tableID) {
+        return this._gameRoom.getTable(tableID);
+    };
+    CGameLib.prototype.getUserList = function () {
+        return this._gameRoom.getUserList();
+    };
+    CGameLib.prototype.sendVoice = function (voiceData) {
+        this._gameRoom.sendSoundToTableUser(voiceData);
+    };
+    CGameLib.prototype.isServicing = function () {
+        return this._gameRoom.isServicing();
+    };
+    CGameLib.prototype.refreshGold = function () {
+        //cclog("CGameLibLua:refreshGold()")
+        if (this._gameRoom != null && this._gameRoom.isServicing())
+            this._gameRoom.refreshGold();
+        //this._gamePlace.getUserGameInfo();
+    };
+    CGameLib.prototype.getStationOnlineCount = function (nStationID) {
+        return this._gamePlace.getStationOnlineCount(nStationID);
+    };
+    return CGameLib;
+}());
+exports.CGameLib = CGameLib;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "summonFriendsBtn",
+    "texture": "f5743634-c1b3-4e9b-967f-6c7a7831a84f",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      248,
+      82
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      248,
+      83
+    ]
+  }
+}

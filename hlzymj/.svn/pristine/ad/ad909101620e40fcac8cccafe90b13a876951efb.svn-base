@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "moneyAdd",
+    "texture": "1cef6992-ac04-4a41-81f3-3ff5be1dee10",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      36,
+      39
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      36,
+      39
+    ]
+  }
+}

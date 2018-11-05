@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "SLTX_shuchu_tex",
+    "texture": "39887628-fced-455d-99f8-dcadd841906b",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      500,
+      341
+    ],
+    "offset": [
+      -5,
+      84.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

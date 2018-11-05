@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cxz_rule1",
+    "texture": "4cbe8fd5-7309-4ae4-9b14-63c31dcef6c6",
+    "atlas": "",
+    "rect": [
+      0,
+      6,
+      798,
+      1181
+    ],
+    "offset": [
+      -2.5,
+      1
+    ],
+    "originalSize": [
+      803,
+      1195
+    ]
+  }
+}

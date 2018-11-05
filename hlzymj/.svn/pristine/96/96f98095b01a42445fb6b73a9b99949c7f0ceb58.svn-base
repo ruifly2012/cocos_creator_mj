@@ -1,0 +1,77 @@
+"use strict";
+cc._RF.push(module, '3df88uaMChDfpNR37KiseZx', 'XueLiuHuTypeItem');
+// scripts/hall/game/gameOver/XueLiuHuTypeItem.js
+
+"use strict";
+
+var GameDefs = require("GameDefs");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        huName: {
+            default: null,
+            type: cc.Label
+        },
+        hformDirection: {
+            default: null,
+            type: cc.Label
+        },
+        beishu: {
+            default: null,
+            type: cc.Label
+        },
+        huScore: {
+            default: null,
+            type: cc.Label
+        }
+    },
+    onLoad: function onLoad() {},
+
+    getDirectionName: function getDirectionName(a, b) {
+        var pos = a - b;
+        var showWinDir = "对家";
+        if (pos == -2 || pos == 2) {
+            showWinDir = "对家";
+        } else if (pos == -1 || pos == 3) {
+            showWinDir = "下家";
+        } else if (pos == -3 || pos == 1) {
+            showWinDir = "上家";
+        }
+        return showWinDir;
+    },
+
+
+    initData: function initData(stSinleScore, myChair) {
+        this.beishu.string = stSinleScore.cbFan + "倍";
+        this.huScore.string = stSinleScore.nScore;
+
+        //记录赢家是哪一家，或者放炮给我的是哪一家，自己自摸和暗杠续杠就不记录(因为赢的是三家的)
+        var showWinDir = "";
+        if (myChair == stSinleScore.cbWinChair) {
+            if (stSinleScore.cbScoreType == 1 || stSinleScore.cbScoreType == 2 || stSinleScore.cbScoreType == 4) {
+                showWinDir = "自己";
+            } else {
+                showWinDir = this.getDirectionName(stSinleScore.cbFangpaoChair, stSinleScore.cbWinChair);
+            }
+        }
+        if (myChair == stSinleScore.cbFangpaoChair) {
+            showWinDir = this.getDirectionName(stSinleScore.cbFangpaoChair, stSinleScore.cbWinChair);
+        }
+        this.hformDirection.string = showWinDir;
+
+        var huMsg = "";
+        if (stSinleScore.cbHuTypeCount > 0) {
+            huMsg = "(";
+            for (var i = 0; i < stSinleScore.cbHuTypeCount; i++) {
+                if (i > 0) huMsg = huMsg + ",";
+                huMsg = huMsg + GameDefs.HUTYPE_STRING[stSinleScore.cbHuType];
+            }
+            huMsg = huMsg + ")";
+        }
+
+        this.huName.string = GameDefs.SCORE_TYPE_STRING[stSinleScore.cbScoreType] + huMsg;
+    }
+});
+
+cc._RF.pop();

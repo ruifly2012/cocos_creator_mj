@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_li_bei",
+    "texture": "c7d58618-5381-4d96-bc10-751219c739e3",
+    "atlas": "4090cd84-4026-4097-8779-2319d795bbcf",
+    "rect": [
+      254,
+      122,
+      82,
+      118
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      84,
+      120
+    ]
+  }
+}

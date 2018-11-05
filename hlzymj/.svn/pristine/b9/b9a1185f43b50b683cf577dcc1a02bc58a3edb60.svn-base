@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "e28ec17f-c077-48c2-b8de-3fdcda3bd99c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "collectBg_iphoneX": {
+      "ver": "1.0.3",
+      "uuid": "eab0e890-2a57-4d6c-b573-16a176824ddd",
+      "rawTextureUuid": "e28ec17f-c077-48c2-b8de-3fdcda3bd99c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1467,
+      "height": 599,
+      "rawWidth": 1468,
+      "rawHeight": 599,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

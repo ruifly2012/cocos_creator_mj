@@ -1,0 +1,116 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/desk/ListenCardLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '73505tx6NhLKqeoQkQ1JuDE', 'ListenCardLayer', __filename);
+// scripts/hall/game/desk/ListenCardLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+var GameCfg = require("GameCfg");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        listenFont: {
+            default: null,
+            type: cc.Font
+        }
+    },
+
+    //监听将牌抬起的消息
+    onLoad: function onLoad() {
+
+        // var self = this;
+        // cc.loader.loadRes("texture/game/tips/listen_blue", cc.Atlas, function (error, font) {
+        //     self.m_listenFont = font;
+
+        //     this.reloadUI();
+        // })
+    },
+
+    //听牌数据会发生变化的时间是 打出去了某一张 以及自己出牌时候 将牌给抬起的时候
+    init: function init(tingCardList, tingFan, tingLeft) {
+        this.m_tingCardList = tingCardList || new Array();
+        this.m_tingFan = tingFan;
+        this.m_tingLeft = tingLeft;
+
+        this.reloadUI();
+    },
+
+    onDestroy: function onDestroy() {},
+
+    setlaiziValue: function setlaiziValue(laiziValue) {
+        this.m_laiziValue = laiziValue;
+    },
+
+    reloadUI: function reloadUI() {
+        var startX = -414;
+        var startY = -197;
+        var distanceX = 47;
+        var tingcardsNode = this.node.getChildByName("ting_cards");
+
+        tingcardsNode.removeAllChildren();
+
+        for (var i = 0; i < this.m_tingCardList.length; i++) {
+            var mjNode = new cc.Node();
+            mjNode.setScale(0.5);
+            var sprite = mjNode.addComponent(cc.Sprite);
+            sprite.spriteFrame = this.node.parent.getComponent("MjResourceMgr").get_face_li_SpriteFrame("mj1", this.m_tingCardList[i]);
+
+            mjNode.x = startX + i * distanceX;
+
+            mjNode.y = startY;
+            tingcardsNode.addChild(mjNode);
+
+            if (this.m_tingLeft[i] == 0) {
+                mjNode.color = new cc.Color(137, 137, 137);
+            }
+
+            //如果这张牌是癞子 则加上癞子角标
+            if (this.m_tingCardList[i] == this.m_laiziValue) {
+                var laiziNode = new cc.Node();
+
+                var sprite = laiziNode.addComponent(cc.Sprite);
+                sprite.spriteFrame = this.node.parent.getComponent("MjResourceMgr").m_mj_hh_li_laizi;
+
+                laiziNode.x = 15.5;
+                laiziNode.y = 18.5;
+                mjNode.addChild(laiziNode);
+            }
+
+            var zhangNode = new cc.Node();
+            zhangNode.setAnchorPoint(cc.p(0.5, 0.5));
+
+            var zhangLabel = zhangNode.addComponent(cc.Label);
+            zhangLabel.font = this.listenFont;
+            zhangLabel.string = this.m_tingLeft[i] + "张";
+
+            zhangNode.x = mjNode.x;
+            zhangNode.y = mjNode.y + 35;
+            tingcardsNode.addChild(zhangNode);
+        }
+
+        var bg2Node = this.node.getChildByName("bg_2");
+        var width = 82 / 2 * this.m_tingCardList.length + (this.m_tingCardList.length + 1) * 6;
+        bg2Node.setContentSize(cc.size(width, 90));
+
+        var bg3Node = this.node.getChildByName("bg_3");
+        bg3Node.x = bg2Node.x + bg2Node.getContentSize().width;
+        bg3Node.y = bg2Node.y;
+    }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ListenCardLayer.js.map
+        

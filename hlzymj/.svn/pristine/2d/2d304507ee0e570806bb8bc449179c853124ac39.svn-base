@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diamondClickOff",
+    "texture": "b5264e6e-b8dc-4f68-8739-9fe21db9eb1f",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      217,
+      96
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      217,
+      97
+    ]
+  }
+}

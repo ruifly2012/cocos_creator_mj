@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "check_fore",
+    "texture": "155b476c-aec8-465d-b1f2-e12b4ebb28de",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      30,
+      22
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      30,
+      22
+    ]
+  }
+}

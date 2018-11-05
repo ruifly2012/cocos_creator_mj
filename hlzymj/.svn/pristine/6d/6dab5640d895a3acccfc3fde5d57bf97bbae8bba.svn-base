@@ -1,0 +1,249 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/gameOver/GameOverLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '84586poZ99BNorvKcabyweY', 'GameOverLayer', __filename);
+// scripts/hall/game/gameOver/GameOverLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+/**
+ * 此处结算界面是金币场内的结算界面
+ */
+
+var GameDefs = require("GameDefs");
+var Resources = require("Resources");
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        laiyouType: {
+            default: null,
+            type: cc.Node
+        },
+
+        fanNum: {
+            default: null,
+            type: cc.Node
+        },
+
+        laiyouZi: {
+            default: null,
+            type: cc.Node
+        }
+
+    },
+
+    onLoad: function onLoad() {},
+
+    onDestroy: function onDestroy() {
+        this.stopLeftTimer();
+    },
+
+    onEnable: function onEnable() {
+
+        //如果流局
+        if (this.m_bIsLiuju) {
+            this.node.getChildByName("hutype_bg").active = false;
+            this.node.getChildByName("laiyouzi_bg").active = false;
+        } else {
+            this.node.getChildByName("hutype_bg").active = true;
+            this.node.getChildByName("laiyouzi_bg").active = true;
+
+            this.loadRes();
+            this.setHuFan();
+            this.setLaiyouZi();
+        }
+
+        this.startLeftTimer();
+
+        var HallResources = require("HallResources");
+        HallResources.recordPlayerLogToServer(HallResources.recordList.count_page);
+    },
+
+    loadRes: function loadRes() {
+
+        var self = this;
+
+        //硬癞油
+        cc.loader.loadRes("texture/game/gameOver/yingLaiYou", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_yingLaiYouFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //软癞油
+        cc.loader.loadRes("texture/game/gameOver/ruanLaiYou", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_ruanLaiYouFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //硬自摸
+        cc.loader.loadRes("texture/game/gameOver/yingZiMo", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_yingZiMoFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //软自摸
+        cc.loader.loadRes("texture/game/gameOver/ruanZiMo", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_ruanZiMoFrame = spriteFrame;
+            self.setHuType();
+        });
+
+        //油中油
+        cc.loader.loadRes("texture/game/gameOver/youZhongYou", cc.SpriteFrame, function (err, spriteFrame) {
+            self.m_youZhongYouFrame = spriteFrame;
+            self.setHuType();
+        });
+    },
+
+    /*
+     * 初始化
+     * @huType 胡牌类型 
+     * @fanNum 胡牌番数
+     * @laiyouValue 癞油字的牌值
+    */
+    init: function init(bIsLiuju, huType, fanNum, laiyouValue, showDetailResult) {
+        this.m_bIsLiuju = bIsLiuju;
+        this.m_huType = huType;
+        this.m_fanNum = fanNum;
+        this.m_laiyouValue = laiyouValue;
+        this.m_showDetailResult = showDetailResult;
+
+        this.m_leftTimerStop = false;
+        this.m_leftTime = 25;
+    },
+
+    getLeftLeaveTime: function getLeftLeaveTime() {
+        return this.m_leftTime;
+    },
+
+    setHuType: function setHuType() {
+        var frame;
+
+        //软自摸
+        if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+            frame = this.m_ruanZiMoFrame;
+        }
+
+        //硬自摸
+        else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                frame = this.m_yingZiMoFrame;
+            }
+
+            //软癞油
+            else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                    frame = this.m_ruanLaiYouFrame;
+                }
+
+                //硬癞油
+                else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                        frame = this.m_yingLaiYouFrame;
+                    }
+
+                    //油中油
+                    else if (this.m_huType == GameDefs.EndStatus.RuanPai) {
+                            frame = this.m_youZhongYouFrame;
+                        }
+
+        if (!frame) {
+            return;
+        }
+
+        this.laiyouType.active = true;
+        this.laiyouType.getComponent(cc.Sprite).spriteFrame = frame;
+    },
+
+    //设定胡牌翻数
+    setHuFan: function setHuFan() {
+        this.fanNum.getComponent(cc.Label).string = this.m_fanNum + "翻";
+    },
+
+    setLaiyouZi: function setLaiyouZi() {
+        if (this.m_laiyouValue == undefined || this.m_laiyouValue == null) {
+            return;
+        }
+        var frameName = Resources.get_frameName("hh_dao_", this.m_laiyouValue);
+
+        var frame = this.node.parent.getComponent("MjResourceMgr").mj1_face_dao.getSpriteFrame(frameName);
+
+        if (frame) {
+            this.laiyouZi.getComponent(cc.Sprite).spriteFrame = frame;
+        }
+    },
+
+    //开始离开房间的按钮
+    startLeftTimer: function startLeftTimer() {
+        var leftTimerNode = this.node.getChildByName("ready_btn").getChildByName("leave_timer");
+        leftTimerNode.active = true;
+        leftTimerNode.getComponent(cc.Label).string = "(" + this.m_leftTime + ")";
+
+        var self = this;
+        var callback = function callback() {
+            if (self.m_leftTimerStop) {
+                return;
+            }
+
+            self.m_leftTime -= 1;
+            var label = leftTimerNode.getComponent(cc.Label);
+            label.string = "(" + self.m_leftTime + ")";
+
+            if (self.m_leftTime > 0) {
+                _TSCommon.TSCommon.performWithDelay(self, callback, 1);
+            } else {
+                leftTimerNode.getComponent(cc.Label).string = "";
+                leftTimerNode.active = false;
+                require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+            }
+        };
+
+        _TSCommon.TSCommon.performWithDelay(this, callback, 1);
+    },
+
+    stopLeftTimer: function stopLeftTimer() {
+        this.m_leftTimerStop = true;
+    },
+
+    //离开按钮点击
+    onLeaveGameClicked: function onLeaveGameClicked() {
+        var DeskScene = this.node.parent.getComponent("DeskScene");
+
+        // if(DeskScene.IsCXZ()){
+        //     G.goldGameReady = 3;
+        // }
+        // else{
+        //     G.goldGameReady = 4;
+        // }
+
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+    },
+
+    //详细结算按钮
+    onDetailResultClicked: function onDetailResultClicked() {
+        if (this.m_showDetailResult) {
+            this.m_showDetailResult();
+        }
+    },
+
+    //准备按钮
+    onReadyClicked: function onReadyClicked() {
+
+        this.node.active = false;
+        var GameCfg = require("GameCfg");
+        _TSCommon.TSCommon.dispatchEvent(GameCfg.GAME_RESTART, { isReady: true });
+    }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GameOverLayer.js.map
+        

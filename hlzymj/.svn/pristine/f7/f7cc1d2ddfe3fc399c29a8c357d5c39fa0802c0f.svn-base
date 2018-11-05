@@ -1,0 +1,38 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/room/MoreGameListLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'befe2KW9Y1DXa0bqys4DbNZ', 'MoreGameListLayer', __filename);
+// scripts/hall/game/room/MoreGameListLayer.js
+
+"use strict";
+
+var HallResources = require("HallResources");
+var MoreGameListLayer = cc.Class({
+    extends: cc.Component,
+    properties: {
+        gameList: {
+            default: null,
+            type: cc.ScrollView
+        }
+    },
+
+    onLoad: function onLoad() {},
+
+    initData: function initData(data, hot, changwan) {
+        this.gameList.getComponent("MoreGameList").initData(data, hot, changwan);
+    }
+});
+
+module.exports = MoreGameListLayer;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=MoreGameListLayer.js.map
+        

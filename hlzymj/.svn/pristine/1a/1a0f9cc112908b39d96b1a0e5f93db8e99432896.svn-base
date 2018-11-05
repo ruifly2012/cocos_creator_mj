@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ruanZiMo",
+    "texture": "14f0d52a-ea6a-4362-acca-6ea361ac7c2a",
+    "atlas": "",
+    "rect": [
+      26,
+      0,
+      209,
+      87
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "originalSize": [
+      257,
+      87
+    ]
+  }
+}

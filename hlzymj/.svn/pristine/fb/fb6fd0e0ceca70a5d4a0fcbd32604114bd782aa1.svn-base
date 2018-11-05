@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuezhan_cw_title",
+    "texture": "529f482b-89ac-41cf-b1a6-0a1cbc3eaa19",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      269,
+      79
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      269,
+      79
+    ]
+  }
+}

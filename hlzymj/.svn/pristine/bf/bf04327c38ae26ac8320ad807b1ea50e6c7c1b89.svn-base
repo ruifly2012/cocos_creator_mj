@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuanpaiBg",
+    "texture": "b2606673-2d59-4045-b3b6-41f15af3c208",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      585,
+      140
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      585,
+      140
+    ]
+  }
+}

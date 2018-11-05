@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "playerCountBG",
+    "texture": "13e6c5cb-e821-4539-ab86-f41252099edd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      357,
+      40
+    ],
+    "offset": [
+      -8,
+      0
+    ],
+    "originalSize": [
+      373,
+      40
+    ]
+  }
+}

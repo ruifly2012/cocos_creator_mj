@@ -1,0 +1,18 @@
+"use strict";
+cc._RF.push(module, '6f895pSwY5AHb3zx33Nq/R2', 'GAME_DATA');
+// scripts/hall/gamelib/frame/GAME_DATA.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ByteArray_1 = require("../../common/ByteArray");
+var GAME_DATA = /** @class */ (function () {
+    function GAME_DATA(buf) {
+        this.cChairID = buf.readUnsignedByte();
+        this.cCmdID = buf.readUnsignedByte();
+        this.data = new ByteArray_1.ByteArray();
+        buf.readBytes(this.data);
+    }
+    return GAME_DATA;
+}());
+exports.GAME_DATA = GAME_DATA;
+
+cc._RF.pop();

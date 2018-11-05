@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "7c941c06-b427-42ed-b50c-6f0c96c19d62",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "texiao_hupai_tex": {
+      "ver": "1.0.3",
+      "uuid": "c5323da3-d72c-46ba-b436-672754c9f175",
+      "rawTextureUuid": "7c941c06-b427-42ed-b50c-6f0c96c19d62",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -4.5,
+      "offsetY": 42.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 1013,
+      "height": 937,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

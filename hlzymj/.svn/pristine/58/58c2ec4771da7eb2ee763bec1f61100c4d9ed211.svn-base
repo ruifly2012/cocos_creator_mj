@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "d588db13-070c-4d8e-8cd3-9295aea31414",
+  "atlasJson": "{\"width\":1024,\"imagePath\":\"DB_PJJS_tex.png\",\"name\":\"DB_PJJS\",\"SubTexture\":[{\"frameY\":-6,\"y\":1,\"frameWidth\":512,\"frameHeight\":512,\"width\":497,\"height\":506,\"name\":\"wzbg_g2\",\"frameX\":-5,\"x\":1},{\"frameY\":0,\"y\":509,\"frameWidth\":580,\"frameHeight\":163,\"width\":546,\"height\":163,\"name\":\"wz_pjjs\",\"frameX\":-18,\"x\":1},{\"frameY\":0,\"y\":674,\"frameWidth\":580,\"frameHeight\":163,\"width\":546,\"height\":163,\"name\":\"wz_pjjs_g\",\"frameX\":-18,\"x\":1},{\"width\":209,\"y\":839,\"height\":139,\"name\":\"bg_guang\",\"x\":1}],\"height\":1024}",
+  "texture": "9e40cb14-3940-4042-8aaa-f4df23d9945a",
+  "subMetas": {}
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "queyimenBg",
+    "texture": "c9b02fac-6af4-4191-9121-c0a2e87203f3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      445,
+      58
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      445,
+      58
+    ]
+  }
+}

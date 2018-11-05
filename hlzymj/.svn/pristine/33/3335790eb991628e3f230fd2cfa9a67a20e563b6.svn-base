@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallitembg",
+    "texture": "9cd8f183-4b07-40d8-91b9-ddd082619b2a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      246,
+      207
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      246,
+      207
+    ]
+  }
+}

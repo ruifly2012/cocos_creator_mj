@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "guafen_tex",
+    "texture": "1cd30198-d54a-4340-a699-9ebb05c082cb",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1020,
+      942
+    ],
+    "offset": [
+      -1,
+      40
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}

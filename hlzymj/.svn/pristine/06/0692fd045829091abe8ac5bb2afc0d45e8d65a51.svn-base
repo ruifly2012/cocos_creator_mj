@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "give_up",
+    "texture": "214b8c04-c13e-4da1-aadb-e9ccb135fe88",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      113,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      113,
+      26
+    ]
+  }
+}

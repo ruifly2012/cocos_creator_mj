@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diamondClickOn",
+    "texture": "d9b6e528-6dde-4b03-b9ff-394e2b11810d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      235,
+      97
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      235,
+      97
+    ]
+  }
+}

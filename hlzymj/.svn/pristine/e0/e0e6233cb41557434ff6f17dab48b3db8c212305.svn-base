@@ -1,0 +1,164 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/gameOver/XueLiuGameOverLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '9daa7AQqMRAHr8r0FBcg6Dc', 'XueLiuGameOverLayer', __filename);
+// scripts/hall/game/gameOver/XueLiuGameOverLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+/**
+ * 此处结算界面是金币场内的结算界面
+ */
+
+var GameDefs = require("GameDefs");
+var Resources = require("Resources");
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        resultList: {
+            default: null,
+            type: cc.ScrollView
+        },
+        playerPrefab: {
+            default: null,
+            type: cc.Prefab
+        },
+        showPlayerNode: {
+            default: null,
+            type: cc.Node
+        }
+    },
+
+    onLoad: function onLoad() {},
+
+    onDestroy: function onDestroy() {
+        this.stopLeftTimer();
+    },
+
+    onEnable: function onEnable() {
+
+        this.startLeftTimer();
+
+        var HallResources = require("HallResources");
+        HallResources.recordPlayerLogToServer(HallResources.recordList.count_page);
+    },
+
+    /*
+     * 初始化
+     * @huType 胡牌类型 
+     * @fanNum 胡牌番数
+     * @laiyouValue 癞油字的牌值
+    */
+    init: function init(stWinStruct, players, playersName, playerAvatorUrls, myChair, showDetailResult) {
+        this.m_showDetailResult = showDetailResult;
+        this.m_stWinStruct = stWinStruct;
+        this.m_playersInfo = players;
+        this.m_stPlayerName = playersName;
+        this.m_playerAvators = playerAvatorUrls;
+        this.m_myChair = myChair;
+        this.m_leftTimerStop = false;
+        this.m_leftTime = 25;
+        this.initData();
+    },
+
+    getLeftLeaveTime: function getLeftLeaveTime() {
+        return this.m_leftTime;
+    },
+
+    //开始离开房间的按钮
+    startLeftTimer: function startLeftTimer() {
+        var leftTimerNode = this.node.getChildByName("ready_btn").getChildByName("leave_timer");
+        leftTimerNode.active = true;
+        leftTimerNode.getComponent(cc.Label).string = "(" + this.m_leftTime + ")";
+
+        var self = this;
+        var callback = function callback() {
+            if (self.m_leftTimerStop) {
+                return;
+            }
+
+            self.m_leftTime -= 1;
+            var label = leftTimerNode.getComponent(cc.Label);
+            label.string = "(" + self.m_leftTime + ")";
+
+            if (self.m_leftTime > 0) {
+                _TSCommon.TSCommon.performWithDelay(self, callback, 1);
+            } else {
+                leftTimerNode.getComponent(cc.Label).string = "";
+                leftTimerNode.active = false;
+                require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+            }
+        };
+
+        _TSCommon.TSCommon.performWithDelay(this, callback, 1);
+    },
+
+    stopLeftTimer: function stopLeftTimer() {
+        this.m_leftTimerStop = true;
+    },
+
+    //离开按钮点击
+    onLeaveGameClicked: function onLeaveGameClicked() {
+        var DeskScene = this.node.parent.getComponent("DeskScene");
+
+        // if(DeskScene.IsCXZ()){
+        //     G.goldGameReady = 3;
+        // }
+        // else{
+        //     G.goldGameReady = 4;
+        // }
+
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+    },
+
+    //详细结算按钮
+    onDetailResultClicked: function onDetailResultClicked() {
+        if (this.m_showDetailResult) {
+            this.m_showDetailResult();
+        }
+    },
+
+    //准备按钮
+    onReadyClicked: function onReadyClicked() {
+
+        this.node.active = false;
+        var GameCfg = require("GameCfg");
+        _TSCommon.TSCommon.dispatchEvent(GameCfg.GAME_RESTART, { isReady: true });
+    },
+
+    initData: function initData() {
+        this.showPlayerNode.removeAllChildren();
+        //四个玩家的内容
+        var maxScore = this.m_stWinStruct.nFinalScore[0];
+        for (var i = 1; i < GameDefs.PLAYER_COUNT; i++) {
+            if (maxScore < this.m_stWinStruct.nFinalScore[i]) {
+                maxScore = this.m_stWinStruct.nFinalScore[i];
+            }
+        }
+        console.log("这次结算的最高分" + maxScore);
+        for (var i = 0; i < GameDefs.PLAYER_COUNT; i++) {
+            var playerResultItem = cc.instantiate(this.playerPrefab);
+            playerResultItem.parent = this.showPlayerNode;
+            playerResultItem.getComponent("XueLiuPlayerResultItem").initData(this.m_stPlayerName[i], this.m_playerAvators[i], this.m_stWinStruct.nFinalScore[i], maxScore, i, this.m_myChair);
+            playerResultItem.setPosition(-70 + i * 290, 0);
+        }
+        console.log("滑动列表数据处理");
+        this.resultList.getComponent("XueLiuGameOverScrollList").initData(this.m_stWinStruct.cbWriteScoreTimes[this.m_myChair], this.m_stWinStruct.stSingleScore[this.m_myChair], this.m_myChair);
+    }
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=XueLiuGameOverLayer.js.map
+        

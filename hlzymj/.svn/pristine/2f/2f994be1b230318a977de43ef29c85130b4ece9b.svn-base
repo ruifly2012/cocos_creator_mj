@@ -1,0 +1,127 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/place/GameServerList.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '00c11gz8HpGEZG7Dfh0LugM', 'GameServerList', __filename);
+// scripts/hall/gamelib/place/GameServerList.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var GameServerList = /** @class */ (function () {
+    function GameServerList(gameID) {
+        this.m_gameID = gameID || 0;
+        this.m_stationList = new Array();
+        this.m_roomList = new Array();
+    }
+    Object.defineProperty(GameServerList.prototype, "GameID", {
+        get: function () {
+            return this.m_gameID;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GameServerList.prototype.addStation = function (pStation) {
+        if (pStation == null)
+            return null;
+        // 先看是否存在
+        var pExist = this.getGameStationByName(pStation.szStationName);
+        if (pExist == null) {
+            this.m_stationList.push(pStation);
+            return pStation;
+        }
+        pExist = pStation;
+        return pStation;
+    };
+    GameServerList.prototype.getGameStationByName = function (stationName) {
+        for (var key in this.m_stationList) {
+            var station = this.m_stationList[key];
+            if (stationName == station.szStationName)
+                return station;
+        }
+        ;
+        return null;
+    };
+    GameServerList.prototype.addGameServer = function (pGameServer) {
+        if (pGameServer == null) {
+            return null;
+        }
+        // 先看是否存在
+        var pExist = this.getGameServer(pGameServer.dwServerID);
+        if (pExist == null) {
+            this.m_roomList.push(pGameServer);
+            return pGameServer;
+        }
+        pExist = pGameServer;
+        return pGameServer;
+    };
+    GameServerList.prototype.getGameServer = function (nServerID) {
+        for (var key in this.m_roomList) {
+            var room = this.m_roomList[key];
+            if (nServerID == room.dwServerID)
+                return room;
+        }
+        ;
+        return null;
+    };
+    GameServerList.prototype.getStation = function (nStationID) {
+        for (var key in this.m_stationList) {
+            var room = this.m_stationList[key];
+            if (nStationID == room.dwStationID)
+                return room;
+        }
+        ;
+        return null;
+    };
+    GameServerList.prototype.getStatonList = function () {
+        return this.m_stationList;
+    };
+    GameServerList.prototype.getAllGameServerList = function () {
+        return this.m_roomList;
+    };
+    GameServerList.prototype.getStationOnlineCount = function (nStationID) {
+        var ret = 0;
+        for (var key in this.m_roomList) {
+            var room = this.m_roomList[key];
+            if (nStationID != -1 && nStationID == room.dwStationID)
+                ret += room.wOnLineCount;
+        }
+        ;
+        return ret;
+    };
+    GameServerList.prototype.getGameServerList = function (stationID) {
+        var ret = new Array();
+        for (var key in this.m_roomList) {
+            var room = this.m_roomList[key];
+            if (stationID != -1 && stationID == room.dwStationID)
+                ret.push(room);
+        }
+        ;
+        return ret;
+    };
+    GameServerList.prototype.getOneGameServerInStation = function (nStationID) {
+        var ret = 0;
+        for (var key in this.m_roomList) {
+            var room = this.m_roomList[key];
+            if (nStationID == room.dwStationID)
+                return room;
+        }
+        ;
+        return null;
+    };
+    GameServerList.prototype.clearServerList = function () {
+        this.m_roomList = new Array();
+        this.m_stationList = new Array();
+    };
+    return GameServerList;
+}());
+exports.GameServerList = GameServerList;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GameServerList.js.map
+        

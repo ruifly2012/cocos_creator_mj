@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_jiesuanjiangbei_tex",
+    "texture": "3d5acf51-ad3a-4217-92d3-a06d5baff083",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1021,
+      1022
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}

@@ -1,0 +1,943 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/desk/Player.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '3a163wUo11MJJ961eJdrxXM', 'Player', __filename);
+// scripts/hall/game/desk/Player.js
+
+"use strict";
+
+var _gamelibcommon = require("../../gamelib/gamelibcommon");
+
+var _TSCommon = require("../../TSCommon");
+
+var _WeixinManager = require("../../weixin/WeixinManager");
+
+var Resources = require("Resources");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        playerName: {
+            default: null,
+            type: cc.Node
+        },
+
+        playerFace: {
+            default: null,
+            type: cc.Node
+        },
+
+        playerScore: {
+            default: null,
+            type: cc.Node
+        },
+
+        offLine: {
+            default: null,
+            type: cc.Node
+        },
+
+        ready: {
+            default: null,
+            type: cc.Node
+        },
+
+        robot: {
+            default: null,
+            type: cc.Node
+        },
+
+        playerInfoLayer: {
+            default: null,
+            type: cc.Node
+        },
+
+        winResultFont: {
+            default: null,
+            type: cc.Font
+        },
+
+        loseResultFont: {
+            default: null,
+            type: cc.Font
+        },
+
+        selectCardSp: {
+            default: null,
+            type: cc.Sprite
+        },
+
+        dingqueSp: {
+            default: null,
+            type: cc.Sprite
+        },
+
+        queWanHeadIconSp: {
+            default: null,
+            type: cc.Sprite
+        },
+
+        queWanSp: {
+            default: null,
+            type: cc.Sprite
+        },
+        chaDaJiaoSp: {
+            default: null,
+            type: cc.Sprite
+        },
+
+        WAN: 0,
+        TIAO: 1,
+        TONG: 2,
+        INVA: 3,
+        DINGQUEZHONG: 4, //定缺中
+        YIDINGQUE: 5, //已定缺
+        XUANPAIZHONG: 6, //选牌中
+        YIXUANPAI: 7, //已选牌
+        CHADAJIAO: 8, //查大叫
+        CHAHUAZHU: 9 //查花猪
+    },
+
+    onLoad: function onLoad() {
+
+        var self = this;
+        cc.loader.loadResDir("animation/dragonBones/biaoqin", function (err, assets) {
+            self.biaoqinAssets = assets;
+        });
+
+        this.node.parent.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
+
+        this.m_leaveTimerStop = false;
+
+        this.initUI();
+    },
+
+    onDestroy: function onDestroy() {
+        this.stopLeaveTimer();
+        this.unscheduleAllCallbacks();
+    },
+
+    initUI: function initUI() {
+
+        this.nDingqueType = -1;
+        this.setIsReady(false);
+
+        this.setIsoffLine(false);
+
+        this.setIsRobot(false);
+
+        this.turnToOutPlayCardIsVis(false);
+
+        var playerNode = this.node.getChildByName("playerNode");
+
+        var chat = playerNode.getChildByName("chat_bg");
+
+        chat.active = false;
+
+        if (this.node.name == "myself") this.prePos = cc.p(-300, 0);else if (this.node.name == "right") this.prePos = cc.p(300, 0);else if (this.node.name == "top") this.prePos = cc.p(0, 300);else if (this.node.name == "left") this.prePos = cc.p(-300, 0);else cc.log("no other player");
+
+        if (this.prePos) {
+            this.node.getChildByName("playerNode").x = this.prePos.x;
+            this.node.getChildByName("playerNode").y = this.prePos.y;
+        }
+
+        playerNode.getChildByName("result_score").active = false;
+        this.playerInfoLayer.active = false;
+
+        this.hideLeaveTimer();
+    },
+
+    onTouch: function onTouch(event) {
+        var pos = event.touch.getLocation();
+        var convertPos = this.node.getChildByName("playerNode").getChildByName("player_bg").convertToNodeSpace(pos);
+        var size = this.node.getChildByName("playerNode").getChildByName("player_bg").getContentSize();
+        var rect = cc.rect(0, 0, size.width, size.height);
+
+        if (cc.rectContainsPoint(rect, convertPos)) {
+            // cc.log(" --------player ----------nPos -----");
+            var PersonalInfoFrame = this.playerInfoLayer.getComponent("PersonalInfoFrame");
+            PersonalInfoFrame.init(this.userInfo);
+            this.playerInfoLayer.active = true;
+        }
+    },
+
+    Come: function Come(nPos, userInfo) {
+        cc.log("call user come  function  nPos = ", nPos);
+
+        this.userInfo = userInfo;
+
+        this.m_nPos = nPos;
+
+        this.node.getComponent("PlayerCardLayer").setPlayerPos(nPos);
+        this.node.getComponent("OutCardLayer").setPlayerPos(nPos);
+        this.Enter(nPos);
+    },
+
+    Leave: function Leave(nPos) {
+
+        //关掉跟player有关联的界面
+        this.playerInfoLayer.active = false;
+
+        //准备隐藏
+        this.setIsReady(false);
+
+        //定时器设置为隐藏
+        this.hideLeaveTimer();
+
+        //清除掉玩家相关显示
+        this.cleanPlayers();
+
+        //让玩家退出
+        this.Exit(nPos);
+    },
+
+    refreshGold: function refreshGold(nGold) {
+        var isPrivateRoom = this.node.parent.getComponent("DeskScene").getIsPrivateRoom();
+        if (isPrivateRoom) {
+            if (this.userInfo) {
+                this.m_lGold = this.userInfo.getScore();
+                cc.log("private this.m_lGold=" + this.m_lGold);
+
+                //获取段位  然后显示段位
+                var result = require("HallResources").getInstance().getRankAndStarByScore(this.m_lGold);
+                this.playerScore.getComponent(cc.Label).string = result.rankName;
+            }
+        } else {
+            this.m_lGold = nGold;
+
+            var szGold = Resources.formatGold(this.m_lGold, true);
+            this.playerScore.getComponent(cc.Label).string = szGold;
+        }
+    },
+
+    getAvatarUrl: function getAvatarUrl(userID, onEnd) {
+        var httpCallback = function httpCallback(success, data) {
+            require('HallResources').getInstance().removeLoading();
+            if (success) {
+                var jsonObject = JSON.parse(data).table[0];
+                if (onEnd && jsonObject.FaceUrl != "") {
+                    onEnd(jsonObject.FaceUrl, jsonObject.NickName);
+                }
+            }
+        };
+        require("HallWebRequest").getInstance().getWxUserInfoByUserID(userID, httpCallback);
+    },
+
+    setSelectCardSpIsVis: function setSelectCardSpIsVis(bIsVis, nType) {
+        var self = this;
+        self.selectCardSp.node.active = bIsVis;
+
+        if (bIsVis) {
+            var strImg = "texture/game/xuanpai";
+            if (nType == this.XUANPAIZHONG) strImg = "texture/game/xuanpai";else if (nType == this.YIXUANPAI) strImg = "texture/game/yixuanpai";
+
+            cc.loader.loadRes(strImg, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.selectCardSp.spriteFrame = spriteFrame;
+                }
+            });
+        }
+    },
+
+    setChaDaJiaoSpIsVis: function setChaDaJiaoSpIsVis(bIsVis, nType) {
+        var self = this;
+        self.chaDaJiaoSp.node.active = bIsVis;
+
+        if (bIsVis) {
+            var strImg = "texture/game/chaDaJiao";
+            if (nType == this.CHADAJIAO) strImg = "texture/game/chaDaJiao";else if (nType == this.CHAHUAZHU) strImg = "texture/game/chaHuaZhu";
+
+            cc.loader.loadRes(strImg, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.chaDaJiaoSp.spriteFrame = spriteFrame;
+                }
+            });
+        }
+    },
+
+    setDingqueSpIsVis: function setDingqueSpIsVis(bIsVis, nType) {
+        var self = this;
+        self.dingqueSp.node.active = bIsVis;
+
+        if (bIsVis) {
+            var strImg = "texture/game/dingque";
+            if (nType == this.DINGQUEZHONG) strImg = "texture/game/dingque";else if (nType == this.YIDINGQUE) strImg = "texture/game/yidingque";
+
+            cc.loader.loadRes(strImg, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.dingqueSp.spriteFrame = spriteFrame;
+                }
+            });
+        }
+    },
+    setQueWanHeadIconSpIsVis: function setQueWanHeadIconSpIsVis(bIsVis, nType) {
+        var self = this;
+        self.nDingqueType = nType;
+        self.queWanHeadIconSp.node.active = bIsVis;
+
+        if (bIsVis) {
+            var strImg = "texture/game/swap/wan2";
+            if (nType == this.WAN) strImg = "texture/game/swap/wan2";else if (nType == this.TIAO) strImg = "texture/game/swap/tiao2";else if (nType == this.TONG) strImg = "texture/game/swap/tong2";
+
+            cc.loader.loadRes(strImg, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.queWanHeadIconSp.spriteFrame = spriteFrame;
+                }
+            });
+        }
+    },
+
+    setQueWanSpIsVis: function setQueWanSpIsVis(bIsVis, nType, bolRun) {
+        var self = this;
+        self.nDingqueType = nType;
+        var pPos = self.queWanSp.node.getPosition();
+        self.queWanSp.node.active = bIsVis;
+
+        if (bIsVis) {
+            var strImg = "texture/game/swap/wan1";
+            if (nType == this.WAN) strImg = "texture/game/swap/wan1";else if (nType == this.TIAO) strImg = "texture/game/swap/tiao1";else if (nType == this.TONG) strImg = "texture/game/swap/tong1";
+
+            cc.loader.loadRes(strImg, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.queWanSp.spriteFrame = spriteFrame;
+                }
+            });
+
+            var action = cc.delayTime(0.5);
+            var TempPoint = self.queWanHeadIconSp.node.getPosition();
+            var action1 = cc.scaleTo(0.2, 1.5, 1.5);
+            var action2 = cc.scaleTo(0.2, 1, 1);
+            var action3 = cc.moveTo(0.1, TempPoint.x, TempPoint.y + 30);
+            var action4 = cc.scaleTo(0.5, 0.3, 0.3);
+            var spawn = cc.spawn(action1, action2, action3, action4);
+            var callBcak = cc.callFunc(function () {
+                self.queWanSp.node.active = false;
+                self.queWanSp.node.setScale(1);
+                self.queWanSp.node.setPosition(pPos);
+                self.setQueWanHeadIconSpIsVis(bIsVis, nType);
+                self.dingQueFlyFinishIsVis(true);
+                // Resources.playMjSoundEffect(SoundRes.SOUND_XUANQUE)
+            });
+
+            var sequence = cc.sequence(action, spawn, callBcak);
+            if (bolRun) this.queWanSp.node.runAction(sequence);
+        }
+    },
+
+    //进入函数
+    Enter: function Enter(nPos) {
+        cc.log("nPos ==========" + nPos);
+        if (this.node.getChildByName("playerNode").getNumberOfRunningActions() > 0) {
+            this.node.getChildByName("playerNode").stopAllActions();
+        }
+
+        var winSize = cc.director.getWinSize();
+
+        this.node.getChildByName("playerNode").nPos = nPos;
+
+        var Tools = require("Tools");
+
+        //获取机器人信息
+        var result = Tools.cutString(this.userInfo.getUserName(), 80, 17, this.node.getChildByName("playerNode"));
+        this.playerName.getComponent(cc.Label).string = result;
+
+        this.refreshGold(this.userInfo.getGold());
+        if (nPos == 1) {
+            this.node.getChildByName("playerNode").x = this.prePos.x;
+            this.node.getChildByName("playerNode").y = this.prePos.y;
+            var posX = 0;
+            var posY = this.node.getChildByName("playerNode").y;
+            var isPrivateRoom = this.node.parent.getComponent("DeskScene").getIsPrivateRoom();
+
+            var self = this;
+            var moveEnd = function moveEnd() {
+                if (self.userInfo.getUserStatus() == _gamelibcommon.gamelibcommon.USER_READY_STATUS) self.setIsReady(true);else {
+                    if (isPrivateRoom) {
+                        var sendCMD = require("sendCMD");
+                        sendCMD.sendCMD_PO_RESTART();
+                    }
+                }
+            };
+
+            var wxUserInfo = _WeixinManager.WeixinManager.getInstance().userInfo;
+            if (wxUserInfo && wxUserInfo.avatarUrl) {
+                var imgurl = wxUserInfo.avatarUrl; //+ "?aaa=aa.jpg";
+                this.userInfo.imgurl = imgurl;
+                cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                    self.playerFace.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                });
+            } else {
+                var onEnd = function onEnd(faceUrl, nickName) {
+                    var imgurl = faceUrl; // + "?aaa=aa.jpg";
+                    self.userInfo.imgurl = imgurl;
+                    cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                        self.playerFace.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                    });
+                };
+                this.getAvatarUrl(this.userInfo.getUserDBID(), onEnd);
+            }
+
+            var moveTo = cc.moveTo(0.4, posX, posY);
+            var callback = cc.callFunc(moveEnd);
+            var sequence = cc.sequence(moveTo, callback);
+            this.node.getChildByName("playerNode").runAction(sequence);
+        } else if (nPos == 4) {
+            this.node.getChildByName("playerNode").x = this.prePos.x;
+            this.node.getChildByName("playerNode").y = this.prePos.y;
+            var posX = 0;
+            var posY = this.node.getChildByName("playerNode").y;
+
+            var self = this;
+            var moveEnd = function moveEnd() {
+                if (self.userInfo.getUserStatus() == _gamelibcommon.gamelibcommon.USER_READY_STATUS) self.setIsReady(true);
+            };
+
+            var onEnd = function onEnd(faceUrl, nickName) {
+                var imgurl = faceUrl; // + "?aaa=aa.jpg";
+                self.userInfo.imgurl = imgurl;
+                cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                    self.playerFace.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                });
+            };
+            this.getAvatarUrl(this.userInfo.getUserDBID(), onEnd);
+
+            var moveTo = cc.moveTo(0.4, posX, posY);
+            var callback = cc.callFunc(moveEnd);
+            var sequence = cc.sequence(moveTo, callback);
+            this.node.getChildByName("playerNode").runAction(sequence);
+        } else if (nPos == 3) {
+            this.node.getChildByName("playerNode").x = this.prePos.x;
+            this.node.getChildByName("playerNode").y = this.prePos.y;
+            var posX = this.node.getChildByName("playerNode").x;
+            var posY = 0;
+
+            var self = this;
+            var moveEnd = function moveEnd() {
+                if (self.userInfo.getUserStatus() == _gamelibcommon.gamelibcommon.USER_READY_STATUS) self.setIsReady(true);
+            };
+
+            var onEnd = function onEnd(faceUrl, nickName) {
+                var imgurl = faceUrl; // + "?aaa=aa.jpg";
+                self.userInfo.imgurl = imgurl;
+                cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                    self.playerFace.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                });
+            };
+            this.getAvatarUrl(this.userInfo.getUserDBID(), onEnd);
+
+            var moveTo = cc.moveTo(0.4, posX, posY);
+            var callback = cc.callFunc(moveEnd);
+            var sequence = cc.sequence(moveTo, callback);
+            this.node.getChildByName("playerNode").runAction(sequence);
+        } else if (nPos == 2) {
+            this.node.getChildByName("playerNode").x = this.prePos.x;
+            this.node.getChildByName("playerNode").y = this.prePos.y;
+            var posX = 0;
+            var posY = this.node.getChildByName("playerNode").y;
+
+            var self = this;
+            var moveEnd = function moveEnd() {
+                if (self.userInfo.getUserStatus() == _gamelibcommon.gamelibcommon.USER_READY_STATUS) self.setIsReady(true);
+            };
+
+            var onEnd = function onEnd(faceUrl, nickName) {
+                var imgurl = faceUrl; // + "?aaa=aa.jpeg";
+                self.userInfo.imgurl = imgurl;
+                cc.loader.load({ url: imgurl, type: "jpg" }, function (err, texture) {
+                    self.playerFace.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+                });
+            };
+            this.getAvatarUrl(this.userInfo.getUserDBID(), onEnd);
+
+            var moveTo = cc.moveTo(0.4, posX, posY);
+            var callback = cc.callFunc(moveEnd);
+            var sequence = cc.sequence(moveTo, callback);
+            this.node.getChildByName("playerNode").runAction(sequence);
+        }
+    },
+
+    //退出
+    Exit: function Exit(nPos) {
+        // var winSize = cc.director.getWinSize();
+        if (nPos == 1) {
+            var act = cc.moveTo(0.4, this.prePos.x, this.prePos.y);
+            this.node.getChildByName("playerNode").runAction(act);
+        } else if (nPos == 2) {
+            var act = cc.moveTo(0.4, this.prePos.x, this.prePos.y);
+            this.node.getChildByName("playerNode").runAction(act);
+        } else if (nPos == 3) {
+            var act = cc.moveTo(0.4, this.prePos.x, this.prePos.y);
+            this.node.getChildByName("playerNode").runAction(act);
+        } else if (nPos == 4) {
+            var act = cc.moveTo(0.4, this.prePos.x, this.prePos.y);
+            this.node.getChildByName("playerNode").runAction(act);
+        }
+    },
+
+    getPlayerName: function getPlayerName() {
+        return this.playerName.getComponent(cc.Label).string;
+    },
+
+    getSex: function getSex() {
+        if (this.userInfo) {
+            return this.userInfo.getSex();
+        } else {
+            return _gamelibcommon.gamelibcommon.SX_BOY;
+        }
+    },
+
+    getGold: function getGold() {
+        return this.m_lGold;
+    },
+
+    setIsReady: function setIsReady(bIsReady) {
+        this.ready.active = bIsReady;
+    },
+
+    setIsoffLine: function setIsoffLine(bIsOffline) {
+        this.offLine.active = bIsOffline;
+    },
+
+    //设定是否托管了
+    setIsRobot: function setIsRobot(bIsRobot) {
+        this.robot.active = bIsRobot;
+    },
+
+    setIsWinner: function setIsWinner(bIsWinner) {
+        this.m_isWinner = bIsWinner;
+    },
+
+    getIsValidPlayer: function getIsValidPlayer() {
+        if (this.userInfo) {
+            return true;
+        }
+
+        return false;
+    },
+
+    getIsWinner: function getIsWinner() {
+        return this.m_isWinner;
+    },
+
+    //获取头像地址
+    getFaceUrl: function getFaceUrl() {
+        if (this.userInfo) {
+            return this.userInfo.imgurl;
+        }
+        return "";
+    },
+
+    //游戏结束时候设定最后的分数
+    setLastGoldOnGameOver: function setLastGoldOnGameOver(nGold) {
+        this.m_nLastGold = nGold;
+    },
+
+    turnToOutPlayCardIsVis: function turnToOutPlayCardIsVis(bIsPlaying) {
+        var playerNode = this.node.getChildByName("playerNode");
+        var whosTurnNode = playerNode.getChildByName("whosturn_act");
+
+        if (bIsPlaying) {
+            whosTurnNode.active = true;
+            var dragonDisplay = whosTurnNode.addComponent(dragonBones.ArmatureDisplay);
+            dragonDisplay.playAnimation('Animation2');
+        } else {
+            whosTurnNode.active = false;
+        }
+    },
+
+    dingQueFlyFinishIsVis: function dingQueFlyFinishIsVis(bIsPlaying) {
+        var playerNode = this.node.getChildByName("playerNode");
+        var whosTurnNode = playerNode.getChildByName("queyimen_act");
+
+        if (bIsPlaying) {
+            whosTurnNode.active = true;
+            var dragonDisplay = whosTurnNode.addComponent(dragonBones.ArmatureDisplay);
+            dragonDisplay.playAnimation('Animation1');
+
+            var self = this;
+            var callback = function callback() {
+                self.dingQueFlyFinishIsVis(false);
+                dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+            };
+
+            dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this);
+        } else {
+            whosTurnNode.active = false;
+        }
+    },
+
+    stopWinAction: function stopWinAction() {
+        var playerNode = this.node.getChildByName("playerNode");
+        var winNode = playerNode.getChildByName("win_act");
+        winNode.active = false;
+    },
+
+    //播放玩家赢牌特效
+    playWinAction: function playWinAction() {
+        var playerNode = this.node.getChildByName("playerNode");
+        var winNode = playerNode.getChildByName("win_act");
+        winNode.active = true;
+        var dragonDisplay = winNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation('Animation2');
+
+        var self = this;
+        var callback = function callback() {
+            self.stopWinAction();
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        };
+
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this);
+    },
+
+    //设置临时改变金币
+    setTempChangeGold: function setTempChangeGold(nGold, callback, bolChaDaJiao) {
+        this.m_lGold += nGold;
+        if (this.m_lGold < 0) {
+            this.m_lGold = 0;
+        }
+
+        this.refreshGold(this.m_lGold);
+
+        var playerNode = this.node.getChildByName("playerNode");
+        var resultScoreNode = playerNode.getChildByName("result_score");
+        if (!bolChaDaJiao) {
+            resultScoreNode.active = true;
+        }
+        resultScoreNode.getComponent(cc.Label).isSystemFontUsed = false;
+        if (nGold > 0) {
+            resultScoreNode.getComponent(cc.Label).font = this.winResultFont;
+            resultScoreNode.getComponent(cc.Label).string = "+" + nGold;
+        } else {
+            resultScoreNode.getComponent(cc.Label).font = this.loseResultFont;
+            resultScoreNode.getComponent(cc.Label).string = nGold;
+        }
+
+        var prePos = cc.p(resultScoreNode.getPosition());
+
+        var moveTo = cc.moveTo(1, cc.p(resultScoreNode.x, resultScoreNode.y + 30));
+        var delayTime = cc.delayTime(1);
+
+        var onEnd = cc.callFunc(function () {
+            resultScoreNode.getComponent(cc.Label).string = "";
+            resultScoreNode.setPosition(prePos);
+            resultScoreNode.active = false;
+            if (callback) {
+                callback();
+            }
+        });
+
+        var sequence = cc.sequence(moveTo, delayTime, onEnd);
+        resultScoreNode.runAction(sequence);
+    },
+
+    playGuaFengEffects: function playGuaFengEffects(bIsPlaying, nPos) {
+        var playerNode = this.node.getChildByName("playerNode");
+        var whosTurnNode = playerNode.getChildByName("guafeng_act");
+        if (nPos == 1) {
+            whosTurnNode.x = 0;
+            whosTurnNode.y = -170;
+        } else if (nPos == 2) {
+            whosTurnNode.x = 345;
+            whosTurnNode.y = 30;
+        } else if (nPos == 3) {
+            whosTurnNode.x = 0;
+            whosTurnNode.y = 205;
+        } else if (nPos == 4) {
+            whosTurnNode.x = -365;
+            whosTurnNode.y = 30;
+        }
+
+        if (bIsPlaying) {
+            whosTurnNode.active = true;
+            var dragonDisplay = whosTurnNode.addComponent(dragonBones.ArmatureDisplay);
+            dragonDisplay.playAnimation('Animation2');
+
+            var self = this;
+            var callback = function callback() {
+                // self.dingQueFlyFinishIsVis(false);
+                dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+            };
+
+            dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this);
+        } else {
+            whosTurnNode.active = false;
+        }
+    },
+
+    playOperateEffects: function playOperateEffects(effect, nPos) {
+        var texiaoNode = new cc.Node();
+        this.node.parent.addChild(texiaoNode, 100);
+
+        var sprite = texiaoNode.addComponent(cc.Sprite);
+
+        var spriteFrameName;
+
+        var GameCfg = require("GameCfg");
+
+        //碰
+        if (effect == GameCfg.EffectList.No_1pen) {
+            spriteFrameName = "No_1pen";
+        }
+        //吃
+        else if (effect == GameCfg.EffectList.No_2chi) {
+                spriteFrameName = "No_2chi";
+            }
+            //杠
+            else if (effect == GameCfg.EffectList.No_2gang) {
+                    spriteFrameName = "No_2gang";
+                }
+                //胡
+                else if (effect == GameCfg.EffectList.No_2hu) {
+                        spriteFrameName = "No_2hu";
+                    } else if (effect == GameCfg.EffectList.No_2ZiMo) {
+                        spriteFrameName = "No_2ZiMo";
+                    }
+                    //放炮
+                    else if (effect == GameCfg.EffectList.No_2FanPao) {
+                            spriteFrameName = "No_2FanPao";
+                        }
+                        //流局
+                        else if (effect == GameCfg.EffectList.No_2LiuJu) {
+                                spriteFrameName = "No_2LiuJu";
+                            }
+                            //癞
+                            else if (effect == GameCfg.EffectList.No_1lai) {
+                                    spriteFrameName = "No_1lai";
+                                } else if (effect == GameCfg.EffectList.No_2caotian) {
+                                    spriteFrameName = "No_2caotian";
+                                }
+
+        var winSize = cc.director.getWinSize();
+        if (nPos == 1) {
+            texiaoNode.x = 0;
+            texiaoNode.y = -170;
+        } else if (nPos == 2) {
+            texiaoNode.x = 345;
+            texiaoNode.y = 30;
+        } else if (nPos == 3) {
+            texiaoNode.x = 0;
+            texiaoNode.y = 205;
+        } else if (nPos == 4) {
+            texiaoNode.x = -365;
+            texiaoNode.y = 30;
+        } else {
+            cc.log("the nPos is error");
+        }
+
+        if (spriteFrameName) {
+            sprite.spriteFrame = this.node.parent.getComponent("GameButtonLayer").buttonAtlas.getSpriteFrame(spriteFrameName);
+        }
+
+        texiaoNode.setScale(1.5);
+        var delayTime = cc.delayTime(0.1);
+        var scaleTo = cc.scaleTo(0.2, 0.85);
+        var fadeOut = cc.fadeOut(0.5);
+        var onEnd = function onEnd() {
+            texiaoNode.removeFromParent();
+        };
+        var callback = cc.callFunc(onEnd);
+        var sequence = cc.sequence(delayTime, scaleTo, fadeOut, callback);
+        texiaoNode.runAction(sequence);
+    },
+
+    showChatTextInfo: function showChatTextInfo(chatStr) {
+        var wordIndex = -1;
+        for (var i in Resources.QUICK_SEND_CHATS) {
+            if (chatStr == Resources.QUICK_SEND_CHATS[i]) {
+                wordIndex = i;
+                break;
+            }
+        }
+
+        Resources.playQWSoundEffect(this.userInfo.getSex(), parseInt(wordIndex) + 1);
+
+        var playerNode = this.node.getChildByName("playerNode");
+
+        var chat = playerNode.getChildByName("chat_bg");
+
+        chat.stopAllActions();
+
+        chat.setScale(0.5);
+
+        chat.setOpacity(255);
+
+        chat.active = true;
+
+        var chattingNode = chat.getChildByName("chatting_status");
+
+        var animation = chattingNode.getComponent(cc.Animation);
+
+        var animState = animation.play("spot_wait_action");
+
+        animState.speed = 0.3; //减慢动画播放速度
+
+        animState.wrapMode = cc.WrapMode.Loop;
+
+        animState.repeatCount = Infinity;
+
+        var scale1 = cc.scaleTo(0.2, 1.1);
+        var scale2 = cc.scaleTo(0.2, 1);
+        var delayTime = cc.delayTime(2);
+
+        var fadeOut = cc.fadeOut(0.2);
+        var scale3 = cc.scaleTo(0.2, 0.5);
+
+        var spawn = cc.spawn(fadeOut, scale3);
+
+        var onEnd = cc.callFunc(function () {
+
+            chat.active = false;
+        });
+
+        var sequence = cc.sequence(scale1, scale2, delayTime, spawn, onEnd);
+
+        chat.runAction(sequence);
+    },
+
+    showChatFaceInfo: function showChatFaceInfo(faceId) {
+        var node = new cc.Node();
+        node.x = this.playerFace.x;
+        node.y = this.playerFace.y;
+        node.active = true;
+        this.node.getChildByName("playerNode").addChild(node, 100);
+        var dragonDisplay = node.addComponent(dragonBones.ArmatureDisplay);
+        for (var i in this.biaoqinAssets) {
+            if (this.biaoqinAssets[i] instanceof dragonBones.DragonBonesAsset) {
+                dragonDisplay.dragonAsset = this.biaoqinAssets[i];
+            }
+            if (this.biaoqinAssets[i] instanceof dragonBones.DragonBonesAtlasAsset) {
+                dragonDisplay.dragonAtlasAsset = this.biaoqinAssets[i];
+            }
+        }
+
+        Resources.playFaceEffect(Resources.FACE_EFFECT[faceId]);
+
+        dragonDisplay.armatureName = 'armatureName';
+        dragonDisplay.playAnimation(faceId + 1);
+        this.onArmatureFinish = function () {
+            node.destroy();
+        };
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, this.onArmatureFinish, this);
+        this.faceDragonDisplay = dragonDisplay;
+    },
+
+    startLeaveTimerOnGameOver: function startLeaveTimerOnGameOver() {
+        // if (this.m_nPos == 1 || this.node.name == "myself") {
+        //     return;
+        // }
+
+        var totalTime = 25;
+
+        var playerNode = this.node.getChildByName("playerNode");
+        var ready_timer = playerNode.getChildByName("ready_timer");
+        ready_timer.active = false;
+        ready_timer.getComponent(cc.Label).string = totalTime;
+
+        var self = this;
+        var callback = function callback() {
+            if (self.m_leaveTimerStop) {
+                return;
+            }
+            totalTime -= 1;
+            ready_timer.getComponent(cc.Label).string = totalTime;
+
+            if (totalTime >= 0) {
+                _TSCommon.TSCommon.performWithDelay(self, callback, 1);
+            } else {
+                ready_timer.active = false;
+
+                if (self.m_nPos == 1 || self.node.name == "myself") {
+                    require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+                    return;
+                }
+            }
+        };
+
+        _TSCommon.TSCommon.performWithDelay(this, callback, 1);
+    },
+
+    stopLeaveTimer: function stopLeaveTimer() {
+        this.m_leaveTimerStop = true;
+    },
+
+    //展示玩家离开定时器
+    showLeaveTimer: function showLeaveTimer() {
+        // if (this.m_nPos == 1 || this.node.name == "myself") {
+        //     return;
+        // }
+        var playerNode = this.node.getChildByName("playerNode");
+        var ready_timer = playerNode.getChildByName("ready_timer");
+        ready_timer.active = true;
+    },
+
+    //隐藏玩家离开定时器
+    hideLeaveTimer: function hideLeaveTimer() {
+        // if (this.m_nPos == 1 || this.node.name == "myself") {
+        //     return;
+        // }
+        var playerNode = this.node.getChildByName("playerNode");
+        var ready_timer = playerNode.getChildByName("ready_timer");
+        ready_timer.active = false;
+    },
+
+    //游戏结束
+    gameOver: function gameOver() {
+
+        this.turnToOutPlayCardIsVis(false);
+
+        this.startLeaveTimerOnGameOver();
+
+        var playerNode = this.node.getChildByName("playerNode");
+        var resultScoreNode = playerNode.getChildByName("result_score");
+        resultScoreNode.getComponent(cc.Label).isSystemFontUsed = false;
+        if (this.m_nLastGold >= 0) {
+            resultScoreNode.getComponent(cc.Label).font = this.winResultFont;
+            resultScoreNode.getComponent(cc.Label).string = "+" + this.m_nLastGold;
+        } else {
+            resultScoreNode.getComponent(cc.Label).font = this.loseResultFont;
+            resultScoreNode.getComponent(cc.Label).string = this.m_nLastGold;
+        }
+
+        resultScoreNode.active = true;
+
+        if (this.getIsValidPlayer()) {
+
+            if (this.m_isWinner) {
+                this.playWinAction();
+            }
+
+            this.node.getComponent("PlayerCardLayer").gameOver();
+
+            this.node.getComponent("OutCardLayer").gameOver();
+
+            this.node.getComponent("HuCardLayer").gameOver();
+        }
+    },
+
+    //游戏重新开始需要清理的东西
+    cleanPlayers: function cleanPlayers() {
+
+        this.node.getComponent("PlayerCardLayer").cleanAllMjs();
+
+        this.node.getComponent("OutCardLayer").cleanAllMjs();
+
+        this.node.getComponent("HuCardLayer").cleanAllMjs();
+
+        var playerNode = this.node.getChildByName("playerNode");
+        var resultScoreNode = playerNode.getChildByName("result_score");
+        resultScoreNode.active = false;
+    }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=Player.js.map
+        

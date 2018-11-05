@@ -1,0 +1,115 @@
+"use strict";
+cc._RF.push(module, '18fb9Ob7ktLQpctpEesZFjs', 'TSCommon');
+// scripts/hall/TSCommon.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var StringConvert_1 = require("./common/StringConvert");
+var ByteArray_1 = require("./common/ByteArray");
+var EgretEvent_1 = require("./event/EgretEvent");
+var EventDispatcher_1 = require("./event/EventDispatcher");
+var MyTimer_1 = require("./common/MyTimer");
+var TSCommon = /** @class */ (function () {
+    function TSCommon() {
+    }
+    TSCommon.parseByte = function (c) {
+        var s0 = "0";
+        var digiStart = s0.charCodeAt(0);
+        var sa = "a";
+        var aStart = sa.charCodeAt(0);
+        var sA = "A";
+        var AStart = sA.charCodeAt(0);
+        var cCharCode = c.charCodeAt[0];
+        if (cCharCode > sA)
+            return 10 + cCharCode - AStart;
+        if (cCharCode > sa)
+            return 10 + cCharCode - aStart;
+        if (cCharCode > s0)
+            return cCharCode - digiStart;
+        return 0;
+    };
+    TSCommon.HexToData = function (hex) {
+        var ba = new ByteArray_1.ByteArray();
+        for (var i = 0; i < hex.length - 1; i += 2) {
+            var b1 = TSCommon.parseByte(hex.charAt(i));
+            var b2 = TSCommon.parseByte(hex.charAt(i + 1));
+            ba.writeByte(b1 * 0x10 + b2);
+        }
+        return ba.buffer;
+        //return ba;
+    };
+    TSCommon.writeStringWithLength = function (byteArray, str, len) {
+        var s = new String(str);
+        for (var i = 0; i < len; i++) {
+            if (i < s.length)
+                byteArray.writeByte(s.charCodeAt(i));
+            else
+                byteArray.writeByte(0);
+        }
+    };
+    TSCommon.readGbkString = function (ba, len) {
+        var cc = new Array();
+        for (var i = 0; i < len; i++) {
+            var c = ba.readUnsignedByte();
+            cc.push(c);
+        }
+        return StringConvert_1.StringConvert.getUtf8(cc);
+    };
+    TSCommon.writeUtf8String = function (ba, s, len) {
+        var cc = StringConvert_1.StringConvert.getGBK(s);
+        if (len > 0) {
+            while (cc.length > len - 1) {
+                cc.pop();
+            }
+        }
+        else
+            len = cc.length + 1;
+        for (var key in cc) {
+            ba.writeByte(cc[key]);
+        }
+        for (var i = 0; i < len - cc.length; i++) {
+            ba.writeByte(0);
+        }
+        return len;
+    };
+    TSCommon.log = function (msg) {
+        console.log(TSCommon.getTime() + ":" + msg);
+    };
+    TSCommon.getTickCount = function () {
+        return new Date().getTime();
+    };
+    TSCommon.getTime = function () {
+        var time = new Date();
+        return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + " " + time.getMilliseconds();
+    };
+    TSCommon.createEventDispatcher = function () {
+        if (this.dispatcher == null)
+            this.dispatcher = new EventDispatcher_1.EventDispatcher();
+    };
+    TSCommon.addEvent = function (type, listener, thisObject) {
+        this.createEventDispatcher();
+        this.dispatcher.addEventListener(type, listener, thisObject);
+    };
+    TSCommon.removeEvent = function (type, listener, thisObject) {
+        this.createEventDispatcher();
+        this.dispatcher.removeEventListener(type, listener, thisObject);
+    };
+    TSCommon.dispatchEvent = function (type, data) {
+        this.createEventDispatcher();
+        this.dispatcher.dispatchEvent(new EgretEvent_1.EgretEvent(type, false, false, data));
+    };
+    TSCommon.performWithDelay = function (target, callback, delay) {
+        MyTimer_1.MyTimer.startTimer(target, callback, delay);
+    };
+    TSCommon.onPayFailed = "onPayFailed";
+    TSCommon.onPaySucceeded = "onPaySucceeded";
+    TSCommon.onPayFinished = "onPayFinished";
+    TSCommon.onNewPayment = "onNewPayment";
+    TSCommon.onGoldChanged = "onGoldChanged";
+    TSCommon.onDiamondChanged = "onDiamondChanged";
+    TSCommon.onFragChanged = "onFragChanged";
+    TSCommon.onGeWXtUserInfoLogin = "onGeWXtUserInfoLogin";
+    return TSCommon;
+}());
+exports.TSCommon = TSCommon;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "freeDiamondTitle",
+    "texture": "c2e5ac88-7cde-4330-bb1b-78c01e1b8e71",
+    "atlas": "",
+    "rect": [
+      88,
+      11,
+      135,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

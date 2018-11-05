@@ -1,0 +1,123 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/ChangeCardAction.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '67794Y2npVCj7habKOeUQzE', 'ChangeCardAction', __filename);
+// scripts/hall/game/ChangeCardAction.js
+
+"use strict";
+
+var _TSCommon = require("TSCommon");
+
+var HallResources = require("HallResources");
+var ChangeCardAction = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        shunRotateSprite: {
+            default: null,
+            type: cc.Sprite
+        },
+        niRotateSprite: {
+            default: null,
+            type: cc.Sprite
+        },
+        upMoveSprite: {
+            default: null,
+            type: cc.Sprite
+        },
+        downMoveSprite: {
+            default: null,
+            type: cc.Sprite
+        },
+        huanType: {
+            default: null,
+            type: cc.Sprite
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        // this.showShunRotateAction();
+        // this.showNiRotateAction();
+        // this.showUpDownMoveAction();
+    },
+
+    showShunRotateAction: function showShunRotateAction(func) {
+        var self = this;
+        this.shunRotateSprite.node.active = true;
+        cc.loader.loadRes("texture/game/swap/shunhuaipai", cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.huanType = spriteFrame;
+            }
+        });
+
+        var action1 = cc.rotateBy(2, 90); //cc.repeatForever(cc.rotateBy(2, 90));
+        var action2 = cc.callFunc(function () {
+            func();
+        });
+        var sequence = cc.sequence(action1, action2);
+        this.shunRotateSprite.node.runAction(sequence);
+        // this.shunRotateSprite.node.runAction(action1);
+    },
+
+    showNiRotateAction: function showNiRotateAction(func) {
+        var self = this;
+        this.niRotateSprite.node.active = true;
+        cc.loader.loadRes("texture/game/swap/nihuaipai", cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.huanType = spriteFrame;
+            }
+        });
+
+        var action1 = cc.rotateBy(2, -90); //cc.repeatForever(cc.rotateBy(2, -90));
+        var action2 = cc.callFunc(function () {
+            func();
+        });
+        var sequence = cc.sequence(action1, action2);
+        this.niRotateSprite.node.runAction(sequence);
+        // this.niRotateSprite.node.runAction(action1);
+    },
+
+    showUpDownMoveAction: function showUpDownMoveAction(func) {
+        var self = this;
+        this.upMoveSprite.node.active = true;
+        this.downMoveSprite.node.active = true;
+        cc.loader.loadRes("texture/game/swap/duijia", cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.huanType = spriteFrame;
+            }
+        });
+
+        var action1 = cc.moveBy(0.5, 0, -30);
+        var action2 = cc.moveBy(0.5, 0, 30);
+        var sequence = cc.sequence(action1, action2);
+        var sequence1 = cc.repeat(sequence, 3);
+        var action3 = cc.callFunc(function () {
+            func();
+        });
+        var sequence2 = cc.sequence(sequence1, action3);
+        this.downMoveSprite.node.runAction(sequence2);
+
+        var action3 = cc.moveBy(0.5, 0, 30);
+        var action4 = cc.moveBy(0.5, 0, -30);
+        var sequence3 = cc.sequence(action3, action4);
+        // var sequence2 = cc.sequence(action3, action4);
+        var sequence4 = cc.repeat(sequence3, 3);
+        this.upMoveSprite.node.runAction(sequence4);
+    }
+});
+
+module.exports = ChangeCardAction;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ChangeCardAction.js.map
+        

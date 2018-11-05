@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cup4",
+    "texture": "090edbac-b6bf-438a-bf37-6b52b83383b7",
+    "atlas": "",
+    "rect": [
+      56,
+      213,
+      454,
+      390
+    ],
+    "offset": [
+      6,
+      -81
+    ],
+    "originalSize": [
+      554,
+      654
+    ]
+  }
+}

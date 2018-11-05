@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_diaoxing_tex",
+    "texture": "aec2c712-d9ee-43aa-812a-3678571ef39f",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      254,
+      201
+    ],
+    "offset": [
+      0,
+      26.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

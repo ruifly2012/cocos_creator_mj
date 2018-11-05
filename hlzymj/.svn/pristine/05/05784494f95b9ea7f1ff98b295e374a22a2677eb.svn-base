@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diamondReward",
+    "texture": "536e8961-4b17-434d-a548-1eacbfe65c8c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      64,
+      60
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      65,
+      61
+    ]
+  }
+}

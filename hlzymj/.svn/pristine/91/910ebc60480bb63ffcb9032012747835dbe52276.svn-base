@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "reviewBtn",
+    "texture": "54446905-d159-4586-ac5a-bd47d3344dd8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      80,
+      80
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      80,
+      80
+    ]
+  }
+}

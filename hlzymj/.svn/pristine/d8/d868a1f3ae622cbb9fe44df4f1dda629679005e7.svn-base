@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "705e36ad-9a04-490a-9477-bc8de1c2217a",
+  "atlasJson": "{\"width\":1024,\"SubTexture\":[{\"frameWidth\":177,\"y\":179,\"frameHeight\":163,\"frameY\":0,\"width\":174,\"frameX\":-2,\"height\":162,\"name\":\"light_0\",\"x\":403},{\"frameWidth\":180,\"y\":1,\"frameHeight\":184,\"frameY\":-4,\"width\":172,\"frameX\":-4,\"height\":176,\"name\":\"light_1\",\"x\":403},{\"frameWidth\":419,\"y\":1,\"frameHeight\":427,\"frameY\":-8,\"width\":400,\"frameX\":-7,\"height\":413,\"name\":\"light\",\"x\":1},{\"frameWidth\":44,\"y\":69,\"frameHeight\":44,\"frameY\":-1,\"width\":42,\"frameX\":-2,\"height\":42,\"name\":\"star_4\",\"x\":577},{\"frameWidth\":69,\"y\":1,\"frameHeight\":69,\"frameY\":-3,\"width\":66,\"frameX\":0,\"height\":66,\"name\":\"star_5\",\"x\":577}],\"height\":512,\"name\":\"dh_beijingguang_2\",\"imagePath\":\"dh_beijingguang_2_tex.png\"}",
+  "texture": "f139f157-d48f-4f94-a4e1-44d3fb83ada7",
+  "subMetas": {}
+}

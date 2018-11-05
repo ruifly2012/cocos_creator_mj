@@ -1,0 +1,41 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "help.plist",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_spriteFrames": {
+    "cxz_double": {
+      "__uuid__": "119ce23f-1892-411a-a8f0-336dd678106e"
+    },
+    "cxz_icon": {
+      "__uuid__": "37488a12-854b-4d9b-ba8d-efdcd4158a24"
+    },
+    "cxz_icon_press": {
+      "__uuid__": "8ed7a1b6-7b48-45df-99ba-d6117f256b81"
+    },
+    "game_introduce": {
+      "__uuid__": "3401e57c-a4a1-4c1f-a94d-79bc9860d479"
+    },
+    "game_introduce_press": {
+      "__uuid__": "2c22773a-b87d-477f-b9ae-63058018b1d3"
+    },
+    "game_rule": {
+      "__uuid__": "38f9dc41-bec2-4cb1-a4d1-4f033aceccdc"
+    },
+    "game_rule_press": {
+      "__uuid__": "d38a68b8-b091-42d4-b759-069abc6c7aa7"
+    },
+    "title_description": {
+      "__uuid__": "410fc0cc-ff53-4df3-afe0-6ad797fa6157"
+    },
+    "yjly_double": {
+      "__uuid__": "524e329e-a9da-455c-9ffd-3170fb99bb9d"
+    },
+    "yjly_icon": {
+      "__uuid__": "9ee5b9b3-74d0-4d35-888d-66246ef6a42e"
+    },
+    "yjly_icon_press": {
+      "__uuid__": "47cff955-5680-4f60-9a03-921e7695ca9a"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "JinYanNum_0",
+    "texture": "f2a757c5-f0a7-4ba0-af67-a18054661cd3",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      221,
+      28
+    ],
+    "offset": [
+      -17.5,
+      113
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

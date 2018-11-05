@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_wordbg",
+    "texture": "ae07ef54-78ab-46e1-93bd-31aa2299f811",
+    "atlas": "ab75ad3b-87a7-4f36-9cc1-f938febb57f8",
+    "rect": [
+      91,
+      555,
+      216,
+      103
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      216,
+      103
+    ]
+  }
+}

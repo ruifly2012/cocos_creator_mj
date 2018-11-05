@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "collectArrow",
+    "texture": "88713522-ba26-4d9e-bc81-4d50af3bbb77",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      629,
+      270
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      629,
+      270
+    ]
+  }
+}

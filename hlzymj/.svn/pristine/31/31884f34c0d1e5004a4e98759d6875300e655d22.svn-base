@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chaHuaZhu",
+    "texture": "f76b3586-4a3f-451e-a20f-57434b4382a3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      385,
+      181
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      385,
+      181
+    ]
+  }
+}

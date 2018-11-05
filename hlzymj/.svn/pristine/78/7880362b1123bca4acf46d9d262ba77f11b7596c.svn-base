@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "match_game_lose_bg",
+    "texture": "12fd7279-ecb2-4068-ae87-36e91c59c280",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1280,
+      440
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1280,
+      440
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "inviteFriendReward",
+    "texture": "f40fea9c-8f0c-49c2-8fc0-33bf7aa15ff6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      264,
+      329
+    ],
+    "offset": [
+      -1,
+      0
+    ],
+    "originalSize": [
+      266,
+      329
+    ]
+  }
+}

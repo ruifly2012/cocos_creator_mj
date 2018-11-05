@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dailyIcon",
+    "texture": "f39d63c9-2349-4585-9da8-364633fdcc5b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      97
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      97
+    ]
+  }
+}

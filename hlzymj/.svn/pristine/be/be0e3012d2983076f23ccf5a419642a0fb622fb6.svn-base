@@ -1,0 +1,7 @@
+"use strict";
+cc._RF.push(module, 'ad780K0euNJJ5MRBXHpogi/', 'IClientFrameSink');
+// scripts/hall/gamelib/IClientFrameSink.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "seasonBg",
+    "texture": "6bd69663-bdee-46fb-bc55-220dc6cb475f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1040,
+      607
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1040,
+      607
+    ]
+  }
+}

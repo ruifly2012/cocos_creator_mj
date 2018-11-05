@@ -1,0 +1,7 @@
+"use strict";
+cc._RF.push(module, '61bc3oyuwtKPqWzK4lO4gsh', 'EventBin');
+// scripts/hall/event/EventBin.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+cc._RF.pop();

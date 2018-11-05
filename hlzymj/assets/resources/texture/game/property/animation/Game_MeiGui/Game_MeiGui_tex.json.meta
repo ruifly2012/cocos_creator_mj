@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "488f11a3-43d7-4543-beff-bd6d6d4820cd",
+  "atlasJson": "{\"SubTexture\":[{\"width\":67,\"y\":73,\"height\":88,\"name\":\"game_mg\",\"x\":149},{\"width\":80,\"y\":94,\"height\":54,\"name\":\"game_mg2\",\"x\":1},{\"width\":80,\"y\":163,\"height\":61,\"name\":\"game_mg5\",\"x\":1},{\"width\":89,\"y\":1,\"height\":70,\"name\":\"game_mg1\",\"x\":149},{\"frameX\":0,\"frameHeight\":150,\"y\":1,\"frameY\":-52,\"frameWidth\":150,\"width\":146,\"height\":91,\"name\":\"game_mg4\",\"x\":1}],\"width\":256,\"height\":256,\"name\":\"Game_MeiGui\",\"imagePath\":\"Game_MeiGui_tex.png\"}",
+  "texture": "7f29a00d-d933-4238-921a-cb84bbe697ef",
+  "subMetas": {}
+}

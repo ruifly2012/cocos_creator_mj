@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rankBackBtn",
+    "texture": "5f9037c8-808a-441f-9513-5753b4aaac12",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      58,
+      132
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      59,
+      132
+    ]
+  }
+}

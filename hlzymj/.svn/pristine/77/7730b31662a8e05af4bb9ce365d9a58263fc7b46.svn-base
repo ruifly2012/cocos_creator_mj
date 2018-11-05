@@ -1,0 +1,21 @@
+"use strict";
+cc._RF.push(module, 'e51d4uyaypMobBWmoqwzct4', 'tagVersionInfo');
+// scripts/hall/gamelib/tagVersionInfo.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tagVersionInfo = /** @class */ (function () {
+    function tagVersionInfo() {
+        this.dwInstallVer = 2015;
+        this.dwBuildVer = 1;
+        this.dwSubBuildVer = 1;
+    }
+    tagVersionInfo.prototype.serialize = function (byteArray) {
+        byteArray.writeInt(this.dwInstallVer);
+        byteArray.writeInt(this.dwBuildVer);
+        byteArray.writeInt(this.dwSubBuildVer);
+    };
+    return tagVersionInfo;
+}());
+exports.tagVersionInfo = tagVersionInfo;
+
+cc._RF.pop();

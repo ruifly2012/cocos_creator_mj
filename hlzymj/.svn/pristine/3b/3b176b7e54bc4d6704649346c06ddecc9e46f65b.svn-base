@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hallBottomBg",
+    "texture": "c44c145b-1dc6-4210-96e2-5b637cd01dfc",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      988,
+      68
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      988,
+      68
+    ]
+  }
+}

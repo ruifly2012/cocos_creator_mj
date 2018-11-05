@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "touxianTX_tex",
+    "texture": "2353e74a-731b-41ef-802f-1bf49cfabf09",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      432,
+      454
+    ],
+    "offset": [
+      -39,
+      28
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

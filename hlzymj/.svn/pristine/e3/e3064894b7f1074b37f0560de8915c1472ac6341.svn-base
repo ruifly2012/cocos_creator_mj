@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rank_level_blue_5",
+    "texture": "c02d04ac-2de2-4dda-b925-d93a51b0c4a5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      114,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      114,
+      33
+    ]
+  }
+}

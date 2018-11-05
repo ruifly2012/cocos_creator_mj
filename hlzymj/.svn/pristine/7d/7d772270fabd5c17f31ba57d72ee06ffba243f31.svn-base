@@ -1,0 +1,29 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/GameEntrance.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '5b11eJuUCJFibSQM9jrbpSW', 'GameEntrance', __filename);
+// scripts/hall/game/GameEntrance.js
+
+"use strict";
+
+var HallResources = require("HallResources");
+var GameEntrance = cc.Class({});
+GameEntrance.start = function (gameID, logonIP, logonPort, webRoot) {
+    var gameLibSink = require('GameLibSink').getInstance();
+    gameLibSink.run(gameID, logonIP, logonPort, webRoot);
+
+    //记录日志
+    HallResources.recordPlayerLogToServer(HallResources.recordList.room_res_start);
+};
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GameEntrance.js.map
+        

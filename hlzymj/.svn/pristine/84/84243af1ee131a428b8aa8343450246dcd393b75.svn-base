@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "back_watch",
+    "texture": "bc7a466b-a00b-42da-9e91-e7a7edacf1a6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      118
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      118
+    ]
+  }
+}

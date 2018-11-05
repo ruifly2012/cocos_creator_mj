@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "texiao_hupai_tex",
+    "texture": "7c941c06-b427-42ed-b50c-6f0c96c19d62",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1013,
+      937
+    ],
+    "offset": [
+      -4.5,
+      42.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}

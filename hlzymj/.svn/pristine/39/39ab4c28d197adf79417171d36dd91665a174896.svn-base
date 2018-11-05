@@ -1,0 +1,58 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/tagGameServerEx.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '7ae017BgGxPPZN1/RtQfgVL', 'tagGameServerEx', __filename);
+// scripts/hall/gamelib/tagGameServerEx.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../TSCommon");
+var tagGameServerEx = /** @class */ (function () {
+    function tagGameServerEx() {
+    }
+    tagGameServerEx.getLen = function () {
+        return tagGameServerEx.getBasicLen() + 15;
+    };
+    tagGameServerEx.prototype.deserialize = function (ba) {
+        this.dwServerIP = ba.readUnsignedInt();
+        this.dwServerID = ba.readUnsignedInt();
+        this.dwKindID = ba.readUnsignedInt();
+        this.dwStationID = ba.readUnsignedInt();
+        this.wOnLineCount = ba.readUnsignedShort();
+        this.wMaxOnLineCount = ba.readUnsignedShort();
+        this.uServerPort = ba.readUnsignedInt();
+        this.szGameRoomName = TSCommon_1.TSCommon.readGbkString(ba, 32);
+    };
+    tagGameServerEx.prototype.deserializeEx = function (ba) {
+        this.deserialize(ba);
+        this.dwRuleID = ba.readUnsignedInt();
+        this.dwMinGold = ba.readUnsignedInt();
+        this.dwMaxGold = ba.readUnsignedInt();
+        this.cbMinVipNeed = ba.readByte();
+        this.cbPrivateRoom = ba.readByte();
+        this.cbMinCreateTableVIP = ba.readByte();
+    };
+    tagGameServerEx.prototype.deserializeExtraInfo = function (ba) {
+        this.nTableGold = ba.readUnsignedInt();
+        this.nBaseGold = ba.readUnsignedInt();
+    };
+    tagGameServerEx.getBasicLen = function () {
+        return 56;
+    };
+    tagGameServerEx.getExtraInfoLen = function () {
+        return 12;
+    };
+    return tagGameServerEx;
+}());
+exports.tagGameServerEx = tagGameServerEx;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=tagGameServerEx.js.map
+        

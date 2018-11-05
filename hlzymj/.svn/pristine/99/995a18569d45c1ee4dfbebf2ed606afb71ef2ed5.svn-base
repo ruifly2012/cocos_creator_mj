@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dljl_lqjl_btn",
+    "texture": "8620c8cf-88e8-459c-bef3-73bfd6786250",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      74
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      211,
+      74
+    ]
+  }
+}

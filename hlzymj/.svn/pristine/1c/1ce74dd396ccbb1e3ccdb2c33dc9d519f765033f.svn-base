@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "game_back_btn",
+    "texture": "3de3f473-3333-49b0-a7d6-1e6e7e45f5c6",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      78,
+      78
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      80,
+      80
+    ]
+  }
+}

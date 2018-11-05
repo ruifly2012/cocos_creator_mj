@@ -1,0 +1,1802 @@
+2018-08-31T06:49:10.308Z - normal: Load ~/.CocosCreator/settings.json
+2018-08-31T06:49:10.311Z - normal: checking language setting...
+2018-08-31T06:49:10.311Z - normal: Language: zh
+2018-08-31T06:49:13.309Z - success: protocol editor-framework registered
+2018-08-31T06:49:13.309Z - success: protocol app registered
+2018-08-31T06:49:13.309Z - success: protocol theme registered
+2018-08-31T06:49:13.309Z - success: protocol packages registered
+2018-08-31T06:49:13.309Z - success: protocol unpack registerred
+2018-08-31T06:49:13.310Z - success: protocol disable-commonjs registerred
+2018-08-31T06:49:13.538Z - normal: connected!
+2018-08-31T06:49:13.540Z - normal: Check project D:\android\creatorDemo\hlzymj
+2018-08-31T06:49:13.542Z - normal: Initializing Cocos2d
+2018-08-31T06:49:14.668Z - normal: Initializing Asset Database
+2018-08-31T06:49:14.719Z - success: protocol uuid registerred
+2018-08-31T06:49:14.719Z - success: protocol db registerred
+2018-08-31T06:49:14.720Z - success: protocol thumbnail registerred
+2018-08-31T06:49:14.720Z - normal: Loading editor/builtin packages
+2018-08-31T06:49:14.862Z - success: anysdk loaded
+2018-08-31T06:49:15.045Z - success: assets loaded
+2018-08-31T06:49:15.048Z - success: builder loaded
+2018-08-31T06:49:15.050Z - success: cocos-analytics loaded
+2018-08-31T06:49:15.054Z - success: console loaded
+2018-08-31T06:49:15.091Z - success: fb-instant-games loaded
+2018-08-31T06:49:15.094Z - success: hierarchy loaded
+2018-08-31T06:49:15.117Z - success: inspector loaded
+2018-08-31T06:49:15.119Z - success: keystore loaded
+2018-08-31T06:49:15.121Z - success: node-library loaded
+2018-08-31T06:49:15.123Z - success: package-asset loaded
+2018-08-31T06:49:15.124Z - success: preferences loaded
+2018-08-31T06:49:15.126Z - success: project-exporter loaded
+2018-08-31T06:49:15.145Z - success: project-importer loaded
+2018-08-31T06:49:15.146Z - success: project-settings loaded
+2018-08-31T06:49:15.235Z - success: ui-kit loaded
+2018-08-31T06:49:15.241Z - success: ui-grid loaded
+2018-08-31T06:49:15.246Z - success: scene loaded
+2018-08-31T06:49:15.248Z - success: sprite-editor loaded
+2018-08-31T06:49:15.252Z - success: store loaded
+2018-08-31T06:49:15.259Z - success: timeline loaded
+2018-08-31T06:49:15.259Z - normal: Loading builtin packages
+2018-08-31T06:49:15.383Z - success: asset-db-debugger loaded
+2018-08-31T06:49:15.421Z - success: code-editor loaded
+2018-08-31T06:49:15.423Z - success: color-picker loaded
+2018-08-31T06:49:15.427Z - success: package-manager loaded
+2018-08-31T06:49:15.431Z - success: qqplay-adapter loaded
+2018-08-31T06:49:15.438Z - success: sdkbox loaded
+2018-08-31T06:49:15.443Z - success: tester loaded
+2018-08-31T06:49:15.446Z - success: ui-kit-preview-extra loaded
+2018-08-31T06:49:15.448Z - success: ui-kit-preview loaded
+2018-08-31T06:49:15.449Z - success: ui-tree loaded
+2018-08-31T06:49:15.450Z - success: weapp-adapter loaded
+2018-08-31T06:49:17.371Z - normal: Initializing project D:\android\creatorDemo\hlzymj
+2018-08-31T06:49:17.390Z - normal: Loading packages
+2018-08-31T06:49:17.399Z - normal: Watching packages
+2018-08-31T06:49:17.996Z - normal: Run Application
+2018-08-31T06:49:21.817Z - success: preview server running at http://localhost:7456
+2018-08-31T06:49:35.541Z - normal: 1.9.3
+2018-08-31T08:46:07.306Z - failed: [db-task][sync-changes] Failed to import asset D:\android\creatorDemo\hlzymj\assets\scripts\hall\game\desk\DeskScene.js, message: Compile error: SyntaxError: D:/android/creatorDemo/hlzymj/assets/scripts/hall/game/desk/DeskScene.js: Unexpected character '；' (2443:94)
+  2441 |                     var tWeaveItem = {}
+  2442 |                     tWeaveItem.cbWeaveKind = GameDefs.WeaveType.FangGang;
+> 2443 |                     console.log("获得stPlayer2.showCardSuits的长度"+stPlayer2.showCardSuits.length)；
+       |                                                                                               ^
+  2444 |                     stPlayer2.showCardSuits[stPlayer2.showCardSuits.length] = tWeaveItem;
+  2445 |                 }
+  2446 |             }
+    at Parser.pp$5.raise (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.getTokenFromCode (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1147:10)
+    at Parser.readToken (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:776:19)
+    at Parser.nextToken (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:766:19)
+    at Parser.next (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:691:10)
+    at Parser.eat (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:698:12)
+    at Parser.pp$3.parseCallExpressionArguments (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3560:16)
+    at Parser.pp$3.parseSubscripts (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3533:31)
+    at Parser.pp$3.parseExprSubscripts (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3474:19)
+2018-08-31T08:55:30.472Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+
+2018-08-31T09:11:00.506Z - warn: The Prefab used is missing. Detailed information:
+Missing uuid: "755237f5-9f9b-4712-8648-d368629e87c5"
+
+2018-08-31T09:11:00.508Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer/moreLisetFrame/ScrollView"
+
+2018-08-31T09:11:00.508Z - warn: The Node referenced by component "GameOverLayer" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer"
+
+2018-08-31T09:11:00.508Z - warn: The Node referenced by component "GameOverLayer" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer"
+
+2018-08-31T09:11:00.508Z - warn: The Node referenced by component "GameOverLayer" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer"
+
+2018-08-31T09:13:11.041Z - warn: The Asset used is missing. Detailed information:
+Missing uuid: "755237f5-9f9b-4712-8648-d368629e87c5"
+
+2018-08-31T09:25:35.236Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer/moreLisetFrame/ScrollView"
+
+2018-08-31T09:34:36.473Z - failed: [db-task][sync-changes] Failed to import asset D:\android\creatorDemo\hlzymj\assets\scripts\hall\game\gameOver\XueLiuGameOverLayer.js, message: Compile error: SyntaxError: D:/android/creatorDemo/hlzymj/assets/scripts/hall/game/gameOver/XueLiuGameOverLayer.js: Unexpected token, expected ; (125:22)
+  123 | 
+  124 |     initData:function(stWinStructData){
+> 125 |         for (var i = 0)
+      |                       ^
+  126 |         cc.loader.loadRes("texture/game/gameOver/myFrame", cc.SpriteFrame, function(err, spriteFrame){
+  127 |             self.m_ruanLaiYouFrame = spriteFrame;
+  128 |             self.setHuType();
+    at Parser.pp$5.raise (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp.expect (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1749:33)
+    at Parser.pp$1.parseFor (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2301:8)
+    at Parser.pp$1.parseForStatement (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2032:17)
+    at Parser.pp$1.parseStatement (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1836:19)
+    at Parser.pp$1.parseBlockBody (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseBlock (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2247:8)
+    at Parser.pp$3.parseFunctionBody (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4235:22)
+    at Parser.pp$1.parseFunction (E:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2386:8)
+2018-08-31T09:35:46.342Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer/moreLisetFrame/ScrollView"
+
+2018-08-31T09:36:22.354Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.355Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.359Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.360Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.364Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.365Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.368Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:22.369Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.215Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.215Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.217Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.218Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.220Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.221Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.222Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.223Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:25.331Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.332Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.336Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.336Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.341Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.341Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.344Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:25.345Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:27.907Z - error: "active" is not defined in the Scene, it is only defined in normal nodes.
+    at cc_Scene.get (E:\CocosCreator\resources\engine\cocos2d\deprecated.js:654:20)
+    at dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:5340)
+    at Object.Editor.getNodeDump (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:6880)
+    at Object.dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\index.js:1:17640)
+    at HTMLElement.scene:query-node (file:///E:/CocosCreator/resources/app.asar/editor/builtin/scene/panel/scene.js:1:6738)
+    at Object.Panel._dispatch (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\panel.js:1:2283)
+    at EventEmitter.ipcRenderer.on.o (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ipc.js:1:4054)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2018-08-31T09:36:28.588Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.589Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.590Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.590Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.592Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.592Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.594Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:28.594Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:34.834Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.835Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.838Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.840Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.842Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.843Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.847Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:34.848Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:37.489Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.489Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.492Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.493Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.495Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.496Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.497Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:37.498Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:47.741Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.742Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.746Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.747Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.750Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.750Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.754Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:47.754Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.781Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.781Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.784Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.784Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.786Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.786Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.788Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.788Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:50.913Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.914Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.917Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.918Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.921Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.923Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.926Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:50.926Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:53.868Z - error: "active" is not defined in the Scene, it is only defined in normal nodes.
+    at cc_Scene.get (E:\CocosCreator\resources\engine\cocos2d\deprecated.js:654:20)
+    at dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:5340)
+    at Object.Editor.getNodeDump (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:6880)
+    at Object.dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\index.js:1:17640)
+    at HTMLElement.scene:query-node (file:///E:/CocosCreator/resources/app.asar/editor/builtin/scene/panel/scene.js:1:6738)
+    at Object.Panel._dispatch (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\panel.js:1:2283)
+    at EventEmitter.ipcRenderer.on.o (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ipc.js:1:4054)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2018-08-31T09:36:55.176Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.176Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.178Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.178Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.180Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.180Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.182Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:55.183Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:36:58.559Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.559Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.562Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.563Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.566Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.567Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.572Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:36:58.572Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-08-31T09:37:01.816Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/xueliu_game_over_layer/moreLisetFrame/ScrollView"
+
+2018-08-31T09:37:06.085Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.087Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.088Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.088Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.089Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.090Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.091Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:37:06.092Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-08-31T09:56:48.839Z - warn: 'XueLiuPlayerResultItem.name' hides inherited property 'cc.Component.name'. To make the current property overwrite that implementation, add the `override: true` attribute please.
+2018-08-31T09:56:48.841Z - error: Can not declare XueLiuPlayerResultItem.name, it is already defined in the prototype of XueLiuPlayerResultItem
+    at Object.errorID (E:\CocosCreator\resources\engine\CCDebugger.js:343:18)
+    at defineProp (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCClass.js:136:16)
+    at declareProperties (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCClass.js:812:17)
+    at Object.CCClass [as Class] (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCClass.js:947:9)
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuPlayerResultItem.js:7:4)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuPlayerResultItem.js:74:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuPlayerResultItem.js:81:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuPlayerResultItem.js:84:3)
+    at Module._compile (module.js:571:32)
+2018-09-01T01:01:13.073Z - normal: Start building with options : {
+  "androidStudio": true,
+  "apiLevel": "",
+  "appABIs": [],
+  "appKey": "",
+  "appSecret": "",
+  "buildPath": "D:\\android\\creatorDemo\\hlzymj\\build",
+  "debug": false,
+  "dest": "D:\\android\\creatorDemo\\hlzymj\\build\\web-desktop",
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeEruda": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.hlzymj",
+  "platform": "web-desktop",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "scenes": [
+    "fde995d8-5975-4db2-8887-5cf003691567",
+    "89d6f8d9-0320-4371-b9d3-8b7c1cbd07d0",
+    "8a1d9375-eb86-4b3a-9ff7-b44df5f61197"
+  ],
+  "sourceMaps": false,
+  "startScene": "fde995d8-5975-4db2-8887-5cf003691567",
+  "template": "link",
+  "title": "hlzymj",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "3c400227-b74b-46",
+  "zipCompressJs": true,
+  "project": "D:\\android\\creatorDemo\\hlzymj",
+  "projectName": "hlzymj",
+  "debugBuildWorker": false
+}
+2018-09-01T01:01:13.077Z - normal: Building D:\android\creatorDemo\hlzymj
+2018-09-01T01:01:13.077Z - normal: Destination D:\android\creatorDemo\hlzymj\build\web-desktop
+2018-09-01T01:01:14.532Z - normal: Delete D:\android\creatorDemo\hlzymj\build\web-desktop\**\*
+2018-09-01T01:02:33.079Z - normal: Compiled project javascript file successfully
+2018-09-01T01:02:33.080Z - normal: Start building assets
+2018-09-01T01:02:33.080Z - normal: Start spawn build-worker
+2018-09-01T01:02:33.832Z - normal: Finish spawn build-worker
+2018-09-01T01:02:33.832Z - normal: Start init build-worker
+2018-09-01T01:02:36.011Z - normal: 1.9.3
+2018-09-01T01:02:37.890Z - normal: Finish init build-worker
+2018-09-01T01:02:37.890Z - normal: Start build-assets in worker
+2018-09-01T01:02:39.904Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+
+2018-09-01T01:02:40.419Z - warn: Script attached to "EatMoreSelect" in prefab "EatMoreSelect.prefab" is missing or invalid. Detailed information:
+Node path: "EatMoreSelect"
+Asset url: "db://assets/resources/prefabs/EatMoreSelect.prefab"
+Script UUID: "8de3ba48-72c9-48e5-a0ce-d4fd25e3429a"
+Class ID: "8de3bpIcslI5aDO1P0l40Ka"
+
+2018-09-01T01:02:50.684Z - normal: Finish build-assets in worker
+2018-09-01T01:02:50.690Z - normal: Finish building assets
+2018-09-01T01:02:51.197Z - normal: Start building raw assets
+2018-09-01T01:02:51.199Z - normal: Start building plugin scripts
+2018-09-01T01:02:58.250Z - normal: Finish building raw assets
+2018-09-01T01:02:58.336Z - normal: Generating main.js from E:\CocosCreator\resources\static\build-templates\shares\main.js
+2018-09-01T01:02:58.375Z - normal: Generating html from E:\CocosCreator\resources\static\build-templates\web-desktop\template\index.html
+2018-09-01T01:02:58.390Z - normal: Built to "D:\android\creatorDemo\hlzymj\build\web-desktop" successfully
+2018-09-01T01:31:38.736Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+
+2018-09-01T01:47:52.803Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.805Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.808Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.809Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.813Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.814Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.817Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:52.818Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.839Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.839Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.841Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.842Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.843Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.843Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.844Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.845Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:55.928Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.928Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.932Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.933Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.936Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.937Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.940Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:55.941Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T01:47:58.627Z - error: "active" is not defined in the Scene, it is only defined in normal nodes.
+    at cc_Scene.get (E:\CocosCreator\resources\engine\cocos2d\deprecated.js:654:20)
+    at dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:5340)
+    at Object.Editor.getNodeDump (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\dump\get-node-dump.js:1:6880)
+    at Object.dumpNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\index.js:1:17640)
+    at HTMLElement.scene:query-node (file:///E:/CocosCreator/resources/app.asar/editor/builtin/scene/panel/scene.js:1:6738)
+    at Object.Panel._dispatch (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\panel.js:1:2283)
+    at EventEmitter.ipcRenderer.on.o (E:\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ipc.js:1:4054)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2018-09-01T01:47:59.577Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.577Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.579Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.580Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.582Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.582Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.584Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T01:47:59.584Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T02:14:52.759Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T02:57:15.102Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T02:58:13.327Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T03:08:19.981Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T03:14:19.886Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T03:15:36.474Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:47:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:52:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:59:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:62:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T03:18:04.722Z - failed: load script [D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js] failed : ReferenceError: XueLiuGameOverScrollList is not defined
+    at __define (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:51:18)
+    at D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:56:13
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:63:11)
+    at Object.<anonymous> (D:\android\creatorDemo\hlzymj\temp\quick-scripts\assets\scripts\hall\game\gameOver\XueLiuGameOverScrollList.js:66:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-09-01T03:18:35.064Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.065Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.070Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.070Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.075Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.075Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.078Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:35.079Z - error: TypeError: Cannot read property 'dispose' of null
+    at call__preloadInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass._invoke (E:\CocosCreator\resources\engine\cocos2d\core\component-scheduler.js:233:21)
+    at CCClass.invoke (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:65:14)
+    at CCClass.activateNode (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:225:26)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1090:40)
+    at cc_Node._onHierarchyChanged (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1126:14)
+    at cc_Node.setParent (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:406:18)
+    at Object.restoreDeleteNode (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo-impl.js:1:4546)
+    at DeleteNodesCommand.undo (E:\CocosCreator\resources\app.asar\editor\page\scene-utils\scene-undo.js:1:2626)
+2018-09-01T03:18:38.662Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+
+2018-09-01T03:18:39.887Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.887Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.889Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.890Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.891Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.891Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.893Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:18:39.893Z - error: TypeError: Cannot read property 'dispose' of null
+    at callonDestroyInTryCatch (eval at misc.tryCatchFunctor_EDITOR (E:\CocosCreator\resources\engine\cocos2d\core\utils\misc.js:1:1), <anonymous>:8:20)
+    at CCClass.destroyComp (E:\CocosCreator\resources\engine\cocos2d\core\node-activator.js:326:17)
+    at dragonBones_ArmatureDisplay._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\components\CCComponent.js:514:36)
+    at dragonBones_ArmatureDisplay.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1218:23)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+    at cc_Node.prototype._destroyImmediate (E:\CocosCreator\resources\engine\cocos2d\core\platform\CCObject.js:436:14)
+    at cc_Node._onPreDestroy [as _onPreDestroyBase] (E:\CocosCreator\resources\engine\cocos2d\core\utils\base-node.js:1211:25)
+    at cc_Node._onPreDestroy (E:\CocosCreator\resources\engine\cocos2d\core\CCNode.js:1052:36)
+2018-09-01T03:47:23.430Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+
+2018-09-01T03:48:42.215Z - warn: Script attached to "change_card_action_node" in prefab "change_card_action_node.prefab" is missing or invalid. Detailed information:
+Node path: "change_card_action_node"
+Asset url: "db://assets/resources/animation/change_card_action_node.prefab"
+Script UUID: "7f19d662-cc45-4483-b676-2e47a68c6c00"
+Class ID: "7f19dZizEVEg7Z2LkemjGwA"
+

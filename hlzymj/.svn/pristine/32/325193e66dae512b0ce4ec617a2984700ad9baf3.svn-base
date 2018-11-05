@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "moreGameIcon",
+    "texture": "7ef36eca-9c2c-427a-9086-63e8446065cc",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      84
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      84
+    ]
+  }
+}

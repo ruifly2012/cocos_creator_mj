@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hasGetDesk",
+    "texture": "f0964fad-8a25-41ff-8b88-10df90f536d9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      148,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      148,
+      59
+    ]
+  }
+}

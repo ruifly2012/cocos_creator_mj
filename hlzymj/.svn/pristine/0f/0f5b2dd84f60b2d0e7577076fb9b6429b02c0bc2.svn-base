@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "left_action_3",
+    "texture": "417895c2-934f-4e21-b87b-fd9440e8b2d6",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      73,
+      71
+    ],
+    "offset": [
+      -1,
+      -0.5
+    ],
+    "originalSize": [
+      75,
+      72
+    ]
+  }
+}

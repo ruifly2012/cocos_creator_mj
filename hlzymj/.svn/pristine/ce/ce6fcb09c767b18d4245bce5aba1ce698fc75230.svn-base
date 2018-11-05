@@ -1,0 +1,100 @@
+"use strict";
+cc._RF.push(module, '8157a0vYQtPYoaLkAJNv+dg', 'PlazaCmds');
+// scripts/hall/gamelib/place/PlazaCmds.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var PlazaCmds = /** @class */ (function () {
+    function PlazaCmds() {
+    }
+    PlazaCmds.MAIN_GP_LOGON = 100; //锟斤拷陆锟斤拷锟斤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_LOGON_RIGISTER = 1; //注锟斤拷锟斤拷锟矫伙拷
+    PlazaCmds.SUB_GP_LOGON_BY_NAME = 2; //通锟斤拷锟斤拷锟街碉拷陆
+    PlazaCmds.SUB_GP_LOGON_BY_USERID = 3; //通锟斤拷 ID 锟斤拷陆
+    PlazaCmds.SUB_GP_LOGON_BY_VNET = 4; //通锟斤拷 VNET 锟斤拷陆
+    PlazaCmds.SUB_GP_LOGON_BY_VNET_TOKEN = 5; //通锟斤拷Vnet锟斤拷证锟斤拷锟斤拷陆	//add by mxs 2006-3
+    PlazaCmds.SUB_GP_LOGON_BY_VNET_TOKEN_V1 = 6; //通锟斤拷Vnet锟斤拷证锟斤拷锟斤拷陆(锟斤拷)//add by mxs nedu
+    PlazaCmds.SUB_GP_LOGON_BY_VNET_CMD = 7; //通锟斤拷Vnet锟斤拷锟斤拷锟叫碉拷陆	//add by mxs e8
+    PlazaCmds.SUB_GP_LOGON_BY_IMEI = 8;
+    PlazaCmds.SUB_GP_LOGON_BY_EMAIL = 9;
+    PlazaCmds.SUB_GP_GET_GAMEINFO = 10;
+    PlazaCmds.SUB_GP_GET_GAMEINFO_EX = 11;
+    PlazaCmds.SUB_GP_LOGON_SUCCESS = 50; //锟斤拷陆锟缴癸拷通知
+    PlazaCmds.SUB_GP_LOGON_SUCCESS_EX = 51; //锟斤拷陆锟缴癸拷通知
+    PlazaCmds.SUB_GP_LOGON_RIGISTER_EX = 52; //注锟斤拷锟斤拷锟矫伙拷
+    PlazaCmds.SUB_GP_GET_OPEN_PLATFORM_TOKEN = 53; //锟斤拷锟斤拷平台锟斤拷取锟矫伙拷Token					//add by mxs 2006- 8 - 8
+    PlazaCmds.SUB_GP_OPEN_PLATFORM_GETTOKEN = 54; //锟矫碉拷token								//add by mxs 2006- 8 - 8
+    PlazaCmds.SUB_GP_LOGON_SUCCESS_VNET = 55; //Vnet锟斤拷录锟缴癸拷(锟斤拷要锟角凤拷锟斤拷锟剿硷拷锟斤拷锟斤拷锟斤拷)//add by mxs vnetpass	2007- 2 - 27
+    PlazaCmds.SUB_GP_LOGON_RIGISTER_V1 = 56; //注锟斤拷锟矫伙拷								//add by mxs fcm
+    PlazaCmds.SUB_GP_PSW_CARD_COORD = 57; //锟矫碉拷锟斤拷锟诫卡锟斤拷锟? //add by mxs mmk
+    PlazaCmds.SUB_GP_PSW_CARD_USER_NUM = 58; //锟斤拷锟斤拷锟矫伙拷锟斤拷锟斤拷锟斤拷锟斤拷肟拷锟斤拷锟 ? //add by mxs mmk
+    PlazaCmds.SUB_GP_GET_OPEN_PLATFORM_TOKEN_VNET = 64; //锟斤拷锟斤拷平台锟斤拷取锟矫伙拷token(VNET锟斤拷陆锟斤拷)//add by mxs nedu
+    PlazaCmds.SUB_GP_OPEN_PLATFORM_GETTOKEN_VNET = 65; //锟矫碉拷token(Vnet锟斤拷陆锟斤拷)//add by mxs nedu
+    PlazaCmds.SUB_GP_LOGON_REG_RESULT = 66; //注锟结返锟截的斤拷锟? //add by mxs nplaza
+    PlazaCmds.SUB_GP_LOGON_AVATAR_URL = 67; //AvatarURL								//add by mxs atr
+    PlazaCmds.SUB_GP_LOGON_FACEDATA = 68; // 鑷畾涔夊ご鍍忎俊鎭 ?
+    PlazaCmds.SUB_GP_VIP_INFO = 69; // 用户vip等级
+    //int nVIPLevel; int nVIPScore;
+    PlazaCmds.SUB_GP_SCORE_EX = 70; // 分数补充
+    //int nWeekWinAmount; int nMaxWinAmount
+    //public static SUB_GP_LOGON_AWARD_BASE:number = 71;				// 每日登陆奖励基数
+    PlazaCmds.SUB_GP_GAMEINFO = 72;
+    //一些锟斤拷锟斤拷锟斤拷锟 ?
+    PlazaCmds.SUB_GP_TRANSFER = 60; //转锟斤拷									//add by mxs 2006- 3
+    PlazaCmds.SUB_GP_SAFEBOX = 61; //锟斤拷锟秸癸拷								//add by mxs 2006- 3
+    PlazaCmds.SUB_GP_SEND_LOGON_TIME = 62; //锟斤拷锟酵碉拷陆时锟斤拷							//add by mxs tel
+    PlazaCmds.SUB_GP_VNET_RT_URL = 63; //锟斤拷取锟斤拷锟斤拷Vnet锟斤拷陆锟斤拷URL					//add by mxs nedu
+    PlazaCmds.SUB_GP_GUEST = 64;
+    PlazaCmds.SUB_GP_LOGON_BY_TOKEN = 65;
+    //////////////////////////////////////////////////////////////////////////
+    PlazaCmds.MAIN_GP_SERVER_LIST = 101; //锟斤拷锟斤拷锟斤拷锟叫憋拷
+    PlazaCmds.SUB_GP_SERVER_LIST_Web = 12; //锟斤拷戏web锟节碉拷
+    PlazaCmds.SUB_GP_SERVER_LIST_TYPE = 1; //锟斤拷戏锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_KIND = 2; //锟斤拷戏锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_STATION = 3; //锟斤拷戏站锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_ROOM = 4; //锟斤拷戏锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_ROOM_EX = 5; //锟斤拷戏锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_ITEM = 6; //锟斤拷锟斤拷锟斤拷息
+    PlazaCmds.SUB_GP_SERVER_LIST_MODE = 9; //锟叫憋拷模式
+    PlazaCmds.SUB_GP_SERVER_LIST_SUBSTATION_ROOM = 10; //锟斤拷站锟斤拷锟斤拷锟叫憋拷
+    PlazaCmds.SUB_GP_SERVER_LIST_EDU_ITEM = 21; //锟斤拷锟斤拷锟斤拷平台锟斤拷戏锟叫憋拷		//add by mxs edu
+    PlazaCmds.SUB_GP_SERVER_LIST_SUBSTATION_KIND = 22; //锟斤拷站锟斤拷戏锟叫憋拷				//add by mxs nedu
+    PlazaCmds.SUB_GP_SERVER_LIST_TYPE_V1 = 23; //锟斤拷戏锟斤拷锟斤拷					//add by mxs sc
+    PlazaCmds.SUB_GP_SERVER_WEB_COUNT = 13; //WEB锟节碉拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_KIND_COUNT = 7; //锟斤拷锟斤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_ROOM_COUNT = 8; //锟斤拷锟斤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_SUBSTATION_COUNT = 11; //锟斤拷站锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_GET_SERVER_LIST = 9; //锟斤拷取锟斤拷锟斤拷
+    PlazaCmds.SUB_GR_GET_COLLECTION_SERVER = 51; //锟斤拷取锟斤拷锟矫凤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GR_GET_COLLECTION_SERVER_EX = 53; //锟斤拷取锟斤拷锟矫凤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_GET_SUBSTATION_SERVER_LIST = 54; //锟斤拷站锟斤拷锟斤拷锟叫憋拷
+    PlazaCmds.SUB_GP_GET_EDU_SERVER_LIST = 59; //锟斤拷取锟斤拷锟斤拷锟斤拷平台锟斤拷戏锟叫憋拷	//add by mxs edu
+    PlazaCmds.SUB_GP_GET_ONLINE_COUNT = 52; //锟斤拷取锟斤拷锟斤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_GET_SUBSTATION_ONLINE_COUNT = 55; //锟斤拷取锟斤拷站锟斤拷锟斤拷
+    //锟借单锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷戏锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_SPECIAL_KIND = 56; //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_WEB_KIND = 57; //web锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_SERVER_LIST_OPENPLATFORM_KIND = 58; //锟斤拷锟斤拷平锟斤拷戏	add by mxs 2006- 8 - 8
+    //////////////////////////////////////////////////////////////////////////
+    PlazaCmds.MAIN_GP_CONFIG = 102; //锟斤拷锟斤拷锟斤拷息
+    PlazaCmds.SUB_GP_BBRING_IP = 1; //寻锟斤拷锟斤拷址
+    PlazaCmds.SUB_GP_USER_INFO = 2; //锟矫伙拷锟斤拷锟斤拷
+    PlazaCmds.SUB_GP_MASTER_IP = 3; //锟斤拷艿锟街?
+    PlazaCmds.SUB_GP_CHANGE_INFO = 50; //锟斤拷锟斤拷锟斤拷锟?
+    PlazaCmds.SUB_GP_AD_INFO = 51; //锟斤拷锟斤拷锟较?
+    PlazaCmds.SUB_GP_BIND_EMAIL = 52;
+    PlazaCmds.SUB_GP_GET_AWARD = 53; // 鑾峰彇濂栧姳
+    PlazaCmds.SUB_GP_GET_FACE = 54; // 鑾峰彇澶村儚
+    PlazaCmds.SUB_GP_APPLE_CHARGE = 55; // 苹果充值
+    PlazaCmds.SUB_GP_CHANGE_USERWORD = 56; // 修改签名
+    PlazaCmds.MAIN_CM_SERVICE = 200;
+    PlazaCmds.SUB_CM_MESSAGE = 1;
+    PlazaCmds.SUB_CM_MESSAGE_EX = 2;
+    PlazaCmds.SUB_CM_MESSAGE_EX_2 = 3;
+    //////////////////////////////////////////////////////////////////////////
+    //锟斤拷效锟斤拷锟斤拷 ID
+    PlazaCmds.ERROR_KIND_ID = 0xFFFF;
+    return PlazaCmds;
+}());
+exports.PlazaCmds = PlazaCmds;
+
+cc._RF.pop();

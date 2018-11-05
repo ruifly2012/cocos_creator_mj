@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hallUpBg",
+    "texture": "cb630a96-2f38-4c17-ad1c-0317cd788ef2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      765,
+      81
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      765,
+      81
+    ]
+  }
+}

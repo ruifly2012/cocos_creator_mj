@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "youzhongyou_match",
+    "texture": "20c28364-7cf4-4fc3-827d-39af3a957a1c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      214,
+      81
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      214,
+      82
+    ]
+  }
+}

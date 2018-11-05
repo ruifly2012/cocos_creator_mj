@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_suit_y_bei",
+    "texture": "7778c62a-6f66-4202-8dfd-6f2ec4cf00a9",
+    "atlas": "744c3690-3ccc-4688-8840-bad9c020de00",
+    "rect": [
+      416,
+      245,
+      81,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

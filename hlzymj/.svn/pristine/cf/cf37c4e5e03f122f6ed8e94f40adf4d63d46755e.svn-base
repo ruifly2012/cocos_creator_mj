@@ -1,0 +1,84 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/rank/RankLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'ffa48RfK+9PSbDxYj/BT23p', 'RankLayer', __filename);
+// scripts/hall/rank/RankLayer.js
+
+"use strict";
+
+var RankExtendedListLayer = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        bg: {
+            default: null,
+            type: cc.Node
+        }
+
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        this.node.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
+    },
+
+    onTouch: function onTouch(event) {
+        var poisition = event.touch.getLocation();
+        var locationInNode = this.bg.convertToNodeSpace(poisition);
+        var s = this.bg.getContentSize();
+        var rect = cc.rect(0, 0, s.width, s.height);
+        if (cc.rectContainsPoint(rect, locationInNode)) {
+            // this.node.active = true;
+        } else {
+            this.node.active = false;
+            this.node.parent.parent.getComponent("HallPlatformInfo").onClickExtendedBtn();
+        }
+    },
+
+    initData: function initData(data, myOpenId) {
+        // var self = this;
+        // this.content = this.rankList.getComponent(cc.ScrollView).content;
+        // this.content.removeAllChildren();
+
+        // var listData = data;
+        // for(var i=0; i<listData.length; i++){
+        //     listData[i].rank = i+1;
+        //     var item = cc.instantiate(this.itemPrefab);
+        //     item.parent = this.content;
+        //     item.getComponent("RankExtendedListItem").onInit(listData[i]);
+        //     //.初始化位置
+        //     var x = 0;
+        //     var y = -70-i*93; 
+        //     item.setPosition(x,y);
+        //     if (myOpenId == listData[i].openid)
+        //     {
+
+        //         this.myCount.string = "局数："+listData[i].playScore;
+        //         this.myName.string = listData[i].nickname;
+        //         var imgurl=listData[i].avatarUrl+"?aaa=aa.jpg";
+        //         this.myRank.string = listData[i].rank;
+        //         cc.loader.load(imgurl, function(err, texture){
+        //             self.myIcon.spriteFrame = new cc.SpriteFrame(texture);
+        //             self.myIcon.node.setScale(0.53);
+        //         });
+        //     }
+        // }
+
+    }
+
+});
+
+module.exports = RankExtendedListLayer;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=RankLayer.js.map
+        

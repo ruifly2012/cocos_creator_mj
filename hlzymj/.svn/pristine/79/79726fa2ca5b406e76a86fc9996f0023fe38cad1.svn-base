@@ -1,0 +1,14 @@
+"use strict";
+cc._RF.push(module, '74a7b5WWBpGlLzS+Y6wlhvQ', 'Global');
+// scripts/hall/Global.js
+
+"use strict";
+
+//此处定义一些全局的变量
+window.G = {
+    matchGameReady: null,
+
+    goldGameReady: null
+};
+
+cc._RF.pop();

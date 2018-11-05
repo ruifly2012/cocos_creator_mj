@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_beijingguang_2_tex",
+    "texture": "f139f157-d48f-4f94-a4e1-44d3fb83ada7",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      642,
+      413
+    ],
+    "offset": [
+      -190,
+      48.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ]
+  }
+}

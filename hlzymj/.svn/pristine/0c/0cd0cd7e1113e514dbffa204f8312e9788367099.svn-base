@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "game_match_bg",
+    "texture": "f34b31da-cffc-4dbb-96e7-51989aba3d9b",
+    "atlas": "",
+    "rect": [
+      3,
+      0,
+      693,
+      668
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      700,
+      668
+    ]
+  }
+}

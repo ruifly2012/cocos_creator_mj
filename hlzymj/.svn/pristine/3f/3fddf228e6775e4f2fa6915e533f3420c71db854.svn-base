@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_suit_y_hua_qiu",
+    "texture": "406ca6ed-b006-4bf6-a3f1-7529e037efe3",
+    "atlas": "8008ecf0-7884-4323-a6db-32dc231a1fde",
+    "rect": [
+      417,
+      2,
+      81,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

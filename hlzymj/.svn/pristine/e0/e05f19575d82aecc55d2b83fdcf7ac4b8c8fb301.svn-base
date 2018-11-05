@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cxzGame",
+    "texture": "0cdd3e9f-1022-4f3d-967d-89449a2d9dee",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      106,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      106,
+      37
+    ]
+  }
+}

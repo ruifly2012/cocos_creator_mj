@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "duijia",
+    "texture": "70e5a2d5-db76-4ead-8b70-0534daf57cad",
+    "atlas": "",
+    "rect": [
+      15,
+      0,
+      187,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      217,
+      37
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "metop_gang_lai",
+    "texture": "dbbab5ab-94e8-406a-94b1-c0a4e17519b4",
+    "atlas": "",
+    "rect": [
+      20,
+      4,
+      32,
+      35
+    ],
+    "offset": [
+      8,
+      18
+    ],
+    "originalSize": [
+      56,
+      79
+    ]
+  }
+}

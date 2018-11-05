@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "7f29a00d-d933-4238-921a-cb84bbe697ef",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Game_MeiGui_tex": {
+      "ver": "1.0.3",
+      "uuid": "b6e5ad09-0ef5-43d9-b341-340ef2732254",
+      "rawTextureUuid": "7f29a00d-d933-4238-921a-cb84bbe697ef",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -8.5,
+      "offsetY": 15.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 237,
+      "height": 223,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nickname_bg",
+    "texture": "10d9d63c-3c91-4bb6-b044-a728690f12e4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      350,
+      50
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      350,
+      50
+    ]
+  }
+}

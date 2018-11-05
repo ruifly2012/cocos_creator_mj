@@ -1,0 +1,25 @@
+"use strict";
+cc._RF.push(module, '758f78IutpC4J5MSYuoURhr', 'tagGameKind');
+// scripts/hall/gamelib/place/tagGameKind.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../../TSCommon");
+var tagGameKind = /** @class */ (function () {
+    function tagGameKind() {
+    }
+    tagGameKind.getLen = function () {
+        return 48;
+    };
+    tagGameKind.prototype.deserialize = function (ba) {
+        this.dwMaxVersion = ba.readUnsignedInt();
+        this.dwOnLineCount = ba.readUnsignedInt();
+        this.dwTypeID = ba.readUnsignedInt();
+        this.dwKindID = ba.readUnsignedInt();
+        this.szKindName = TSCommon_1.TSCommon.readGbkString(ba, 16);
+        this.szProcessName = TSCommon_1.TSCommon.readGbkString(ba, 16);
+    };
+    return tagGameKind;
+}());
+exports.tagGameKind = tagGameKind;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upgrade_level_bg",
+    "texture": "92619aeb-1b7e-46ee-8294-f9e390d0bace",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      451,
+      55
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      451,
+      55
+    ]
+  }
+}

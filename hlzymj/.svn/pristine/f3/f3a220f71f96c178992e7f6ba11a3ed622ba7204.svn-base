@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "redPoint",
+    "texture": "21084e0d-fe7c-42cb-a528-0f93fbe51751",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      37,
+      32
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      37,
+      32
+    ]
+  }
+}

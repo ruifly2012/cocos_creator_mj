@@ -1,0 +1,36 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/tagClientInfo.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'a4638doFe1FYrSdOe+lLziT', 'tagClientInfo', __filename);
+// scripts/hall/gamelib/tagClientInfo.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TSCommon_1 = require("../TSCommon");
+var tagClientInfo = /** @class */ (function () {
+    function tagClientInfo() {
+        this.dwComputerID = [1, 2, 3];
+        this.dwSystemVer = [1, 2];
+        this.szComputerName = "h5_client";
+    }
+    tagClientInfo.prototype.serialize = function (byteArray) {
+        for (var i = 0; i < 3; i++)
+            byteArray.writeInt(this.dwComputerID[i]);
+        for (var i = 0; i < 2; i++)
+            byteArray.writeInt(this.dwSystemVer[i]);
+        TSCommon_1.TSCommon.writeStringWithLength(byteArray, this.szComputerName, 12);
+    };
+    return tagClientInfo;
+}());
+exports.tagClientInfo = tagClientInfo;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=tagClientInfo.js.map
+        

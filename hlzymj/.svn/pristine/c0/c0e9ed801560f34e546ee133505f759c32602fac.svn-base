@@ -1,0 +1,342 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/weixin/WeixinManager.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '1ca59SmhwZNObSWEIA6R7d4', 'WeixinManager', __filename);
+// scripts/hall/weixin/WeixinManager.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Domain_1 = require("../Domain");
+var WebRequest = require("../common/WebRequest");
+var TSCommon_1 = require("../TSCommon");
+var HallUtils = require("../HallUtils");
+var HallResources = require("../HallResources");
+var WeixinUserInfo = /** @class */ (function () {
+    function WeixinUserInfo() {
+        this.unionid = "test";
+        this.nickname = "test";
+    }
+    return WeixinUserInfo;
+}());
+exports.WeixinUserInfo = WeixinUserInfo;
+var WeixinManager = /** @class */ (function () {
+    function WeixinManager() {
+        this.userInfo = null;
+        this.openid = null;
+        this.uinionid = null;
+        this.js_code = null;
+        this.init();
+    }
+    WeixinManager.getInstance = function () {
+        if (this._instance == null)
+            this._instance = new WeixinManager();
+        return this._instance;
+    };
+    WeixinManager.prototype.init = function () {
+        //获取签名        
+        //this.getSignPackage();
+    };
+    /**
+     * 获取签名分享
+     */
+    WeixinManager.prototype.getSignPackage = function () {
+        var _this = this;
+        var signUrl = Domain_1.Domain.WEIXIN_URL + "/genWeixinSign.aspx?appid=" + Domain_1.Domain.WEIXIN_APPID + "&url=" +
+            location.href.split("#")[0];
+        var webRequest = new WebRequest();
+        webRequest.getData(signUrl, "", function (succeeded, data) {
+            _this.signPackage = JSON.parse(data);
+            //........................................................
+            //基本配置
+            _this.getWeiXinConfig();
+        }, false);
+    };
+    /**
+     * 获取微信配置
+     */
+    WeixinManager.prototype.getWeiXinConfig = function () {
+        /*
+         * 注意：
+         * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+         * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+         * 3. 完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+         *
+         * 如有问题请通过以下渠道反馈：
+         * 邮箱地址：weixin-open@qq.com
+         * 邮件主题：【微信JS-SDK反馈】具体问题
+         * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+         */
+        //配置参数
+        var bodyConfig = new BodyConfig();
+        bodyConfig.debug = true; // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        bodyConfig.appId = Domain_1.Domain.WEIXIN_APPID; // 必填，公众号的唯一标识
+        bodyConfig.timestamp = this.signPackage.timestamp; // 必填，生成签名的时间戳
+        bodyConfig.nonceStr = this.signPackage.nonceStr; // 必填，生成签名的随机串
+        bodyConfig.signature = this.signPackage.signature; // 必填，签名，见附录1
+        bodyConfig.jsApiList = [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'hideMenuItems',
+            'showMenuItems',
+            'hideAllNonBaseMenuItem',
+            'showAllNonBaseMenuItem',
+            'translateVoice',
+            'startRecord',
+            'stopRecord',
+            'playVoice',
+            'pauseVoice',
+            'stopVoice',
+            'uploadVoice',
+            'downloadVoice',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage',
+            'getNetworkType',
+            'openLocation',
+            'getLocation',
+            'hideOptionMenu',
+            'showOptionMenu',
+            'closeWindow',
+            'scanQRCode',
+            'chooseWXPay',
+            'openProductSpecificView',
+            'addCard',
+            'chooseCard',
+            'openCard' //查看微信卡包中的卡券接口
+        ];
+        wx.config(bodyConfig);
+    };
+    WeixinManager.prototype.shareAppMessage = function (title, desc, link, imgUrl) {
+        wx.onMenuShareAppMessage({
+            title: title,
+            desc: desc,
+            link: link,
+            imgUrl: imgUrl,
+            type: '',
+            dataUrl: '',
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            trigger: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            fail: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    };
+    WeixinManager.prototype.shareTimeline = function (title, link, imgUrl) {
+        wx.onMenuShareTimeline({
+            title: title,
+            link: link,
+            imgUrl: imgUrl,
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            trigger: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            fail: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    };
+    WeixinManager.prototype.shareQQ = function (title, desc, link, imgUrl) {
+        wx.onMenuShareQQ({
+            title: title,
+            desc: desc,
+            link: link,
+            imgUrl: imgUrl,
+            type: '',
+            dataUrl: '',
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            trigger: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            fail: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            complete: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    };
+    WeixinManager.prototype.pay = function (productID, price) {
+        var genorderURL = Domain_1.Domain.PAY_GENORDER_URL + "?appid=" + Domain_1.Domain.WEIXIN_APPID +
+            "&userid=" + PublicUserInfo.userDBID + "&gameid=0&partnerID=10101&price=" + price + "&productid=" + productID;
+        var webRequest = new WebRequest();
+        webRequest.getData(genorderURL, "", function (succeeded, data) {
+            var pay = JSON.parse(data);
+            if (pay.retult != 1) {
+                // 生成订单失败
+                TSCommon_1.TSCommon.dispatchEvent(TSCommon_1.TSCommon.onPayFailed, "生成订单失败");
+                return;
+            }
+            wx.chooseWXPay({
+                timestamp: pay.timestamp,
+                nonceStr: pay.nonceStr,
+                package: 'prepay_id=' + pay.prepayid,
+                signType: 'SHA1',
+                paySign: pay.signature,
+                success: function (res) {
+                    // 支付成功后的回调函数
+                    TSCommon_1.TSCommon.dispatchEvent(TSCommon_1.TSCommon.onPaySucceeded, "");
+                }
+            });
+        }, false);
+    };
+    WeixinManager.prototype.weixinLoginByWeb = function () {
+        webWeixinLogin("wx9077e9fe86b5ae1b", "http://weixin.ss2007.com/weixinauth.aspx");
+    };
+    WeixinManager.prototype.checkLogin = function (doLogin) {
+        var ua = navigator.userAgent.toLowerCase();
+        TSCommon_1.TSCommon.log(ua);
+        var isweixin = false;
+        if (ua.indexOf("micromessenger") > 0)
+            isweixin = true;
+        if (HallUtils.judeIsPhoneWXGameBrowser()) {
+            this.wxGameLogin();
+            return;
+        }
+        /*if (!isweixin) {
+            //this.userInfo = new WeixinUserInfo();
+            this.weixinLoginByWeb();
+            return false;
+        }*/
+        var params = window.location.href;
+        var paramBegin = params.indexOf("?");
+        var paramJson;
+        if (paramBegin > 0) {
+            params = params.slice(paramBegin + 1);
+            var p = params.split("&");
+            for (var key in p) {
+                var param1 = p[key].split("=");
+                if (param1[0] == "param")
+                    paramJson = decodeURI(param1[1]);
+            }
+            console.log("paramJson = " + paramJson);
+            WeixinManager.getInstance().userInfo = JSON.parse(paramJson);
+            WeixinManager.getInstance().userInfo.avatarUrl = WeixinManager.getInstance().userInfo.headimgurl;
+            if (!doLogin)
+                return true;
+        }
+        TSCommon_1.TSCommon.log("encodeURI = " + encodeURI(location.href.split("#")[0]));
+        if (!doLogin)
+            return false;
+        if (WeixinManager.getInstance().userInfo == null) {
+            if (isweixin)
+                window.location.href = Domain_1.Domain.WEIXIN_URL + "/OAuth/weixinlogin.aspx?redirect_uri=" + encodeURI(location.href.split("#")[0]);
+            else {
+                window.location.href = "https://open.weixin.qq.com/connect/qrconnect?appid=" + Domain_1.Domain.WEIXIN_WEB_APPID +
+                    "&redirect_uri=http%3A%2F%2Fweixin.ss2007.com%2FOAuthWeb%2Fweixinauth.aspx&response_type=code&scope=snsapi_login&state="
+                    + encodeURI(location.href.split("#")[0]) + "#wechat_redirect";
+            }
+            return false;
+        }
+        return true;
+    };
+    WeixinManager.prototype.wxBuyDiamond = function (useCount) {
+        // console.log("useCount==="+useCount+"    nEnv="+nEnv);
+        var self = this;
+        wx.requestMidasPayment({
+            mode: "game",
+            env: Domain_1.Domain.ENV,
+            offerId: '1450016157',
+            platform: "android",
+            currencyType: Domain_1.Domain.CURRENCYTYPE,
+            buyQuantity: useCount * 10,
+            zoneId: "1",
+            success: function (res) {
+                console.log("购买成功");
+                TSCommon_1.TSCommon.dispatchEvent(HallResources.onRefreshPlayerDiamondCount, this);
+                console.log(res);
+                //告知服务器去微信拿钻石
+                // var webRequest = new WebRequest();
+                // var getOpenIdUrl = Domain.WebRoot+"GetGameCurrency.aspx?UserID="+PublicUserInfo.userDBID+"&js_code="+self.js_code;
+                // webRequest.getData(getOpenIdUrl, "",  function (isSucceed, data) {
+                //     if (isSucceed == true) {
+                //         var jsonObject = JSON.parse(data); 
+                //         console.log("获得钻石："+jsonObject.gc);
+                //     }
+                // })
+            },
+            fail: function (res) {
+                console.log("购买失败");
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log("购买完成");
+                TSCommon_1.TSCommon.dispatchEvent(HallResources.onRefreshPlayerDiamondCount, this);
+                console.log(res);
+            }
+        });
+    };
+    WeixinManager.prototype.wxGameLogin = function () {
+        var self = this;
+        // //    AladinSDK.report(AladinSDK.ReportTypes.LOGIN,'')
+        wx.login({
+            success: function (res) {
+                // // AladinSDK.report(AladinSDK.ReportTypes.AUTH,'')
+                console.log(res);
+                var code = res.code;
+                self.js_code = code;
+                var webRequest = new WebRequest();
+                var getOpenIdUrl = Domain_1.Domain.WebRoot + "CodeToAccessToken.aspx?js_code=" + code;
+                webRequest.getData(getOpenIdUrl, "", function (isSucceed, data) {
+                    if (isSucceed == true) {
+                        var jsonObject = JSON.parse(data);
+                        console.log("获得openid为：" + jsonObject.openid);
+                        // // AladinSDK.report(AladinSDK.ReportTypes.OPEN_ID,jsonObject.openid)
+                        WeixinManager.getInstance().userInfo = new WeixinUserInfo();
+                        self.openid = jsonObject.openid;
+                        self.uinionid = jsonObject.uinionid;
+                        wx.getUserInfo({
+                            openIdList: [WeixinManager.getInstance().userInfo.openid],
+                            lang: 'zh_CN',
+                            fail: function (res) {
+                            },
+                            success: function (res) {
+                                var rawData = res.rawData;
+                                WeixinManager.getInstance().userInfo = res.userInfo;
+                                WeixinManager.getInstance().userInfo.openid = self.openid;
+                                WeixinManager.getInstance().userInfo.unionid = self.uinionid;
+                                WeixinManager.getInstance().userInfo.gender = res.userInfo.gender;
+                                TSCommon_1.TSCommon.log("wxUserinfo rawData=" + rawData);
+                                TSCommon_1.TSCommon.dispatchEvent(TSCommon_1.TSCommon.onGeWXtUserInfoLogin, "");
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    };
+    return WeixinManager;
+}());
+exports.WeixinManager = WeixinManager;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=WeixinManager.js.map
+        

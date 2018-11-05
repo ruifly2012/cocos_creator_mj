@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dinque2_tex",
+    "texture": "4ae385db-ccaf-41aa-a0f0-ba4895105818",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      238,
+      204
+    ],
+    "offset": [
+      -8,
+      25
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

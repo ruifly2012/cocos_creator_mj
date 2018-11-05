@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yinglaiyou_match",
+    "texture": "58881792-e416-4b68-be62-70586b5dce33",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      210,
+      81
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      210,
+      82
+    ]
+  }
+}

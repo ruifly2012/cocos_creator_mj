@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_wall_y_3_6",
+    "texture": "ac343c98-c7b7-4573-ab1d-e8eeccab9163",
+    "atlas": "f5e293e6-d221-43df-8858-80b7a7c7ea3a",
+    "rect": [
+      61,
+      186,
+      57,
+      44
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      57,
+      44
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+"use strict";
+cc._RF.push(module, '9a7ecZ78BtF94wiaEeGGGk4', 'CDefaultGameLibSink');
+// scripts/hall/gamelib/CDefaultGameLibSink.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var CDefaultGameLibSink = /** @class */ (function () {
+    function CDefaultGameLibSink() {
+    }
+    CDefaultGameLibSink.prototype.onLogonFinished = function () { };
+    CDefaultGameLibSink.prototype.onPlazaGoldChanged = function () { };
+    CDefaultGameLibSink.prototype.onRefreshUserInfo = function () { };
+    CDefaultGameLibSink.prototype.onChargeInfoRefeshRet = function (result) { };
+    CDefaultGameLibSink.prototype.onSendSpeakerRet = function (cbRetCode) { };
+    CDefaultGameLibSink.prototype.onLogonFailed = function (errorStr, nFaileType) { };
+    CDefaultGameLibSink.prototype.onEnteredGameRoom = function (tableCount, chairCount) { };
+    CDefaultGameLibSink.prototype.onEnterGameRoomFailed = function (errorStr) { };
+    CDefaultGameLibSink.prototype.onRoomConnectClosed = function () { };
+    CDefaultGameLibSink.prototype.onEnterGameView = function () { };
+    CDefaultGameLibSink.prototype.onLeaveGameView = function () { };
+    CDefaultGameLibSink.prototype.onRoomUserEnter = function (userID) { };
+    CDefaultGameLibSink.prototype.onRoomUserExit = function (userID) { };
+    CDefaultGameLibSink.prototype.onRoomUserInfoUpdated = function (userID) { };
+    CDefaultGameLibSink.prototype.onTableInfoChanged = function (tableID) { };
+    CDefaultGameLibSink.prototype.onRecvHallChat = function (chat) { };
+    CDefaultGameLibSink.prototype.onRecvTableChat = function (chat) { };
+    CDefaultGameLibSink.prototype.onShowAlertMsg = function (msg) { };
+    CDefaultGameLibSink.prototype.onLogonGameRoomSucceeded = function () { };
+    CDefaultGameLibSink.prototype.onChangeUserInfoRet = function (cbRetCode) { };
+    CDefaultGameLibSink.prototype.onTaskInfo = function (cbRetCode, pTaskList) { };
+    CDefaultGameLibSink.prototype.onTaskGift = function (nTaskID, cbRetCode) { };
+    CDefaultGameLibSink.prototype.onNewStatus = function (nNewMissionDone, nNewMail, nNewActivity, nNewFriend, bLoginGift) { };
+    CDefaultGameLibSink.prototype.onBankInfo = function (nBankAmount, nBankCapacity) { };
+    CDefaultGameLibSink.prototype.onCreatePrivateTableFailed = function (lpszErrorMsg) { };
+    CDefaultGameLibSink.prototype.onEnterPrivateTableFailed = function (lpszErrorMsg) { };
+    CDefaultGameLibSink.prototype.onGameBankOpeReturn = function (succeeded, gold, bank) { };
+    CDefaultGameLibSink.prototype.onShowGameSystemMsg = function (msg) {
+    };
+    CDefaultGameLibSink.prototype.onSpeaker = function (msg, priorty) {
+    };
+    return CDefaultGameLibSink;
+}());
+exports.CDefaultGameLibSink = CDefaultGameLibSink;
+
+cc._RF.pop();

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "left_lai",
+    "texture": "404a7239-c71d-4c8f-a115-5345465929cb",
+    "atlas": "",
+    "rect": [
+      30,
+      15,
+      35,
+      26
+    ],
+    "offset": [
+      7,
+      1.5
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

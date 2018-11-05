@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuanpai",
+    "texture": "baf10084-a307-48b9-994b-ace647d19552",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      247,
+      91
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      247,
+      91
+    ]
+  }
+}

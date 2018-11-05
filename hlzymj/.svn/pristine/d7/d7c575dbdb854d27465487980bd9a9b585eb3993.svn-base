@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "zuanshi_tex",
+    "texture": "c4c7cd4b-52ab-4a4b-b813-94c2b6d3d4cb",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      117,
+      95
+    ],
+    "offset": [
+      -4.5,
+      15.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ]
+  }
+}

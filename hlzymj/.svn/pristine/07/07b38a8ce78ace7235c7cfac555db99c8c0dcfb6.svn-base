@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "95675ec2-2df5-497d-9f33-d6251864ba47",
+  "atlasJson": "{\"SubTexture\":[{\"width\":110,\"y\":145,\"height\":129,\"name\":\"game_fd1\",\"x\":142},{\"frameX\":-2,\"frameHeight\":145,\"y\":1,\"frameY\":-2,\"frameWidth\":147,\"width\":145,\"height\":142,\"name\":\"game_fd2\",\"x\":1},{\"frameX\":0,\"frameHeight\":49,\"y\":1,\"frameY\":0,\"frameWidth\":102,\"width\":102,\"height\":48,\"name\":\"game_fd3\",\"x\":148},{\"width\":139,\"y\":145,\"height\":123,\"name\":\"game_fd4\",\"x\":1}],\"width\":256,\"height\":512,\"name\":\"Game_FeiDao\",\"imagePath\":\"Game_FeiDao_tex.png\"}",
+  "texture": "d51021d7-241e-4165-9930-0b5e88dddd71",
+  "subMetas": {}
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nextGameBtn",
+    "texture": "bcdcb40e-48f2-46be-ad45-56b7615ee744",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      136,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      136,
+      29
+    ]
+  }
+}

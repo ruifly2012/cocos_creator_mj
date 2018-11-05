@@ -1,0 +1,80 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/mall/MallScrollListItem.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '4c76fJgh+dKx5L8u+6pmEwV', 'MallScrollListItem', __filename);
+// scripts/hall/mall/MallScrollListItem.js
+
+"use strict";
+
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        getCount: {
+            default: null,
+            type: cc.Label
+        },
+        getIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        needIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        needCount: {
+            default: null,
+            type: cc.Label
+        },
+        bgBtn: {
+            default: null,
+            type: cc.Button
+        }
+    },
+    onLoad: function onLoad() {
+        this.bgBtn.node.on('click', this.btnClickFunc, this);
+    },
+
+    // update (dt) {},
+    btnClickFunc: function btnClickFunc() {
+        var self = this;
+        self.clickFunc(self.needCount.string, self.getCount.string, self.wxRmb);
+    },
+
+    initView: function initView(data) {
+        var self = this;
+        //.初始化数据
+        this.getCount.string = data.count;
+        this.needCount.string = data.need;
+        this.clickFunc = data.clickFunc;
+        this.wxRmb = data.wxRmb;
+        cc.loader.loadRes(data.getIcon, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.getIcon.spriteFrame = spriteFrame;
+            }
+        });
+
+        if (data.needIcon == "") {
+            self.needIcon.node.active = false;
+            this.needCount.string = "¥ " + this.needCount.string;
+        } else {
+            cc.loader.loadRes(data.needIcon, cc.SpriteFrame, function (err, spriteFrame) {
+                if (!err) {
+                    self.needIcon.spriteFrame = spriteFrame;
+                }
+            });
+        }
+    }
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=MallScrollListItem.js.map
+        

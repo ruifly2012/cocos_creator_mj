@@ -1,0 +1,43 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/common/MyTimer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'a1962bHY1dLkaA01I/jhEt+', 'MyTimer', __filename);
+// scripts/hall/common/MyTimer.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MyTimer = /** @class */ (function (_super) {
+    __extends(MyTimer, _super);
+    function MyTimer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MyTimer.startTimer = function (target, callback, delay) {
+        var timer = new MyTimer();
+        timer.openTimer(target, callback, delay);
+    };
+    MyTimer.prototype.timCallBack = function () {
+        if (this.m_target && this.m_callback)
+            this.m_callback.call(this.m_target);
+        else
+            cc.log("new timer timCallBack no callback");
+    };
+    MyTimer.prototype.openTimer = function (target, callback, delay) {
+        this.m_target = target;
+        this.m_callback = callback;
+        this.m_delay = delay;
+        cc.director.getScheduler().scheduleCallbackForTarget(this, this.timCallBack, delay, 0, delay, false, false);
+    };
+    return MyTimer;
+}(cc.Node));
+exports.MyTimer = MyTimer;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=MyTimer.js.map
+        

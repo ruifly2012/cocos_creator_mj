@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ting3",
+    "texture": "45417465-f2e6-4203-a1fb-fa5a787576f6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      12,
+      90
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      12,
+      90
+    ]
+  }
+}

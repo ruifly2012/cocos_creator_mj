@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "inviteFriendPlayerBg",
+    "texture": "2d1ef5d9-07c0-4f7c-a56f-48f78ef2a8ba",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      134,
+      153
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      134,
+      153
+    ]
+  }
+}

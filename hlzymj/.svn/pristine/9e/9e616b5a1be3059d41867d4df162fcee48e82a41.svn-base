@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_face_suit_z",
+    "texture": "7d7743e2-4c68-4670-8b99-53a25bf0f47c",
+    "atlas": "",
+    "rect": [
+      0,
+      3,
+      498,
+      485
+    ],
+    "offset": [
+      0,
+      -1.5
+    ],
+    "originalSize": [
+      498,
+      488
+    ]
+  }
+}

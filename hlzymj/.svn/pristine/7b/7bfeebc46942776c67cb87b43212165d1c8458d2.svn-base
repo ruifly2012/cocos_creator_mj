@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "winCount_7",
+    "texture": "a9d18292-a63d-4c29-9657-02f7574451c0",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      380,
+      171
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      382,
+      171
+    ]
+  }
+}

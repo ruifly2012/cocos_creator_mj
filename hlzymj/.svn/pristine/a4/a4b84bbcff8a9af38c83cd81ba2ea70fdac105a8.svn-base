@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_li_zhonglaizi",
+    "texture": "a2a9b2fc-b63b-4796-9519-31f785370523",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      81,
+      116
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      84,
+      120
+    ]
+  }
+}

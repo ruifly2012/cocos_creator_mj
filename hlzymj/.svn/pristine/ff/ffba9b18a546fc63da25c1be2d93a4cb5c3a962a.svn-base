@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "goldCoin",
+    "texture": "37ef37de-99c3-4e98-9a14-3f69b6c6a4d0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      46,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      46,
+      46
+    ]
+  }
+}

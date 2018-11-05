@@ -1,0 +1,59 @@
+"use strict";
+cc._RF.push(module, '884a2PKejFL2aMkIyph1cWZ', 'inviteFriendItem');
+// scripts/hall/activity/inviteFriend/inviteFriendItem.js
+
+"use strict";
+
+var inviteFriendItem = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        inviteFriendBtn: {
+            default: null,
+            type: cc.Button
+        },
+        inviteFriendIconBtn: {
+            default: null,
+            type: cc.Button
+        },
+        inviteSuccessGold: {
+            default: null,
+            type: cc.Label
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        this.inviteFriendBtn.node.on('click', this.callback, this);
+    },
+
+    callback: function callback() {
+        this.callbackFunc();
+    },
+    initData: function initData(data) {
+        var self = this;
+        if (data.imgurl) {
+            self.inviteFriendIconBtn.node.active = true;
+            // cc.loader.loadRes(data.icon,cc.SpriteFrame,function(err,spriteFrame){
+            //     if(!err)
+            //     {   
+            //         self.inviteFriendIconBtn.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            //     }
+            // });
+            cc.loader.load(data.imgurl, function (err, texture) {
+                self.inviteFriendIconBtn.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+            });
+        } else {
+            self.callbackFunc = data.callbackFunc;
+        }
+        self.inviteSuccessGold.string = data.gold + "金币";
+    },
+
+    start: function start() {}
+    // update (dt) {},
+});
+
+module.exports = inviteFriendItem;
+
+cc._RF.pop();

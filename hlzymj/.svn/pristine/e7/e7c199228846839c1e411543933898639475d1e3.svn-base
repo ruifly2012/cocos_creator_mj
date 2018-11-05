@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yingZiMo",
+    "texture": "a33bcb59-6d67-485c-bbe7-1637268f2064",
+    "atlas": "",
+    "rect": [
+      16,
+      0,
+      219,
+      86
+    ],
+    "offset": [
+      -3,
+      0.5
+    ],
+    "originalSize": [
+      257,
+      87
+    ]
+  }
+}

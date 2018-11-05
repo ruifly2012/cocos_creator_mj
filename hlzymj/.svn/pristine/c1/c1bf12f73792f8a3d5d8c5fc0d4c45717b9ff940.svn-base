@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallBg",
+    "texture": "e0249cec-e783-42df-871b-a5b71c9cefa9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      909,
+      700
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      909,
+      700
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diamondCoin",
+    "texture": "94450d43-9558-407a-aad6-5927b13c6434",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      46,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      48,
+      45
+    ]
+  }
+}

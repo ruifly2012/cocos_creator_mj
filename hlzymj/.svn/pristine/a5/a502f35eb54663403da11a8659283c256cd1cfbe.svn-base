@@ -1,0 +1,81 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/activity/dailyLogin/dailyGetButtonItem.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '82a04NSTw1DsadTbweUyMHE', 'dailyGetButtonItem', __filename);
+// scripts/hall/activity/dailyLogin/dailyGetButtonItem.js
+
+"use strict";
+
+var dailyGetButtonItem = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        btnBG: {
+            default: null,
+            type: cc.Button
+        },
+        dayIcon: {
+            default: null,
+            type: cc.Sprite
+        },
+        dayCount: {
+            default: null,
+            type: cc.Label
+        },
+        coinIcon: {
+            default: null,
+            type: cc.Sprite
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        this.btnBG.node.on('click', this.callback, this);
+
+        this.initUI();
+    },
+
+    initUI: function initUI() {
+        var effectNode = this.node.getChildByName("get_daily_reward_btn").getChildByName("same_effect_sp");
+        var rotate = cc.rotateBy(4, 360);
+        var repeatForever = cc.repeatForever(rotate);
+        effectNode.runAction(repeatForever);
+    },
+
+    callback: function callback() {
+        var self = this;
+        self.callbackFunc();
+    },
+
+    initData: function initData(data, callback) {
+        var self = this;
+        self.callbackFunc = callback;
+        this.dayCount.string = data.amount;
+        cc.loader.loadRes("texture/activityRes/dailyLogin/days" + data.days, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.dayIcon.spriteFrame = spriteFrame;
+            }
+        });
+        cc.loader.loadRes("texture/activityRes/dailyLogin/" + data.icon, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.coinIcon.spriteFrame = spriteFrame;
+            }
+        });
+    }
+    // update (dt) {},
+});
+
+module.exports = dailyGetButtonItem;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=dailyGetButtonItem.js.map
+        

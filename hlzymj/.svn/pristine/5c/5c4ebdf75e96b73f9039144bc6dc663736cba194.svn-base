@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "spot_icon1",
+    "texture": "cfa08454-3c5d-4904-8a29-54e805ffc16d",
+    "atlas": "4e3dce2f-143f-4c9b-96f0-2e3c874dc977",
+    "rect": [
+      318,
+      479,
+      18,
+      18
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      18,
+      18
+    ]
+  }
+}

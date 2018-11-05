@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "progress_bar",
+    "texture": "58c77666-2064-4b81-8a7d-dbfc11080419",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      775,
+      20
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      775,
+      20
+    ]
+  }
+}

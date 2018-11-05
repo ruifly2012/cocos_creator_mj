@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "getRewardGrayBtn",
+    "texture": "6e0015e7-7ceb-4e72-a26d-b30901216474",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      152,
+      73
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      152,
+      74
+    ]
+  }
+}

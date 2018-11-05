@@ -1,0 +1,135 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/chat/Chatting.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'fe7f6d+EzpNk595x8KIfRaj', 'Chatting', __filename);
+// scripts/hall/game/chat/Chatting.js
+
+"use strict";
+
+var _GameCmds = require("../../gamelib/room/GameCmds");
+
+var _TSCommon = require("../../TSCommon");
+
+var Resources = require("Resources");
+var GameCfg = require("GameCfg");
+cc.Class({
+        extends: cc.Component,
+
+        properties: {
+                bg: {
+                        default: null,
+                        type: cc.Node
+                }
+        },
+
+        //界面载入
+        onLoad: function onLoad() {
+                this.init();
+
+                this.node.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
+        },
+
+        init: function init() {
+
+                var size = this.bg.getContentSize();
+
+                this.prePos = this.node.getPosition();
+
+                this.node.setPosition(cc.p(this.prePos.x + size.width, this.prePos.y));
+        },
+
+        onTouch: function onTouch(event) {
+                cc.log("onTouch");
+                var point = event.touch.getLocation();
+
+                var convertPoint = this.bg.convertToNodeSpace(point);
+
+                var size = this.bg.getContentSize();
+
+                var rect = cc.rect(0, 0, size.width, size.height);
+
+                if (!cc.rectContainsPoint(rect, convertPoint)) {
+                        this.hide();
+                }
+        },
+
+        show: function show() {
+                this.node.active = true;
+
+                this.node.stopAllActions();
+
+                var self = this;
+
+                //运行动画
+                var size = this.bg.getContentSize();
+
+                var destPos = cc.p(this.prePos.x, this.prePos.y);
+
+                var moveTo = cc.moveTo(0.2, destPos);
+
+                this.node.runAction(moveTo);
+        },
+
+        hide: function hide() {
+                this.node.stopAllActions();
+
+                var self = this;
+
+                var size = this.bg.getContentSize();
+
+                var destPos = cc.p(this.prePos.x + size.width, this.prePos.y);
+
+                var moveTo = cc.moveTo(0.2, destPos);
+
+                var onMoveEnd = function onMoveEnd() {
+                        self.node.active = false;
+                };
+                var callFunc = cc.callFunc(onMoveEnd, this);
+
+                var sequence = cc.sequence(moveTo, callFunc);
+
+                this.node.runAction(sequence);
+        },
+
+        sendChat: function sendChat(lpszMsg) {
+
+                var nResult = require('GameLibSink').getInstance().getGameLib().sendTableChat(lpszMsg);
+                this.node.active = false;
+
+                if (nResult == _GameCmds.GameCmds.SEND_TABLE_CHAT_OFFLINE) {} else if (nResult == _GameCmds.GameCmds.SEND_TABLE_CHAT_NULL_CONTENT) {} else if (nResult == _GameCmds.GameCmds.SEND_TABLE_CHAT_BUSY) {} else {
+                        _TSCommon.TSCommon.dispatchEvent(GameCfg.sendChatEnd, null);
+                }
+
+                return nResult;
+        },
+
+        onSendFaceClicked: function onSendFaceClicked(event, faceID) {
+                // console.log("faceID ====="+faceID);
+
+                var msg = "--:" + (faceID - 1);
+                this.sendChat(msg);
+
+                this.hide();
+        },
+
+        onSendWordsClicked: function onSendWordsClicked(event, wordID) {
+                // console.log("wordID =====" + wordID);
+                var msg = Resources.QUICK_SEND_CHATS[wordID];
+                this.sendChat(msg);
+
+                this.hide();
+        }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=Chatting.js.map
+        

@@ -1,0 +1,64 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/gamelib/Table.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '9b9d6X9B1pOt7lH8pHF1GSb', 'Table', __filename);
+// scripts/hall/gamelib/Table.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Chair_1 = require("./Chair");
+var Table = /** @class */ (function () {
+    function Table(chairCount, tableID) {
+        this._chairCount = chairCount;
+        this._tableID = tableID;
+        this._isLocked = false;
+        this._isPlaying = false;
+        this._chairs = new Array();
+        for (var i = 0; i < chairCount; i++) {
+            this._chairs[i] = new Chair_1.Chair();
+        }
+    }
+    Table.prototype.getChair = function (chairID) {
+        if (chairID < 0 || chairID >= this._chairCount)
+            return null;
+        return this._chairs[chairID];
+    };
+    Table.prototype.getEmptyChairCount = function () {
+        var count = 0;
+        for (var key in this._chairs) {
+            if (this._chairs[key].isEmpty())
+                count++;
+        }
+        return count;
+    };
+    Table.prototype.getPlayerCount = function () {
+        return this._chairCount - this.getEmptyChairCount();
+    };
+    Table.prototype.setTableBuffer = function (buf) {
+        this._tableBuffer = buf;
+    };
+    Table.prototype.getTableBuffer = function () {
+        return this._tableBuffer;
+    };
+    Table.prototype.dump = function () {
+        for (var i = 0; i < this._chairCount; i++) {
+            var chair = this._chairs[i];
+            console.log("chair " + i + " " + chair.isEmpty() ? "empty" : "taken");
+        }
+    };
+    Table.TABLE_PLAYING = 2;
+    Table.TABLE_LOCKED = 1;
+    return Table;
+}());
+exports.Table = Table;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=Table.js.map
+        

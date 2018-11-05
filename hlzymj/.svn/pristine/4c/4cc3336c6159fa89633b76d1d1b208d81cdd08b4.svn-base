@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xlchIcon",
+    "texture": "7d4eb3c3-4d66-484f-88ee-945cef686da9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      315,
+      233
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      315,
+      233
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yixuanpai",
+    "texture": "cc7f1d9d-54f7-4149-9c85-a746b2e6cbce",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      196,
+      83
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      196,
+      83
+    ]
+  }
+}

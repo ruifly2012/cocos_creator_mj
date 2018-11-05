@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "niQuan",
+    "texture": "4eec85cc-e57d-4a28-9ce3-64b99e0f38f8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      198
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      211,
+      198
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallGold1",
+    "texture": "5306b4f9-85d7-4d0b-bd9f-18bb88a7a7e5",
+    "atlas": "",
+    "rect": [
+      11,
+      25,
+      100,
+      60
+    ],
+    "offset": [
+      3,
+      -6
+    ],
+    "originalSize": [
+      116,
+      98
+    ]
+  }
+}

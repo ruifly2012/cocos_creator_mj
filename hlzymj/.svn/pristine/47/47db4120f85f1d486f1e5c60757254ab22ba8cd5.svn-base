@@ -1,0 +1,77 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "game_setting.plist",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_spriteFrames": {
+    "bg1": {
+      "__uuid__": "200e714c-287b-461e-80e3-1e729e37597a"
+    },
+    "bg2": {
+      "__uuid__": "bf58f14b-35a0-4622-b80e-0b20ccd40939"
+    },
+    "bg3": {
+      "__uuid__": "06cb1973-a5b9-4715-8123-cbfc48512938"
+    },
+    "bg_mask": {
+      "__uuid__": "cb6109b0-4cd2-4ae1-9ed8-4a6502a67e04"
+    },
+    "cb_close": {
+      "__uuid__": "d8ce70fc-6b5f-4b47-a98f-2e3cf4c8b901"
+    },
+    "cb_open": {
+      "__uuid__": "8f7f4736-8f86-4fec-8db5-11dc4e185de5"
+    },
+    "close_bg1": {
+      "__uuid__": "ba573e68-1796-40a0-905b-ca9942933d6d"
+    },
+    "desktop_label1": {
+      "__uuid__": "9619b4fd-bb0e-4899-9b1e-45696e69057b"
+    },
+    "effect_img": {
+      "__uuid__": "03a45819-c17b-4a46-a403-8baeb3ddb1b7"
+    },
+    "left_arrow": {
+      "__uuid__": "b898e80f-66ea-4931-855e-ac6db3e01916"
+    },
+    "mahjong1_icon": {
+      "__uuid__": "f27a5d46-8532-4203-8ad1-b638c2453c6d"
+    },
+    "mahjong2_icon": {
+      "__uuid__": "57d39953-8cc7-41d1-bf3f-abba292933a3"
+    },
+    "mahjong3_icon": {
+      "__uuid__": "25663b7f-9a0a-476f-a380-885028008f57"
+    },
+    "mahjong_label1": {
+      "__uuid__": "b7ca91c5-68f7-4a75-af3d-f284c978dd52"
+    },
+    "music_img": {
+      "__uuid__": "6ca05b15-18ec-4591-aea3-19ed5fcef344"
+    },
+    "right_arrow": {
+      "__uuid__": "00e4bd35-d352-46a6-9503-4d04721df8d5"
+    },
+    "select_icon": {
+      "__uuid__": "ca6503a5-b856-4499-9e96-0ad79cd58006"
+    },
+    "sound_bg": {
+      "__uuid__": "0fef5459-097a-4bbb-968a-e3db35c4e82d"
+    },
+    "sound_label1": {
+      "__uuid__": "586add58-1758-4e19-aceb-4c812f237f86"
+    },
+    "spot_icon": {
+      "__uuid__": "3941f22d-2787-478d-ab4f-7b61f2eee69f"
+    },
+    "spot_icon1": {
+      "__uuid__": "6e60426f-20d1-4eb8-af2f-48b4cf853ad4"
+    },
+    "title_setting1": {
+      "__uuid__": "03c6c482-460e-4e8c-a734-d60ccecb1de4"
+    },
+    "vibration_img": {
+      "__uuid__": "754e81f4-bd75-4052-b82c-db772e99d682"
+    }
+  }
+}

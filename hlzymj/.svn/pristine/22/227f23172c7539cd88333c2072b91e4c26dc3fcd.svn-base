@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "9fb18347-636b-46ec-9954-3b390956e8e4",
+  "atlasJson": "{\"SubTexture\":[{\"width\":50,\"y\":161,\"height\":67,\"name\":\"game_jd\",\"x\":1},{\"frameX\":-7,\"frameHeight\":171,\"y\":1,\"frameY\":-2,\"frameWidth\":305,\"width\":278,\"height\":158,\"name\":\"game_jd2\",\"x\":1},{\"width\":27,\"y\":161,\"height\":32,\"name\":\"game_jd1\",\"x\":53}],\"width\":512,\"height\":256,\"name\":\"Game_JiDan\",\"imagePath\":\"Game_JiDan_tex.png\"}",
+  "texture": "8b6add14-df28-4de4-aac9-988d86fec3ec",
+  "subMetas": {}
+}

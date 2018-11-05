@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "6aaad9ba-a422-4d73-89bf-41f84d845d8d",
+  "atlasJson": "{\"width\":256,\"imagePath\":\"WenZi_tex.png\",\"name\":\"WenZi\",\"SubTexture\":[{\"width\":1,\"y\":63,\"height\":1,\"name\":\"bg\",\"x\":171},{\"width\":65,\"y\":1,\"height\":65,\"name\":\"wz_bg\",\"x\":178},{\"frameY\":-3,\"y\":194,\"frameWidth\":58,\"frameHeight\":50,\"width\":52,\"height\":45,\"name\":\"wz_peng\",\"frameX\":-3,\"x\":1},{\"frameY\":-3,\"y\":176,\"frameWidth\":47,\"frameHeight\":54,\"width\":41,\"height\":49,\"name\":\"wz_hu\",\"frameX\":-3,\"x\":55},{\"frameY\":-3,\"y\":141,\"frameWidth\":55,\"frameHeight\":56,\"width\":48,\"height\":51,\"name\":\"wz_gang\",\"frameX\":-3,\"x\":1},{\"frameY\":-3,\"y\":63,\"frameWidth\":83,\"frameHeight\":60,\"width\":76,\"height\":55,\"name\":\"wz_zm\",\"frameX\":-3,\"x\":93},{\"width\":90,\"y\":1,\"height\":80,\"name\":\"wz_dg\",\"x\":1},{\"width\":58,\"y\":68,\"height\":50,\"name\":\"wz_pengguang\",\"x\":171},{\"width\":55,\"y\":83,\"height\":56,\"name\":\"wz_gangguang\",\"x\":1},{\"width\":47,\"y\":120,\"height\":54,\"name\":\"wz_huguang\",\"x\":58},{\"width\":83,\"y\":1,\"height\":60,\"name\":\"wz_zmguang\",\"x\":93}],\"height\":256}",
+  "texture": "532e75c8-51a3-48ef-9251-f0651a1e72c8",
+  "subMetas": {}
+}

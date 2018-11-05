@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "commonFrameMaskBg",
+    "texture": "4b988fd7-3aeb-4d4e-b68e-2c820d10baa4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      30,
+      30
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      30,
+      30
+    ]
+  }
+}

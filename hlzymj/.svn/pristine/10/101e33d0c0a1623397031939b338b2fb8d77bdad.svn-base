@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "9YouJin",
+    "texture": "34ea2117-5ee7-4b1d-87e4-cf2640cad06f",
+    "atlas": "61c53b4d-d512-4cd9-8b88-637c48cc18b3",
+    "rect": [
+      244,
+      480,
+      147,
+      151
+    ],
+    "offset": [
+      3,
+      0
+    ],
+    "originalSize": [
+      167,
+      167
+    ],
+    "rotated": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "9f81c8c2-d17b-46c6-8d2d-d0c7b74a009d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "diamondCoin": {
+      "ver": "1.0.3",
+      "uuid": "cacf1580-d4fd-4c3c-922a-c0548487ce8e",
+      "rawTextureUuid": "9f81c8c2-d17b-46c6-8d2d-d0c7b74a009d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 39,
+      "height": 31,
+      "rawWidth": 39,
+      "rawHeight": 31,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

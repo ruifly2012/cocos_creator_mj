@@ -1,0 +1,129 @@
+"use strict";
+cc._RF.push(module, 'a684ecTPyxC47NHCPWL9Eh2', 'GameIDList');
+// scripts/hall/gamelib/place/GameIDList.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var GameServerList_1 = require("./GameServerList");
+var GameIDList = /** @class */ (function () {
+    function GameIDList() {
+        this.m_list = new Array();
+    }
+    GameIDList.prototype.clearServerList = function () {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            v.clearServerList();
+        }
+        ;
+        this.m_list = new Array();
+    };
+    GameIDList.prototype.addGameID = function (gameid) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameid)
+                return;
+        }
+        ;
+        var serverList = new GameServerList_1.GameServerList(gameid);
+        this.m_list.push(serverList);
+    };
+    GameIDList.prototype.addStation = function (pStation) {
+        if (pStation == null || pStation.dwParentID == null)
+            return null;
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == pStation.dwParentID)
+                return v.addStation(pStation);
+        }
+        ;
+        return null;
+    };
+    GameIDList.prototype.addGameServer = function (pGameServer) {
+        if (pGameServer == null || pGameServer.dwKindID == null)
+            return null;
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == pGameServer.dwKindID) {
+                return v.addGameServer(pGameServer);
+            }
+        }
+        return null;
+    };
+    GameIDList.prototype.getStation = function (stationID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            var station = v.getStation(stationID);
+            if (station)
+                return station;
+        }
+        ;
+        return null;
+    };
+    GameIDList.prototype.getGameServer = function (nServerID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            var station = v.getGameServer(nServerID);
+            if (station)
+                return station;
+        }
+        ;
+        return null;
+    };
+    GameIDList.prototype.getGameStationByName = function (gameID, stationName) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getGameStationByName(stationName);
+        }
+        ;
+        return null;
+    };
+    GameIDList.prototype.getStationList = function (gameID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getStatonList();
+        }
+        ;
+        return new Array();
+    };
+    GameIDList.prototype.getGameServerList = function (gameID, stationID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getGameServerList(stationID);
+        }
+        ;
+        return new Array();
+    };
+    GameIDList.prototype.getAllGameServerList = function (gameID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getAllGameServerList();
+        }
+        ;
+        return new Array();
+    };
+    GameIDList.prototype.getOneGameServerInStation = function (gameID, nStationID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getOneGameServerInStation(nStationID);
+        }
+        ;
+        return null;
+    };
+    GameIDList.prototype.getStationOnlineCount = function (gameID, nStationID) {
+        for (var key in this.m_list) {
+            var v = this.m_list[key];
+            if (v.GameID == gameID)
+                return v.getStationOnlineCount(nStationID);
+        }
+        ;
+        return 0;
+    };
+    return GameIDList;
+}());
+exports.GameIDList = GameIDList;
+
+cc._RF.pop();

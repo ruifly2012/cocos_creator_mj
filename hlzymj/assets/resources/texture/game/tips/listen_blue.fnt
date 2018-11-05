@@ -1,0 +1,15 @@
+info face="Î¢ÈíÑÅºÚ" size=40 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=2,2 outline=2
+common lineHeight=40 base=32 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=3
+page id=0 file="listen_blue_0.png"
+chars count=11
+char id=48   x=26    y=0     width=19    height=27    xoffset=0     yoffset=0     xadvance=19    page=0  chnl=15
+char id=49   x=194   y=0     width=12    height=27    xoffset=0     yoffset=0     xadvance=12    page=0  chnl=15
+char id=50   x=87    y=0     width=16    height=27    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=51   x=177   y=0     width=15    height=27    xoffset=0     yoffset=0     xadvance=15    page=0  chnl=15
+char id=52   x=47    y=0     width=19    height=27    xoffset=0     yoffset=0     xadvance=19    page=0  chnl=15
+char id=53   x=105   y=0     width=16    height=27    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=54   x=123   y=0     width=16    height=27    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=55   x=141   y=0     width=16    height=27    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=56   x=159   y=0     width=16    height=27    xoffset=0     yoffset=0     xadvance=16    page=0  chnl=15
+char id=57   x=68    y=0     width=17    height=27    xoffset=0     yoffset=0     xadvance=17    page=0  chnl=15
+char id=24352 x=0     y=0     width=24    height=27    xoffset=0     yoffset=0     xadvance=24    page=0  chnl=15

@@ -1,0 +1,110 @@
+"use strict";
+cc._RF.push(module, '6b1d9nl5elE+a8ULbDQA7wJ', 'ConsecutiveVictoriesRewardLayer');
+// scripts/hall/activity/consecutiveVictories/ConsecutiveVictoriesRewardLayer.js
+
+"use strict";
+
+var _TSCommon = require("TSCommon");
+
+var _WeixinManager = require("../../../hall/weixin/WeixinManager");
+
+var HallResources = require("HallResources");
+
+var ConsecutiveVictoriesRewardLayer = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        playerName: {
+            default: null,
+            type: cc.Label
+        },
+        playerTime: {
+            default: null,
+            type: cc.Label
+        },
+        playerHead: {
+            default: null,
+            type: cc.Sprite
+        },
+        winCount: {
+            default: null,
+            type: cc.Sprite
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {},
+
+    initData: function initData(winCount) {
+        var self = this;
+        this.winAddCount = winCount;
+        cc.loader.loadRes("texture/activityRes/consecutiveVictories/winCount_" + winCount, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.winCount.spriteFrame = spriteFrame;
+            }
+        });
+
+        var weixinUserInfo = _WeixinManager.WeixinManager.getInstance().userInfo;
+        if (weixinUserInfo && weixinUserInfo.avatarUrl) {
+            var imgurl = weixinUserInfo.avatarUrl + "?aaa=aa.jpg";
+            cc.loader.load(imgurl, function (err, texture) {
+                self.playerHead.spriteFrame = new cc.SpriteFrame(texture);
+            });
+        }
+        var publicUserInfo = require("HallControl").getInstance().getPublicUserInfo();
+        this.playerName.string = publicUserInfo.nickName;
+
+        var testDate = new Date();
+        var time = testDate.toLocaleString(); //获取日期与时间
+        this.playerTime.string = time;
+    },
+
+    onClickSharetBtn: function onClickSharetBtn() {
+        var self = this;
+
+        var winShareImgUrl = "";
+        if (self.winAddCount == 3) {
+            winShareImgUrl = HallResources.shareWin_3;
+        } else if (self.winAddCount == 5) {
+            winShareImgUrl = HallResources.shareWin_5;
+        } else if (self.winAddCount == 7) {
+            winShareImgUrl = HallResources.shareWin_7;
+        } else if (self.winAddCount == 8) {
+            winShareImgUrl = HallResources.shareWin_9;
+        }
+        wx.shareAppMessage({
+            title: "戳虾子，我已经连胜" + self.winAddCount + "盘,本群谁能与我一战！。",
+            imageUrl: winShareImgUrl,
+            success: function success(res) {
+                console.log("转发成功!!!");
+                if (res.shareTickets == null || res.shareTickets == undefined || res.shareTickets == "") {
+                    //没有群信息，说明分享的是个人
+                    _TSCommon.TSCommon.dispatchEvent(HallResources.onShowFlyMessage, ["请分享到群聊"]);
+                } else {
+                    //有群信息
+                    console.log("下面是群消息数据!!!");
+                    console.log(res);
+                    self.closeLayer();
+                }
+            },
+            fail: function fail(res) {
+                console.log("转发失败!!!");
+            }
+        });
+    },
+
+    onClickNextBtn: function onClickNextBtn() {
+        this.closeLayer();
+    },
+
+    closeLayer: function closeLayer() {
+        this.node.active = false;
+    }
+
+    // update (dt) {},
+});
+
+module.exports = ConsecutiveVictoriesRewardLayer;
+
+cc._RF.pop();

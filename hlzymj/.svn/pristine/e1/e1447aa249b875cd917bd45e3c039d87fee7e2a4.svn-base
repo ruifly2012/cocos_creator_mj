@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bigWinPlayer",
+    "texture": "5b36a11e-b8ce-46fe-9725-fe563d49dc07",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      116,
+      51
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      117,
+      51
+    ]
+  }
+}

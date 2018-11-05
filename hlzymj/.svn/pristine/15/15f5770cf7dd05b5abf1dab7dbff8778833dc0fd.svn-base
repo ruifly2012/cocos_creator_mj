@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ruanzimo_match",
+    "texture": "210d29b9-21f4-48fd-9c99-2bedb9d6251a",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      214,
+      81
+    ],
+    "offset": [
+      0.5,
+      0.5
+    ],
+    "originalSize": [
+      215,
+      82
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shunQuan",
+    "texture": "855631a4-ab9d-48fc-ba54-8e71fcee3634",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      198
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      211,
+      198
+    ]
+  }
+}

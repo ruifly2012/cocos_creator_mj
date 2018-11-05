@@ -1,0 +1,167 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/gameOver/ProtectScoreLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '7010f0lFfZAJbAPRaeuaugS', 'ProtectScoreLayer', __filename);
+// scripts/hall/game/gameOver/ProtectScoreLayer.js
+
+"use strict";
+
+var _TSCommon = require("../../TSCommon");
+
+var _WeixinManager = require("../../weixin/WeixinManager");
+
+/**
+ * 分享保分界面
+ */
+
+var Resources = require("Resources");
+
+var GameCfg = require("GameCfg");
+cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        timer_bg: {
+            default: null,
+            type: cc.Node
+        },
+        timer_label: {
+            default: null,
+            type: cc.Label
+        }
+    },
+
+    onEnable: function onEnable() {
+        this.show();
+
+        var windowSize = cc.view.getVisibleSize();
+        //主界面不显示
+        if (this.node.getChildByName("mask_bg")) {
+            this.node.getChildByName("mask_bg").setContentSize(windowSize);
+        }
+    },
+
+    onDisable: function onDisable() {
+        this.unschedule(this.m_waitCallback);
+    },
+
+    init: function init(sn, score) {
+        this.m_totalTime = 7;
+
+        this.m_sn = sn; //本局的流水号
+
+        this.m_score = score; //本局结束的分数
+
+        this.node.getChildByName("give_up_btn").active = false;
+    },
+
+    show: function show() {
+
+        var self = this;
+
+        this.m_waitCallback = function () {
+
+            self.m_totalTime -= 1;
+
+            self.timer_label.string = self.m_totalTime;
+
+            if (self.m_totalTime < 0) {
+                self.node.active = false;
+            }
+
+            if (self.m_totalTime <= 3) {
+
+                self.node.getChildByName("give_up_btn").active = true;
+            }
+        }.bind(this);
+
+        this.schedule(this.m_waitCallback, 1, this.m_totalTime, 0);
+
+        this.timer_bg.runAction(cc.repeatForever(cc.rotateBy(1.0, 360)));
+    },
+
+    onShareClicked: function onShareClicked() {
+        var self = this;
+        var HallResources = require("HallResources");
+        if (cc.sys.browserType == "mqqbrowser" || "wechatgame" == cc.sys.browserType) {
+
+            //主动拉起分享接口
+            wx.shareAppMessage({
+                title: "[有人@你]保本就靠你了！老铁，忍心见死不救吗！",
+                imageUrl: HallResources.protectScoreShareImgUrl,
+                success: function success(res) {
+                    if (res.shareTickets == null || res.shareTickets == undefined || res.shareTickets == "") {
+                        //没有群信息，说明分享的是个人
+                        setTimeout(function () {
+                            Resources.showRewardTips("请选择一个群进行分享", true, true, true);
+                        }, 0);
+                    } else {
+                        //有群信息
+                        console.log("下面是群消息数据!!!");
+                        console.log(res);
+                        if (res.shareTickets.length > 0) {
+                            self.commonShareTickets = res.shareTickets[0];
+                            wx.getShareInfo({
+                                shareTicket: self.commonShareTickets,
+                                success: function success(res) {
+                                    console.log("下面是群消息唯一性数据!!!");
+                                    console.log(res);
+                                    self.requestProtectScore(res.encryptedData, res.iv);
+                                }
+                            });
+                        }
+                    }
+                },
+                fail: function fail(res) {
+                    console.log("分享保分失败!!!");
+                }
+            });
+        }
+    },
+
+    requestProtectScore: function requestProtectScore(encryptedData, iv) {
+        var myOpenId = _WeixinManager.WeixinManager.getInstance().userInfo.openid;
+        var self = this;
+        var httpCallback = function httpCallback(success, data) {
+            require('HallResources').getInstance().removeLoading();
+            if (success) {
+                var jsonObject = JSON.parse(data);
+                console.log("分享保分 ---------jsonObject --------");
+                console.log(jsonObject);
+                var nRetCode = parseInt(jsonObject.RetCode);
+                if (nRetCode == 1) {
+                    Resources.showRewardTips("分享成功", true, true, true);
+
+                    self.node.active = false;
+
+                    _TSCommon.TSCommon.dispatchEvent(GameCfg.PROTECT_SCORE_SUCCESS, null);
+                } else if (nRetCode == 12) {
+                    Resources.showRewardTips("分享次数已经达到上限", true, true, true);
+                } else if (nRetCode == 13) {
+                    Resources.showRewardTips("该群已分享过一次，请选择其他群进行分享", true, true, true);
+                } else {
+                    console.log("未对应的错误码错误");
+                }
+            }
+        };
+
+        require('HallWebRequest').getInstance().getProtectScoreShareReward(this.m_sn, this.m_score, myOpenId, encryptedData, iv, httpCallback);
+    },
+
+    onCloseBtnClicked: function onCloseBtnClicked() {
+        this.node.active = false;
+    }
+
+});
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ProtectScoreLayer.js.map
+        

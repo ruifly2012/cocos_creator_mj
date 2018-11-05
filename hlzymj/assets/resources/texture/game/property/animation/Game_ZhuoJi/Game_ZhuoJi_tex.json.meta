@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "8ffebca9-7a6c-4fba-9b67-9b77ef914fd1",
+  "atlasJson": "{\"SubTexture\":[{\"width\":117,\"y\":1,\"height\":114,\"name\":\"game_zj3\",\"x\":120},{\"width\":119,\"y\":128,\"height\":122,\"name\":\"game_zj5\",\"x\":1},{\"width\":103,\"y\":117,\"height\":112,\"name\":\"game_zj2\",\"x\":122},{\"width\":117,\"y\":1,\"height\":125,\"name\":\"game_zj4\",\"x\":1},{\"width\":103,\"y\":117,\"height\":74,\"name\":\"game_zj1\",\"x\":227},{\"width\":27,\"y\":193,\"height\":29,\"name\":\"game_zj6\",\"x\":227},{\"width\":22,\"y\":224,\"height\":20,\"name\":\"game_zj7\",\"x\":227}],\"width\":512,\"height\":256,\"name\":\"Game_ZhuoJi\",\"imagePath\":\"Game_ZhuoJi_tex.png\"}",
+  "texture": "e7f3b536-deea-4511-b6eb-fc68d1ae0269",
+  "subMetas": {}
+}

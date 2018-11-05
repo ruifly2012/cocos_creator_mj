@@ -1,0 +1,171 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/game/GameLibSink.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, 'f170b3E6ltA8Ka6gMfm52aP', 'GameLibSink', __filename);
+// scripts/hall/game/GameLibSink.js
+
+"use strict";
+
+var _CGameLib = require("../gamelib/CGameLib");
+
+var _TSCommon = require("../TSCommon");
+
+var _gamelibcommon = require("../gamelib/gamelibcommon");
+
+var ClientFrameSink = require('ClientFrameSink');
+
+var HallResources = require("HallResources");
+var GameLibSink = cc.Class({
+    statics: {
+        instance: null
+    },
+    m_gameLib: null,
+    _clientFrameSink: null,
+
+    ctor: function ctor() {
+        this._clientFrameSink = new ClientFrameSink();
+        this.m_gameLib = _CGameLib.CGameLib.getInstance();
+    },
+
+    run: function run(gameID, logonIP, logonPort, webRoot) {
+
+        // cc.log("call the GameLibSink of run");
+        // cc.log("logonIP =========", logonIP);
+        // cc.log("logonPort ========", logonPort);
+        // cc.log("webRoot =======", webRoot);
+        if (gameID) {
+            _CGameLib.CGameLib.getInstance().createGamelib(gameID, 1, this, this._clientFrameSink, 10001, 10101, logonIP, logonPort, webRoot);
+        }
+        //require('HallResources').getInstance().showLoading();
+    },
+
+    getGameLib: function getGameLib() {
+        return this.m_gameLib;
+    },
+
+    onLogonFinished: function onLogonFinished() {
+        cc.log("onLogonFinished");
+        // CGameLib.getInstance().autoEnterGameRoom("练习场1")
+
+
+        // cc.director.loadScene("GameScene");
+    },
+
+    onPlazaGoldChanged: function onPlazaGoldChanged() {},
+    onRefreshUserInfo: function onRefreshUserInfo() {},
+    onChargeInfoRefeshRet: function onChargeInfoRefeshRet(result) {},
+    onSendSpeakerRet: function onSendSpeakerRet(cbRetCode) {},
+    onLogonFailed: function onLogonFailed(errorStr, nFaileType) {},
+    onEnteredGameRoom: function onEnteredGameRoom(tableCount, chairCount) {
+        cc.log("GameLibSink:onEnteredGameRoom");
+
+        this.m_chairCount = chairCount;
+
+        cc.director.loadScene('XueLiuGameScene', function () {
+            require('HallResources').getInstance().removeLoading();
+
+            //记录日志
+            HallResources.recordPlayerLogToServer(HallResources.recordList.room_res_end);
+        });
+
+        cc.log("onEnteredGameRoom");
+
+        //CGameLib.getInstance().autoSit();
+    },
+    onEnterGameRoomFailed: function onEnterGameRoomFailed(errorStr) {},
+    onRoomConnectClosed: function onRoomConnectClosed() {
+        // cc.log(" --------------onRoomConnectClosed--------------")
+        cc.director.loadScene('HallPlatformScene');
+    },
+    onEnterGameView: function onEnterGameView() {},
+    onLeaveGameView: function onLeaveGameView() {},
+    onRoomUserEnter: function onRoomUserEnter(userID) {
+        cc.log("onRoomUserEnter");
+    },
+    onRoomUserExit: function onRoomUserExit(userID) {},
+    onRoomUserInfoUpdated: function onRoomUserInfoUpdated(userID) {
+        var pMyself = this.getGameLib().getMyself();
+
+        if (!pMyself) {
+            return;
+        }
+
+        if (userID == pMyself.getUserID()) {
+            var logonInfo = this.getGameLib().getUserLogonInfo();
+            logonInfo.dwGold = pMyself.getGold();
+            logonInfo.nScore = pMyself.getScoreField(_gamelibcommon.gamelibcommon.enScore_Score);
+            logonInfo.nWin = pMyself.getScoreField(_gamelibcommon.gamelibcommon.enScore_Win);
+            logonInfo.nLose = pMyself.getScoreField(_gamelibcommon.gamelibcommon.enScore_Loss);
+            logonInfo.nFlee = pMyself.getScoreField(_gamelibcommon.gamelibcommon.enScore_Flee);
+            logonInfo.nDraw = pMyself.getScoreField(_gamelibcommon.gamelibcommon.enScore_Draw);
+
+            if (this._clientFrameSink.m_dataEventHandler) {
+                this._clientFrameSink.m_dataEventHandler.emit("updateUserInfo", {
+                    user: pMyself
+                });
+            } else {
+                _TSCommon.TSCommon.performWithDelay(this, this.onRoomUserInfoUpdated, 0.2);
+            }
+        } else {
+            var pUser = this.getGameLib().getUser(userID);
+            if (!pUser) return;
+
+            if (pMyself.getUserTableID() != pUser.getUserTableID()) return;
+
+            if (this._clientFrameSink.m_dataEventHandler) {
+                this._clientFrameSink.m_dataEventHandler.emit("updateUserInfo", {
+                    user: pMyself
+                });
+            } else {
+                _TSCommon.TSCommon.performWithDelay(this, this.onRoomUserInfoUpdated, 0.2);
+            }
+        }
+    },
+    onTableInfoChanged: function onTableInfoChanged(tableID) {},
+    onRecvHallChat: function onRecvHallChat(chat) {},
+
+
+    //收到语音聊天的消息
+    onRecvTableChat: function onRecvTableChat(chat) {
+        if (this._clientFrameSink.m_dataEventHandler) {
+            this._clientFrameSink.m_dataEventHandler.emit("onRecvTableChat", {
+                chatMsg: chat
+            });
+        } else {
+            _TSCommon.TSCommon.performWithDelay(this, this.onRecvTableChat, 0.2);
+        }
+    },
+    onShowAlertMsg: function onShowAlertMsg(msg) {},
+    onLogonGameRoomSucceeded: function onLogonGameRoomSucceeded() {},
+    onChangeUserInfoRet: function onChangeUserInfoRet(cbRetCode) {},
+    onTaskInfo: function onTaskInfo(cbRetCode, pTaskList) {},
+    onTaskGift: function onTaskGift(nTaskID, cbRetCode) {},
+    onNewStatus: function onNewStatus(nNewMissionDone, nNewMail, nNewActivity, nNewFriend, bLoginGift) {},
+    onBankInfo: function onBankInfo(nBankAmount, nBankCapacity) {},
+    onCreatePrivateTableFailed: function onCreatePrivateTableFailed(lpszErrorMsg) {},
+    onEnterPrivateTableFailed: function onEnterPrivateTableFailed(lpszErrorMsg) {},
+    onGameBankOpeReturn: function onGameBankOpeReturn(succeeded, gold, bank) {},
+    onShowGameSystemMsg: function onShowGameSystemMsg(msg) {},
+    onSpeaker: function onSpeaker(msg, priorty) {}
+});
+
+GameLibSink.getInstance = function () {
+    if (GameLibSink.instance == null) {
+        GameLibSink.instance = new GameLibSink();
+    }
+    return GameLibSink.instance;
+};
+
+module.exports = GameLibSink;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=GameLibSink.js.map
+        

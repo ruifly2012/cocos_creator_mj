@@ -1,0 +1,100 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/activity/consecutiveVictories/ConsecutiveVictoriesItem.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '27434iU5GNDpJ9oYYT9O588', 'ConsecutiveVictoriesItem', __filename);
+// scripts/hall/activity/consecutiveVictories/ConsecutiveVictoriesItem.js
+
+"use strict";
+
+var _TSCommon = require("TSCommon");
+
+var HallResources = require("HallResources");
+var ConsecutiveVictoriesItem = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        progressing: {
+            default: null,
+            type: cc.Sprite
+        },
+        progressingBg: {
+            default: null,
+            type: cc.Sprite
+        },
+        winCount: {
+            default: null,
+            type: cc.Label
+        },
+        winReward: {
+            default: null,
+            type: cc.Label
+        },
+        canGetRewardBtn: {
+            default: null,
+            type: cc.Button
+        }
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {},
+
+    setProgressing: function setProgressing(bol) {
+        this.progressing.node.active = bol;
+        this.progressingBg.node.active = bol;
+    },
+
+    initData: function initData(data) {
+        if (data.CanAward == 1 && data.IsGetAward == 0) {
+            this.canGetRewardBtn.node.active = true;
+        }
+        this.hasCount = data.WinCount;
+        this.winCount.string = data.WinCount + "连胜奖励";
+        this.winReward.string = "x" + data.AwardAmount;
+    },
+
+    onClickRewardBtn: function onClickRewardBtn() {
+        var self = this;
+        var callBackFunc = function callBackFunc(bolSuccess, data) {
+            if (bolSuccess) {
+                HallResources.getInstance().removeLoading();
+                var jsonObject = JSON.parse(data);
+                console.log("-----------------ContinuityWinGetAward.aspx返回数据----------------------------");
+                console.log(jsonObject);
+                var backData = jsonObject;
+                var retcode = backData.RetCode;
+                var awardAmount = backData.AwardAmount;
+                if (retcode == 1) {
+                    var goldData = require("HallControl").getInstance().getPublicUserInfo().nGold;
+                    require("HallControl").getInstance().getPublicUserInfo().nGold = parseInt(awardAmount) + parseInt(goldData);
+
+                    _TSCommon.TSCommon.dispatchEvent(HallResources.onGoldOrDiamondChanged, true);
+                    _TSCommon.TSCommon.dispatchEvent(HallResources.onShowFlyMessage, ["+" + awardAmount, "texture/hallRes/roomInfo/gold"]);
+                    self.node.parent.parent.parent.getComponent("HallPlatformInfo").updateConsecutiveVictoriesData();
+                    self.node.parent.parent.parent.getComponent("HallPlatformInfo").openConsecutiveVictoriesReward(self.hasCount);
+                } else if (retcode == 11) {
+                    console.log("密码错误");
+                } else if (retcode == 12) {
+                    console.log("未满足连胜条件");
+                } else if (retcode == 13) {
+                    console.log("重复领取");
+                }
+            }
+        };
+        require('HallWebRequest').getInstance().getContinuityWinGetAward(this.hasCount, callBackFunc);
+    }
+});
+
+module.exports = ConsecutiveVictoriesItem;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=ConsecutiveVictoriesItem.js.map
+        

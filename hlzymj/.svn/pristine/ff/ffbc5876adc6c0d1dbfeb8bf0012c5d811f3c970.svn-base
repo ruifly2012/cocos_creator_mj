@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_blue_suit_z",
+    "texture": "468d415e-ee0a-4180-8e61-50e759692468",
+    "atlas": "",
+    "rect": [
+      4,
+      5,
+      73,
+      48
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

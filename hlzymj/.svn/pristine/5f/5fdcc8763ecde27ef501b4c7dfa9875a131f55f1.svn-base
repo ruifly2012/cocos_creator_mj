@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "jinyan_blue",
+    "texture": "03a0a8d6-7bf5-495e-81d5-c8be9dd95c81",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      26
+    ],
+    "offset": [
+      -22.5,
+      115
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

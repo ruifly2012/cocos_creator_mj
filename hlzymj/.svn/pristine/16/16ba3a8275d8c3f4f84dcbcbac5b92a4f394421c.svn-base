@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "groupRankBg",
+    "texture": "d77f2708-82ac-4542-b2ec-ddc58d5404c7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      889,
+      614
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      889,
+      614
+    ]
+  }
+}

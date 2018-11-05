@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dljl_db",
+    "texture": "0376c281-0ff4-4840-b69f-f17bd8c09200",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      138,
+      238
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      138,
+      238
+    ]
+  }
+}

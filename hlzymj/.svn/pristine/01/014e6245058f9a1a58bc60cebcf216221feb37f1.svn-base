@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_suit_z_dong",
+    "texture": "3e4be95f-4971-471d-96f3-c8f33d6c2575",
+    "atlas": "1b406663-21bd-424e-84f1-fe84d946a0be",
+    "rect": [
+      146,
+      63,
+      81,
+      59
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

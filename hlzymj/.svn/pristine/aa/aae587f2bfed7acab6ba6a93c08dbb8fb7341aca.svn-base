@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gdmjGame",
+    "texture": "ab0feac1-7efc-485c-96a3-d0b9fafc152e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      150,
+      39
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      150,
+      39
+    ]
+  }
+}

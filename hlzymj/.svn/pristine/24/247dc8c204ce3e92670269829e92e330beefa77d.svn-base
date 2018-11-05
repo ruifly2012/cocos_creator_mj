@@ -1,0 +1,23 @@
+"use strict";
+cc._RF.push(module, 'cd40dNuJEFBEa/CbpYuZhJs', 'tagConnectInfo');
+// scripts/hall/gamelib/tagConnectInfo.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tagConnectInfo = /** @class */ (function () {
+    function tagConnectInfo() {
+        this.wSize = 16;
+        this.dwGameInstallVer = 1;
+        this.dwGameBuildVer = 1;
+        this.dwConnectDelay = 1;
+    }
+    tagConnectInfo.prototype.serialize = function (byteArray) {
+        byteArray.writeShort(this.wSize);
+        byteArray.writeInt(this.dwGameInstallVer);
+        byteArray.writeInt(this.dwGameBuildVer);
+        byteArray.writeInt(this.dwConnectDelay);
+    };
+    return tagConnectInfo;
+}());
+exports.tagConnectInfo = tagConnectInfo;
+
+cc._RF.pop();

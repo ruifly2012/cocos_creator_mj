@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "famous",
+    "texture": "5d4c2552-f0fe-491e-bfc7-b1dfd91f305b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      121,
+      111
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      121,
+      111
+    ]
+  }
+}

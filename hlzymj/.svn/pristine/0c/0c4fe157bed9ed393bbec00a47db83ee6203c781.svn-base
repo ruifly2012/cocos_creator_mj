@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "metop_cao",
+    "texture": "8d8f4184-f7d3-447f-ac05-571f731ea11b",
+    "atlas": "",
+    "rect": [
+      35,
+      16,
+      44,
+      49
+    ],
+    "offset": [
+      15,
+      19.5
+    ],
+    "originalSize": [
+      84,
+      120
+    ]
+  }
+}

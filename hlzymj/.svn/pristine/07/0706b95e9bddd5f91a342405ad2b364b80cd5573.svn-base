@@ -1,0 +1,113 @@
+"use strict";
+cc._RF.push(module, 'b4f36PrVR5F65SkFI5FYD5O', 'UserManager');
+// scripts/hall/gamelib/room/UserManager.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var UserManager = /** @class */ (function () {
+    function UserManager() {
+        this.m_dwMyUserID = 0xFFFFFFFF;
+        this.m_dwMyDBID = 0xFFFFFFFF;
+        this.m_userList = new Array();
+    }
+    UserManager.prototype.getUserCount = function () {
+        return this.m_userList.length;
+    };
+    UserManager.prototype.setMyUserID = function (myUserID) {
+        this.m_dwMyUserID = myUserID;
+    };
+    UserManager.prototype.getMyUserID = function () {
+        return this.m_dwMyUserID;
+    };
+    UserManager.prototype.setMyDBID = function (myDBID) {
+        this.m_dwMyDBID = myDBID;
+    };
+    UserManager.prototype.getMyDBID = function () {
+        return this.m_dwMyDBID;
+    };
+    UserManager.prototype.addUser = function (user) {
+        this.m_userList.push(user);
+    };
+    UserManager.prototype.removeUser = function (dwUserID) {
+        dwUserID = dwUserID % 0x10000;
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (dwUserID == this.m_userList[i].getUserID()) {
+                this.m_userList.splice(i, 1);
+                return;
+            }
+        }
+    };
+    UserManager.prototype.getUser = function (dwUserID) {
+        dwUserID = dwUserID % 0x10000;
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (dwUserID == this.m_userList[i].getUserID())
+                return this.m_userList[i];
+        }
+        return null;
+    };
+    UserManager.prototype.getMyInfo = function () {
+        return this.getUser(this.m_dwMyUserID);
+    };
+    UserManager.prototype.clearAllUser = function () {
+        this.m_userList.splice(0);
+    };
+    UserManager.prototype.getUserByDBID = function (dwDBID) {
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (dwDBID == this.m_userList[i].getUserDBID())
+                return this.m_userList[i];
+        }
+        return null;
+    };
+    UserManager.prototype.updateGameUser = function (user) {
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (user.getUserID() == this.m_userList[i].getUserID()) {
+                this.m_userList[i] = user;
+                return true;
+            }
+        }
+        return false;
+    };
+    UserManager.prototype.updateUserScore = function (wUserID, bufScore) {
+        wUserID = wUserID % 0x10000;
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (wUserID == this.m_userList[i].getUserID()) {
+                this.m_userList[i]._scoreBuf = bufScore;
+                this.m_userList[i]._scoreBufLen = bufScore.length;
+                return true;
+            }
+        }
+        return false;
+    };
+    UserManager.prototype.updateUserFame = function (wUserID, nFameLevel, nFameScore, cbVIPLevel) {
+        wUserID = wUserID % 0x10000;
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (wUserID == this.m_userList[i].getUserID()) {
+                this.m_userList[i]._fame = nFameScore;
+                this.m_userList[i]._fameLevel = nFameLevel;
+                this.m_userList[i].m_cbVipLevel = cbVIPLevel;
+                return true;
+            }
+        }
+        return false;
+    };
+    UserManager.prototype.getUserByTableChair = function (wTableID, cbChair) {
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (this.m_userList[i]._tableID == wTableID
+                && this.m_userList[i]._chairID == cbChair
+                && this.m_userList[i].isPlayer())
+                return this.m_userList[i];
+        }
+        return null;
+    };
+    UserManager.prototype.findUserByTableIndex = function (wTableID) {
+        var list = new Array();
+        for (var i = 0; i < this.m_userList.length; i++) {
+            if (this.m_userList[i]._tableID == wTableID)
+                list.push(this.m_userList[i]);
+        }
+        return list;
+    };
+    return UserManager;
+}());
+exports.UserManager = UserManager;
+
+cc._RF.pop();

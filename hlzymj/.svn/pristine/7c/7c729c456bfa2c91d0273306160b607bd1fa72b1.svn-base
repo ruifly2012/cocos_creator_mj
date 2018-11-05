@@ -1,0 +1,7 @@
+"use strict";
+cc._RF.push(module, '11a1a+ABSNJi5PC2Ig20YeS', 'IGameLibSink');
+// scripts/hall/gamelib/IGameLibSink.ts
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+cc._RF.pop();

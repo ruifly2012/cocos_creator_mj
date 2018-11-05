@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "qualifyingMsg",
+    "texture": "f160152d-67f3-44d7-b022-4b4c87a0309e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      278,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      278,
+      28
+    ]
+  }
+}

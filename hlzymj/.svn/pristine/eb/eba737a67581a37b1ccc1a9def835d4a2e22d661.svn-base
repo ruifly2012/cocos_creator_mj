@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "famousTag",
+    "texture": "0fe1e98c-a145-4028-af04-986a3d251988",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      113,
+      121
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      113,
+      121
+    ]
+  }
+}

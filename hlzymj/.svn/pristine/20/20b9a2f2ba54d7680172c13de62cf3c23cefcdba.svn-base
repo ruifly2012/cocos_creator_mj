@@ -1,0 +1,58 @@
+(function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/scripts/hall/activity/moreGame/MoreGameLayer.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+cc._RF.push(module, '009b1CfWNRFSYQl6MBrbatz', 'MoreGameLayer', __filename);
+// scripts/hall/activity/moreGame/MoreGameLayer.js
+
+"use strict";
+
+var MoreGameLayer = cc.Class({
+    extends: cc.Component,
+
+    properties: {
+        bg: {
+            default: null,
+            type: cc.Node
+        }
+
+    },
+
+    onLoad: function onLoad() {
+        this.node.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
+    },
+
+    onTouch: function onTouch(event) {
+        var poisition = event.touch.getLocation();
+        var locationInNode = this.bg.convertToNodeSpace(poisition);
+        var s = this.bg.getContentSize();
+        var rect = cc.rect(0, 0, s.width, s.height);
+        if (cc.rectContainsPoint(rect, locationInNode)) {
+            // this.node.active = true;
+        } else {
+            this.node.active = false;
+        }
+    },
+    initData: function initData(data) {
+        var self = this;
+        cc.loader.load(data, function (err, texture) {
+            self.bg.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture);
+            var scale = texture.height / 720;
+            self.bg.getComponent(cc.Sprite).node.height = texture.height > 720 ? 720 : texture.height;
+            self.bg.getComponent(cc.Sprite).node.width = texture.width * scale;
+        });
+    }
+});
+
+module.exports = MoreGameLayer;
+
+cc._RF.pop();
+        }
+        if (CC_EDITOR) {
+            __define(__module.exports, __require, __module);
+        }
+        else {
+            cc.registerModuleFunc(__filename, function () {
+                __define(__module.exports, __require, __module);
+            });
+        }
+        })();
+        //# sourceMappingURL=MoreGameLayer.js.map
+        
