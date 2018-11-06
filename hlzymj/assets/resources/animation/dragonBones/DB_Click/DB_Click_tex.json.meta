@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "515bf910-1ff5-4728-95e2-10eed26d6022",
+  "atlasJson": "{\"width\":256,\"imagePath\":\"DB_Click_tex.png\",\"SubTexture\":[{\"width\":1,\"y\":238,\"height\":1,\"name\":\"人人麻将bg\",\"x\":1},{\"width\":156,\"y\":1,\"height\":160,\"name\":\"tx_guang \",\"x\":1},{\"width\":55,\"y\":163,\"height\":22,\"name\":\"bg_yezi2\",\"x\":41},{\"width\":38,\"y\":163,\"height\":73,\"name\":\"bg_yezi\",\"x\":1}],\"height\":256,\"name\":\"DB_Click\"}",
+  "texture": "019fc220-c466-4767-9ef2-df9a4b762941",
+  "subMetas": {}
+}

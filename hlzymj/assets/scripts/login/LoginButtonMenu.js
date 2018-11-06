@@ -154,7 +154,7 @@ cc.Class({
             var self = this;
             var imei = null;
             // var imei = "AfneS1YkaPCAf4zOMqtLhcPGIUm45"+cc.sys.localStorage.getItem("imei");
-            var imei = "ofneS1YkaPCAf3zOMqtLhcPGIUm45666999"//cc.sys.localStorage.getItem("imei");
+            // var imei = "ofneS1YkaPCAf3zOMqtLhcPGIUm45666999"//cc.sys.localStorage.getItem("imei");
             if(!imei){
                 var lastNumber = "";
                 for(var i = 0; i < 6; i++){
