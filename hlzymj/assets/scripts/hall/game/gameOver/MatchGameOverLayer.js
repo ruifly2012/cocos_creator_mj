@@ -335,10 +335,6 @@ cc.Class({
             preStarNum = Math.floor(preLevelScore / preOffsetScore * 3);
             prePercent = preLevelScore / preOffsetScore;
 
-            var needProgress = preOffsetScore - preLevelScore;
-            self.richProgressTips.node.active = true;
-            self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
-
             for (var i = 0; i < preStarNum; i++) {
                 self.match_level_star.children[i].active = true;
             }
@@ -394,6 +390,10 @@ cc.Class({
                 preLevelScore = preScore - preMinScore;
                 preStarNum = Math.floor(preLevelScore / preOffsetScore * 3);
                 prePercent = preLevelScore / preOffsetScore;
+                
+                var needProgress = preOffsetScore - preLevelScore;
+                self.richProgressTips.node.active = true;
+                self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
 
                 var onScrollEnded = function () {
                     //播放加星动画
