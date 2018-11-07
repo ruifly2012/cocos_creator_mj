@@ -5,6 +5,7 @@
 var Resources = require("Resources");
 import {TSCommon} from "../../TSCommon";
 import {WeixinManager} from "../../weixin/WeixinManager"
+var HallResources = require("HallResources");
 var GameCfg = require("GameCfg");
 cc.Class({
     extends: cc.Component,
@@ -19,9 +20,25 @@ cc.Class({
         //     type: cc.Label,
         // },
 
+        protect_share_btn: cc.Button,
+
+        next_game_btn: cc.Button,
+
+        women_icon: cc.Sprite,
+
+        title_icon: cc.Sprite,
+
+        cup_icon: cc.Sprite,
+
+        cup_name: cc.Label,
+
+        richText: cc.RichText,
+
         protect_score: cc.Label,
 
         timer_label: cc.Label,
+
+        cancel_protect_btn: cc.Button,
     },
 
     onLoad:function(){
@@ -29,7 +46,8 @@ cc.Class({
 
         this.node.width = windowSize.width;
         this.node.height = windowSize.height;
-       
+        
+        this.bolShareProtect = true;
         //主界面不显示
         if (this.node.getChildByName("mask_bg"))
         {
@@ -40,6 +58,9 @@ cc.Class({
     onEnable: function () {
         this.show();
         this.playLightAct();
+        this.getShareTimes();
+        this.setCupAndLevelInfo(this.m_matchScore);
+        
     },
 
     onDisable:function(){
@@ -50,7 +71,7 @@ cc.Class({
         }
     },
 
-    init: function (sn, score, onEnd) {
+    init: function (sn, score, onEnd, nMatchLevel, nMatchScore, myselfWinOrLoseScore) {
         this.m_totalTime = 10;
 
         this.m_sn = sn;     //本局的流水号
@@ -61,6 +82,11 @@ cc.Class({
         this.node.getChildByName("give_up_protect").active = false;
 
         this.m_onEnd = onEnd;
+
+        this.m_matchLevel = nMatchLevel;
+        this.m_matchScore = nMatchScore;
+
+        this.m_myselfWinOrLoseScore = myselfWinOrLoseScore;
     },
 
     show: function () {
@@ -93,40 +119,31 @@ cc.Class({
 
     onShareClicked: function () {
         var self = this;
-        var HallResources = require("HallResources");
         if (cc.sys.browserType == "mqqbrowser" || "wechatgame" == cc.sys.browserType) {
             self.requestProtectScore()
             //主动拉起分享接口
             wx.shareAppMessage({
                 title: "小手轻轻点，救活你我他！",
                 imageUrl: HallResources.protectScoreShareImgUrl,
-                // success(res) {
-                //     if(res.shareTickets == null || res.shareTickets == undefined || res.shareTickets == ""){ //没有群信息，说明分享的是个人
-                //         setTimeout(function(){
-                //             Resources.showRewardTips("请选择一个群进行分享", true, true, true);
-                //         }, 0)                       
-                //     }else{ //有群信息
-                //         console.log("下面是群消息数据!!!")
-                //         console.log(res);
-                //         if(res.shareTickets.length > 0){ 
-                //             self.commonShareTickets = res.shareTickets[0];
-                //             wx.getShareInfo({
-                //                 shareTicket: self.commonShareTickets,
-                //                 success: function (res) {
-                //                     console.log("下面是群消息唯一性数据!!!")
-                //                     console.log(res);
-                //                     self.requestProtectScore(res.encryptedData,res.iv);
-                //                 }
-                //             })
-                //         }
-                //     }
-                // },
-                // fail(res) {
-                //     console.log("分享保分失败!!!")
-                // }
             })
         }
     },
+
+    //设定奖杯和段位信息
+    setCupAndLevelInfo: function (score) {
+        var self = this;
+
+        var data = HallResources.getInstance().getRankAndStarByScore(score);
+        cc.loader.loadRes("texture/hallRes/qualifyingCup/cup" + data.cup, cc.SpriteFrame, function (err, spriteFrame) {
+            if (!err) {
+                self.cup_icon.spriteFrame = spriteFrame;
+            }
+        });
+
+        var nextName = data.rankName;
+        this.cup_name.string = nextName;
+    },
+
 
     requestProtectScore: function () {
         var myOpenId = WeixinManager.getInstance().userInfo.openid;
@@ -141,10 +158,28 @@ cc.Class({
                 if(nRetCode == 1){
 
                     TSCommon.dispatchEvent(GameCfg.PROTECT_SCORE_SUCCESS, null);  
+                    if (self.bolShareProtect)
+                        Resources.showRewardTips("分享成功", true, true, true);
+                    else
+                        Resources.showRewardTips("您分享保分的机会已经用尽", true, true, true);
+                    cc.loader.loadRes("texture/game/matchResult/protect_success_title", cc.SpriteFrame, function (err, spriteFrame) {
+                        if (!err) {
+                            self.title_icon.spriteFrame = spriteFrame;
+                        }
+                    });
 
-                    Resources.showRewardTips("分享成功", true, true, true);
+                    cc.loader.loadRes("texture/game/protectScore/protect_girl_img2", cc.SpriteFrame, function (err, spriteFrame) {
+                        if (!err) {
+                            self.women_icon.spriteFrame = spriteFrame;
+                        }
+                    });
+                    self.cancel_protect_btn.node.active = false;
+                    self.protect_score.node.active = false;
+                    self.protect_share_btn.node.active = false;
+                    self.next_game_btn.node.active = true;
+                    self.getShareTimes();
 
-                    self.node.active = false;                     
+                    // self.node.active = false;                     
                 }
                 else if(nRetCode == 12){
                     Resources.showRewardTips("分享次数已经达到上限", true, true, true);
@@ -159,6 +194,22 @@ cc.Class({
         }
 
         require('HallWebRequest').getInstance().getProtectScoreShareReward(this.m_sn, this.m_score, myOpenId, httpCallback);
+    },
+
+    getShareTimes:function(){
+        var self = this;
+        var onRetCallback = function(success, data){
+            require('HallResources').getInstance().removeLoading();
+            if(success){
+                var jsonObject = JSON.parse(data);
+                self.richText.string = "<color=#ffffff>您还有</color><color=#e72c07>"+jsonObject.CurTimes+"</color><color=#ffffff>次拯救我的机会</color>"
+                if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
+                    
+                    self.bolShareProtect = false;
+                }
+            }
+        }
+        require('HallWebRequest').getInstance().getProtectScoreNum(onRetCallback)
     },
 
     playLightAct:function(){
@@ -178,6 +229,12 @@ cc.Class({
     //继续游戏点击
     onResumeGameClicked:function(){
         this.node.active = false;
+    },
+
+     //下一局
+    onNextClicked:function(){
+        G.matchGameReady = true;
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
     },
 
 });

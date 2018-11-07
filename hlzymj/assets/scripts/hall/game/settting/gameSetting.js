@@ -152,17 +152,17 @@ var setting = {
 
     closeAndChangeScaleAction(){
         var self = this;
-        self.node.active = false;
+        // self.node.active = false;
         var HallResources = require("HallResources");
         TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
-        // var action1 = cc.scaleTo(0.2, 0.3, 0.3);
-        // var action2 =cc.fadeOut(0.01);
+        var action1 = cc.scaleTo(0.2, 0.3, 0.3);
+        var action2 =cc.fadeOut(0.01);
         
-        // var action3 = cc.callFunc(function(){
-        //     self.node.active = false;
-        // });
-        // var sequence = cc.sequence(action1, action2, action3);
-        // this.node.runAction(sequence);
+        var action3 = cc.callFunc(function(){
+            self.node.active = false;
+        });
+        var sequence = cc.sequence(action1, action2, action3);
+        this.node.runAction(sequence);
     },
 
     onCloseClicked: function () {

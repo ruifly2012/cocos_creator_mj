@@ -1023,7 +1023,7 @@ cc.Class({
         //     return;
         // }
 
-        var totalTime = 25;
+        var totalTime = 60;
 
         var playerNode = this.node.getChildByName("playerNode");
         var ready_timer = playerNode.getChildByName("ready_timer");

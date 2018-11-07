@@ -317,9 +317,7 @@ cc.Class({
                     self.level_progressBar.progress = prePercent;
                 }
             }
-            var needProgress = offsetScore - preLevelScore;
-            self.richProgressTips.node.active = true;
-            self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
+            
         }
         else {
 
@@ -390,10 +388,6 @@ cc.Class({
                 preLevelScore = preScore - preMinScore;
                 preStarNum = Math.floor(preLevelScore / preOffsetScore * 3);
                 prePercent = preLevelScore / preOffsetScore;
-                
-                var needProgress = preOffsetScore - preLevelScore;
-                self.richProgressTips.node.active = true;
-                self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
 
                 var onScrollEnded = function () {
                     //播放加星动画
@@ -421,7 +415,7 @@ cc.Class({
 
                     self.playJiaxingAction(preStarNum, 3, onPlayActionEnded);
                 };
-                self.scrollToPercent(prePercent, 1, 0.5, onScrollEnded);
+                self.scrollToPercent(prePercent, 1, 0.5, onScrollEnded,true);
             }
            
         }
@@ -598,7 +592,8 @@ cc.Class({
             }
         }
         TSCommon.performWithDelay(this, function () {
-            self.back_Btn.node.active = true;
+            if (self.back_Btn)
+                self.back_Btn.node.active = true;
         }.bind(this), 2.5);
         
     },
@@ -621,11 +616,28 @@ cc.Class({
 
 
     //滑动列表滑动到某个百分比
-    scrollToPercent: function (prePercent, curPercent, scrollTime, onEnd) {
+    scrollToPercent: function (prePercent, curPercent, scrollTime, onEnd, bolLeaveUp) {
         console.log("滑动时之前比率为：" + prePercent);
         console.log("滑动时当前比率为：" + curPercent);
         var deltaScroll = (curPercent - prePercent) / (scrollTime * 100);
         var self = this;
+        Resources.playCommonEffect("moveProgress.mp3");
+        var nextLevel = self.m_matchLevel;
+        var toNextPercent = 1-curPercent;
+        if (bolLeaveUp){
+            nextLevel = self.m_matchLevel + 1;
+            toNextPercent = 1;
+        }
+        if (nextLevel<=20){  
+            var preLevelData = HallResources.getInstance().getRankDataById(nextLevel);
+            var preMaxScore = preLevelData.MaxScore;
+            var preMinScore = preLevelData.MinScore;
+            var preOffsetScore = (preMaxScore - preMinScore);
+
+            var needProgress = preOffsetScore * toNextPercent;
+            self.richProgressTips.node.active = true;
+            self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
+        }
         this.setProgress = function () {
 
             if(self.m_thisViewClosed){
@@ -677,6 +689,7 @@ cc.Class({
                     dragonDisplay.playAnimation("shengxing");
 
                     self.onPlayJiaxingFinished = function () {
+                        Resources.playCommonEffect("addStar.mp3");
                         self.match_level_star.children[stars].active = true;
                         actNode.destroy();
 
@@ -729,6 +742,7 @@ cc.Class({
                     dragonDisplay.armatureName = 'armatureName';
                     dragonDisplay.playAnimation("diaoxing");
                     self.onPlayDiaoxingFinished = function () {
+                        Resources.playCommonEffect("removeStar.mp3");
                         self.match_level_star.children[stars - 1].active = false;
                         actNode.destroy();
 

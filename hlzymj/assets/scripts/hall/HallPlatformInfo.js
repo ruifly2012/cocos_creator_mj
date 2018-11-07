@@ -316,11 +316,42 @@ var HallPlatformInfo = {
 
         dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
 
-        // 血战动画
+        var playNode = this.hotGameBtn.node.getChildByName("xueliu1_act");
+        playNode.active = true;
+        var dragonDisplay = playNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation("xueliuchenghe_baiguang");
+        var callback = function () {
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        }
+
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
+
+        // 血战到底动画
         var playNode = this.cwGameBtn.node.getChildByName("xuezhan_act");
         playNode.active = true;
         var dragonDisplay = playNode.getComponent(dragonBones.ArmatureDisplay);
         dragonDisplay.playAnimation("xuezhandaodi");
+        var callback = function () {
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        }
+
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
+
+        var playNode = this.cwGameBtn.node.getChildByName("xuezhan1_act");
+        playNode.active = true;
+        var dragonDisplay = playNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation("xuezhandaodi_baiguang");
+        var callback = function () {
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        }
+
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
+
+        // 排位赛按钮动画
+        var playNode = this.qualifyingBtn.getChildByName("qualifying_act");
+        playNode.active = true;
+        var dragonDisplay = playNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation("chuangguanshengji");
         var callback = function () {
             dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
         }
@@ -1637,7 +1668,8 @@ var HallPlatformInfo = {
     //点击设置按钮
     onClickSetBtn:function(){
         HallResources.getInstance().playButtonEffect();
-        this.setLayer.active = true;
+        // this.setLayer.active = true;
+        this.openAndChangeScaleAction( this.setLayer);
         // this.openAndChangeScaleAction( this.setLayer);
         // var HallResources = require("HallResources");
         TSCommon.dispatchEvent(HallResources.onChangeShadow,true);

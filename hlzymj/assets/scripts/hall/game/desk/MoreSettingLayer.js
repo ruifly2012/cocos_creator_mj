@@ -149,10 +149,10 @@ cc.Class({
     onSettingClicked: function () {
         HallResources.getInstance().playButtonEffect();
         this.settingLayer.active = true;
-        // var action =cc.fadeIn(0.01);
-        // var action2 = cc.scaleTo(0.2, 1, 1);
-        // var sequence = cc.sequence(action, action2);
-        // this.settingLayer.runAction(sequence);
+        var action =cc.fadeIn(0.01);
+        var action2 = cc.scaleTo(0.2, 1, 1);
+        var sequence = cc.sequence(action, action2);
+        this.settingLayer.runAction(sequence);
         this.hide();
     },
 

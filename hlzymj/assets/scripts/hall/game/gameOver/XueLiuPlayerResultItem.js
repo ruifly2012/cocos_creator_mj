@@ -100,8 +100,10 @@ cc.Class({
             this.loseCount.string = showScore;
             this.loseCount.node.active = true;
             console.log("保分之后，原始分数："+nSrcScore+"后来分数："+finalScore)
-            if (finalScore > nSrcScore)
-                this.protected.node.active = true;
+            if (!bolIsPrivateRoom){
+                if (finalScore > nSrcScore)
+                    this.protected.node.active = true;
+            }
         }
         
         var imgurl = headUrl;

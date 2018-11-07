@@ -1,0 +1,15 @@
+info face="Arial" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=32 base=26 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="number_0.png"
+chars count=11
+char id=45   x=0     y=65    width=38    height=64    xoffset=0     yoffset=0     xadvance=38    page=0  chnl=15
+char id=48   x=46    y=0     width=44    height=64    xoffset=0     yoffset=0     xadvance=44    page=0  chnl=15
+char id=49   x=225   y=0     width=30    height=64    xoffset=0     yoffset=0     xadvance=30    page=0  chnl=15
+char id=50   x=135   y=65    width=44    height=63    xoffset=0     yoffset=0     xadvance=44    page=0  chnl=15
+char id=51   x=91    y=0     width=44    height=64    xoffset=0     yoffset=0     xadvance=44    page=0  chnl=15
+char id=52   x=39    y=65    width=47    height=63    xoffset=0     yoffset=0     xadvance=47    page=0  chnl=15
+char id=53   x=180   y=65    width=44    height=63    xoffset=0     yoffset=0     xadvance=44    page=0  chnl=15
+char id=54   x=136   y=0     width=44    height=64    xoffset=0     yoffset=0     xadvance=44    page=0  chnl=15
+char id=55   x=87    y=65    width=47    height=63    xoffset=0     yoffset=0     xadvance=47    page=0  chnl=15
+char id=56   x=0     y=0     width=45    height=64    xoffset=0     yoffset=0     xadvance=45    page=0  chnl=15
+char id=57   x=181   y=0     width=43    height=64    xoffset=0     yoffset=0     xadvance=43    page=0  chnl=15

@@ -2831,25 +2831,25 @@ cc.Class({
                             matchGameOverLayer.init(false, null, null, laiyouCardValue, null, matchLevel, self.m_pMyself.getScore(), myselfWinOrLoseScore, jsonObject.ContinuityWin);
 
                             if(myselfWinOrLoseScore < 0){                           
-                                var onRetCallback = function(success, data){
-                                    require('HallResources').getInstance().removeLoading();
-                                    if(success){
-                                        var jsonObject = JSON.parse(data);
-                                        if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
-                                            self.matchGameOverLayer.active = true;
-                                        }
-                                        else{
+                                // var onRetCallback = function(success, data){
+                                //     require('HallResources').getInstance().removeLoading();
+                                //     if(success){
+                                //         var jsonObject = JSON.parse(data);
+                                //         if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
+                                //             self.matchGameOverLayer.active = true;
+                                //         }
+                                //         else{
 
                                             var onProtectScoreLayerClosed = function(){
                                                 self.matchGameOverLayer.active = true;
                                             }
                                             var protectScoreLayer =  self.protectScoreLayer.getComponent("ProtectScoreLayer");
-                                            protectScoreLayer.init(self.m_roomSetInfo.szBatchID, myselfWinOrLoseScore,  onProtectScoreLayerClosed);
+                                            protectScoreLayer.init(self.m_roomSetInfo.szBatchID, myselfWinOrLoseScore,  onProtectScoreLayerClosed, matchLevel, self.m_pMyself.getScore(),myselfWinOrLoseScore);
                                             self.protectScoreLayer.active = true;
-                                        }
-                                    }
-                                }
-                                require('HallWebRequest').getInstance().getProtectScoreNum(onRetCallback)
+                                //         }
+                                //     }
+                                // }
+                                // require('HallWebRequest').getInstance().getProtectScoreNum(onRetCallback)
                             }
                             else{
 
