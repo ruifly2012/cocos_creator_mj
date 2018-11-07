@@ -961,7 +961,7 @@ cc.Class({
             distanceX = 48;
             distanceY = 0;
 
-            startX = -300 + this.m_pengGangArray.length * 82;
+            startX = -300 + this.m_pengGangArray.length * 82 + (this.m_pengGangArray.length -1)*79;
 
         }
         else if (this.m_nPos == 2) {
