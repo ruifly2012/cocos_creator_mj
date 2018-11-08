@@ -63,16 +63,16 @@ var setting = {
         var windowSize=cc.view.getVisibleSize();
         
         //主界面不显示
-        if (this.node.getChildByName("shadow_bg"))
-        {
-            this.node.getChildByName("shadow_bg").setContentSize(windowSize);
-        }
+        // if (this.node.getChildByName("shadow_bg"))
+        // {
+        //     this.node.getChildByName("shadow_bg").setContentSize(windowSize);
+        // }
     },
 
     onEnable: function () {
         var index = cc.sys.localStorage.getItem("deskBg", index) || 0;
 
-        var bgPageView = this.node.getChildByName("deskBg_select_scrollView").getComponent(cc.PageView);
+        var bgPageView = this.bg.getChildByName("deskBg_select_scrollView").getComponent(cc.PageView);
 
         /*
         index = parseInt(index);
@@ -110,8 +110,8 @@ var setting = {
 
         bgPageView.scrollToPage(selectIndex, 0.1);
 
-        this.node.getChildByName("deskBg_mask").active = false;
-        this.node.getChildByName("get_deskbg_btn").active = false;
+        this.bg.getChildByName("deskBg_mask").active = false;
+        this.bg.getChildByName("get_deskbg_btn").active = false;
         var bgMusicOpen = parseInt(cc.sys.localStorage.getItem("bgMusic") || 0);
         if (bgMusicOpen) {
             this.music_open.active = true;
@@ -154,7 +154,7 @@ var setting = {
         var self = this;
         // self.node.active = false;
         var HallResources = require("HallResources");
-        TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
+        // TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
         var action1 = cc.scaleTo(0.2, 0.3, 0.3);
         var action2 =cc.fadeOut(0.01);
         
@@ -162,7 +162,7 @@ var setting = {
             self.node.active = false;
         });
         var sequence = cc.sequence(action1, action2, action3);
-        this.node.runAction(sequence);
+        this.bg.runAction(sequence);
     },
 
     onCloseClicked: function () {
@@ -178,8 +178,8 @@ var setting = {
 
         var tableInfo = publicUserInfo.tableBoardInfo;
 
-        this.node.getChildByName("deskBg_mask").active = parseInt(tableInfo[index].IsGet) == 1 ? false : true;
-        this.node.getChildByName("get_deskbg_btn").active = parseInt(tableInfo[index].IsGet) == 1 ? false : true;
+        this.bg.getChildByName("deskBg_mask").active = parseInt(tableInfo[index].IsGet) == 1 ? false : true;
+        this.bg.getChildByName("get_deskbg_btn").active = parseInt(tableInfo[index].IsGet) == 1 ? false : true;
 
         var self = this;
 

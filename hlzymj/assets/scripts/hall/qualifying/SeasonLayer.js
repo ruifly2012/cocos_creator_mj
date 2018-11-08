@@ -259,10 +259,10 @@ var SeasonLayer = cc.Class({
         var action3 = cc.callFunc(function(){
             self.node.active = false;
             
-            TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
+            // TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
         });
         var sequence = cc.sequence(action1, action2, action3);
-        this.node.runAction(sequence);
+        this.bg.runAction(sequence);
     },
 
 

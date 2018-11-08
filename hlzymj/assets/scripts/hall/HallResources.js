@@ -83,7 +83,7 @@ var HallResources = cc.Class({
     },
 
     //返回按照天梯等级排序后的等级数据(按照青铜，白银排序)
-    getDivisionData: function (rankScore) {
+    getDivisionData: function () {
         return this.divisionData;
     },
     //传入底分和数据结构，拿到当前星级，等阶，细分等阶,细分等阶名称

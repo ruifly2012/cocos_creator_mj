@@ -692,7 +692,7 @@ var HallPlatformInfo = {
         this.loadingNode.getComponent("Loading").showActive();
         TSCommon.addEvent(HallResources.openBgMusic, this.onPlayBgMusic, this);
         TSCommon.addEvent(HallResources.closeBgMusic, this.onCloseBgMusic, this);
-        TSCommon.addEvent(HallResources.onChangeShadow,this.setShadowNodeVis,this);
+        // TSCommon.addEvent(HallResources.onChangeShadow,this.setShadowNodeVis,this);
 
         if(!HallResources.ChangeOncePlayMusic){
             cc.sys.localStorage.setItem("bgMusic", 1);
@@ -945,7 +945,7 @@ var HallPlatformInfo = {
     onDestroy:function(){
         // var HallResources = require("HallResources");
         this.onCloseBgMusic();
-        TSCommon.removeEvent(HallResources.onChangeShadow ,this.setShadowNodeVis,this);
+        // TSCommon.removeEvent(HallResources.onChangeShadow ,this.setShadowNodeVis,this);
         TSCommon.removeEvent(HallResources.onGoldOrDiamondChanged ,this.changMoney,this);
         TSCommon.removeEvent(HallResources.onNoEnoughGold,this.onMoneyNotEnough,this);
         TSCommon.removeEvent(HallResources.onShowLoadingNode,this.showLoadingFunc,this);
@@ -1395,21 +1395,21 @@ var HallPlatformInfo = {
      },
 
     //通用的打开一个新的窗口界面，作用是让界面从小到大显示，必须在引擎编辑器里提前把相应的界面scale设置一下
-    openAndChangeScaleAction(node)
+    openAndChangeScaleAction(node,node_bg)
     {
         // var HallResources = require("HallResources");
-        TSCommon.dispatchEvent(HallResources.onChangeShadow,true);
+        // TSCommon.dispatchEvent(HallResources.onChangeShadow,true);
         node.active = true;
         var action =cc.fadeIn(0.01);
         var action2 = cc.scaleTo(0.1, 1, 1);
         var sequence = cc.sequence(action, action2);
-        node.runAction(sequence);
+        node_bg.runAction(sequence);
     },
 
     //点击玩家头像
     onClickUserIcon:function(){
         HallResources.getInstance().playButtonEffect();
-        this.openAndChangeScaleAction( this.userInfoLayer);
+        this.openAndChangeScaleAction(this.userInfoLayer,this.userInfoLayer.getComponent("UserInfoLayer").bg);
 
         var self = this;
         var callBackFunc = function(bolSuccess,data){
@@ -1443,7 +1443,7 @@ var HallPlatformInfo = {
                 var curTimes = jsonObject.CurTimes;
                 var awardAmount = jsonObject.AwardAmount;
                 // --返回信息：TotalTimes --每日可领取次数CurTimes --今日已领取次数 AwardAmount --奖励额度
-                self.openAndChangeScaleAction(self.getFreeDiamondNode);
+                self.openAndChangeScaleAction(self.getFreeDiamondNode,self.getFreeDiamondNode.getComponent("freeDiamondLayer").bg);
                 self.getFreeDiamondNode.getComponent("freeDiamondLayer").initData(totalTimes, curTimes, awardAmount)
             }
         };
@@ -1458,13 +1458,13 @@ var HallPlatformInfo = {
                 this.openIosPlatformShare();
             }
             else{
-                this.openAndChangeScaleAction( this.mallLayer);
+                this.openAndChangeScaleAction(this.mallLayer,this.mallLayer.getComponent("MallLayer").bg);
                 this.mallLayer.getComponent("MallLayer").showDiamondNode(); 
             }
         }
         else
         {
-            this.openAndChangeScaleAction( this.mallLayer);
+            this.openAndChangeScaleAction(this.mallLayer,this.mallLayer.getComponent("MallLayer").bg);
             this.mallLayer.getComponent("MallLayer").showGoldNode();
         }
     },
@@ -1493,7 +1493,7 @@ var HallPlatformInfo = {
                 }
                 if (bolTodayIsClick == 1){
                     // self.dailyLayer.active = true;
-                    self.openAndChangeScaleAction( self.dailyLayer);
+                    self.openAndChangeScaleAction(self.dailyLayer,self.dailyLayer.getComponent("dailyLoginLayer").bg);
                     self.dailyLoginRedPoint.active = true;
                     self.dailyLayer.getComponent("dailyLoginLayer").initData(allData,bolTodayIsClick);
                 }
@@ -1525,7 +1525,7 @@ var HallPlatformInfo = {
                     gameInfo.icon = item.Icon;
                     allData.push(gameInfo);
                 }
-                self.openAndChangeScaleAction( self.dailyLayer);
+                self.openAndChangeScaleAction( self.dailyLayer,self.dailyLayer.getComponent("dailyLoginLayer").bg);
                 // self.dailyLayer.active = true;
                 self.dailyLayer.getComponent("dailyLoginLayer").initData(allData,bolTodayIsClick);
             }
@@ -1574,7 +1574,7 @@ var HallPlatformInfo = {
     //点击赛季问号按钮
     showSeasonLayer: function () {
         HallResources.getInstance().playButtonEffect();
-        this.openAndChangeScaleAction(this.seasonNode);
+        this.openAndChangeScaleAction(this.seasonNode,this.seasonNode.getComponent("SeasonLayer").bg);
     },
 
     //点击赛季详细按钮
@@ -1582,7 +1582,7 @@ var HallPlatformInfo = {
         this.seasonNode.getComponent("SeasonLayer").clickCloseBtn(true);
         var openCallback = function(){
             HallResources.getInstance().playButtonEffect();
-            this.openAndChangeScaleAction(this.newSeasonNode);
+            this.openAndChangeScaleAction(this.newSeasonNode,this.newSeasonNode.getComponent("NewSeasonLayer").bg);
         }
         TSCommon.performWithDelay(this, openCallback, 0.5);
     },
@@ -1591,7 +1591,7 @@ var HallPlatformInfo = {
     onClickConsecutiveVictoriesBtn:function(){
         HallResources.getInstance().playButtonEffect();
         // TSCommon.dispatchEvent(HallResources.onShowFlyMessage,["暂未开放，敬请期待！"]);
-        this.openAndChangeScaleAction(this.consecutiveVictoriesNode);
+        this.openAndChangeScaleAction(this.consecutiveVictoriesNode,this.consecutiveVictoriesNode.getComponent("ConsecutiveVictoriesLayer").bg);
         this.updateConsecutiveVictoriesData();
     },
 
@@ -1655,7 +1655,7 @@ var HallPlatformInfo = {
             };  
 
         }
-        this.openAndChangeScaleAction(this.collectNode);
+        this.openAndChangeScaleAction(this.collectNode,this.collectNode.getComponent("collectLayer").bg);
         this.collectNode.getComponent("collectLayer").initData(bolIsIPhoneX,button1Func,self.bClickCollectionBtn)
 
         // collectLayer.parent = this.node;
@@ -1669,17 +1669,17 @@ var HallPlatformInfo = {
     onClickSetBtn:function(){
         HallResources.getInstance().playButtonEffect();
         // this.setLayer.active = true;
-        this.openAndChangeScaleAction( this.setLayer);
+        this.openAndChangeScaleAction(this.setLayer,this.setLayer.getComponent("gameSetting").bg);
         // this.openAndChangeScaleAction( this.setLayer);
         // var HallResources = require("HallResources");
-        TSCommon.dispatchEvent(HallResources.onChangeShadow,true);
+        // TSCommon.dispatchEvent(HallResources.onChangeShadow,true);
     },
 
     //点击邀请按钮
     onClickInviteBtn:function(){
         HallResources.getInstance().playButtonEffect();
         this.getInviteFriendData();
-        this.openAndChangeScaleAction( this.inviteFriendLayer);
+        this.openAndChangeScaleAction( this.inviteFriendLayer,this.inviteFriendLayer.getComponent("inviteFriendLayer").bg);
         // this.inviteFriendLayer.active = true;
         var tableInfo = require("HallControl").getInstance().getPublicUserInfo().tableBoardInfo;
         for(var i = 0;i<tableInfo.length;i++){
@@ -1695,7 +1695,7 @@ var HallPlatformInfo = {
     onClickHelpBtn:function(){
         HallResources.getInstance().playButtonEffect();
         // this.helpLayer.active = true;
-        this.openAndChangeScaleAction( this.helpLayer);
+        this.openAndChangeScaleAction(this.helpLayer,this.helpLayer.getComponent("gameRuleLayer").bg);
     },
     
     //显示游戏房间列表
@@ -1881,7 +1881,7 @@ var HallPlatformInfo = {
     // 点击客服按钮
     onClickCustomServiceBtn:function(){
         HallResources.getInstance().playButtonEffect();
-        this.openAndChangeScaleAction(this.kefuLayer);
+        this.openAndChangeScaleAction(this.kefuLayer,this.kefuLayer.getComponent("kefuLayer").bg);
 
         // if(self.isWeChatPlatform()){
         //     cc.loader.loadRes("texture/share/qun_rank_share",function(err,data){

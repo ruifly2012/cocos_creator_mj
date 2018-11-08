@@ -462,6 +462,22 @@ var HallWebRequest = cc.Class({
         this.gameHttpRequest("KeepScoreGetInfo.aspx", szData, onRetCallBack);
     },
 
+    //分享翻倍次数查询
+    getDoubleScoreGetInfo:function(onRetCallBack){
+        //http://h5cxz.ss2007.com/yjly/KeepScoreGetInfo.aspx?userid=97245805&apptype=1
+        var publicUserInfo = require("HallControl").getInstance().getPublicUserInfo();
+        var szData = "userid=" + publicUserInfo.userDBID + "&appType=1";
+        this.gameHttpRequest("DoubleScoreGetInfo.aspx", szData, onRetCallBack);
+    },
+
+    //分享翻倍
+    getGetDoubleScoreAward:function(onRetCallBack,sn){
+        //http://h5cxz.ss2007.com/yjly/KeepScoreGetInfo.aspx?userid=97245805&apptype=1
+        var publicUserInfo = require("HallControl").getInstance().getPublicUserInfo();
+        var szData = "userid=" + publicUserInfo.userDBID +"&serialnumber="+ sn + "&appType=1";
+        this.gameHttpRequest("GetDoubleScoreAward.aspx", szData, onRetCallBack);
+    },
+
     //牌局结束后段位升级奖励
     getUpgradeRewardOnResult:function(levelUpTo, myOpenId, onRetCallBack){
         console.log("getUpgradeRewardOnResult ------- levelUpTo ===== " + levelUpTo);

@@ -72,7 +72,7 @@ cc.Class({
     },
 
     init: function (sn, score, onEnd, nMatchLevel, nMatchScore, myselfWinOrLoseScore) {
-        this.m_totalTime = 10;
+        this.m_totalTime = 25;
 
         this.m_sn = sn;     //本局的流水号
 
@@ -102,7 +102,7 @@ cc.Class({
 
             }
 
-            if(self.m_totalTime <= 5){
+            if(self.m_totalTime <= 20){
                 self.node.getChildByName("give_up_protect").active = true;
             }
 
@@ -202,7 +202,8 @@ cc.Class({
             require('HallResources').getInstance().removeLoading();
             if(success){
                 var jsonObject = JSON.parse(data);
-                self.richText.string = "<color=#ffffff>您还有</color><color=#e72c07>"+jsonObject.CurTimes+"</color><color=#ffffff>次拯救我的机会</color>"
+                var hasTimes = jsonObject.TotalTimes - jsonObject.CurTimes;
+                self.richText.string = "<color=#ffffff>您还有</color><color=#e72c07>"+hasTimes+"</color><color=#ffffff>次拯救我的机会</color>"
                 if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
                     
                     self.bolShareProtect = false;

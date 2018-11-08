@@ -41,7 +41,7 @@ var ConsecutiveVictoriesLayer = cc.Class({
 
     initData:function(data)
     {
-        this.bg.removeAllChildren();
+        this.bg.getChildByName("list").removeAllChildren();
         var nowProgressingIndex = 0;
         for(var i = 0;i<data.length;i++)
         {
@@ -64,7 +64,7 @@ var ConsecutiveVictoriesLayer = cc.Class({
                 //显示正在进行中
                 item.getComponent("ConsecutiveVictoriesItem").setProgressing(true);
             } 
-            item.parent = this.bg;
+            item.parent = this.bg.getChildByName("list");
             var offsetY = 100;
             //.初始化位置
             var y = 70-i * offsetY;
@@ -81,10 +81,10 @@ var ConsecutiveVictoriesLayer = cc.Class({
         var action3 = cc.callFunc(function(){
             self.node.active = false;
             
-            TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
+            // TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
         });
         var sequence = cc.sequence(action1, action2, action3);
-        this.node.runAction(sequence);
+        this.bg.runAction(sequence);
     },
 
 

@@ -134,7 +134,7 @@ var inviteFriendLayer = cc.Class({
             for (var i = 0;i<self.data.length;i++)
             {
                 var invitePrefab = cc.instantiate(self.inviteBtnPrefab);
-                invitePrefab.parent = self.node;
+                invitePrefab.parent = self.bg;
                 invitePrefab.getComponent("inviteFriendItem").initData(self.tbData[i]);   
                 invitePrefab.setPosition(self.tbData[i].x,self.tbData[i].y); 
             }
@@ -242,10 +242,10 @@ var inviteFriendLayer = cc.Class({
         
         var action3 = cc.callFunc(function(){
             self.node.active = false;
-            TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
+            // TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
         });
         var sequence = cc.sequence(action1, action2, action3);
-        this.node.runAction(sequence);
+        this.bg.runAction(sequence);
     },
 
     setHasGetDesk:function(bol){

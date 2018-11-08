@@ -51,7 +51,7 @@ var dailyLoginLayer = cc.Class({
 
     initData:function(data,bolClick)
     {
-        this.bg.removeAllChildren();
+        this.bg.getChildByName("list").removeAllChildren();
         var todayDay = 0;
         for(var i=0; i<data.length; i++){
             if (data[i].hassign == 0){
@@ -61,7 +61,7 @@ var dailyLoginLayer = cc.Class({
         }
         for(var i=0; i<todayDay; i++){
             var item = cc.instantiate(this.hasGetPrefab);
-            item.parent = this.bg;
+            item.parent =  this.bg.getChildByName("list");
             item.getComponent("dailyHasGetItem").initData(data[i]);      
             var x = -410 + i*138;
             var y = -30; 
@@ -73,7 +73,7 @@ var dailyLoginLayer = cc.Class({
         }
         else{
             var item = cc.instantiate(this.todayBtnPrefab);
-            item.parent = this.bg;
+            item.parent =  this.bg.getChildByName("list");
             item.getComponent("dailyGetButtonItem").initData(data[i],this.clickGetRewardBtn);      
             var x = 230 + todayDay*138;
             var y = 270; 
@@ -83,7 +83,7 @@ var dailyLoginLayer = cc.Class({
 
         for(var i=todayDay+1; i<data.length; i++){
             var item = cc.instantiate(this.tomorrowPrefab);
-            item.parent = this.bg;
+            item.parent =  this.bg.getChildByName("list");
             item.getComponent("dailyTomorrowItem").initData(data[i]);      
             var x = -410 + i*138;
             var y = -30; 
@@ -115,7 +115,7 @@ var dailyLoginLayer = cc.Class({
                 if (allData.retcode == 1){
                     HallResources.getInstance().playButtonEffect();
                     // self.node.parent.parent.active = false;
-                    self.node.parent.parent.getComponent("dailyLoginLayer").closeAndChangeScaleAction();
+                    self.node.parent.parent.parent.getComponent("dailyLoginLayer").closeAndChangeScaleAction();
                     var goldData = require("HallControl").getInstance().getPublicUserInfo().nGold
                     require("HallControl").getInstance().getPublicUserInfo().nGold = parseInt(allData.wantamount) + parseInt(goldData);
 
@@ -126,7 +126,7 @@ var dailyLoginLayer = cc.Class({
                     sendData.moneytype = 7;
                     sendData.wantamount = allData.wantamount;
 
-                    self.node.parent.parent.parent.getComponent("HallPlatformInfo").openGetReward(sendData);
+                    self.node.parent.parent.parent.parent.getComponent("HallPlatformInfo").openGetReward(sendData);
                 }
                 else if(allData.retcode == 11) {
                     console.log("身份验证不通过");
@@ -153,10 +153,10 @@ var dailyLoginLayer = cc.Class({
         var action3 = cc.callFunc(function(){
             self.node.active = false;
             
-            TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
+            // TSCommon.dispatchEvent(HallResources.onChangeShadow,false);
         });
         var sequence = cc.sequence(action1, action2, action3);
-        this.node.runAction(sequence);
+        this.bg.runAction(sequence);
     },
 
 

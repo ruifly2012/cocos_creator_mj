@@ -66,6 +66,10 @@ cc.Class({
         win_score_font: cc.Font,
 
         continue_win_counts: cc.Label,
+
+        richTips: cc.RichText,
+
+        share_btn:cc.Button,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -80,8 +84,26 @@ cc.Class({
         if (this.node.getChildByName("mask_bg")) {
             this.node.getChildByName("mask_bg").setContentSize(windowSize);
         }
+        this.bolShareDouble = true;
+        this.getShareDoubleTimes();
     },
 
+    getShareDoubleTimes:function(){
+        var self = this;
+        var onRetCallback = function(success, data){
+            require('HallResources').getInstance().removeLoading();
+            if(success){
+                var jsonObject = JSON.parse(data);
+                var hasTimes = jsonObject.TotalTimes - jsonObject.CurTimes;
+                self.richTips.string = "<color=#ffffff>您目前还有</color><color=#e72c07>"+hasTimes+"</color><color=#ffffff>次积分翻倍的机会</color>"
+                if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
+                    
+                    self.bolShareDouble = false;
+                }
+            }
+        }
+        require('HallWebRequest').getInstance().getDoubleScoreGetInfo(onRetCallback)
+    },
 
     /*
      * 初始化
@@ -89,7 +111,8 @@ cc.Class({
      * @fanNum 胡牌番数
      * @laiyouValue 癞油字的牌值
     */
-    init: function (bIsLiuju, huType, fanNum, laiyouValue, showDetailResult, nMatchLevel, nMatchScore, myselfWinOrLoseScore, winCount) {
+    init: function (bIsLiuju, huType, fanNum, laiyouValue, showDetailResult, nMatchLevel, nMatchScore, myselfWinOrLoseScore, winCount,sn) {
+        this.m_sn = sn;     //本局的流水号
         this.m_bIsLiuju = bIsLiuju;
         this.m_huType = huType;
         this.m_fanNum = fanNum;
@@ -216,6 +239,48 @@ cc.Class({
                 imageUrl: HallResources.groupShareImgUrl,
             })
         }
+        
+
+        var self = this;
+        var onRetCallback = function(success, data){
+            require('HallResources').getInstance().removeLoading();
+            if(success){
+                var jsonObject = JSON.parse(data);
+                var retcode = jsonObject.RetCode;
+                if (retcode == 1){
+                    Resources.showRewardTips("分享双倍成功", true, true, true);
+                    self.share_btn.node.active = false;
+                    var newRankData = HallResources.getInstance().getRankAndStarByScore(jsonObject.NowScore);
+                    self.init(false, null, null, null, null, self.m_matchLevel, jsonObject.NowScore, self.m_myselfWinOrLoseScore, self.m_winCount, self.m_sn);
+                    self.m_showLevelUpgrade = function(onLevelUpgradeClosed){
+                        var upgradelevelLayer = self.node.parent.getComponent("DeskScene").levelUpgradeLayer.getComponent("UpgradeLevelLayer");
+                        upgradelevelLayer.init(newRankData.id, jsonObject.NowScore, self.myselfWinOrLoseScore, onLevelUpgradeClosed);
+                        self.node.parent.getComponent("DeskScene").levelUpgradeLayer.active = true;
+                    }
+
+                    self.setLevelInfo();
+                }
+                else if(retcode == 11) {
+                    console.log("次数不足");
+                    Resources.showRewardTips("您分享双倍的机会已经用尽", true, true, true);
+                }
+                else if(retcode == 12) {
+                    console.log("参数错误");
+                }
+                else if(retcode == 13) {
+                    console.log("分数不为正");
+                }
+                self.getShareDoubleTimes()
+            }
+        }
+        if (this.bolShareDouble){
+            console.log("进入分享翻倍功能")
+            require('HallWebRequest').getInstance().getGetDoubleScoreAward(onRetCallback,this.m_sn);
+        }
+        else{
+            Resources.showRewardTips("您分享双倍的机会已经用尽", true, true, true);
+        }
+
     },
 
     setLevelInfo: function () {
@@ -265,6 +330,7 @@ cc.Class({
             this.changeScore.string = "+" + this.m_myselfWinOrLoseScore;
         }
         else {
+            this.richTips.node.active = false;
             this.changeScore.string = this.m_myselfWinOrLoseScore;
         }
 
@@ -634,7 +700,7 @@ cc.Class({
             var preMinScore = preLevelData.MinScore;
             var preOffsetScore = (preMaxScore - preMinScore);
 
-            var needProgress = preOffsetScore * toNextPercent;
+            var needProgress = parseInt(preOffsetScore * toNextPercent);
             self.richProgressTips.node.active = true;
             self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
         }

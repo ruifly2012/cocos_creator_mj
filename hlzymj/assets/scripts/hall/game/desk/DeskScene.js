@@ -2828,7 +2828,7 @@ cc.Class({
                         var showMatchResultLayer = function(){
                             var matchGameOverLayer = self.matchGameOverLayer.getComponent("MatchGameOverLayer");
                             var matchLevel = self.m_nNewLevel ? self.m_nNewLevel : self.m_roomSetInfo.cbGradeIndex[self.m_cbMyChair]
-                            matchGameOverLayer.init(false, null, null, laiyouCardValue, null, matchLevel, self.m_pMyself.getScore(), myselfWinOrLoseScore, jsonObject.ContinuityWin);
+                            matchGameOverLayer.init(false, null, null, laiyouCardValue, null, matchLevel, self.m_pMyself.getScore(), myselfWinOrLoseScore, jsonObject.ContinuityWin, self.m_roomSetInfo.szBatchID);
 
                             if(myselfWinOrLoseScore < 0){                           
                                 // var onRetCallback = function(success, data){
