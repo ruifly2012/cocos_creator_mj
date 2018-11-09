@@ -207,6 +207,14 @@ cc.Class({
                 if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
                     
                     self.bolShareProtect = false;
+
+                    cc.loader.loadRes("texture/game/gameOver/shareToGroup", cc.SpriteFrame,function (error, spriteframe)
+                    {
+                        if (!error) {
+                            self.protect_share_btn.node.getComponent(cc.Sprite).spriteFrame = spriteframe;
+                        
+                        }
+                    });
                 }
             }
         }

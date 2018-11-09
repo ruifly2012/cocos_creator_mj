@@ -591,6 +591,7 @@ cc.Class({
         for (var i = 0; i < laiziNode.childrenCount; i++) {
             laiziNode.children[i].active = false;
         }
+        this.hideOutCard();
     },
 
     gameOver: function () {

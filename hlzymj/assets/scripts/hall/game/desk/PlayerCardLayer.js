@@ -34,7 +34,8 @@ cc.Class({
         this.setTouchMjEnable2 = true;
 
         this.init();
-
+        this.colorGray = new cc.Color(137, 137, 137);
+        this.colorWhite = new cc.Color(255, 255, 255);
         var holdCardRootNode = this.node.getChildByName("holds");
         
     },
@@ -373,7 +374,7 @@ cc.Class({
                 this.setPlayerMjFrameByNode(holdCardsNode.children[preCount], spriteFrame, mjCardValue);
                 holdCardsNode.children[preCount].y = this.m_selfOriginalPosY;
                 holdCardsNode.children[preCount].setScale(1);
-                holdCardsNode.children[preCount].removeAllChildren();
+                // holdCardsNode.children[preCount].removeAllChildren();
 
                 // if (mjCardValue == this.m_laiziValue || mjCardValue == this.m_laizipiValue) {
                 //     var laiziIcon = new cc.Node();
@@ -591,7 +592,7 @@ cc.Class({
                 holdCardsNode.children[i].y = this.m_selfOriginalPosY;
                 holdCardsNode.children[i].setScale(1);
 
-                holdCardsNode.children[i].removeAllChildren();
+                // holdCardsNode.children[i].removeAllChildren();
 
                 //判定是否出了后会听牌
                 var vOutCardList = this.node.parent.getComponent("DeskScene").m_stSceneData.vTingList;
@@ -1044,8 +1045,8 @@ cc.Class({
                     }
 
                 }
-
-                    holdCardRootNode.children[i].removeAllChildren();
+                if (this.m_nPos == 1) 
+                    holdCardRootNode.children[i].getChildByName("shadow").active = false;
             }
         }
     },
@@ -1071,7 +1072,7 @@ cc.Class({
                 holdCardRootNode.children[i].x = this.m_selfOriginalPosX + (i) * offset[this.m_nPos - 1][0];
                 holdCardRootNode.children[i].y = this.m_selfOriginalPosY + (i) * offset[this.m_nPos - 1][1];
             }
-            holdCardRootNode.children[i].removeAllChildren();
+            // holdCardRootNode.children[i].removeAllChildren();
         }
 
         if (this.m_pengGangArray) {
@@ -1315,10 +1316,10 @@ cc.Class({
         for (var i = 0; i < holdCardsNode.childrenCount; i++) {
             var nType = GameCfg.getMjColor(holdCardsNode.children[i].cardValue);
             if (nType == this.m_nQueYiMenStyleType){
-                holdCardsNode.children[i].color = new cc.Color(137, 137, 137);
+                holdCardsNode.children[i].getChildByName("shadow").active = true;
             }
             else{
-                holdCardsNode.children[i].color = new cc.Color(255, 255, 255);
+                holdCardsNode.children[i].getChildByName("shadow").active = false;
             }
         }
     },
@@ -1332,9 +1333,9 @@ cc.Class({
             if (holdCardsNode.children[i].y == this.m_selfOriginalPosY)
             {
                 if (bol){
-                    holdCardsNode.children[i].color = new cc.Color(255, 255, 255);
+                    holdCardsNode.children[i].getChildByName("shadow").active = false;
                 }else{
-                    holdCardsNode.children[i].color = new cc.Color(137, 137, 137);
+                    holdCardsNode.children[i].getChildByName("shadow").active = true;
                 }
             }
         }

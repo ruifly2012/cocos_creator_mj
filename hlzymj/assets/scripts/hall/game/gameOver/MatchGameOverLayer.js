@@ -99,6 +99,14 @@ cc.Class({
                 if(parseInt(jsonObject.CurTimes) >= parseInt(jsonObject.TotalTimes)){
                     
                     self.bolShareDouble = false;
+                    
+                    cc.loader.loadRes("texture/game/gameOver/shareToGroup", cc.SpriteFrame,function (error, spriteframe)
+                    {
+                        if (!error) {
+                            self.share_btn.node.getComponent(cc.Sprite).spriteFrame = spriteframe;
+                        
+                        }
+                    });
                 }
             }
         }
