@@ -126,14 +126,6 @@ cc.Class({
         this.continueBtn.node.active = true;
         this.backToDeskBtn.node.active = true;
         
-        this.continueBtn.node.setPosition(0,-600);
-        var action4 = cc.moveBy(0.5,0,300);
-        this.continueBtn.node.runAction(action4);
-
-        this.backToDeskBtn.node.setPosition(560,-628);
-        var action5 = cc.moveBy(0.5,0,300);
-        this.backToDeskBtn.node.runAction(action5);
-        
         this.nextBtn.node.active = false;
         this.backBtn.node.active = false;
         this.continueBtnFunc = func;
@@ -222,10 +214,8 @@ cc.Class({
             playerResultItem.getComponent("XueLiuPlayerResultItem").initData(this.m_stPlayerName[i],this.m_playerAvators[i],score,maxScoreIndex == i,i,this.m_myChair,this.m_nPoChan[i],this.m_bolIsPrivateRoom,this.m_stWinStruct.nSrcScore[i]);   
             playerResultItem.setPosition(-70 + i*290,300);
 
-            var delay = cc.delayTime(0.2*i);
             var action = cc.moveBy(0.5,0,-300);
-            var sequence = cc.sequence(delay, action);
-            playerResultItem.runAction(sequence);
+            playerResultItem.runAction(action);
         }
         this.resultList.getComponent("XueLiuGameOverScrollList").initData(this.m_stWinStruct.cbWriteScoreTimes[this.m_myChair],this.m_stWinStruct.stSingleScore[this.m_myChair],this.m_myChair);
         
@@ -241,5 +231,13 @@ cc.Class({
         this.nextBtn.node.setPosition(292,-602);
         var action3 = cc.moveBy(0.5,0,300);
         this.nextBtn.node.runAction(action3);
+
+        this.continueBtn.node.setPosition(0,-600);
+        var action4 = cc.moveBy(0.5,0,300);
+        this.continueBtn.node.runAction(action4);
+
+        this.backToDeskBtn.node.setPosition(560,-628);
+        var action5 = cc.moveBy(0.5,0,300);
+        this.backToDeskBtn.node.runAction(action5);
     },
 });
