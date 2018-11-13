@@ -159,16 +159,16 @@ PropertyAnimationLayer.PlayArmatureAction = function(){
     }
    
 
-    var moveTo = cc.moveTo(0.5, this.m_endPoint.x, this.m_endPoint.y);
-    TSCommon.performWithDelay(self, function () {
+    var moveTo = cc.moveTo(0.7, this.m_endPoint.x, this.m_endPoint.y);
+    // TSCommon.performWithDelay(self, function () {
         HallResources.getInstance().playPropertyEffect(self.m_nPropertyId);
 
-    }, 0.2)
+    // }, 0.2)
     console.log("self.m_nPropertyId========"+self.m_nPropertyId)
     
     //如果是扔鸡蛋或者是kiss表情 则加一个旋转动画
     if(this.m_nPropertyId == 1 || this.m_nPropertyId == 4){
-        var rotate = cc.rotateBy(0.5, 360)
+        var rotate = cc.rotateBy(0.7, 360)
         var spawn = cc.spawn(moveTo, rotate);
         var callFunc = cc.callFunc(playeAnimation);
         var sequence = cc.sequence(spawn, callFunc);

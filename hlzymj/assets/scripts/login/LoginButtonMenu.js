@@ -37,6 +37,11 @@ cc.Class({
             default: null,
             type: cc.Node,
         },
+
+        ver_label:{
+            default: null,
+            type: cc.Label,
+        },
         pregress: 0.0,
         isLoading: false,
 
@@ -47,7 +52,7 @@ cc.Class({
     onLoad:function() {
 
         TSCommon.addEvent(HallResources.onLoginFinish, this.onLoginFinished, this);
-
+        this.ver_label.string = Domain.Gversion;
         if(cc.sys.browserType == "mqqbrowser" || "wechatgame" == cc.sys.browserType){
 
             //上报aladinSDK需要的相应参数

@@ -70,6 +70,8 @@ cc.Class({
         richTips: cc.RichText,
 
         share_btn:cc.Button,
+
+        share_tips2: cc.Sprite,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -266,6 +268,8 @@ cc.Class({
                 if (retcode == 1){
                     Resources.showRewardTips("分享双倍成功", true, true, true);
                     self.share_btn.node.active = false;
+                    self.richTips.node.active = false;
+                    self.share_tips2.node.active = false;
                     var newRankData = HallResources.getInstance().getRankAndStarByScore(jsonObject.NowScore);
                     self.init(false, null, null, null, null, self.m_matchLevel, jsonObject.NowScore, self.m_myselfWinOrLoseScore, self.m_winCount, self.m_sn);
                     self.m_showLevelUpgrade = function(onLevelUpgradeClosed){
@@ -346,6 +350,7 @@ cc.Class({
         }
         else {
             this.richTips.node.active = false;
+            this.share_tips2.node.active = false;
             this.changeScore.string = this.m_myselfWinOrLoseScore;
         }
 

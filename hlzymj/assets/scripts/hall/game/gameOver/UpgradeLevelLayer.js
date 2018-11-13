@@ -62,6 +62,7 @@ cc.Class({
     },
 
     init:function(newLevel, nNewScore, myselfWinOrLoseScore, onEnd){
+        this.m_totalTime = 25;
         this.m_nNewLevel = newLevel;
         this.m_nNewScore = nNewScore;
         this.m_myselfWinOrLoseScore = myselfWinOrLoseScore;  //当前局的输赢分数
@@ -69,8 +70,25 @@ cc.Class({
         this.m_onEnd = onEnd;
     },
 
-    onEnable: function () {
+    playJinBiAct:function(){
+        var self = this;
+        Resources.playCommonEffect("jinbiyu.mp3");
+        var whosTurnNode = this.node.getChildByName("jinbiyu_act");
+        var strAniName = 'jinbiyu';
+        whosTurnNode.active = true;
+        var dragonDisplay = whosTurnNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation(strAniName,1);
+        var callback = function () {
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        }
 
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
+    },
+
+
+    onEnable: function () {
+        this.show();
+        this.playJinBiAct();
         this.reward_cup.active = false;
         this.match_level.active = false;
 
@@ -155,7 +173,29 @@ cc.Class({
         
     },
 
-    
+    show: function () {
+
+        var self = this;
+
+        this.m_waitCallback = function(){
+
+            self.m_totalTime -= 1;
+
+            // if(self.m_totalTime < 0){
+            //     self.node.active = false;
+            // }
+
+            if(self.m_totalTime == 22){
+                self.node.getChildByName("game_back").active = true;
+                self.node.getChildByName("resume_next_btn").active = true;
+            }
+
+        }.bind(this);
+
+        this.schedule(this.m_waitCallback, 1, this.m_totalTime, 0);
+
+    },
+
     onDisable:function(){
 
         if(this.m_onEnd){
@@ -272,11 +312,13 @@ cc.Class({
 
     //游戏返回按钮点击
     onGameBackClicked:function(){
+        this.m_onEnd = null;
         this.node.active = false;
     },
 
     //继续闯关点击
     onResumeNextClicked: function () {
+        this.m_onEnd = null;
         this.node.active = false;
     },
 

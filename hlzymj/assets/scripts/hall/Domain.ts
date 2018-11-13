@@ -21,6 +21,7 @@ export class Domain {
     //public static START_URL: string = "http://scplatform.ss2007.com/edongh5/";
     public static ENV = 0;
     public static CURRENCYTYPE = "CNY";
+    public static Gversion = "Ver:0.1.1113.2";//大版本号/小版本号/当天日期/当天的第几个版本（0-F）
 }
 
 if(Domain.BolTest){

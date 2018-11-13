@@ -299,6 +299,10 @@ var HallPlatformInfo = {
             default: null,
             type: cc.Button,
         },
+        versionLabel:{
+            default: null,
+            type: cc.Label,
+        },
         hotGameEnName : "",
         cwGameEnName : "",
     },
@@ -374,7 +378,8 @@ var HallPlatformInfo = {
 
         var self = this;
         this.gameMatchLayer.active = false;
-
+        this.clickHideBtnTimes = 0;
+        this.versionLabel.string = Domain.Gversion;
         if(require("HallUtils").isIPhoneX())
         { 
             if(!cc.sys.isNative && cc.sys.isMobile){
@@ -2035,7 +2040,11 @@ var HallPlatformInfo = {
         return month+"."+day;
     },
 
-
+    onClickHideVersionBtn:function(){
+        this.clickHideBtnTimes = this.clickHideBtnTimes + 1;
+        if (this.clickHideBtnTimes > 3)
+            this.versionLabel.node.active = true;
+    },
 
 };
 

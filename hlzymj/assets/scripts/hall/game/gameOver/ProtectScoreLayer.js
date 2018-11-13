@@ -51,6 +51,18 @@ cc.Class({
         changeScore: cc.Label,
 
         protect_score_icon: cc.Node,
+
+        protect_tips2: cc.Sprite,
+
+        richProgressTips: {
+            default: null,
+            type: cc.Sprite,
+        },
+
+        richProgress: {
+            default: null,
+            type: cc.RichText,
+        },
     },
 
     onLoad:function(){
@@ -59,6 +71,7 @@ cc.Class({
         this.node.width = windowSize.width;
         this.node.height = windowSize.height;
         
+        this.removeCancelBtn = true;
         this.bolShareProtect = true;
         //主界面不显示
         if (this.node.getChildByName("mask_bg"))
@@ -116,10 +129,12 @@ cc.Class({
 
             }
 
-            if(self.m_totalTime == 20){
+            if(self.m_totalTime == 22){
+
                 // self.node.getChildByName("give_up_protect").active = true;
-                self.cancel_protect_btn.node.active = true;
+                // self.cancel_protect_btn.node.active =  self.removeCancelBtn;
                 self.node.getChildByName("game_back_btn").active = true;
+                self.next_game_btn.node.active = true;
             }
 
             self.timer_label.string = self.m_totalTime
@@ -468,6 +483,21 @@ cc.Class({
         var deltaScroll = (curPercent - prePercent) / (scrollTime * 100);
         var self = this;
         Resources.playCommonEffect("moveProgress.mp3");
+        var nextLevel = self.m_matchLevel;
+        var toNextPercent = 1-curPercent;
+        if (bolLeaveUp){
+            nextLevel = self.m_matchLevel + 1;
+            toNextPercent = 1;
+        }
+        if (nextLevel<=20){  
+            var preLevelData = HallResources.getInstance().getRankDataById(nextLevel);
+            var preMaxScore = preLevelData.MaxScore;
+            var preMinScore = preLevelData.MinScore;
+            var preOffsetScore = (preMaxScore - preMinScore);
+
+            var needProgress = parseInt(preOffsetScore * toNextPercent);
+            self.richProgress.string = "<color=#42130a>您当前还差</color><color=#e72c07>"+needProgress+"</color><color=#42130a>积分晋级</color>"
+        }
         this.setProgress = function () {
 
             if(self.m_thisViewClosed){
@@ -670,11 +700,15 @@ cc.Class({
                             self.women_icon.spriteFrame = spriteFrame;
                         }
                     });
+                    self.playJinBiAct();
+                    self.removeCancelBtn = false;
                     self.cancel_protect_btn.node.active = false;
                     self.protect_score.node.active = false;
                     self.protect_share_btn.node.active = false;
                     self.next_game_btn.node.active = true;
+                    self.richProgressTips.node.active = true;
                     self.richText.node.active = false;
+                    self.protect_tips2.node.active = false;
 
                     self.init(self.m_sn, self.m_score, self.m_onEnd,  self.m_matchLevel, self.m_matchScore,self.m_myselfWinOrLoseScore);
                     self.setLevelInfo();
@@ -693,6 +727,21 @@ cc.Class({
         }
 
         require('HallWebRequest').getInstance().getProtectScoreShareReward(this.m_sn, this.m_score, myOpenId, httpCallback);
+    },
+
+    playJinBiAct:function(){
+        var self = this;
+        Resources.playCommonEffect("jinbiyu.mp3");
+        var whosTurnNode = this.node.getChildByName("jinbiyu_act");
+        var strAniName = 'jinbiyu';
+        whosTurnNode.active = true;
+        var dragonDisplay = whosTurnNode.getComponent(dragonBones.ArmatureDisplay);
+        dragonDisplay.playAnimation(strAniName,1);
+        var callback = function () {
+            dragonDisplay.removeEventListener(dragonBones.EventObject.COMPLETE, callback, self);
+        }
+
+        dragonDisplay.addEventListener(dragonBones.EventObject.COMPLETE, callback, this)
     },
 
     getShareTimes:function(){
@@ -741,8 +790,15 @@ cc.Class({
 
      //下一局
     onNextClicked:function(){
+        this.m_onEnd = null;
         G.matchGameReady = true;
         require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
     },
 
+    onLeaveGameClicked: function () {
+        this.m_onEnd = null;
+        G.goldGameReady = null;
+        G.matchGameReady = null;
+        require('GameLibSink').getInstance().getGameLib().leaveGameRoom();
+    },
 });

@@ -127,11 +127,11 @@ cc.Class({
         this.backToDeskBtn.node.active = true;
         
         this.continueBtn.node.setPosition(0,-600);
-        var action4 = cc.moveBy(0.5,0,300);
+        var action4 = cc.moveBy(0.3,0,300);
         this.continueBtn.node.runAction(action4);
 
         this.backToDeskBtn.node.setPosition(560,-628);
-        var action5 = cc.moveBy(0.5,0,300);
+        var action5 = cc.moveBy(0.3,0,300);
         this.backToDeskBtn.node.runAction(action5);
         
         this.nextBtn.node.active = false;
@@ -223,23 +223,23 @@ cc.Class({
             playerResultItem.setPosition(-70 + i*290,300);
 
             var delay = cc.delayTime(0.2*i);
-            var action = cc.moveBy(0.5,0,-300);
+            var action = cc.moveBy(0.3,0,-300);
             var sequence = cc.sequence(delay, action);
             playerResultItem.runAction(sequence);
         }
         this.resultList.getComponent("XueLiuGameOverScrollList").initData(this.m_stWinStruct.cbWriteScoreTimes[this.m_myChair],this.m_stWinStruct.stSingleScore[this.m_myChair],this.m_myChair);
         
         this.resultListBg.node.setPosition(0,-432);
-        var action1 = cc.moveBy(0.5,0,300);
+        var action1 = cc.moveBy(0.3,0,300);
         this.resultListBg.node.runAction(action1);
 
 
         this.backBtn.node.setPosition(-292,-602);
-        var action2 = cc.moveBy(0.5,0,300);
+        var action2 = cc.moveBy(0.3,0,300);
         this.backBtn.node.runAction(action2);
 
         this.nextBtn.node.setPosition(292,-602);
-        var action3 = cc.moveBy(0.5,0,300);
+        var action3 = cc.moveBy(0.3,0,300);
         this.nextBtn.node.runAction(action3);
     },
 });
