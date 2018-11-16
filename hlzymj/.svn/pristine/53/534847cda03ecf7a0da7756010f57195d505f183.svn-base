@@ -1,0 +1,150 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_action_3",
+      "texture": "41eJXCk09OIbh7/ZRA6LLW",
+      "rect": [
+        0,
+        1,
+        73,
+        71
+      ],
+      "offset": [
+        -1,
+        -0.5
+      ],
+      "originalSize": [
+        75,
+        72
+      ]
+    }
+  },
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "left_action",
+    "_duration": 0.35,
+    "curveData": {
+      "comps": {
+        "cc.Sprite": {
+          "spriteFrame": [
+            {
+              "frame": 0,
+              "value": {
+                "__uuid__": "9fdIlCpS1Ntq80tIGnU2yj"
+              }
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": {
+                "__uuid__": "7dQGCeSsNNFJVDsbw2vHQH"
+              }
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": {
+                "__uuid__": "24A5XKNk5F/Z2O5ru1y5Ao"
+              }
+            },
+            {
+              "frame": 0.25,
+              "value": {
+                "__uuid__": "f7TEbOkdJPg7QyTwG3zXrK"
+              }
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": {
+                "__uuid__": "d4NNcuj4tO9q/2H3TIYETf"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_action_2",
+      "texture": "dfCHULvSVIgrheN9f7IPx1",
+      "rect": [
+        0,
+        2,
+        75,
+        70
+      ],
+      "offset": [
+        0,
+        -1
+      ],
+      "originalSize": [
+        75,
+        72
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_action_1",
+      "texture": "91Nb7rADBP+biTVnANw47J",
+      "rect": [
+        4,
+        4,
+        67,
+        65
+      ],
+      "offset": [
+        0,
+        -0.5
+      ],
+      "originalSize": [
+        75,
+        72
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_action_5",
+      "texture": "deyl36dZJHCanitEs1NN6K",
+      "rect": [
+        11,
+        2,
+        52,
+        68
+      ],
+      "offset": [
+        -0.5,
+        0
+      ],
+      "originalSize": [
+        75,
+        72
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_action_4",
+      "texture": "53OKMs6A1KLJhZAtowxbaF",
+      "rect": [
+        9,
+        0,
+        57,
+        72
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        75,
+        72
+      ]
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gdmjIcon",
+    "texture": "35wzjy7+lE2LYSTGiShpLX",
+    "rect": [
+      0,
+      0,
+      315,
+      233
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      315,
+      233
+    ]
+  }
+}

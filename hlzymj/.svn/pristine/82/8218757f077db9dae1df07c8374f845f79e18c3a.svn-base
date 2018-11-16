@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "3e57481a-a07a-4430-8928-1e8893087f2f",
+  "atlasJson": "{\"width\":256,\"imagePath\":\"jiazai_ske_tex.png\",\"height\":256,\"name\":\"jiazai_ske\",\"SubTexture\":[{\"width\":80,\"y\":143,\"height\":82,\"name\":\"jiazai_majiangzi\",\"x\":1},{\"width\":140,\"y\":1,\"height\":140,\"name\":\"quan\",\"x\":1}]}",
+  "texture": "b5ee1dfa-85b2-4b02-8551-54f64e1f31f9",
+  "subMetas": {}
+}

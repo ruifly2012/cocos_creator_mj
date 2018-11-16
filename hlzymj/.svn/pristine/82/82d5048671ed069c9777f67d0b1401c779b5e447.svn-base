@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "allDataMsgBtn",
+    "texture": "14qSyX7CJKDqzdGcLfXJzC",
+    "rect": [
+      0,
+      1,
+      248,
+      82
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      248,
+      83
+    ]
+  }
+}

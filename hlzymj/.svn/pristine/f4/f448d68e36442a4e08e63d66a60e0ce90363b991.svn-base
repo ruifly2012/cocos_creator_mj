@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_btn_fenxiang_tex",
+    "texture": "4b8yA7WihHTpkTpDkXEavv",
+    "rect": [
+      1,
+      1,
+      503,
+      368
+    ],
+    "offset": [
+      -3.5,
+      71
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

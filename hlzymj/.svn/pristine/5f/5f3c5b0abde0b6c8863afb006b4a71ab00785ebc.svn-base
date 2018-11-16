@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yingzimo_match",
+    "texture": "d90514wXJIr65WKOmedCRo",
+    "rect": [
+      0,
+      0,
+      213,
+      82
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      214,
+      82
+    ]
+  }
+}

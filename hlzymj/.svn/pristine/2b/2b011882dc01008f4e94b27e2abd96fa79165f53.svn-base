@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "quick_chat",
+    "texture": "aeB+9UeKtG4ZO9MaoimfgR",
+    "rect": [
+      2,
+      2,
+      1017,
+      1195
+    ],
+    "offset": [
+      -1.5,
+      424.5
+    ],
+    "originalSize": [
+      1024,
+      2048
+    ]
+  }
+}

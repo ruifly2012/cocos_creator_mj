@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "winCount_7",
+    "texture": "a90YKSpj1MKZZXAvdXRFHA",
+    "rect": [
+      1,
+      0,
+      380,
+      171
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      382,
+      171
+    ]
+  }
+}

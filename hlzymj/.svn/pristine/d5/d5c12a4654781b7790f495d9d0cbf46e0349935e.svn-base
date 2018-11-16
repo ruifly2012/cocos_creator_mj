@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "kefu_green",
+    "texture": "88rD+V/7lBOqYwG09PxmkO",
+    "rect": [
+      0,
+      0,
+      69,
+      35
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      69,
+      35
+    ]
+  }
+}

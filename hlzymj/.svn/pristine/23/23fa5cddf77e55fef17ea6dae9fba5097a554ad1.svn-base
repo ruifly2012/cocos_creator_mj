@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "give_up",
+    "texture": "21S4wEwT5Noarb6cyxNf6I",
+    "rect": [
+      0,
+      0,
+      113,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      113,
+      26
+    ]
+  }
+}

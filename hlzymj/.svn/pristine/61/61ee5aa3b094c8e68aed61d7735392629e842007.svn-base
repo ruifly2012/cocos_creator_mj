@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "youzhongyou_match",
+    "texture": "20woNkfPRPw4J9Oa86lXoc",
+    "rect": [
+      0,
+      0,
+      214,
+      81
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      214,
+      82
+    ]
+  }
+}

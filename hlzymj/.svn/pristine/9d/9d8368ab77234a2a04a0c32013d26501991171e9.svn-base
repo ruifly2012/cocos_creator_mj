@@ -1,0 +1,571 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "right_arrow",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        756,
+        78,
+        55,
+        74
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        55,
+        74
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "effect_img",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        756,
+        192,
+        70,
+        29
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        70,
+        29
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "title_setting1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        2,
+        985,
+        71,
+        35
+      ],
+      "offset": [
+        -1,
+        1
+      ],
+      "originalSize": [
+        311,
+        59
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "bg3",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        253,
+        508,
+        475,
+        249
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        475,
+        249
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "sound_bg",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        2,
+        2,
+        314,
+        504
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        314,
+        504
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "bg1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        318,
+        2,
+        475,
+        249
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        475,
+        249
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "mahjong3_icon",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        841,
+        116,
+        61,
+        88
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        61,
+        88
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "spot_icon",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        338,
+        479,
+        16,
+        17
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        16,
+        17
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteAtlas",
+    "_name": "game_setting.plist",
+    "_spriteFrames": {
+      "bg1": {
+        "__uuid__": "20DnFMKHtGHoDjHnKeN1l6"
+      },
+      "bg2": {
+        "__uuid__": "bfWPFLNaBGIrgOCyDM1Ak5"
+      },
+      "bg3": {
+        "__uuid__": "06yxlzpblHFYEjy/xIUSk4"
+      },
+      "bg_mask": {
+        "__uuid__": "cbYQmwTNJK4Z7YSmUCpn4E"
+      },
+      "cb_close": {
+        "__uuid__": "d8znD8a19LR6mPLjz0yLkB"
+      },
+      "cb_open": {
+        "__uuid__": "8ff0c2j4ZP7I21EdxOGF3l"
+      },
+      "close_bg1": {
+        "__uuid__": "baVz5oF5ZAoJBbyplCkz1t"
+      },
+      "desktop_label1": {
+        "__uuid__": "96GbT9uw5ImZseRWluaQV7"
+      },
+      "effect_img": {
+        "__uuid__": "03pFgZwXtKRqQDi66z3bG3"
+      },
+      "left_arrow": {
+        "__uuid__": "b8mOgPZupJMYVerG2z4BkW"
+      },
+      "mahjong1_icon": {
+        "__uuid__": "f2el1GhTJCA4rRtjjCRTxt"
+      },
+      "mahjong2_icon": {
+        "__uuid__": "5705lTjMdB0b8/q7opKTOj"
+      },
+      "mahjong3_icon": {
+        "__uuid__": "25Zjt/mgpHb6OAiFAoAI9X"
+      },
+      "mahjong_label1": {
+        "__uuid__": "b7ypHFaPdKda898oTJeN1S"
+      },
+      "music_img": {
+        "__uuid__": "6coFsVGOxFka6jGe1fzvNE"
+      },
+      "right_arrow": {
+        "__uuid__": "005L0101JGppUDTQRyHfjV"
+      },
+      "select_icon": {
+        "__uuid__": "caZQOluFZEmZ6WCtec1YAG"
+      },
+      "sound_bg": {
+        "__uuid__": "0f71RZCXpLu5aK49s1xOgt"
+      },
+      "sound_label1": {
+        "__uuid__": "58at1YF1hOGazrTIEvI3+G"
+      },
+      "spot_icon": {
+        "__uuid__": "39QfItJ4dHjatPe2Hy7uaf"
+      },
+      "spot_icon1": {
+        "__uuid__": "6eYEJvINFOuK8vSLTPhTrU"
+      },
+      "title_setting1": {
+        "__uuid__": "03xsSCRg5OjKc01gzOyx3k"
+      },
+      "vibration_img": {
+        "__uuid__": "75ToH0vXVAUrgs23cumdaC"
+      }
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "mahjong2_icon",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        841,
+        179,
+        61,
+        87
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        61,
+        87
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "sound_label1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        75,
+        985,
+        246,
+        32
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        248,
+        32
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "music_img",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        642,
+        985,
+        70,
+        29
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        70,
+        29
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "spot_icon1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        318,
+        479,
+        18,
+        18
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        18,
+        18
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "vibration_img",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        571,
+        985,
+        69,
+        30
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        69,
+        30
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "cb_open",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        841,
+        2,
+        156,
+        55
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        158,
+        55
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "desktop_label1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        504,
+        955,
+        246,
+        28
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        248,
+        28
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "mahjong_label1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        323,
+        985,
+        246,
+        32
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        248,
+        32
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "left_arrow",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        756,
+        135,
+        55,
+        74
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        55,
+        74
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "close_bg1",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        756,
+        2,
+        74,
+        75
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        74,
+        75
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "bg2",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        504,
+        479,
+        474,
+        250
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        474,
+        250
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "select_icon",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        752,
+        955,
+        62,
+        87
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        62,
+        87
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "bg_mask",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        2,
+        508,
+        475,
+        249
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        475,
+        249
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "cb_close",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        841,
+        59,
+        156,
+        55
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        158,
+        55
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "mahjong1_icon",
+      "texture": "cfoIRUPF1JBIopVOgF/8Ft",
+      "rect": [
+        931,
+        116,
+        61,
+        88
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        61,
+        88
+      ],
+      "rotated": 1
+    }
+  }
+]

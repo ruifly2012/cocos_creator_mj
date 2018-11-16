@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_zhujiemian_3ge_tex",
+    "texture": "ddKB28JD1MXbDG2CwU/DjM",
+    "rect": [
+      1,
+      1,
+      2045,
+      1997
+    ],
+    "offset": [
+      -0.5,
+      24.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "consecutiveVictoriesBg_iphoneX",
+    "texture": "54UF5yjJRKKoIJMe9saNuZ",
+    "rect": [
+      0,
+      0,
+      1559,
+      720
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1559,
+      720
+    ]
+  }
+}

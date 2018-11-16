@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "match_level_bar_bg",
+    "texture": "76OJGmVrNN1INIjtytVePy",
+    "rect": [
+      0,
+      0,
+      232,
+      20
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      232,
+      20
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "help",
+    "texture": "e5FsiDsp5NGL7NktlE/apm",
+    "rect": [
+      2,
+      2,
+      2033,
+      2016
+    ],
+    "offset": [
+      -5.5,
+      14
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

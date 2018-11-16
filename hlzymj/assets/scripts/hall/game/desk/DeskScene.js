@@ -157,7 +157,17 @@ cc.Class({
             type: cc.Button,
         },
 
+        huTips: {
+            default: null,
+            type: cc.Sprite,
+        },
+
+        robotTips: {
+            default: null,
+            type: cc.Sprite,
+        },
         GAMETIMER_COUNT: 10,
+        CHANGE_THREE_COUNT: 15,
         XUANPAI_COUNT: 8,
     },
 
@@ -166,6 +176,13 @@ cc.Class({
         //玩家离开游戏，头像延迟消失的处理,这个为了防止金币场游戏开始前就设置为true，必须在场景大于startgame的时候才设置为true。在gameover之后才设置为false
         this.openGmae = false;
         var self = this;
+        this.isMyFirstHu = false;
+
+        this.isMeClickRobot = false;
+
+        this.afterHuOutCardTimes = 0;
+
+        this.queyimenTipsTimes = 0;
 
         if (require("HallUtils").isIPhoneX()) {
             if (!cc.sys.isNative && cc.sys.isMobile) {
@@ -268,7 +285,7 @@ cc.Class({
         
         //设定游戏icon
         if(this.IsCXZ()){
-            cc.loader.loadRes("texture/game/cxz_title", cc.SpriteFrame, function (err, spriteFrame) {
+            cc.loader.loadRes("game/cxz_title", cc.SpriteFrame, function (err, spriteFrame) {
                 
                 if (!err) {
                     self.node.getChildByName("game_icon").getComponent(cc.Sprite).spriteFrame = spriteFrame;
@@ -328,7 +345,7 @@ cc.Class({
     loadNomalBgRes:function(){
         var self = this;
         var index = cc.sys.localStorage.getItem("deskBg") || 0;
-        cc.loader.loadRes("texture/game/background1", cc.SpriteFrame, function (err, spriteFrame) {
+        cc.loader.loadRes("texture/gameDeskButton/background1", cc.SpriteFrame, function (err, spriteFrame) {
             if (!err) {
                 self.m_bg1Frame = spriteFrame;
 
@@ -336,25 +353,25 @@ cc.Class({
             }
         })
 
-        cc.loader.loadRes("texture/game/background2", cc.SpriteFrame, function (err, spriteFrame) {
+        cc.loader.loadRes("game/background2", cc.SpriteFrame, function (err, spriteFrame) {
             if (!err) {
                 self.m_bg2Frame = spriteFrame;
                 self.onChangeDeskBg(null, index);
             }
         })
 
-        cc.loader.loadRes("texture/game/background3", cc.SpriteFrame, function (err, spriteFrame) {
-            if (!err) {
-                self.m_bg3Frame = spriteFrame;
-                self.onChangeDeskBg(null, index);
-            }
-        })
+        // cc.loader.loadRes("game/background3", cc.SpriteFrame, function (err, spriteFrame) {
+        //     if (!err) {
+        //         self.m_bg3Frame = spriteFrame;
+        //         self.onChangeDeskBg(null, index);
+        //     }
+        // })
     },
 
     loadIphoneXBgRes:function(){
         var self = this;
         var index = cc.sys.localStorage.getItem("deskBg") || 0;
-        cc.loader.loadRes("texture/game/background1_x", cc.SpriteFrame, function (err, spriteFrame) {
+        cc.loader.loadRes("texture/gameDeskButton/background1_x", cc.SpriteFrame, function (err, spriteFrame) {
             if (!err) {
                 self.m_bg1Frame = spriteFrame;
 
@@ -362,19 +379,19 @@ cc.Class({
             }
         })
 
-        cc.loader.loadRes("texture/game/background2_x", cc.SpriteFrame, function (err, spriteFrame) {
+        cc.loader.loadRes("game/background2_x", cc.SpriteFrame, function (err, spriteFrame) {
             if (!err) {
                 self.m_bg2Frame = spriteFrame;
                 self.onChangeDeskBg(null, index);
             }
         })
 
-        cc.loader.loadRes("texture/game/background3", cc.SpriteFrame, function (err, spriteFrame) {
-            if (!err) {
-                self.m_bg3Frame = spriteFrame;
-                self.onChangeDeskBg(null, index);
-            }
-        })
+        // cc.loader.loadRes("game/background3", cc.SpriteFrame, function (err, spriteFrame) {
+        //     if (!err) {
+        //         self.m_bg3Frame = spriteFrame;
+        //         self.onChangeDeskBg(null, index);
+        //     }
+        // })
     },
 
 
@@ -383,6 +400,7 @@ cc.Class({
         this.m_bIsOffLine = false;
         this.isClick = false;
         this.pochanFlag = false;
+        this.bolTips20Card = false;
     },
 
 
@@ -391,7 +409,7 @@ cc.Class({
         var self = this;
         if(this.IsXueZhan())
         {
-            cc.loader.loadRes("texture/game/xuezhan_title",cc.SpriteFrame,function(err,spriteFrame){
+            cc.loader.loadRes("game/xuezhan_title",cc.SpriteFrame,function(err,spriteFrame){
                 if(!err)
                 {   
                     self.gameTitle.spriteFrame = spriteFrame;
@@ -512,6 +530,7 @@ cc.Class({
     onRobot:function(){
         if( this.m_stSceneData && this.m_stSceneData.cbPhase != GameDefs.GamePhase.PhaseEnd)
         {
+            this.isMeClickRobot = true;
             sendCMD.sendCMD_PO_ROBOTPLAYSTART()
         }
         else{
@@ -893,8 +912,12 @@ cc.Class({
         var restMjNum = this.getRestMjCount();
         if(restMjNum < 0)
             restMjNum = 108
-        if (restMjNum == 19)
-            Resources.ShowToast("当前牌数不足20张啦")
+        if (restMjNum == 19){
+            if (!this.bolTips20Card){
+                this.bolTips20Card = true;
+                Resources.ShowToast("当前牌数不足20张啦");
+            }
+        }
         gameSystemNode.getChildByName("leftMj_label").getComponent(cc.Label).string = restMjNum;
     },
 
@@ -1079,6 +1102,12 @@ cc.Class({
                     var cancelRobotNode = this.node.getChildByName("cancel_robot");
                     var isRobot = this.m_stSceneData.players[cbChair].cbAutoOutCard == 1;
                     cancelRobotNode.active = isRobot ? true : false;
+
+                    if (!this.isMeClickRobot)
+                    {
+                        //判断不是我点击的托管
+                        this.robotTips.node.active =  isRobot ? true : false;
+                    }
 
                     if (require("HallUtils").isIPhoneX()) {
                         cancelRobotNode.setScale(1.2);
@@ -1351,6 +1380,15 @@ cc.Class({
                 } 
 
                 if (vHuChair[i] == this.m_cbMyChair) {
+                    if (this.node.getChildByName("cancel_robot").active){
+                        this.node.getChildByName("cancel_robot").active = false;
+                        sendCMD.sendCMD_PO_ROBOTPLAYCANCEL()
+                    }
+                    if (!this.isMyFirstHu)
+                    {
+                        this.huTips.node.active = true;
+                        this.isMyFirstHu = true;
+                    }
                     this.getPlayerByPos(1).getComponent("PlayerCardLayer").setGrayForCannotUpCard(false);
                     if (this.IsXueZhan())
                     {
@@ -1378,16 +1416,22 @@ cc.Class({
             cc.log("轮到当前的椅子号为" + this.PosFromChair(this.m_stSceneData.cbWhosTurn));
             var nPos = this.PosFromChair(this.m_stSceneData.cbWhosTurn);
 
+            var bolHu = (this.m_cbMyChair == this.m_stSceneData.cbWhosTurn) &&(this.m_stSceneData.players[this.m_cbMyChair].cbIsHu == 1);
+            if (bolHu){
+                //胡牌提示文字放入手牌位置并居中， 文字显示俩回合（自己出牌俩次）
+                if(this.afterHuOutCardTimes < 2)
+                    this.afterHuOutCardTimes = this.afterHuOutCardTimes + 1;
+                else
+                    this.huTips.node.active = false;
+            }
             //表示从牌墙开始处拿了一张牌
             if (this.m_stSceneData.cbCurrentIndex != this.m_stSaveSceneData.cbCurrentIndex) {
                 this.getPlayerByPos(nPos).getComponent("PlayerCardLayer").setActionState(GameDefs.PlayerAction.paGet1CardFromHeader);
-                
-                var bolHu = (this.m_cbMyChair == this.m_stSceneData.cbWhosTurn) &&(this.m_stSceneData.players[this.m_cbMyChair].cbIsHu == 1);
                 this.getPlayerByPos(nPos).getComponent("PlayerCardLayer").getOneMj(this.m_stSceneData.cbCurrentCard,bolHu);
             }
             else if (this.m_stSceneData.cbLastIndex != this.m_stSaveSceneData.cbLastIndex) {
                 this.getPlayerByPos(nPos).getComponent("PlayerCardLayer").setActionState(GameDefs.PlayerAction.paGet1CardFromTail);
-                var bolHu = (this.m_cbMyChair == this.m_stSceneData.cbWhosTurn) &&(this.m_stSceneData.players[this.m_cbMyChair].cbIsHu == 1);
+                
                 this.getPlayerByPos(nPos).getComponent("PlayerCardLayer").getOneMj(this.m_stSceneData.cbCurrentCard,bolHu);
             }
             else {
@@ -1405,7 +1449,6 @@ cc.Class({
                 this.operationChangeData();
             }
 
-            var nPos = this.PosFromChair(this.m_stSceneData.cbWhosTurn)
             this.setIsDirectionVis(nPos);
 
             for (var pos = 1; pos <= GameDefs.PLAYER_COUNT; pos++) {
@@ -1427,6 +1470,21 @@ cc.Class({
                 this.refreshTingCard();
             }
 
+            //当是我出牌阶段，判断手牌有没有三种花色
+            if (this.m_cbMyChair == this.m_stSceneData.cbWhosTurn){
+                
+                if (this.getPlayerByPos(nPos).getComponent("PlayerCardLayer").getHasQueYiMenMj())
+                {
+                    if (this.queyimenTipsTimes < 3){
+                        this.queYiMenTipsLayer.active = true;
+                        this.queyimenTipsTimes = this.queyimenTipsTimes + 1;
+                    }
+                }
+            
+            }
+            else{
+                this.queYiMenTipsLayer.active = false;
+            }
         }
         else if (this.m_stSceneData.cbPhase == GameDefs.GamePhase.PhaseWaitChoice) {
             this.operationChangeData();
@@ -1451,7 +1509,7 @@ cc.Class({
             //等待换牌
             var self = this;
             var callBackFunc = function(){
-                self.startTimer(null, self.GAMETIMER_COUNT - 2)
+                self.startTimer(null, self.CHANGE_THREE_COUNT - 2)
                 self.operationChangeData(true);
                 self.addThreeSelectCardUI(true,6,true);
             }
@@ -1555,6 +1613,12 @@ cc.Class({
                 var cancelRobotNode = this.node.getChildByName("cancel_robot");
 
                 cancelRobotNode.active = true;
+                if (!this.isMeClickRobot)
+                {
+                    //判断不是我点击的托管
+                    this.robotTips.node.active = true;
+                }
+
                 if (require("HallUtils").isIPhoneX()) {
                     cancelRobotNode.setScale(1.2);
                 }
@@ -1569,6 +1633,8 @@ cc.Class({
         else if (cCmdID == GameDefs.MJ_CMD_Cancel_AutoOut) {  //取消托管
             var nChair = lpBuf.readUnsignedByte();
             var nPos = this.PosFromChair(nChair);
+            this.robotTips.node.active = false;
+            this.isMeClickRobot = false;
 
             this.getPlayerByPos(nPos).getComponent("Player").setIsRobot(false);
             if (nChair == this.m_cbMyChair) {
@@ -2395,7 +2461,7 @@ cc.Class({
     addThreeSelectCardUI:function(bIsVis,nType,bShow){
         var self = this;
         var nType = nType || 7;
-        this.waitTimer = this.XUANPAI_COUNT;
+        this.waitTimer = this.CHANGE_THREE_COUNT - 2;
         
         for (var nPos = 1; nPos <= GameDefs.PLAYER_COUNT; nPos++) {
             if (nPos != 1) {
@@ -2445,8 +2511,8 @@ cc.Class({
         var vCardSpList = this.getPlayerByPos(1).getComponent("PlayerCardLayer").getThreeUpCradList()
         if (data == 2)
             vCardSpList = this.getPlayerByPos(1).getComponent("PlayerCardLayer").getUpThreeCardValue()
-        console.log("下面是选择的手牌---------------------------------------")
-        console.log(vCardSpList)
+        // console.log("下面是选择的手牌---------------------------------------")
+        // console.log(vCardSpList)
         if (vCardSpList.length!=3) {
             Resources.ShowToast("必须选择同花色的三张牌")
             return;
@@ -2719,7 +2785,7 @@ cc.Class({
             if (success)  {
                 HallResources.getInstance().removeLoading();
                 var jsonObject = JSON.parse(data)
-                console.log("-----------------WxFriendsScoreRank.aspx返回数据----------------------------")
+                console.log("打印上报给微信服务器的胜局数数据-----------------WxFriendsScoreRank.aspx返回数据----------------------------")
                 console.log(jsonObject)
                 var data = jsonObject.table[0]
                 var playerRankNum = data.RankNum;
@@ -2748,6 +2814,14 @@ cc.Class({
 
     //游戏结束
     gameOver: function () {
+        this.bolTips20Card = false;
+        this.queYiMenTipsLayer.active = false;
+        this.queyimenTipsTimes = 0;
+        this.robotTips.node.active = false;
+        this.isMeClickRobot = false;
+        this.huTips.node.active = false;
+        this.afterHuOutCardTimes = 0;
+        this.isMyFirstHu = false;
         this.pochanFlag = false;
         var cancelPoChanNode = this.node.getChildByName("cancel_pochan");
         cancelPoChanNode.active = false;
@@ -3090,11 +3164,17 @@ cc.Class({
                 this.node.getComponent("GameButtonLayer").setStartBtnVisible(true);
                 this.getPlayerByPos(1).getComponent("Player").showLeaveTimer();
     
-                var startClickedCallback = function(){
-                    if(pCurrentRoom && nGold < pCurrentRoom.dwMinGold){
+                var startClickedCallback = function(fun){
+
+                    console.log("测试破产数据：nGold = "+nGold)
+                    console.log("测试破产数据：pCurrentRoom.dwMinGold = "+pCurrentRoom.dwMinGold)
+                    var nGold2 = self.m_pMyself.getGold();
+                    console.log("测试破产数据：nGold2 = "+nGold2)
+                    if(pCurrentRoom && nGold2 < pCurrentRoom.dwMinGold){
                         self.showGoldNotEnoughTips();
                     }
                     else{
+                        fun();
                         self.getPlayerByPos(1).getComponent("Player").stopLeaveTimer();
                         self.getPlayerByPos(1).getComponent("Player").hideLeaveTimer();
                     }
@@ -3225,9 +3305,9 @@ cc.Class({
                     Resources.ShowToast("领取失败");
                 }
                 else if (backMsg == 1){
-                    // var nPreGold = require("HallControl").getInstance().getPublicUserInfo().nGold
-                    // var nNewGold = parseInt(self.bankruptAwardAmount) + parseInt(nPreGold);
-                    // require("HallControl").getInstance().getPublicUserInfo().nGold = nNewGold
+                    var nPreGold = require("HallControl").getInstance().getPublicUserInfo().nGold
+                    var nNewGold = parseInt(self.bankruptAwardAmount) + parseInt(nPreGold);
+                    require("HallControl").getInstance().getPublicUserInfo().nGold = nNewGold
                     // self.getPlayerByPos(1).getComponent("Player").refreshGold(nNewGold);
                     self.getGameLib().refreshGold();
                 }

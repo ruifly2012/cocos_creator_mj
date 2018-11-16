@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "longIcon",
+    "texture": "cbmb6VLtJNcJlDcQ2sMPQ/",
+    "rect": [
+      0,
+      0,
+      565,
+      221
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      566,
+      221
+    ]
+  }
+}

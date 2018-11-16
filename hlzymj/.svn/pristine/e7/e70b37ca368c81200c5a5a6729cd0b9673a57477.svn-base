@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "niQuan",
+    "texture": "4e7IXM5X1KKJzjZLmeDzj4",
+    "rect": [
+      0,
+      0,
+      211,
+      198
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      211,
+      198
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "jqqdIcon",
+    "texture": "53W5IOfGBPmq01DL4HtmLi",
+    "rect": [
+      0,
+      0,
+      315,
+      233
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      315,
+      233
+    ]
+  }
+}

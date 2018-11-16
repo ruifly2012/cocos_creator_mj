@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "match_game_win_bg",
+    "texture": "6a1pbPx8lOu4uez9wpQ1rX",
+    "rect": [
+      0,
+      2,
+      1280,
+      438
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      1280,
+      440
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ruanzimo_match",
+    "texture": "21DSm5IfRI/ZyZK+251iUa",
+    "rect": [
+      1,
+      0,
+      214,
+      81
+    ],
+    "offset": [
+      0.5,
+      0.5
+    ],
+    "originalSize": [
+      215,
+      82
+    ]
+  }
+}

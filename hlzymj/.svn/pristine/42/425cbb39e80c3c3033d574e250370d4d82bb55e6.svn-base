@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuezhan_hb_title",
+    "texture": "36dqYBQpdCX5eEi7I+JuKB",
+    "rect": [
+      1,
+      1,
+      268,
+      77
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      269,
+      79
+    ]
+  }
+}

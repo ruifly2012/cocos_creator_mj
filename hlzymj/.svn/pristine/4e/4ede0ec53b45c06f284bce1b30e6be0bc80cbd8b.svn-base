@@ -1,0 +1,325 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xuezhan_icon_press",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        2,
+        1384,
+        210,
+        100
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "game_introduce_press",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1794,
+        155,
+        162,
+        51
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        162,
+        51
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "game_introduce",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1590,
+        202,
+        162,
+        51
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        162,
+        51
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "game_rule",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1958,
+        143,
+        162,
+        51
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        162,
+        51
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "gdmj_icon_press",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        2,
+        1596,
+        210,
+        100
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "title_description",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        2000,
+        2,
+        139,
+        35
+      ],
+      "offset": [
+        -1,
+        1
+      ],
+      "originalSize": [
+        311,
+        59
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xuezhan_double",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        2,
+        2,
+        792,
+        1380
+      ],
+      "offset": [
+        -4,
+        -6
+      ],
+      "originalSize": [
+        800,
+        1400
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xueliu_icon_press",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1590,
+        2,
+        204,
+        98
+      ],
+      "offset": [
+        2,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xueliu_double",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        796,
+        2,
+        792,
+        1380
+      ],
+      "offset": [
+        -4,
+        -6
+      ],
+      "originalSize": [
+        800,
+        1400
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xueliu_icon",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1590,
+        102,
+        202,
+        98
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "xuezhan_icon",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1796,
+        2,
+        202,
+        98
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "gdmj_icon",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        2,
+        1808,
+        210,
+        100
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        210,
+        100
+      ],
+      "rotated": 1
+    }
+  },
+  {
+    "__type__": "cc.SpriteAtlas",
+    "_name": "help.plist",
+    "_spriteFrames": {
+      "game_introduce": {
+        "__uuid__": "34AeV8pKFMH6lNebyYYNR5"
+      },
+      "game_introduce_press": {
+        "__uuid__": "2cInc6uH1Hf7muYwWAGLHT"
+      },
+      "game_rule": {
+        "__uuid__": "38+dxBvsJMsaTRTwM6zszc"
+      },
+      "game_rule_press": {
+        "__uuid__": "d3imi4sJFC1LdZBpq8bHqn"
+      },
+      "gdmj_icon": {
+        "__uuid__": "afatpBqcpONI0NeK04hmqU"
+      },
+      "gdmj_icon_press": {
+        "__uuid__": "3a7vF+DFhOyL7AUfIHMaxY"
+      },
+      "title_description": {
+        "__uuid__": "41D8DM/1NN86/gateX+mFX"
+      },
+      "xueliu_double": {
+        "__uuid__": "74O8e/JqdIy6zXNgWXtDb0"
+      },
+      "xueliu_icon": {
+        "__uuid__": "7d+qSUxhJM+ZBmin7q/aFq"
+      },
+      "xueliu_icon_press": {
+        "__uuid__": "471dd+WbFH24+zF2DM5AG/"
+      },
+      "xuezhan_double": {
+        "__uuid__": "41U14YHJNNuJSZj1i4cs+H"
+      },
+      "xuezhan_icon": {
+        "__uuid__": "98qS0dUClGo5d39OnkLQoN"
+      },
+      "xuezhan_icon_press": {
+        "__uuid__": "06YpvHzm9MNo3DDHvHkwsf"
+      }
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "game_rule_press",
+      "texture": "e5FsiDsp5NGL7NktlE/apm",
+      "rect": [
+        1794,
+        102,
+        162,
+        51
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        162,
+        51
+      ]
+    }
+  }
+]

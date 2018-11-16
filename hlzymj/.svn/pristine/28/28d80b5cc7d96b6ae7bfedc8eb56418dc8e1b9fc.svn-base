@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xueliu_rule1",
+    "texture": "b6XCLknZxNnpMYLg5BeSCG",
+    "rect": [
+      0,
+      16,
+      791,
+      923
+    ],
+    "offset": [
+      -4.5,
+      122.5
+    ],
+    "originalSize": [
+      800,
+      1200
+    ]
+  }
+}

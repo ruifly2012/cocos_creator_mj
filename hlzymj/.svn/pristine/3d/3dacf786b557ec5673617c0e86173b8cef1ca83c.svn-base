@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tong1",
+    "texture": "fdEFhcbs9KJ4fQa3sI5N/G",
+    "rect": [
+      18,
+      0,
+      86,
+      118
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "originalSize": [
+      118,
+      118
+    ]
+  }
+}

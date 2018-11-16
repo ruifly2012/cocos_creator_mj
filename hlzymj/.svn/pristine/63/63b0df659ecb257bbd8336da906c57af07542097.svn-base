@@ -1,0 +1,149 @@
+[
+  {
+    "__type__": "cc.LabelAtlas",
+    "_name": "win_counts",
+    "spriteFrame": {
+      "__uuid__": "e74+MYz75EaLHqsWimxmuv"
+    },
+    "fontSize": 41.36,
+    "_fntConfig": {
+      "commonHeight": 47,
+      "fontSize": 41,
+      "atlasName": "win_counts",
+      "fontDefDictionary": {
+        "48": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "49": {
+          "rect": {
+            "x": 38,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "50": {
+          "rect": {
+            "x": 76,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "51": {
+          "rect": {
+            "x": 114,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "52": {
+          "rect": {
+            "x": 152,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "53": {
+          "rect": {
+            "x": 190,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "54": {
+          "rect": {
+            "x": 228,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "55": {
+          "rect": {
+            "x": 266,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "56": {
+          "rect": {
+            "x": 304,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        },
+        "57": {
+          "rect": {
+            "x": 342,
+            "y": 0,
+            "width": 38,
+            "height": 47
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 38
+        }
+      },
+      "kerningDict": {}
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "win_counts",
+      "texture": "8fF9dLA99I67YU/Ee0RSxG",
+      "rect": [
+        1,
+        0,
+        379,
+        46
+      ],
+      "offset": [
+        0.5,
+        0.5
+      ],
+      "originalSize": [
+        380,
+        47
+      ]
+    }
+  }
+]

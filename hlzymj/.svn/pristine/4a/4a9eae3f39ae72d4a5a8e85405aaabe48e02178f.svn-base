@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "549e496c-a75f-45a6-bed2-78d58e1436e3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "pochan": {
+      "ver": "1.0.3",
+      "uuid": "cabd8885-31dc-47b2-a4a2-085c626df5bc",
+      "rawTextureUuid": "549e496c-a75f-45a6-bed2-78d58e1436e3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 1,
+      "width": 69,
+      "height": 68,
+      "rawWidth": 69,
+      "rawHeight": 70,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

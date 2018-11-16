@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "result_liuju_title",
+    "texture": "2dihbQqgVM96bLgjgALr2R",
+    "rect": [
+      1,
+      0,
+      542,
+      144
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      544,
+      146
+    ]
+  }
+}

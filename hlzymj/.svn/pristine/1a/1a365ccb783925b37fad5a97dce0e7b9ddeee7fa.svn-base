@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "famousTag",
+    "texture": "0f4emMoUVAKK8EmGo9JRmI",
+    "rect": [
+      0,
+      0,
+      113,
+      121
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      113,
+      121
+    ]
+  }
+}

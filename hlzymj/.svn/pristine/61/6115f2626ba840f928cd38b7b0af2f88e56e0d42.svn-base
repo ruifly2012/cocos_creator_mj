@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "girl",
+    "texture": "9eU9iZUNdNmrI2kfsIIo7k",
+    "rect": [
+      2,
+      0,
+      370,
+      576
+    ],
+    "offset": [
+      1,
+      2
+    ],
+    "originalSize": [
+      372,
+      580
+    ]
+  }
+}

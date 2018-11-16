@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_face_z",
+    "texture": "c6ezRUucVP/6eS8Ud1iD4k",
+    "rect": [
+      2,
+      2,
+      488,
+      482
+    ],
+    "offset": [
+      -10,
+      13
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

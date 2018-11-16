@@ -1,0 +1,292 @@
+[
+  {
+    "__type__": "cc.BitmapFont",
+    "_name": "loginFnt",
+    "spriteFrame": {
+      "__uuid__": "cbimyRdjNNR5OKJSDN1DNL"
+    },
+    "fontSize": 32,
+    "_fntConfig": {
+      "commonHeight": 33,
+      "fontSize": 32,
+      "atlasName": "loginFnt_0.png",
+      "fontDefDictionary": {
+        "37": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "46": {
+          "rect": {
+            "x": 238,
+            "y": 0,
+            "width": 9,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 9
+        },
+        "48": {
+          "rect": {
+            "x": 227,
+            "y": 34,
+            "width": 21,
+            "height": 29
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "49": {
+          "rect": {
+            "x": 165,
+            "y": 34,
+            "width": 14,
+            "height": 30
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 14
+        },
+        "50": {
+          "rect": {
+            "x": 204,
+            "y": 34,
+            "width": 22,
+            "height": 29
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 22
+        },
+        "51": {
+          "rect": {
+            "x": 0,
+            "y": 68,
+            "width": 21,
+            "height": 29
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "52": {
+          "rect": {
+            "x": 180,
+            "y": 34,
+            "width": 23,
+            "height": 29
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 23
+        },
+        "53": {
+          "rect": {
+            "x": 22,
+            "y": 68,
+            "width": 21,
+            "height": 29
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "54": {
+          "rect": {
+            "x": 44,
+            "y": 68,
+            "width": 21,
+            "height": 28
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "55": {
+          "rect": {
+            "x": 66,
+            "y": 68,
+            "width": 21,
+            "height": 28
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "56": {
+          "rect": {
+            "x": 88,
+            "y": 67,
+            "width": 21,
+            "height": 28
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "57": {
+          "rect": {
+            "x": 110,
+            "y": 67,
+            "width": 21,
+            "height": 28
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 21
+        },
+        "21152": {
+          "rect": {
+            "x": 34,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "22312": {
+          "rect": {
+            "x": 68,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "25509": {
+          "rect": {
+            "x": 34,
+            "y": 34,
+            "width": 32,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 32
+        },
+        "27491": {
+          "rect": {
+            "x": 102,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "28304": {
+          "rect": {
+            "x": 136,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "32476": {
+          "rect": {
+            "x": 67,
+            "y": 34,
+            "width": 33,
+            "height": 32
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "32593": {
+          "rect": {
+            "x": 135,
+            "y": 34,
+            "width": 29,
+            "height": 32
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 29
+        },
+        "36164": {
+          "rect": {
+            "x": 170,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "36733": {
+          "rect": {
+            "x": 204,
+            "y": 0,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "36830": {
+          "rect": {
+            "x": 101,
+            "y": 34,
+            "width": 33,
+            "height": 32
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        },
+        "65306": {
+          "rect": {
+            "x": 0,
+            "y": 34,
+            "width": 33,
+            "height": 33
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 33
+        }
+      },
+      "kerningDict": {}
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "loginFnt_0",
+      "texture": "e0ZcNdhlFOtrjShjuvYYEY",
+      "rect": [
+        0,
+        0,
+        248,
+        97
+      ],
+      "offset": [
+        -4,
+        79.5
+      ],
+      "originalSize": [
+        256,
+        256
+      ]
+    }
+  }
+]

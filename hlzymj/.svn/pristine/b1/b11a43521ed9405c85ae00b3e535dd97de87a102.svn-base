@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rank_level_blue_4",
+    "texture": "5dZSrDmGNJIaSafflMR+VM",
+    "rect": [
+      0,
+      0,
+      114,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      114,
+      33
+    ]
+  }
+}

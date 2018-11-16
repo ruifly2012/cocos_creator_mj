@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cupShadow",
+    "texture": "ccIE6TqnRMTrT2sXq59ctQ",
+    "rect": [
+      0,
+      0,
+      62,
+      21
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      62,
+      21
+    ]
+  }
+}

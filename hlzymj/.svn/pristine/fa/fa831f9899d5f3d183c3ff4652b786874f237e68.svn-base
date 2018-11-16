@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "2hu_tex",
+    "texture": "2atFaFgn1I94fUwE/nKznk",
+    "rect": [
+      1,
+      1,
+      943,
+      1011
+    ],
+    "offset": [
+      -39.5,
+      5.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}

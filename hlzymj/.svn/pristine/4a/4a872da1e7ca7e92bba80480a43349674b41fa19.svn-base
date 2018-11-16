@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "myRankTitle",
+    "texture": "c5dlhCak1NU5tVb6trOlcK",
+    "rect": [
+      0,
+      0,
+      91,
+      24
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      91,
+      24
+    ]
+  }
+}

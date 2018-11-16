@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_wall_z",
+    "texture": "20B3KVI/xFw6hbs6LZ7Q7v",
+    "rect": [
+      2,
+      2,
+      241,
+      504
+    ],
+    "offset": [
+      -5.5,
+      2
+    ],
+    "originalSize": [
+      256,
+      512
+    ]
+  }
+}

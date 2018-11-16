@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_jinbiyu_tex",
+    "texture": "8eJROTSRZOLrI0Z6drsC98",
+    "rect": [
+      1,
+      1,
+      50,
+      124
+    ],
+    "offset": [
+      -6,
+      1
+    ],
+    "originalSize": [
+      64,
+      128
+    ]
+  }
+}

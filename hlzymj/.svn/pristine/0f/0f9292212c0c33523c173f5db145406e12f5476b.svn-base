@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "left_lai",
+    "texture": "9fV2TCPQpK67bE5FUUJzOu",
+    "rect": [
+      30,
+      15,
+      35,
+      26
+    ],
+    "offset": [
+      7,
+      1.5
+    ],
+    "originalSize": [
+      81,
+      59
+    ]
+  }
+}

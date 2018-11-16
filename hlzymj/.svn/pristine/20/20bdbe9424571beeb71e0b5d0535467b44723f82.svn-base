@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "right_gang_cao",
+    "texture": "a61BaiSH9BSpno8YFKfVz5",
+    "rect": [
+      6,
+      8,
+      29,
+      28
+    ],
+    "offset": [
+      -13.5,
+      10
+    ],
+    "originalSize": [
+      68,
+      64
+    ]
+  }
+}

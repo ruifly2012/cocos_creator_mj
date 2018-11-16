@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "iphonex_hallBottomBg",
+    "texture": "0apdn9/4RMZoY9W/dgZ62x",
+    "rect": [
+      0,
+      0,
+      1559,
+      82
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1559,
+      82
+    ]
+  }
+}

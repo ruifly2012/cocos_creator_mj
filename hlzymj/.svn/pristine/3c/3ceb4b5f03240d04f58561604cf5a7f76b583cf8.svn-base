@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallDiamond1",
+    "texture": "24jKievPZA+pTxsneuf62w",
+    "rect": [
+      6,
+      2,
+      106,
+      89
+    ],
+    "offset": [
+      1,
+      2.5
+    ],
+    "originalSize": [
+      116,
+      98
+    ]
+  }
+}

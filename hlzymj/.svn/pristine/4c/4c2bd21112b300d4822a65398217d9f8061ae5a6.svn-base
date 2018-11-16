@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "liuju_match",
+    "texture": "83PRd7KhRJ9qHhgo49IHOE",
+    "rect": [
+      0,
+      0,
+      215,
+      81
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      215,
+      81
+    ]
+  }
+}

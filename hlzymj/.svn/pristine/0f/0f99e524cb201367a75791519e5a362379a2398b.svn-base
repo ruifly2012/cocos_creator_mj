@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Game_MeiGui_tex",
+    "texture": "7fKaAN2TNCOJIay4S75pfv",
+    "rect": [
+      1,
+      1,
+      237,
+      223
+    ],
+    "offset": [
+      -8.5,
+      15.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

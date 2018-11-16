@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "laiyouzi_match",
+    "texture": "5bHzGpuJ5Hoqo3JZPfwq3t",
+    "rect": [
+      1,
+      0,
+      212,
+      82
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      214,
+      83
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yinglaiyou_match",
+    "texture": "58iBeS5BZLaL5icFhrXc4z",
+    "rect": [
+      0,
+      0,
+      210,
+      81
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      210,
+      82
+    ]
+  }
+}

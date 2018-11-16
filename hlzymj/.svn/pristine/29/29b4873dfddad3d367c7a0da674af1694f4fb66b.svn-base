@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "loase_share",
+    "texture": "039vaU31dFqogxSdrI2I/O",
+    "rect": [
+      85,
+      11,
+      141,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

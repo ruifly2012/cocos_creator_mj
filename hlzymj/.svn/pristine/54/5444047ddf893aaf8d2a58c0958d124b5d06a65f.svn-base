@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "game_button",
+    "texture": "346iEXXudLHYfkzyZAytBv",
+    "rect": [
+      2,
+      2,
+      1020,
+      1255
+    ],
+    "offset": [
+      0,
+      394.5
+    ],
+    "originalSize": [
+      1024,
+      2048
+    ]
+  }
+}

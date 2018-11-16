@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuezhan_rule1",
+    "texture": "50GUzz/xJMkKoC8MvfWzjm",
+    "rect": [
+      0,
+      17,
+      791,
+      1084
+    ],
+    "offset": [
+      -4.5,
+      141
+    ],
+    "originalSize": [
+      800,
+      1400
+    ]
+  }
+}

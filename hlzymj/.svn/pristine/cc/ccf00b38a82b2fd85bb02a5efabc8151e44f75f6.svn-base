@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "freeDiamondTitle",
+    "texture": "c25ayIfN5DMLsbeMAeG45x",
+    "rect": [
+      88,
+      11,
+      135,
+      35
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1pen_tex",
+    "texture": "fcztojqKJMfpi9/LiyMyub",
+    "rect": [
+      1,
+      1,
+      985,
+      506
+    ],
+    "offset": [
+      -18.5,
+      2
+    ],
+    "originalSize": [
+      1024,
+      512
+    ]
+  }
+}

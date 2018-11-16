@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DB_Click_tex",
+    "texture": "01n8IgxGZHZ57y35pLdilB",
+    "rect": [
+      1,
+      1,
+      156,
+      238
+    ],
+    "offset": [
+      -49,
+      8
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

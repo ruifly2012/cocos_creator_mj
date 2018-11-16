@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "xuezhanGame",
+    "texture": "39H9Bf4lBPV6mQDZ8CSmkr",
+    "rect": [
+      0,
+      0,
+      150,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      150,
+      40
+    ]
+  }
+}

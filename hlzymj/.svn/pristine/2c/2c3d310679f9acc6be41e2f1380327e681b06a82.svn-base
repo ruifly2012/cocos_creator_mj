@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallGold3",
+    "texture": "c864nZ3TBP3ZVBG19nvVq4",
+    "rect": [
+      2,
+      10,
+      103,
+      75
+    ],
+    "offset": [
+      -4.5,
+      1.5
+    ],
+    "originalSize": [
+      116,
+      98
+    ]
+  }
+}

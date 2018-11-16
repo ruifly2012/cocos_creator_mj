@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Game_Kiss_tex",
+    "texture": "17zLP4KNtE3I1gOfS7nEtd",
+    "rect": [
+      1,
+      1,
+      185,
+      459
+    ],
+    "offset": [
+      -34.5,
+      25.5
+    ],
+    "originalSize": [
+      256,
+      512
+    ]
+  }
+}

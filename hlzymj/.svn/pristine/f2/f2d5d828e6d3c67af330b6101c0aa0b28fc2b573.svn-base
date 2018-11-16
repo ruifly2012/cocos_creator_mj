@@ -1,0 +1,131 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "3",
+      "texture": "346iEXXudLHYfkzyZAytBv",
+      "rect": [
+        158,
+        634,
+        78,
+        78
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        80,
+        80
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "chatBtn",
+      "texture": "76Y1/wn1pPx434poqPHsVA",
+      "rect": [
+        1,
+        1,
+        78,
+        78
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        80,
+        80
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "2",
+      "texture": "346iEXXudLHYfkzyZAytBv",
+      "rect": [
+        162,
+        392,
+        80,
+        80
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        80,
+        80
+      ]
+    }
+  },
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "quickChatTimer",
+    "_duration": 3.0166666666666666,
+    "curveData": {
+      "comps": {
+        "cc.Sprite": {
+          "spriteFrame": [
+            {
+              "frame": 0,
+              "value": {
+                "__uuid__": "01KgFjBP5GmKnaubN4xZVO"
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__uuid__": "7bHzFXf5tJ4IVXLb6vbaLa"
+              }
+            },
+            {
+              "frame": 2,
+              "value": {
+                "__uuid__": "e11muwexpCv4+rVWl4y4yt"
+              }
+            },
+            {
+              "frame": 3,
+              "value": {
+                "__uuid__": "64jfHPhI5Of71oW1T/TGgR"
+              }
+            }
+          ]
+        },
+        "cc.Button": {}
+      }
+    },
+    "events": [
+      {
+        "frame": 3,
+        "func": "onActionEnd",
+        "params": []
+      }
+    ]
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "1",
+      "texture": "346iEXXudLHYfkzyZAytBv",
+      "rect": [
+        155,
+        714,
+        78,
+        78
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        80,
+        80
+      ]
+    }
+  }
+]

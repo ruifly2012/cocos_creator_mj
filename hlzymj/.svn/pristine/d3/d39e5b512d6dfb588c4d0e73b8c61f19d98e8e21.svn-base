@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Game_DianZan_tex",
+    "texture": "b0oLT/SehIDajOA3Cyj3bT",
+    "rect": [
+      1,
+      1,
+      200,
+      243
+    ],
+    "offset": [
+      -27,
+      5.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ]
+  }
+}

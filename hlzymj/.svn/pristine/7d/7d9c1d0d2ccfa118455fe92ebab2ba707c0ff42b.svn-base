@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_face_dao",
+    "texture": "6610P/HiBNMbbF9uzPv1RI",
+    "rect": [
+      2,
+      2,
+      462,
+      472
+    ],
+    "offset": [
+      1,
+      -1
+    ],
+    "originalSize": [
+      464,
+      474
+    ]
+  }
+}

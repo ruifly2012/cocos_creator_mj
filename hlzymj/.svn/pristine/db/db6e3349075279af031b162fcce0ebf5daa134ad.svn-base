@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "qidai_cw_title",
+    "texture": "0cM97dGXBHK7BLaWG17qyc",
+    "rect": [
+      0,
+      0,
+      257,
+      77
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      257,
+      77
+    ]
+  }
+}

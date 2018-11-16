@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "collectBg_iphoneX",
+    "texture": "e2jsF/wHdIwrjeP9zaO9mc",
+    "rect": [
+      0,
+      0,
+      1467,
+      599
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      1468,
+      599
+    ]
+  }
+}

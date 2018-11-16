@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_xueliuchenghe_tex",
+    "texture": "f0ebAT8pNDDq8ANUvf+qH9",
+    "rect": [
+      1,
+      1,
+      510,
+      771
+    ],
+    "offset": [
+      0,
+      125.5
+    ],
+    "originalSize": [
+      512,
+      1024
+    ]
+  }
+}

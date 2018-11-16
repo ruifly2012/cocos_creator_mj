@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ruanZiMo",
+    "texture": "148NUq6mpDYqzKbqNhrHwq",
+    "rect": [
+      26,
+      0,
+      209,
+      87
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "originalSize": [
+      257,
+      87
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "back_watch",
+    "texture": "bcekZroAtC2p6R56ftrPGm",
+    "rect": [
+      0,
+      0,
+      85,
+      118
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      118
+    ]
+  }
+}

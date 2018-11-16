@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "share_bg",
+    "texture": "54t0UK6IVM/657oaPlQK+6",
+    "rect": [
+      0,
+      0,
+      685,
+      500
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      685,
+      500
+    ]
+  }
+}

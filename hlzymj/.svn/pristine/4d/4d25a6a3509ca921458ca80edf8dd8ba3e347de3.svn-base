@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "texiao_tex",
+    "texture": "58M4NqPe5O2IxJ/J2EHRud",
+    "rect": [
+      1,
+      1,
+      2043,
+      1703
+    ],
+    "offset": [
+      -1.5,
+      171.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

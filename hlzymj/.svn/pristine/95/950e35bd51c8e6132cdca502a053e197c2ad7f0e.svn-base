@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hh_blue_suit_dao",
+    "texture": "6e0eSZjR9Ie6EsfUaTmaGY",
+    "rect": [
+      5,
+      5,
+      47,
+      68
+    ],
+    "offset": [
+      0.5,
+      0.5
+    ],
+    "originalSize": [
+      56,
+      79
+    ]
+  }
+}

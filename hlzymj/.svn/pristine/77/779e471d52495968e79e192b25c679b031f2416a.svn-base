@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chaHuaZhu",
+    "texture": "f7azWGSj9FHqIPV0NLQ4Kj",
+    "rect": [
+      0,
+      0,
+      385,
+      181
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      385,
+      181
+    ]
+  }
+}

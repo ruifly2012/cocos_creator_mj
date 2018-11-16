@@ -1,0 +1,149 @@
+[
+  {
+    "__type__": "cc.LabelAtlas",
+    "_name": "TimerNumber",
+    "spriteFrame": {
+      "__uuid__": "abYGLFhmtAzYrs3k4YJ4hC"
+    },
+    "fontSize": 29.92,
+    "_fntConfig": {
+      "commonHeight": 34,
+      "fontSize": 29,
+      "atlasName": "NumTimer",
+      "fontDefDictionary": {
+        "48": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "49": {
+          "rect": {
+            "x": 27,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "50": {
+          "rect": {
+            "x": 54,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "51": {
+          "rect": {
+            "x": 81,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "52": {
+          "rect": {
+            "x": 108,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "53": {
+          "rect": {
+            "x": 135,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "54": {
+          "rect": {
+            "x": 162,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "55": {
+          "rect": {
+            "x": 189,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "56": {
+          "rect": {
+            "x": 216,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        },
+        "57": {
+          "rect": {
+            "x": 243,
+            "y": 0,
+            "width": 27,
+            "height": 34
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 27
+        }
+      },
+      "kerningDict": {}
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "NumTimer",
+      "texture": "5eLI0rj75HXoy1OhEghKJ+",
+      "rect": [
+        0,
+        0,
+        269,
+        34
+      ],
+      "offset": [
+        -0.5,
+        0
+      ],
+      "originalSize": [
+        270,
+        34
+      ]
+    }
+  }
+]

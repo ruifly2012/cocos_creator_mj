@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "biaoqin_tex",
+    "texture": "3f0l/6mzBFQYAIHIm/JpLI",
+    "rect": [
+      1,
+      1,
+      510,
+      634
+    ],
+    "offset": [
+      0,
+      194
+    ],
+    "originalSize": [
+      512,
+      1024
+    ]
+  }
+}

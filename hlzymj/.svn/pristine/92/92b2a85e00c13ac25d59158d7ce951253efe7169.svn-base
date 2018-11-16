@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gameItem_2",
+    "texture": "dcrEkaw/ZFZrTvSO4Z7OBr",
+    "rect": [
+      0,
+      0,
+      147,
+      145
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      147,
+      145
+    ]
+  }
+}

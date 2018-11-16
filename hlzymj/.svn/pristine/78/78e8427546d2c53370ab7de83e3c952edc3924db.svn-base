@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mallGold8",
+    "texture": "374AfT36RIUYf9drkpreA2",
+    "rect": [
+      0,
+      8,
+      154,
+      147
+    ],
+    "offset": [
+      -0.5,
+      -4
+    ],
+    "originalSize": [
+      155,
+      155
+    ]
+  }
+}

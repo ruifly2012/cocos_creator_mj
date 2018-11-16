@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "friendHelpTitle",
+    "texture": "f3SXj/SDNPf5BOUw1nHy7s",
+    "rect": [
+      88,
+      11,
+      134,
+      35
+    ],
+    "offset": [
+      -0.5,
+      1
+    ],
+    "originalSize": [
+      311,
+      59
+    ]
+  }
+}

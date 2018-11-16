@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yidingque",
+    "texture": "cfQWgcFyBBTK9MmId0pSak",
+    "rect": [
+      0,
+      0,
+      199,
+      80
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      199,
+      80
+    ]
+  }
+}

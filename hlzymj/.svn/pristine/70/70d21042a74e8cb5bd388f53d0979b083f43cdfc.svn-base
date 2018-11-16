@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "b5ee1dfa-85b2-4b02-8551-54f64e1f31f9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "jiazai_ske_tex": {
+      "ver": "1.0.3",
+      "uuid": "e869ddb4-3493-4813-95a2-32a087c0fb04",
+      "rawTextureUuid": "b5ee1dfa-85b2-4b02-8551-54f64e1f31f9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -57,
+      "offsetY": 15,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 140,
+      "height": 224,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

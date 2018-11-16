@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "RR_BG1_tex",
+    "texture": "9fvXGetI1CKpVpiTFU89fu",
+    "rect": [
+      1,
+      1,
+      1834,
+      1501
+    ],
+    "offset": [
+      -106,
+      272.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

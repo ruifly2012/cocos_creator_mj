@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "touxianTX_tex",
+    "texture": "23U+dKcxtB74AvG/Sc+r8J",
+    "rect": [
+      1,
+      1,
+      432,
+      454
+    ],
+    "offset": [
+      -39,
+      28
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

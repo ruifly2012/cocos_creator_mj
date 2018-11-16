@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "seasonCupFrame",
+    "texture": "bbNrAy3EVD67bbhvPES+DO",
+    "rect": [
+      0,
+      0,
+      1013,
+      158
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1013,
+      158
+    ]
+  }
+}

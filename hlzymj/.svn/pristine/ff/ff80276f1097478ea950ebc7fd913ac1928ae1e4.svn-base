@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dh_xueliu_paiweisai_tex",
+    "texture": "f8l6FABndPM4OapAyAoa8I",
+    "rect": [
+      1,
+      1,
+      2044,
+      1763
+    ],
+    "offset": [
+      -1,
+      141.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

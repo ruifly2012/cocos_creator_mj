@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "emil_yellow",
+    "texture": "75yiG6J1dAZ5TqskDpb33Z",
+    "rect": [
+      0,
+      0,
+      64,
+      31
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      64,
+      31
+    ]
+  }
+}

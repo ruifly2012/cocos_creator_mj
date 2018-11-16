@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Game_JiDan_tex",
+    "texture": "8bat0U3yhN5KrJmI2G/sPs",
+    "rect": [
+      1,
+      1,
+      278,
+      227
+    ],
+    "offset": [
+      -116,
+      13.5
+    ],
+    "originalSize": [
+      512,
+      256
+    ]
+  }
+}

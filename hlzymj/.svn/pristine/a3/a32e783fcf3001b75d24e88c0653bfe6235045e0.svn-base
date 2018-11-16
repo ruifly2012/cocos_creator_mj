@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DB_PJJS_tex",
+    "texture": "9eQMsUOUBAQoqq9N8j2ZRa",
+    "rect": [
+      1,
+      1,
+      546,
+      977
+    ],
+    "offset": [
+      -238,
+      22.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ]
+  }
+}
